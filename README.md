@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
-
 <p align="center"><img src="docs/assets/banner.png" alt="Blue Carbon Guardian: tide-aware satellite monitoring for Gulf mangroves" width="100%"></p>
 
 <p align="center">
@@ -57,11 +53,12 @@ Contains modified Copernicus Sentinel data 2021–2026. Built by <code>scripts/a
 <td align="center"><b>≈ 247 kt C</b><br><sub>carbon stock, pilot area</sub></td></tr>
 </table>
 
-<!-- VIDEO_PLAYER -->
-<p align="center"><a href="docs/demo_video.mp4"><img src="docs/assets/demo_preview.gif" alt="Demo video preview (plays automatically): click to open the full 2-minute video with sound" width="80%"></a><br>
-<sub>▶ <a href="docs/demo_video.mp4"><b>Watch the full 2:14 video with sound</b></a> (English narration, Arabic subtitles; play / pause) ·
-<a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
-<a href="dashboard/index.html"><b>Dashboard</b></a> (download and open)</sub></p>
+<h3 align="center">🎬 Demo video (2:14) · English narration, Arabic subtitles</h3>
+
+https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
+
+<p align="center"><sub><a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
+<a href="dashboard/index.html"><b>Dashboard</b></a> (download and open) · <a href="docs/demo_video.mp4">full-resolution video file</a></sub></p>
 
 <a id="judges"></a>
 ## 🏆 For the judges: each criterion and where the evidence is
