@@ -54,8 +54,8 @@ Contains modified Copernicus Sentinel data 2021–2026. Built by <code>scripts/a
 </table>
 
 <!-- VIDEO_PLAYER -->
-<p align="center"><a href="docs/demo_video.mp4"><img src="docs/assets/video_poster.png" alt="Demo video: click to play the 2-minute video" width="80%"></a><br>
-<sub>▶ <a href="docs/demo_video.mp4"><b>Play the 2:14 demo video</b></a> (English narration, Arabic subtitles) ·
+<p align="center"><a href="docs/demo_video.mp4"><img src="docs/assets/demo_preview.gif" alt="Demo video preview (plays automatically): click to open the full 2-minute video with sound" width="80%"></a><br>
+<sub>▶ <a href="docs/demo_video.mp4"><b>Watch the full 2:14 video with sound</b></a> (English narration, Arabic subtitles; play / pause) ·
 <a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
 <a href="dashboard/index.html"><b>Dashboard</b></a> (download and open)</sub></p>
 
