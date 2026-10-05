@@ -19,9 +19,11 @@
 > inside a stand to inspect, and reports the carbon at stake. It runs on free Sentinel-2 imagery with a tide model, and it is checked against EnMAP
 > hyperspectral data and dated sub-metre imagery.
 
-<p align="center"><a href="docs/demo_video.mp4"><img src="docs/assets/demo_preview.gif" alt="Demo video preview: click to open the full 2-minute video" width="80%"></a><br>
-<sub>▶ <a href="docs/demo_video.mp4"><b>Watch the 2:14 demo video</b></a> (English narration, Arabic subtitles) · <a href="docs/slides.pdf"><b>Slides (PDF)</b></a> ·
-<a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> · <a href="dashboard/index.html"><b>Dashboard</b></a> (download and open)</sub></p>
+<h3 align="center">⚡ Watch a real mangrove loss trigger the alert</h3>
+<p align="center"><img src="docs/assets/alert_story.gif" alt="Animated: stand 5 in Abu Dhabi, 2022 to 2026. Sentinel-2 images show the mangrove fringe being replaced by reclamation and canals while the 200 m cells turn red and the alert score drops below its threshold on 25 October 2022" width="92%"><br>
+<sub>Real data, stand 5 (Abu Dhabi), 2022 → 2026: Sentinel-2 images, 200 m cells coloured by their alert state, and the tide-aware alert score.
+The alert began between the last sub-metre capture showing intact mangrove (Mar 2022) and the first showing works (Feb 2023).
+Contains modified Copernicus Sentinel data 2021–2026. Built by <code>scripts/alert_story_data.py</code> + <code>scripts/make_alert_story.py</code>.</sub></p>
 
 <table align="center">
 <tr><td align="center"><b>−29 to −35 %</b><br><sub>noise after the tide model</sub></td>
@@ -31,6 +33,11 @@
 <td align="center"><b>0.79</b><br><sub>false alarms / stand-year on 65 unseen stands</sub></td>
 <td align="center"><b>≈ 247 kt C</b><br><sub>carbon stock, pilot area</sub></td></tr>
 </table>
+
+<p align="center"><a href="docs/demo_video.mp4"><img src="docs/assets/demo_preview.gif" alt="Demo video preview: click to open the full 2-minute video" width="80%"></a><br>
+<sub>▶ <a href="docs/demo_video.mp4"><b>Watch the 2:14 demo video</b></a> (English narration, Arabic subtitles) · <a href="docs/slides.pdf"><b>Slides (PDF)</b></a> ·
+<a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> · <a href="dashboard/index.html"><b>Dashboard</b></a> (download and open)</sub></p>
+
 
 ---
 
@@ -207,6 +214,6 @@ reports/                                  automatic per-stand site reports
 docs/                                     slides.pdf, demo_video.mp4, business plan, API and alert concept, README assets
 deck_source/                              slide sources
 video/                                    demo-video sources (narration EN + AR, motion graphics, renderer)
-scripts/                                  sample-input builder, notebook builder, slide export, EnMAP download helper
+scripts/                                  sample-input and notebook builders, slide export, README visuals (banner, alert story), EnMAP download helper
 ```
 </details>
