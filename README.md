@@ -1,16 +1,16 @@
 <p align="center"><img src="docs/assets/banner.png" alt="Blue Carbon Guardian: tide-aware satellite monitoring for Gulf mangroves" width="100%"></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Challenge-813%20·%20Arab%20Youth%20Space%20Hackathon%202026-0B7A66?style=for-the-badge" alt="Challenge 813">
-  <img src="https://img.shields.io/badge/Theme-Ecosystem%20Health%20%26%20Blue%20Carbon-3FC0A4?style=for-the-badge" alt="Theme">
+  <img src="https://img.shields.io/badge/Challenge-813%20·%20Arab%20Youth%20Space%20Hackathon%202026-0A3D91?style=for-the-badge" alt="Challenge 813">
+  <img src="https://img.shields.io/badge/Theme-Ecosystem%20Health%20%26%20Blue%20Carbon-1E6FD9?style=for-the-badge" alt="Theme">
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white" alt="Python 3.12">
-  <img src="https://img.shields.io/badge/Jupyter-runs%20in%20~25%20s-F37626?logo=jupyter&logoColor=white" alt="Notebook">
-  <img src="https://img.shields.io/badge/Sentinel--2-778%20dates-1E88E5" alt="Sentinel-2">
-  <img src="https://img.shields.io/badge/EnMAP-224%20bands%20hyperspectral-8E44AD" alt="EnMAP">
-  <img src="https://img.shields.io/badge/Confirmed-5%20real%20events%20at%200.3--0.5%20m-C8384F" alt="Events">
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="MIT">
+  <img src="https://img.shields.io/badge/Jupyter-runs%20in%20~25%20s-1565C0?logo=jupyter&logoColor=white" alt="Notebook">
+  <img src="https://img.shields.io/badge/Sentinel--2-778%20dates-2F80ED" alt="Sentinel-2">
+  <img src="https://img.shields.io/badge/EnMAP-224%20bands%20hyperspectral-4F6BED" alt="EnMAP">
+  <img src="https://img.shields.io/badge/Confirmed-5%20real%20events%20at%200.3--0.5%20m-0EA5E9" alt="Events">
+  <img src="https://img.shields.io/badge/License-MIT-0B2A5B" alt="MIT">
 </p>
 
 <p align="center"><b>Team T0006 · Nahla Nabil · Country representation: Palestine</b></p>
@@ -80,9 +80,15 @@ flowchart LR
     F --> G
     H["🌳 Field carbon<br/>108 t C/ha"] --> G
     I["🌈 EnMAP · 🔍 sub-metre captures<br/>independent checks"] -.-> G
-    style D fill:#0B7A66,color:#fff,stroke:#0B7A66
-    style E fill:#C8384F,color:#fff,stroke:#C8384F
-    style G fill:#0F2B29,color:#fff,stroke:#0F2B29
+    style A fill:#E8F2FF,stroke:#2F80ED
+    style B fill:#D6E8FF,stroke:#2F80ED
+    style C fill:#C3DDFF,stroke:#2F80ED
+    style D fill:#1E6FD9,color:#fff,stroke:#1E6FD9
+    style E fill:#0EA5E9,color:#fff,stroke:#0EA5E9
+    style G fill:#0A3D91,color:#fff,stroke:#0A3D91
+    style F fill:#C3DDFF,stroke:#2F80ED
+    style H fill:#E8F2FF,stroke:#2F80ED
+    style I fill:#E8F2FF,stroke:#2F80ED
 ```
 1. **Stands and cells.** ESA WorldCover 2021 mangrove patches of at least 3 ha become stands: 25 pilot stands (2,281 ha) and 65 unseen test stands in Abu
    Dhabi and Saudi Arabia's Tarut Bay. Each stand is cut into 200 m cells.
