@@ -62,6 +62,21 @@ https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
 
 ---
 
+## 🌐 Live website: [nahla-nabil.github.io/blue-carbon-guardian](https://nahla-nabil.github.io/blue-carbon-guardian/)
+<p align="center"><a href="https://nahla-nabil.github.io/blue-carbon-guardian/"><img src="docs/assets/site_preview.jpg" alt="The Blue Carbon Guardian website: landing page and the interactive monitor with the 200 m cell map and the stand 5 panel" width="100%"></a></p>
+
+The product, open in any browser with nothing to install (hosted on GitHub Pages from [`docs/`](docs/), built by [`scripts/build_site.py`](scripts/build_site.py)):
+
+| Section | What you can do |
+|---|---|
+| 🗺️ **Interactive monitor** | Click any of the 25 pilot stands; switch between **stands** and **200 m cells**; see condition, carbon at stake, cells to inspect, the alert score 2022–2026 and tide-corrected NDVI since 2020; open the printable **site report**; sort the stand table |
+| ⚙️ **How it works** | The five-step workflow, the noise removed by the tide model, why cells matter |
+| 🛰️ **Real events** | Stand 5 through time on Sentinel-2, the confirmed conversions, and when each alert started against the dated sub-metre captures |
+| 🧪 **Validation** | Detection against chance, false alarms on 65 unseen stands, the EnMAP hyperspectral check |
+| 🌳 **Carbon and offer** | Field-based carbon stock, who uses it for which decision, pricing hypotheses, limits |
+
+---
+
 <a id="judges"></a>
 ## 🏆 For the judges: each criterion and where the evidence is
 | Criterion | What we show | Evidence |
