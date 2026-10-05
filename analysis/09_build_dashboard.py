@@ -54,6 +54,7 @@ data["cells"] = [dict(c=c, s=int(cst.loc[c, "stand"]), cond=cst.loc[c, "conditio
                       g=dict(type=(m := mapping(unary_union(p).simplify(0.00004)))["type"], coordinates=rnd(m["coordinates"])))
                  for c, p in parts.items() if c in cst.index]
 
+json.dump(data, open(D + "site_data.json", "w"), separators=(",", ":"))   # also used by scripts/build_site.py (the public website)
 HTML = open("analysis/dashboard_template.html", encoding="utf-8").read()
 HTML = HTML.replace("__DATA__", json.dumps(data, separators=(",", ":"))).replace("__IMG__", img_uri).replace("__IMG9__", img9_uri).replace("__IMGEN__", img_en_uri).replace("__IMG12__", img12_uri)
 os.makedirs("dashboard", exist_ok=True); open("dashboard/index.html", "w", encoding="utf-8").write(HTML)
