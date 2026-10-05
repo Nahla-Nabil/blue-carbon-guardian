@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
+
 <p align="center"><img src="docs/assets/banner.png" alt="Blue Carbon Guardian: tide-aware satellite monitoring for Gulf mangroves" width="100%"></p>
 
 <p align="center">
