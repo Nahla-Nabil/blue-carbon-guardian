@@ -9,6 +9,8 @@
   <img src="https://img.shields.io/badge/License-MIT-0B2A5B?style=flat-square" alt="MIT">
 </p>
 
+<p align="center"><a href="https://nahla-nabil.github.io/blue-carbon-guardian/"><img src="https://img.shields.io/badge/%F0%9F%8C%90%20Live%20website-nahla--nabil.github.io%2Fblue--carbon--guardian-1E6FD9?style=for-the-badge" alt="Live website"></a></p>
+
 <p align="center"><b>Team Blue Athar · الأثر الأزرق</b> · Nahla Nabil<br>
 <sub><i>"Every lost mangrove leaves a trace (athar). We find it from space."</i></sub></p>
 
@@ -56,7 +58,7 @@ showing works (Feb 2023). Contains modified Copernicus Sentinel data 2021–2026
 https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
 
 <p align="center"><sub><a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="docs/summary_ar.pdf"><b>Arabic summary · ملخص عربي (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
-<a href="dashboard/index.html"><b>Dashboard</b></a> (download and open) · <a href="docs/demo_video.mp4">full-resolution video file</a></sub></p>
+<a href="https://nahla-nabil.github.io/blue-carbon-guardian/"><b>Live website &amp; monitor</b></a> · <a href="docs/demo_video.mp4">full-resolution video file</a></sub></p>
 
 ---
 

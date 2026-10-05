@@ -136,6 +136,7 @@ ul {{ padding-right: 18px; margin: 4px 0; }} li {{ margin: 2px 0; }}
 </div>
 
 <div class="foot">
+<p><b>الموقع والمراقب التفاعلي:</b> <span class="en">nahla-nabil.github.io/blue-carbon-guardian</span></p>
 <p><b>الكود والبيانات:</b> <span class="en">github.com/Nahla-Nabil/blue-carbon-guardian</span>. الدفتر الرئيسي يعمل خلال نحو 25 ثانية بلا إنترنت.</p>
 <p><b>المصادر:</b> صور Copernicus Sentinel-2 معدَّلة (2020 إلى 2026)، وصور EnMAP معدَّلة © DLR 2022 و2025، وESA WorldCover 2021 (CC BY 4.0)، وقياسات Schile et al. 2016 (CC0)، وأرشيف Esri World Imagery Wayback (للعرض فقط). هذا ملخص عربي مساعد؛ وثائق التسليم الرسمية بالإنجليزية.</p>
 </div>

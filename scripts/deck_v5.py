@@ -452,7 +452,7 @@ S["team"] = dark("team", f"""
         <p class="lab" style="color:#A9E4FF">What we are asking for</p>
         <p style="font-size:25px;color:#fff;margin-top:14px;line-height:1.45">Mentor feedback on hyperspectral reading of Gulf mangroves and sabkha vegetation, and a path into incubation to validate with a <b>real restoration partner</b>.</p></div>
     </div>
-    <p class="mono" style="font-size:22px;color:#BFDFFF;margin-top:44px">github.com/Nahla-Nabil/blue-carbon-guardian &#183; Thank you.</p>
+    <p class="mono" style="font-size:22px;color:#BFDFFF;margin-top:44px">nahla-nabil.github.io/blue-carbon-guardian &#183; github.com/Nahla-Nabil/blue-carbon-guardian</p>
   </div>""")
 
 for sid in ORDER:
