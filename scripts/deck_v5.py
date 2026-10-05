@@ -235,8 +235,7 @@ S["cover"] = dark("cover", f"""
     <p style="font-size:34px;color:#D8EEFF;line-height:1.35">Tide-aware satellite monitoring for Gulf mangroves &#8212; from alert to evidence.</p>
     <div style="display:flex;gap:12px;margin-top:26px;flex-wrap:wrap">
       <span class="pill" style="background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.5)">Team Blue Athar &#183; <span style="font-family:'IBM Plex Sans Arabic',sans-serif">&#1575;&#1604;&#1571;&#1579;&#1585; &#1575;&#1604;&#1571;&#1586;&#1585;&#1602;</span></span>
-      <span class="pill" style="background:rgba(108,199,255,.16);color:#D8EEFF;border-color:rgba(108,199,255,.4)">Theme: Ecosystem Health, Biodiversity &amp; Blue Carbon</span>
-      <span class="pill" style="background:rgba(108,199,255,.16);color:#D8EEFF;border-color:rgba(108,199,255,.4)">Palestine</span></div>
+      <span class="pill" style="background:rgba(108,199,255,.16);color:#D8EEFF;border-color:rgba(108,199,255,.4)">Theme: Ecosystem Health, Biodiversity &amp; Blue Carbon</span></div>
     <div style="display:flex;gap:18px;margin-top:56px">
       {"".join(f'<div style="padding:20px 26px;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.05));border:1px solid rgba(169,228,255,.35)"><p class="bigw" style="font-size:42px;white-space:nowrap">{a}</p><p style="font-size:20px;color:#BFDFFF;margin-top:8px">{b}</p></div>' for a, b in [("91 stands", "Abu Dhabi + Tarut Bay"), ("5 confirmed", "real conversions, 0.3&#8211;0.5 m"), ("73 % vs 13 %", "partial loss caught vs chance"), ("&#8776;1", "false alarm / stand-year")])}
     </div>

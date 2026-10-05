@@ -1,48 +1,41 @@
 <p align="center"><img src="docs/assets/banner.png" alt="Blue Carbon Guardian: tide-aware satellite monitoring for Gulf mangroves" width="100%"></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Challenge-813%20·%20Arab%20Youth%20Space%20Hackathon%202026-0A3D91?style=for-the-badge" alt="Challenge 813">
-  <img src="https://img.shields.io/badge/Theme-Ecosystem%20Health%20%26%20Blue%20Carbon-1E6FD9?style=for-the-badge" alt="Theme">
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white" alt="Python 3.12">
-  <img src="https://img.shields.io/badge/Jupyter-runs%20in%20~25%20s-1565C0?logo=jupyter&logoColor=white" alt="Notebook">
-  <img src="https://img.shields.io/badge/Sentinel--2-778%20dates-2F80ED" alt="Sentinel-2">
-  <img src="https://img.shields.io/badge/EnMAP-224%20bands%20hyperspectral-4F6BED" alt="EnMAP">
-  <img src="https://img.shields.io/badge/Confirmed-5%20real%20events%20at%200.3--0.5%20m-0EA5E9" alt="Events">
-  <img src="https://img.shields.io/badge/License-MIT-0B2A5B" alt="MIT">
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/SDG%2013-Climate%20Action-3F7E44" alt="SDG 13">
-  <img src="https://img.shields.io/badge/SDG%2014-Life%20Below%20Water-0A97D9" alt="SDG 14">
-  <img src="https://img.shields.io/badge/SDG%2015-Life%20on%20Land-56C02B" alt="SDG 15">
+  <img src="https://img.shields.io/badge/Challenge-813-06235A?style=flat-square" alt="Challenge 813">
+  <img src="https://img.shields.io/badge/Theme-Ecosystem%20Health%20%26%20Blue%20Carbon-0A3D91?style=flat-square" alt="Theme">
+  <img src="https://img.shields.io/badge/Python-3.12-1E6FD9?style=flat-square&logo=python&logoColor=white" alt="Python 3.12">
+  <img src="https://img.shields.io/badge/Notebook-runs%20in%20~25%20s-2F80ED?style=flat-square&logo=jupyter&logoColor=white" alt="Notebook">
+  <img src="https://img.shields.io/badge/Hyperspectral-EnMAP%20224%20bands-0EA5E9?style=flat-square" alt="EnMAP">
+  <img src="https://img.shields.io/badge/License-MIT-0B2A5B?style=flat-square" alt="MIT">
 </p>
 
-<p align="center"><b>Team Blue Athar · الأثر الأزرق</b> · Nahla Nabil · Country representation: Palestine<br>
+<p align="center"><b>Team Blue Athar · الأثر الأزرق</b> · Nahla Nabil<br>
 <sub><i>"Every lost mangrove leaves a trace (athar). We find it from space."</i></sub></p>
 
-<p align="center">
-<a href="#judges">🏆 For the judges</a> ·
-<a href="#1-business-use-case">💼 Use case</a> ·
-<a href="#2-the-problem">🌱 Problem</a> ·
-<a href="#3-data-used">🛰️ Data</a> ·
-<a href="#4-technical-approach">⚙️ Approach</a> ·
-<a href="#5-installation">📦 Install</a> ·
-<a href="#6-how-to-run">▶️ Run</a> ·
-<a href="#7-example-input-and-output">🖼️ Examples</a> ·
-<a href="#8-results-and-limitations">📊 Results</a> ·
-<a href="#9-author-tools-licence-and-attribution">👩‍💻 Author</a>
-</p>
+<p align="center"><sub>
+<a href="#judges">For the judges</a> ·
+<a href="#1-business-use-case">Use case</a> ·
+<a href="#2-the-problem">Problem</a> ·
+<a href="#3-data-used">Data</a> ·
+<a href="#4-technical-approach">Approach</a> ·
+<a href="#5-installation">Install</a> ·
+<a href="#6-how-to-run">Run</a> ·
+<a href="#7-example-input-and-output">Examples</a> ·
+<a href="#8-results-and-limitations">Results</a> ·
+<a href="#9-author-tools-licence-and-attribution">Author</a>
+</sub></p>
 
-> **We watch Gulf mangroves from space, stand by stand and in 200 m cells.** The system flags losses with a calibrated false-alarm rate, shows where
-> inside a stand to inspect, and reports the carbon at stake. It runs on free Sentinel-2 imagery with a tide model, and it is checked against EnMAP
-> hyperspectral data and dated sub-metre imagery.
+---
 
-<h3 align="center">⚡ Watch a real mangrove loss trigger the alert</h3>
-<p align="center"><img src="docs/assets/alert_story.gif" alt="Animated: stand 5 in Abu Dhabi, 2022 to 2026. Sentinel-2 images show the mangrove fringe being replaced by reclamation and canals while the 200 m cells turn red and the alert score drops below its threshold on 25 October 2022" width="92%"><br>
-<sub>Real data, stand 5 (Abu Dhabi), 2022 → 2026: Sentinel-2 images, 200 m cells coloured by their alert state, and the tide-aware alert score.
-The alert began between the last sub-metre capture showing intact mangrove (Mar 2022) and the first showing works (Feb 2023).
-Contains modified Copernicus Sentinel data 2021–2026. Built by <code>scripts/alert_story_data.py</code> + <code>scripts/make_alert_story.py</code>.</sub></p>
+## ✨ In one minute
+**What it does.** It watches Gulf mangroves from space, stand by stand and in 200 m cells. It raises an alert when part of a stand is lost, shows
+**where** inside the stand to inspect, and reports the **carbon at stake**.
+
+**Why it is new.** On Gulf tidal flats the **tide**, not the trees, drives most of the change in a satellite index. We model the tide out first, then
+check every 200 m cell, with a false-alarm rate we measured rather than assumed.
+
+**What it found.** Five real mangrove conversions to coastal development, all confirmed on dated sub-metre imagery; three of them were visible
+**only** at cell level.
 
 <table align="center">
 <tr><td align="center"><b>−29 to −35 %</b><br><sub>noise after the tide model</sub></td>
@@ -53,12 +46,19 @@ Contains modified Copernicus Sentinel data 2021–2026. Built by <code>scripts/a
 <td align="center"><b>≈ 247 kt C</b><br><sub>carbon stock, pilot area</sub></td></tr>
 </table>
 
-<h3 align="center">🎬 Demo video (2:14) · English narration, Arabic subtitles</h3>
+### ⚡ Watch a real mangrove loss trigger the alert
+<p align="center"><img src="docs/assets/alert_story.gif" alt="Animated: stand 5 in Abu Dhabi, 2022 to 2026. Sentinel-2 images show the mangrove fringe being replaced by reclamation and canals while the 200 m cells turn red and the alert score drops below its threshold on 25 October 2022" width="92%"><br>
+<sub>Real data, stand 5 (Abu Dhabi), 2022 → 2026. The alert began between the last sub-metre capture showing intact mangrove (Mar 2022) and the first
+showing works (Feb 2023). Contains modified Copernicus Sentinel data 2021–2026.</sub></p>
+
+### 🎬 Demo video (2:14) · English narration, Arabic subtitles
 
 https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
 
 <p align="center"><sub><a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
 <a href="dashboard/index.html"><b>Dashboard</b></a> (download and open) · <a href="docs/demo_video.mp4">full-resolution video file</a></sub></p>
+
+---
 
 <a id="judges"></a>
 ## 🏆 For the judges: each criterion and where the evidence is

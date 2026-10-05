@@ -121,7 +121,7 @@ open("slides/limits.html", "w", encoding="utf-8").write(f"""{sec("limits", "#EEF
 p = "slides/cover.html"; t = open(p, encoding="utf-8").read()
 a = "Arab Youth Space Hackathon &#183; Challenge 813 &#183; Team Blue Athar</p>"
 if a in t:
-    t = t.replace(a, "Arab Youth Space Hackathon &#183; Challenge 813 &#183; Team Blue Athar &#183; Palestine</p>\n  <p style=\"font-size:26px; font-weight:600; color:#9FC1BB\">Theme: Ecosystem Health, Biodiversity &amp; Blue Carbon</p>")
+    t = t.replace(a, "Arab Youth Space Hackathon &#183; Challenge 813 &#183; Team Blue Athar</p>\n  <p style=\"font-size:26px; font-weight:600; color:#9FC1BB\">Theme: Ecosystem Health, Biodiversity &amp; Blue Carbon</p>")
 open(p, "w", encoding="utf-8").write(t)
 
 # ---- order, sections, renumber ---------------------------------------------------------------------------------------------------------------
