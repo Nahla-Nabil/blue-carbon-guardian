@@ -1,0 +1,37 @@
+{
+  "voice": "en-US-AvaNeural",
+  "rate": "-4%",
+  "scenes": [
+    {"id": "intro", "lines": [
+      ["The UAE and Saudi Arabia have pledged two hundred million mangroves by 2030.", "تعهّدت الإمارات والسعودية بزراعة مئتي مليون شجرة قرم بحلول 2030."],
+      ["But who checks, stand by stand, that they survive, and how much carbon they hold?", "لكن من يتحقق، غابةً غابة، من بقائها، وكم تخزّن من كربون؟"]]},
+    {"id": "title", "lines": [
+      ["This is Blue Carbon Guardian: tide-aware satellite monitoring for Gulf mangroves.", "هذا هو «حارس الكربون الأزرق»: مراقبة فضائية لأشجار القرم في الخليج، تفهم المدّ والجزر."]]},
+    {"id": "tide", "lines": [
+      ["In the Gulf, mangroves grow on tidal flats, and every high tide makes a satellite index look like tree loss.", "في الخليج تنمو أشجار القرم على السهول المدّية، وكل مدٍّ عالٍ يجعل المؤشر الفضائي يبدو كأن الأشجار تُفقد."],
+      ["We model the tide, and the noise drops by about a third.", "نحن نُنمذج المدّ، فينخفض التشويش بنحو الثلث."]]},
+    {"id": "pipeline", "lines": [
+      ["Every five days, free Sentinel-2 imagery of every stand flows through our model, for the whole stand and for every two-hundred-metre cell.", "كل خمسة أيام، تمرّ صور Sentinel-2 المجانية لكل غابة عبر نموذجنا، للغابة كاملة ولكل خلية بطول مئتي متر."]]},
+    {"id": "map", "lines": [
+      ["We monitor ninety-one mangrove stands, in Abu Dhabi and in Saudi Arabia's Tarut Bay.", "نراقب واحدًا وتسعين غابة قرم، في أبوظبي وفي خليج تاروت بالسعودية."]]},
+    {"id": "cells", "lines": [
+      ["A stand average can hide a partial loss.", "متوسط الغابة قد يُخفي خسارة جزئية."],
+      ["Stand nine still looks stable on average, but eight of its twenty-eight cells are in severe decline.", "الغابة رقم تسعة تبدو مستقرة في المتوسط، لكن ثماني خلايا من ثمانٍ وعشرين في تراجع حاد."]]},
+    {"id": "events", "lines": [
+      ["We found five real conversions inside our stands, all of them coastal developments.", "وجدنا خمس حالات تحوّل حقيقية داخل غاباتنا، كلها مشاريع تطوير ساحلي."],
+      ["All five are confirmed on dated sub-metre imagery, and three of them only the cells could see.", "الخمس جميعها مؤكدة بصور مؤرّخة بدقة أقل من متر، وثلاث منها لم تكشفها إلا الخلايا."],
+      ["At every site, our alert began while the works were happening.", "وفي كل موقع، بدأ إنذارنا أثناء تنفيذ الأعمال."]]},
+    {"id": "validation", "lines": [
+      ["Calibrated to about one false alarm per stand per year, the alert catches a partial loss within two months in seventy-three percent of simulations, against thirteen percent by chance.", "بمعدّل إنذار كاذب واحد تقريبًا لكل غابة في السنة، يلتقط الإنذار الخسارة الجزئية خلال شهرين في ثلاثة وسبعين بالمئة من المحاكاة، مقابل ثلاثة عشر بالمئة بالصدفة."],
+      ["On sixty-five stands it had never seen, the false-alarm rate held.", "وعلى خمسٍ وستين غابة لم يرَها من قبل، بقي معدّل الإنذار الكاذب ثابتًا."]]},
+    {"id": "hyper", "lines": [
+      ["The EnMAP hyperspectral satellite confirms our indices, with correlations up to zero point nine nine, and shows stand five turning from vegetation into sand.", "ويؤكد القمر الفائق الطيفية EnMAP مؤشراتنا، بارتباط يصل إلى 0.99، ويُظهر تحوّل الغابة رقم خمسة من نبات إلى رمل."]]},
+    {"id": "product", "lines": [
+      ["Field-measured carbon puts about two hundred and forty-seven thousand tonnes of carbon in our pilot area.", "وبحسب الكربون المقاس ميدانيًا، تخزّن منطقتنا التجريبية نحو مئتين وسبعة وأربعين ألف طن من الكربون."],
+      ["Every stand gets a dashboard view and an automatic site report: where to inspect, and what is at stake.", "ولكل غابة لوحة متابعة وتقرير موقع تلقائي: أين يجب الفحص، وما المعرّض للخطر."]]},
+    {"id": "next", "lines": [
+      ["Free satellite data, measured costs, and a clear path: a pilot partner, Satellite 813 on gIQ, and the whole Gulf coast.", "بيانات فضائية مجانية، وتكاليف مقاسة، ومسار واضح: شريك تجريبي، والقمر 813 على منصة gIQ، وساحل الخليج كله."]]},
+    {"id": "outro", "lines": [
+      ["Blue Carbon Guardian. From light to insight, for the mangroves of the Gulf.", "حارس الكربون الأزرق. من الضوء إلى البصيرة، لأشجار القرم في الخليج."]]}
+  ]
+}

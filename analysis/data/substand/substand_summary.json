@@ -1,0 +1,65 @@
+{
+ "agreement": {
+  "changed_cells": 15,
+  "unchanged_cells": 554,
+  "grey_cells": 51,
+  "flagged_of_changed": "11/15",
+  "flagged_of_unchanged": "11/554",
+  "flagged_cells_total": 51,
+  "flagged_by_stand": {
+   "1": 1,
+   "5": 26,
+   "6": 5,
+   "9": 8,
+   "10": 1,
+   "12": 6,
+   "18": 3,
+   "25": 1
+  }
+ },
+ "timing": {
+  "5": {
+   "changed_cells": 6,
+   "onset_ndmi": "2023-02-14",
+   "first_cell_alert": "2022-11-22",
+   "cells_alerting_within_180d": 5,
+   "stand_level_alert": "2022-12-07",
+   "cell_condition_counts": {
+    "severe decline": 3,
+    "stable": 3
+   },
+   "stand_cells_condition": {
+    "severe decline": 26,
+    "stable": 19
+   }
+  },
+  "9": {
+   "changed_cells": 5,
+   "onset_ndmi": "2023-06-14",
+   "first_cell_alert": "2023-07-27",
+   "cells_alerting_within_180d": 2,
+   "stand_level_alert": "2023-09-23",
+   "cell_condition_counts": {
+    "severe decline": 5
+   },
+   "stand_cells_condition": {
+    "stable": 20,
+    "severe decline": 8
+   }
+  }
+ },
+ "cost": {
+  "cells": 620,
+  "cell_years": 2908.0,
+  "alert_episodes_per_cell_year": 0.97,
+  "flagged_cells_without_epoch_support": 11,
+  "stands_with_unsupported_flag": [
+   1,
+   5,
+   6,
+   12
+  ],
+  "unsupported_area_ha": 18.3
+ },
+ "now_days": 365
+}

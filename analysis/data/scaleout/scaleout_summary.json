@@ -1,0 +1,41 @@
+{
+ "ADN": {
+  "stands": 36,
+  "area_ha": 956.3,
+  "stand_years": 168.8,
+  "alert_episodes": 176,
+  "episodes_per_stand_year": 1.04,
+  "active_alerts": 0,
+  "conditions": {
+   "stable": 35,
+   "decline": 1
+  }
+ },
+ "ADW": {
+  "stands": 21,
+  "area_ha": 645.5,
+  "stand_years": 98.7,
+  "alert_episodes": 71,
+  "episodes_per_stand_year": 0.72,
+  "active_alerts": 0,
+  "conditions": {
+   "stable": 21
+  }
+ },
+ "TRT": {
+  "stands": 9,
+  "area_ha": 361.9,
+  "stand_years": 42.3,
+  "alert_episodes": 40,
+  "episodes_per_stand_year": 0.95,
+  "active_alerts": 0,
+  "conditions": {
+   "stable": 8,
+   "decline": 1
+  }
+ },
+ "pilot_reference": {
+  "stands": 25,
+  "episodes_per_stand_year": 0.95
+ }
+}

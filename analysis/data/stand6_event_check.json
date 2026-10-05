@@ -1,0 +1,38 @@
+{
+ "stand": 6,
+ "flagged_cells": [
+  284,
+  288,
+  294,
+  296,
+  298
+ ],
+ "flagged_ha": 10.5,
+ "onset": {
+  "ndvi": {
+   "level_before": 0.005,
+   "level_after": -0.412,
+   "start": "2022-06-19",
+   "start_90ci": [
+    "2022-03-21",
+    "2022-09-17"
+   ],
+   "ramp_end": "2025-12-30"
+  },
+  "ndmi": {
+   "level_before": -0.073,
+   "level_after": -0.297,
+   "start": "2022-08-18",
+   "start_90ci": [
+    "2022-06-19",
+    "2022-10-17"
+   ],
+   "ramp_end": "2023-03-16"
+  }
+ },
+ "first_cell_alert": "2022-07-05",
+ "first_stand_alert": "2024-12-03",
+ "cell_alerts_before_window": [
+  "2022-02-12"
+ ]
+}

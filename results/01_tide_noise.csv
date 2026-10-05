@@ -1,0 +1,4 @@
+index,noise_without_tide,noise_with_tide,reduction_%
+ndmi,0.0432,0.0306,29.3
+ndre,0.0283,0.0183,35.3
+ndvi,0.0436,0.0298,31.6

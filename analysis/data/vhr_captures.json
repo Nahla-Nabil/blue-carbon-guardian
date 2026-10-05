@@ -1,0 +1,278 @@
+{
+ "5": {
+  "lon": 54.53399,
+  "lat": 24.5344,
+  "captures": [
+   {
+    "release": "2019-01-09",
+    "release_id": "6036",
+    "capture": "20160813",
+    "res_m": "0.31",
+    "source": "WV03_VNIR"
+   },
+   {
+    "release": "2019-12-12",
+    "release_id": "4756",
+    "capture": "20180919",
+    "res_m": "0.31",
+    "source": "WV03"
+   },
+   {
+    "release": "2020-07-01",
+    "release_id": "18289",
+    "capture": "20191019",
+    "res_m": "0.31",
+    "source": "WV03_VNIR"
+   },
+   {
+    "release": "2020-12-16",
+    "release_id": "29260",
+    "capture": "20200524",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2021-11-03",
+    "release_id": "42403",
+    "capture": "20210608",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2022-11-02",
+    "release_id": "7110",
+    "capture": "20220328",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2023-06-13",
+    "release_id": "25982",
+    "capture": "20230222",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2024-05-09",
+    "release_id": "52930",
+    "capture": "20231114",
+    "res_m": "0.31",
+    "source": "WV03"
+   },
+   {
+    "release": "2025-06-26",
+    "release_id": "48925",
+    "capture": "20250106",
+    "res_m": "0.34",
+    "source": "LG01"
+   }
+  ]
+ },
+ "9": {
+  "lon": 54.51374,
+  "lat": 24.53412,
+  "captures": [
+   {
+    "release": "2019-01-09",
+    "release_id": "6036",
+    "capture": "20160813",
+    "res_m": "0.31",
+    "source": "WV03_VNIR"
+   },
+   {
+    "release": "2019-12-12",
+    "release_id": "4756",
+    "capture": "20180831",
+    "res_m": "0.31",
+    "source": "WV03"
+   },
+   {
+    "release": "2020-07-01",
+    "release_id": "18289",
+    "capture": "20191019",
+    "res_m": "0.31",
+    "source": "WV03_VNIR"
+   },
+   {
+    "release": "2020-12-16",
+    "release_id": "29260",
+    "capture": "20200524",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2021-11-03",
+    "release_id": "42403",
+    "capture": "20210608",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2022-11-02",
+    "release_id": "7110",
+    "capture": "20220328",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2023-06-13",
+    "release_id": "25982",
+    "capture": "20230222",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2024-05-09",
+    "release_id": "52930",
+    "capture": "20231114",
+    "res_m": "0.31",
+    "source": "WV03"
+   },
+   {
+    "release": "2025-06-26",
+    "release_id": "48925",
+    "capture": "20250106",
+    "res_m": "0.34",
+    "source": "LG01"
+   }
+  ]
+ },
+ "12": {
+  "lon": 54.52745,
+  "lat": 24.54524,
+  "captures": [
+   {
+    "release": "2019-01-09",
+    "release_id": "6036",
+    "capture": "20160813",
+    "res_m": "0.31",
+    "source": "WV03_VNIR"
+   },
+   {
+    "release": "2019-12-12",
+    "release_id": "4756",
+    "capture": "20180919",
+    "res_m": "0.31",
+    "source": "WV03"
+   },
+   {
+    "release": "2020-07-01",
+    "release_id": "18289",
+    "capture": "20191019",
+    "res_m": "0.31",
+    "source": "WV03_VNIR"
+   },
+   {
+    "release": "2020-12-16",
+    "release_id": "29260",
+    "capture": "20200524",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2021-11-03",
+    "release_id": "42403",
+    "capture": "20210608",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2022-11-02",
+    "release_id": "7110",
+    "capture": "20220328",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2023-06-13",
+    "release_id": "25982",
+    "capture": "20230222",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2024-05-09",
+    "release_id": "52930",
+    "capture": "20231114",
+    "res_m": "0.31",
+    "source": "WV03"
+   },
+   {
+    "release": "2025-06-26",
+    "release_id": "48925",
+    "capture": "20250106",
+    "res_m": "0.34",
+    "source": "LG01"
+   }
+  ]
+ },
+ "18": {
+  "lon": 54.5161,
+  "lat": 24.54393,
+  "captures": [
+   {
+    "release": "2019-01-09",
+    "release_id": "6036",
+    "capture": "20160813",
+    "res_m": "0.31",
+    "source": "WV03_VNIR"
+   },
+   {
+    "release": "2019-12-12",
+    "release_id": "4756",
+    "capture": "20180919",
+    "res_m": "0.31",
+    "source": "WV03"
+   },
+   {
+    "release": "2020-07-01",
+    "release_id": "18289",
+    "capture": "20191019",
+    "res_m": "0.31",
+    "source": "WV03_VNIR"
+   },
+   {
+    "release": "2020-12-16",
+    "release_id": "29260",
+    "capture": "20200524",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2021-11-03",
+    "release_id": "42403",
+    "capture": "20210608",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2022-11-02",
+    "release_id": "7110",
+    "capture": "20220328",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2023-06-13",
+    "release_id": "25982",
+    "capture": "20230222",
+    "res_m": "0.5",
+    "source": "WV02"
+   },
+   {
+    "release": "2024-05-09",
+    "release_id": "52930",
+    "capture": "20231114",
+    "res_m": "0.31",
+    "source": "WV03"
+   },
+   {
+    "release": "2025-06-26",
+    "release_id": "48925",
+    "capture": "20250106",
+    "res_m": "0.34",
+    "source": "LG01"
+   }
+  ]
+ }
+}

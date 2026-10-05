@@ -1,0 +1,241 @@
+{
+ "thresholds": {
+  "STAND": 1.2,
+  "CELL-1": 3.0,
+  "CELL-2": 2.3,
+  "CELL-3": 1.9,
+  "UNION": "stand 1.5 or cell 3.5 (each part calibrated to 0.75 per stand-year)"
+ },
+ "union_rate_per_stand_year": 0.96,
+ "stand_years": 117.3,
+ "real_events": {
+  "5": {
+   "change_start": "2023-02-14",
+   "STAND": "2023-02-15 (+1 d)",
+   "STAND pre-start": "yes",
+   "CELL-1": "2023-02-15 (+1 d)",
+   "CELL-1 pre-start": "yes",
+   "CELL-2": "2023-02-15 (+1 d)",
+   "CELL-2 pre-start": "yes",
+   "CELL-3": "2023-02-15 (+1 d)",
+   "CELL-3 pre-start": "yes",
+   "UNION": "2023-02-15 (+1 d)",
+   "UNION pre-start": "yes"
+  },
+  "9": {
+   "change_start": "2023-06-14",
+   "STAND": "2023-07-22 (+38 d)",
+   "STAND pre-start": "no",
+   "CELL-1": "2023-06-15 (+1 d)",
+   "CELL-1 pre-start": "yes",
+   "CELL-2": "2023-06-15 (+1 d)",
+   "CELL-2 pre-start": "yes",
+   "CELL-3": "2023-06-15 (+1 d)",
+   "CELL-3 pre-start": "yes",
+   "UNION": "2023-06-15 (+1 d)",
+   "UNION pre-start": "yes"
+  },
+  "12": {
+   "change_start": "2022-09-01",
+   "STAND": "2023-03-07 (+187 d)",
+   "STAND pre-start": "no",
+   "CELL-1": "2022-11-12 (+72 d)",
+   "CELL-1 pre-start": "no",
+   "CELL-2": "2023-01-21 (+142 d)",
+   "CELL-2 pre-start": "no",
+   "CELL-3": "2023-01-21 (+142 d)",
+   "CELL-3 pre-start": "no",
+   "UNION": "2022-12-17 (+107 d)",
+   "UNION pre-start": "no"
+  },
+  "18": {
+   "change_start": "2025-02-03",
+   "STAND": "2025-02-04 (+1 d)",
+   "STAND pre-start": "yes",
+   "CELL-1": "2025-02-04 (+1 d)",
+   "CELL-1 pre-start": "yes",
+   "CELL-2": "2025-02-04 (+1 d)",
+   "CELL-2 pre-start": "yes",
+   "CELL-3": "2025-02-04 (+1 d)",
+   "CELL-3 pre-start": "yes",
+   "UNION": "2025-02-04 (+1 d)",
+   "UNION pre-start": "yes"
+  }
+ },
+ "backtest": {
+  "null: no loss": {
+   "n": 160,
+   "mean_patch_frac": 0.139,
+   "STAND": {
+    "within_60d": 11.2,
+    "within_180d": 40.6,
+    "median_delay_d": 95.0
+   },
+   "CELL-1": {
+    "within_60d": 10.6,
+    "within_180d": 29.4,
+    "median_delay_d": 81.0
+   },
+   "CELL-2": {
+    "within_60d": 8.8,
+    "within_180d": 30.0,
+    "median_delay_d": 86.0
+   },
+   "CELL-3": {
+    "within_60d": 8.8,
+    "within_180d": 35.0,
+    "median_delay_d": 91.0
+   },
+   "UNION": {
+    "within_60d": 13.1,
+    "within_180d": 36.2,
+    "median_delay_d": 84.0
+   }
+  },
+  "patch 10 %, cover -50 %": {
+   "n": 160,
+   "mean_patch_frac": 0.139,
+   "STAND": {
+    "within_60d": 25.0,
+    "within_180d": 65.0,
+    "median_delay_d": 68.0
+   },
+   "CELL-1": {
+    "within_60d": 76.9,
+    "within_180d": 84.4,
+    "median_delay_d": 41.0
+   },
+   "CELL-2": {
+    "within_60d": 58.8,
+    "within_180d": 70.6,
+    "median_delay_d": 40.0
+   },
+   "CELL-3": {
+    "within_60d": 41.9,
+    "within_180d": 56.2,
+    "median_delay_d": 42.0
+   },
+   "UNION": {
+    "within_60d": 72.5,
+    "within_180d": 83.8,
+    "median_delay_d": 44.0
+   }
+  },
+  "patch 10 %, cover -100 %": {
+   "n": 160,
+   "mean_patch_frac": 0.141,
+   "STAND": {
+    "within_60d": 45.0,
+    "within_180d": 79.4,
+    "median_delay_d": 55.0
+   },
+   "CELL-1": {
+    "within_60d": 84.4,
+    "within_180d": 85.0,
+    "median_delay_d": 25.0
+   },
+   "CELL-2": {
+    "within_60d": 65.0,
+    "within_180d": 69.4,
+    "median_delay_d": 24.0
+   },
+   "CELL-3": {
+    "within_60d": 43.8,
+    "within_180d": 56.9,
+    "median_delay_d": 24.0
+   },
+   "UNION": {
+    "within_60d": 83.1,
+    "within_180d": 83.1,
+    "median_delay_d": 27.0
+   }
+  },
+  "patch 25 %, cover -50 %": {
+   "n": 160,
+   "mean_patch_frac": 0.29,
+   "STAND": {
+    "within_60d": 43.8,
+    "within_180d": 78.8,
+    "median_delay_d": 54.0
+   },
+   "CELL-1": {
+    "within_60d": 80.6,
+    "within_180d": 83.8,
+    "median_delay_d": 36.0
+   },
+   "CELL-2": {
+    "within_60d": 81.9,
+    "within_180d": 83.1,
+    "median_delay_d": 35.0
+   },
+   "CELL-3": {
+    "within_60d": 66.9,
+    "within_180d": 72.5,
+    "median_delay_d": 35.0
+   },
+   "UNION": {
+    "within_60d": 77.5,
+    "within_180d": 83.8,
+    "median_delay_d": 41.0
+   }
+  },
+  "whole stand, cover -10 %": {
+   "n": 160,
+   "mean_patch_frac": 1.0,
+   "STAND": {
+    "within_60d": 32.5,
+    "within_180d": 73.1,
+    "median_delay_d": 64.0
+   },
+   "CELL-1": {
+    "within_60d": 16.2,
+    "within_180d": 48.1,
+    "median_delay_d": 81.0
+   },
+   "CELL-2": {
+    "within_60d": 18.8,
+    "within_180d": 56.2,
+    "median_delay_d": 71.0
+   },
+   "CELL-3": {
+    "within_60d": 21.2,
+    "within_180d": 62.5,
+    "median_delay_d": 71.0
+   },
+   "UNION": {
+    "within_60d": 25.0,
+    "within_180d": 63.1,
+    "median_delay_d": 69.0
+   }
+  },
+  "whole stand, cover -20 %": {
+   "n": 160,
+   "mean_patch_frac": 1.0,
+   "STAND": {
+    "within_60d": 57.5,
+    "within_180d": 83.1,
+    "median_delay_d": 48.0
+   },
+   "CELL-1": {
+    "within_60d": 40.0,
+    "within_180d": 80.6,
+    "median_delay_d": 60.0
+   },
+   "CELL-2": {
+    "within_60d": 47.5,
+    "within_180d": 82.5,
+    "median_delay_d": 55.0
+   },
+   "CELL-3": {
+    "within_60d": 55.0,
+    "within_180d": 81.2,
+    "median_delay_d": 51.0
+   },
+   "UNION": {
+    "within_60d": 52.5,
+    "within_180d": 83.1,
+    "median_delay_d": 50.0
+   }
+  }
+ }
+}

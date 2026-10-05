@@ -1,0 +1,58 @@
+{
+ "ADN": {
+  "stands": 36,
+  "cells": 288,
+  "stand_years": 168.8,
+  "union_per_stand_year": 0.85,
+  "stand_part_per_stand_year": 0.79,
+  "cell_part_per_stand_year": 0.4
+ },
+ "ADW": {
+  "stands": 21,
+  "cells": 196,
+  "stand_years": 98.6,
+  "union_per_stand_year": 0.63,
+  "stand_part_per_stand_year": 0.62,
+  "cell_part_per_stand_year": 0.31
+ },
+ "TRT": {
+  "stands": 8,
+  "cells": 106,
+  "stand_years": 37.6,
+  "union_per_stand_year": 0.96,
+  "stand_part_per_stand_year": 0.91,
+  "cell_part_per_stand_year": 0.37
+ },
+ "ALL": {
+  "stand_years": 305.0,
+  "union_per_stand_year": 0.79,
+  "pilot_calibrated": 0.96,
+  "thresholds": "stand 1.5 / cell 3.5"
+ },
+ "flagged_cells": [
+  {
+   "block": "ADN",
+   "stand": "ADN17",
+   "cells": 2,
+   "ha": 2.9
+  },
+  {
+   "block": "ADN",
+   "stand": "ADN23",
+   "cells": 1,
+   "ha": 1.0
+  },
+  {
+   "block": "ADN",
+   "stand": "ADN6",
+   "cells": 2,
+   "ha": 3.5
+  },
+  {
+   "block": "TRT",
+   "stand": "TRT9",
+   "cells": 1,
+   "ha": 1.3
+  }
+ ]
+}

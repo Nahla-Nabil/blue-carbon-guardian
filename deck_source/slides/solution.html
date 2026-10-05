@@ -1,0 +1,50 @@
+<section id="solution" data-transition="fade" style="background:#FBFBF8; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:28px">
+  <div style="display:flex; flex-direction:column; gap:14px">
+    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Approach</p>
+    <h2 style="font-size:58px; font-weight:700; line-height:1.12; color:#12302E">From satellite pixels to an inspection decision</h2>
+  </div>
+  <div style="display:flex; flex-direction:row; gap:12px; align-items:center">
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:22px 20px">
+      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:22px; font-weight:600; color:#0B7A66">01</p>
+      <h3 style="font-size:26px; font-weight:700; color:#12302E; line-height:1.25">Stands &amp; 200 m cells</h3>
+      <p style="font-size:21px; color:#4B6461; line-height:1.4">WorldCover 2021 mangrove patches &#8805; 3&#160;ha; interior pixels only</p>
+    </div>
+    <p style="font-size:36px; color:#0B7A66; font-weight:700">&#8594;</p>
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:22px 20px">
+      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:22px; font-weight:600; color:#0B7A66">02</p>
+      <h3 style="font-size:26px; font-weight:700; color:#12302E; line-height:1.25">Sentinel-2 series</h3>
+      <p style="font-size:21px; color:#4B6461; line-height:1.4">778 dates 2020&#8211;26; cloud mask; NDVI, red edge, SWIR moisture, wetness</p>
+    </div>
+    <p style="font-size:36px; color:#0B7A66; font-weight:700">&#8594;</p>
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:22px 20px">
+      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:22px; font-weight:600; color:#0B7A66">03</p>
+      <h3 style="font-size:26px; font-weight:700; color:#12302E; line-height:1.25">Tide-aware model</h3>
+      <p style="font-size:21px; color:#4B6461; line-height:1.4">Robust trend + season + <b>tide</b> terms, refitted monthly</p>
+    </div>
+    <p style="font-size:36px; color:#0B7A66; font-weight:700">&#8594;</p>
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:22px 20px">
+      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:22px; font-weight:600; color:#0B7A66">04</p>
+      <h3 style="font-size:26px; font-weight:700; color:#12302E; line-height:1.25">Alert &amp; condition</h3>
+      <p style="font-size:21px; color:#4B6461; line-height:1.4">Stand <b>OR</b> any cell, &#8776;1 false alarm per stand-year; vs 2020&#8211;21 baseline</p>
+    </div>
+    <p style="font-size:36px; color:#0B7A66; font-weight:700">&#8594;</p>
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1; background:#0F2B29; border-radius:14px; padding:22px 20px">
+      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:22px; font-weight:600; color:#3FC0A4">05</p>
+      <h3 style="font-size:26px; font-weight:700; color:#EAF3F0; line-height:1.25">Decision layer</h3>
+      <p style="font-size:21px; color:#9FC1BB; line-height:1.4">Carbon at stake, cell map, dashboard &amp; site reports</p>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:row; gap:24px">
+    <div style="display:flex; flex-direction:column; gap:8px; flex:1; background:#DDF0EA; border-radius:14px; padding:22px 28px">
+      <p style="font-size:24px; font-weight:700; color:#12302E">Checks built in</p>
+      <p style="font-size:23px; color:#12302E; line-height:1.45">EnMAP hyperspectral on the same dates &#183; dated sub-metre captures &#183; simulated losses against chance &#183; 65 unseen stands</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; flex:1; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:22px 28px">
+      <p style="font-size:24px; font-weight:700; color:#12302E">Problem statement</p>
+      <p style="font-size:23px; font-style:italic; color:#12302E; line-height:1.45">&#8220;We monitor mangrove condition and carbon stock in Abu Dhabi, 2020&#8211;2026, so authorities and developers can decide where to inspect and verify carbon claims.&#8221;</p>
+    </div>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team T0006</p>
+  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">05</p>
+  <aside>Five steps, all running on free data. The only non-standard step is the tide model in step 3 &#8212; that is what makes stand-level monitoring possible on Gulf tidal flats. Steps 1 to 5 are exactly what the notebook in our repository runs.</aside>
+</section>

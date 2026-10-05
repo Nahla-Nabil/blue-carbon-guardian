@@ -1,0 +1,29 @@
+# --- never publish ---
+# EnMAP licence v1.1: raw data must not be redistributed publicly
+data/enmap/
+# internal working notes (team details, account names, decisions log)
+CLAUDE.md
+# organizer material (slides PDF, official notebooks): not ours to redistribute
+reference/
+# private reference-label master (contains the WorldCover strata used to draw the sample)
+labeling/points_master.csv
+# credentials of any kind
+*.env
+
+# --- large or regenerable ---
+*.tar.gz
+*.npz
+*.pkl
+analysis/data/substand/cell_stats.csv
+analysis/data/scaleout_cells/*_cell_stats.csv
+*.log
+__pycache__/
+
+# slide renders (regenerable by scripts/export_slides_pdf.py)
+docs/_slide_png/
+.ipynb_checkpoints/
+# 200 m cell label grids (intermediate rasters, rebuilt by analysis/25 and 32)
+analysis/data/substand/cells.npy
+analysis/data/scaleout_cells/*_cells.npy
+# demo-video intermediates (rebuilt by video/make_audio.py, build_page.py, render.py)
+video/build/

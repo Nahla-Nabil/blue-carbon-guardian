@@ -1,0 +1,243 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blue Carbon Guardian</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg:#EEF3F1; --surface:#FFFFFF; --ink:#0F2B29; --ink2:#4B6461; --line:#D3DEDA; --accent:#0B7A66; --accent-soft:#DDF0EA;
+    --stable:#2E8B78; --decline:#D99A1E; --severe:#C8384F; --improving:#3B78A8; --alert:#7A2E8E;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg:#0C1A1A; --surface:#132524; --ink:#E6F0EE; --ink2:#9DB6B2; --line:#25403D; --accent:#3FC0A4; --accent-soft:#163A34;
+    --stable:#4FBFA8; --decline:#F0B35A; --severe:#F0778C; --improving:#7DB5E0; --alert:#C68BD9; } }
+  :root[data-theme="dark"] {
+    --bg:#0C1A1A; --surface:#132524; --ink:#E6F0EE; --ink2:#9DB6B2; --line:#25403D; --accent:#3FC0A4; --accent-soft:#163A34;
+    --stable:#4FBFA8; --decline:#F0B35A; --severe:#F0778C; --improving:#7DB5E0; --alert:#C68BD9; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; padding-inline:16px; padding-block:22px 48px; }
+  .wrap { max-width:1180px; margin-inline:auto; }
+  h1,h2,h3 { margin:0; line-height:1.3; text-wrap:balance; } h1 { font-size:clamp(24px,4vw,32px); font-weight:600; letter-spacing:-.01em; }
+  h2 { font-size:17px; font-weight:600; margin-bottom:10px; } h3 { font-size:14px; font-weight:600; margin:0 0 6px; }
+  .eyebrow { font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); font-weight:600; }
+  .sub { color:var(--ink2); margin:6px 0 0; max-width:75ch; }
+  a { color:var(--accent); } button,summary,tr[tabindex] { font:inherit; }
+  :focus-visible { outline:3px solid var(--accent); outline-offset:2px; border-radius:4px; }
+  .kpis { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 16px; }
+  .kpi { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 14px; min-width:150px; flex:1; }
+  .kpi b { display:block; font-family:var(--mono); font-size:22px; font-weight:500; line-height:1.2; font-variant-numeric:tabular-nums; }
+  .kpi span { color:var(--ink2); font-size:12.5px; } .kpi.bad b { color:var(--severe); }
+  .grid { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:14px; align-items:start; }
+  @media (max-width:900px) { .grid { grid-template-columns:minmax(0,1fr); } }
+  .grid > div, .card { min-width:0; }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .card + .card { margin-top:14px; }
+  #map { width:100%; height:auto; display:block; background:var(--bg); border-radius:8px; }
+  #map path { stroke:var(--surface); stroke-width:.8; cursor:pointer; transition:opacity .15s; } #map path:hover { opacity:.8; }
+  #map path.sel { stroke:var(--ink); stroke-width:2.2; } #map path.alert { stroke:var(--alert); stroke-width:2.4; }
+  #map #gCells path { stroke-width:.35; } #map #gCells path.sel { stroke:var(--ink); stroke-width:.9; }
+  .seg { display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; margin-inline-start:8px; vertical-align:2px; }
+  .seg button { border:0; background:var(--surface); color:var(--ink2); padding:2px 10px; font-size:12.5px; cursor:pointer; }
+  .seg button[aria-pressed="true"] { background:var(--accent); color:#fff; }
+  .inset { display:grid; grid-template-columns:minmax(0,190px) minmax(0,1fr); gap:12px; align-items:center; margin:4px 0 10px; }
+  @media (max-width:520px) { .inset { grid-template-columns:minmax(0,1fr); } }
+  .inset svg { width:100%; height:auto; background:var(--bg); border-radius:8px; } .inset svg path { stroke:var(--surface); stroke-width:.6; }
+  .c-stable { fill:var(--stable); } .c-decline { fill:var(--decline); } .c-severe { fill:var(--severe); } .c-improving { fill:var(--improving); }
+  .legend { display:flex; flex-wrap:wrap; gap:6px 14px; font-size:12.5px; color:var(--ink2); margin-top:8px; }
+  .legend i { display:inline-block; width:11px; height:11px; border-radius:3px; margin-inline-end:5px; vertical-align:-1px; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:8px 14px; margin:8px 0 12px; }
+  .stats div span { display:block; color:var(--ink2); font-size:12px; } .stats div b { font-family:var(--mono); font-weight:500; font-size:15px; font-variant-numeric:tabular-nums; }
+  .pill { display:inline-block; padding:1px 9px; border-radius:999px; font-size:12px; font-weight:600; color:#fff; }
+  .pill.stable { background:var(--stable); } .pill.decline { background:var(--decline); color:#1b1400; } .pill.severe { background:var(--severe); } .pill.improving { background:var(--improving); }
+  svg text { font-family:var(--sans); fill:var(--ink2); font-size:11px; } .tick { stroke:var(--line); stroke-width:1; }
+  .tablewrap { overflow-x:auto; max-height:360px; overflow-y:auto; border:1px solid var(--line); border-radius:8px; }
+  table { border-collapse:collapse; width:100%; min-width:560px; font-size:13px; }
+  th,td { padding:6px 10px; text-align:left; border-bottom:1px solid var(--line); white-space:nowrap; } th { position:sticky; top:0; background:var(--surface); color:var(--ink2); font-weight:600; font-size:12px; }
+  td.n { font-family:var(--mono); text-align:right; font-variant-numeric:tabular-nums; } th.n { text-align:right; }
+  tr[tabindex] { cursor:pointer; } tr[tabindex]:hover td, tr.sel td { background:var(--accent-soft); }
+  .story img { width:100%; height:auto; border-radius:8px; display:block; margin:8px 0; border:1px solid var(--line); }
+  .note { color:var(--ink2); font-size:13px; } .warn { background:color-mix(in srgb,var(--decline) 16%,transparent); border-radius:8px; padding:8px 12px; font-size:13px; margin:8px 0; }
+  .cols2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; } .cols2 p { margin:0 0 8px; }
+  footer { margin-top:22px; color:var(--ink2); font-size:12.5px; border-top:1px solid var(--line); padding-top:12px; }
+  details { border-top:1px solid var(--line); padding-block:8px; } summary { cursor:pointer; font-weight:600; }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Arab Youth Space Hackathon · Challenge 813 · Theme: Ecosystem Health &amp; Blue Carbon</div>
+  <h1>Blue Carbon Guardian: Abu Dhabi mangrove monitor</h1>
+  <p class="sub">Tide-aware Sentinel-2 monitoring of individual mangrove stands, 2020–2026. Two separate signals: an <b>alert</b> for recent change and a <b>condition</b> against each stand's own 2020–21 baseline.</p>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>Condition map <span class="seg" role="group" aria-label="Map layer"><button type="button" data-v="stands" aria-pressed="true">Stands</button><button type="button" data-v="cells" aria-pressed="false">200 m cells</button></span> <span class="note" style="font-weight:400">· click to open a stand</span></h2>
+        <svg id="map" role="img" aria-label="Map of 25 mangrove stands coloured by condition"></svg>
+        <div class="legend">
+          <span><i style="background:var(--stable)"></i>Stable</span><span><i style="background:var(--decline)"></i>Decline</span>
+          <span><i style="background:var(--severe)"></i>Severe decline</span><span><i style="background:var(--improving)"></i>Improving</span>
+          <span><i style="background:transparent;border:2px solid var(--alert)"></i>Active alert</span>
+        </div>
+        <p class="note" style="margin:8px 0 0">No basemap: stand outlines are ESA WorldCover 2021 mangrove patches (≥3 ha) in the densest 13 × 10 km block near Abu Dhabi. <b>200 m cells</b>: the same monitor run on each 4 ha block of a stand, to show <i>where</i> inside a stand the change is. The stand alert stays the trigger; cells guide the inspection.</p>
+      </div>
+      <div class="card">
+        <h2>All stands</h2>
+        <div class="tablewrap"><table id="tbl"><thead><tr><th>Stand</th><th class="n">Area ha</th><th>Condition</th><th class="n">NDVI vs base</th><th class="n">NDMI vs base</th><th class="n">Alerts 22–26</th><th class="n">Carbon kt C*</th></tr></thead><tbody></tbody></table></div>
+        <p class="note" style="margin:8px 0 0">*Area × 108 t C per ha (mean of 24 field plots at 4 sites near Jubail and the Eastern Mangroves, tree + top 1 m of soil; Schile et al. 2016). Median shown; the range reflects uncertainty in that mean only.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" id="detail"></div>
+      <div class="card story">
+        <h2>Case study: five conversions inside mangrove polygons, confirmed on sub-metre imagery</h2>
+        <p class="note" style="margin-top:0">Sentinel-2 true colour, same stand outline in yellow.</p>
+        <h3>Stand 5 — 11 Jan 2021 → 7 May 2026</h3>
+        <img src="__IMG__" alt="Stand 5 outline on Sentinel-2 imagery in 2021 and 2026: a large coastal reclamation with canals covers the western and central part of the outline">
+        <p>A large coastal reclamation with finger canals appeared between the 2021 and 2023 images. Dating the change from the affected pixels (778 Sentinel-2 dates) puts its start in <b>Feb&ndash;Apr 2023</b>. Our alert was already on from <b>25 Oct 2022</b>, mostly from cells that later converted (18 of 23), and stayed on through the conversion. The stand's tide-corrected NDVI fell from 0.27 to below zero. The eastern part of the outline is still mangrove.</p>
+        <h3>Stand 9 — 23 Sep 2020 → 7 May 2026</h3>
+        <img src="__IMG9__" alt="Stand 9 outline on Sentinel-2 imagery in 2020 and 2026: a canal-style residential development with sand islands covers the south-eastern part of the outline">
+        <p>A canal-style coastal development (sand islands, lagoons) now covers the south-eastern part of the outline; the north-western, denser mangrove part is unchanged. Stand 9 had the most alert episodes of any stand (7) and was independently flagged by the epoch-difference indicator (17.5 % of its area). Its stand average still reads &ldquo;stable&rdquo;, but <b>8 of its 28 cells (21.8 ha) show severe decline</b>, exactly the converted part. Dated from the affected pixels, the change started in <b>Jun 2023</b>. Our alert was already on from <b>7 Dec 2022</b>, raised by cells in the south-east part that later converted.</p>
+        <h3>Stand 12 — found only by the 200 m cells</h3>
+        <img src="__IMG12__" alt="Stand 12 southern edge in August 2022, September 2023 and July 2026, flagged cells outlined in red: intact vegetation in 2022, a new canal and reclamation lagoons by 2023, construction inside the flagged cells by 2026">
+        <p>The stand average still reads &ldquo;stable&rdquo;, but <b>6 of its 20 cells (13.2 ha)</b> show severe decline along its southern edge. Summer images (flagged cells in red) show why: intact until <b>Aug 2022</b>; by <b>Sep 2023</b> a new canal crosses the stand and reclamation lagoons press against its edge; by <b>2025&ndash;26</b> construction reaches into the flagged cells. Our alert first fired on <b>17 Dec 2022</b>, between the last intact image and the first converted one. The same development later reached <b>stand 18</b> (converted in 2025, dated start Feb 2025): our alert was on from 29 Oct 2024 across much of the stand (not specific to the part that converted) and again from 17 Apr 2025, from the converting cells. At <b>stand 6</b>, sparse mangrove on a tidal flat: new canals encircle it by Feb 2023 and part of it is a lagoon by Jan 2025. Our alert (from its cells) began on 17 Feb 2023. Stands 12, 18 and 6 were found only by the 200 m cells.</p>
+        <div class="warn"><b>Checked at 0.3&ndash;0.5 m:</b> dated WorldView-2/3 and Legion-1 captures (Esri World Imagery Wayback) confirm all five conversions. At each site our alert began between the last undisturbed capture and the first capture showing works (stand 5: Mar 2022 &rarr; Feb 2023, alert Oct 2022; stand 9: works next to it by Feb 2023, alert Dec 2022; stand 12: Mar 2022 &rarr; Feb 2023, alert Dec 2022; stand 18: Nov 2023 &rarr; Jan 2025, alert Oct 2024; stand 6: Mar 2022 &rarr; Feb 2023, alert Feb 2023). This is detection of works as they happen, not advance warning. Change dates come from the pixels and images themselves, not from permits or construction records. The outlines come from a 2021 land-cover map and include ground that is now provably non-mangrove: all these losses are partial and their carbon figures are upper bounds.</div>
+      </div>
+      <div class="card story">
+        <h2>Independent hyperspectral check (EnMAP, 224 bands)</h2>
+        <img src="__IMGEN__" alt="EnMAP spectra of stand 5 pixels that stayed vegetated and pixels that converted between November 2022 and April 2025, and a map of converted pixels in red and persistent pixels in green">
+        <p><b>Agreement with our Sentinel-2 series:</b> on the same date, EnMAP-derived indices match our stand medians (r = 0.84&#8211;0.97 across 25 stands on 1 Nov 2022; 0.97&#8211;0.99 across 14 stands on 14 Apr 2025).</p>
+        <p><b>Stand 5:</b> 685 of 1,518 mangrove-classified 30 m pixels (about 62 ha, 45 %) changed from a vegetation spectrum to a bright, mineral-like one (sand or construction material). This brackets our conservative Sentinel-2 flag (26 ha): the loss is <b>26&#8211;62 ha</b> by two independent methods.</p>
+        <div class="warn">What hyperspectral did <b>not</b> show: a better mangrove classifier (F1 0.74 vs 0.72 for Sentinel-2-like bands, within noise) or early stress. Two dates in different seasons cannot separate stress from season and tide.</div>
+        <p class="note" style="margin-bottom:0">Contains modified EnMAP data &#169;DLR 2022, 2025.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h2>How to read it, and what we can and cannot claim</h2>
+    <div class="cols2">
+      <div>
+        <h3>Two signals</h3>
+        <p><b>Alert</b>: the last five observations are unusually low compared with a model of the stand's own season, trend and tide state, <b>either for the stand average (−1.5 σ) or for any one of its 200 m cells (−3.5 σ)</b>. The two levels are set together so that false alarms stay at about one episode per stand-year (0.96 measured).</p>
+        <p><b>Condition</b>: the median tide-corrected index of the last 12 months (a full seasonal cycle) compared with the stand's 2020–21 median. A sustained decline is not forgotten.</p>
+        <p><b>200 m cells</b>: the same two signals per 4 ha block. Against an independent change method (2021 vs 2025 composites), cells flagged 11 of 15 changed blocks and 11 of 554 unchanged ones; most of those 11 are real conversions that the stricter method misses. On 65 stands the rule never saw (Abu Dhabi and Saudi Arabia's Tarut Bay), with its thresholds fixed, the combined alert gave <b>0.79</b> episodes per stand-year, against 0.96 where it was calibrated.</p>
+      </div>
+      <div>
+        <h3>Tested performance (simulation)</h3>
+        <p>We injected artificial canopy loss into the real series of stands with no known change, with false alarms held to about one per stand-year. A detection counts only if a <b>new</b> alert starts after the loss begins, and every rate is shown next to the rate by chance (the same test with no loss).</p>
+        <p>With the combined alert (<b>stand average OR any 200 m cell</b>), a partial loss (a tenth of a stand losing half its canopy) is caught within 60 days in about <b>73 %</b> of cases (13 % by chance). A uniform 10 % loss over a whole stand is harder: about <b>63 %</b> within 6 months (36 % by chance). Tide correction alone cut noise by 30–35 %.</p>
+        <p class="note">This corrects our earlier figures (58 % / 90 %): that test also counted alerts already running and had no chance baseline. The alerts shown in this dashboard use the combined rule.</p>
+      </div>
+      <div>
+        <h3>Limits</h3>
+        <p>Simulated losses are cover loss, not leaf stress. The stand outlines come from a 2021 map that our reference check found imperfect (about 65 % agreement on confident points). Reference labels are AI-assisted photo-interpretation and cover extent, not health. Carbon uses 2013–14 field plots from four nearby sites, so the range is wide and excludes soil below 1 m.</p>
+      </div>
+    </div>
+    <details><summary>Data and attribution</summary>
+      <p class="note">Contains modified Copernicus Sentinel-2 L2A data (ESA), accessed via the Microsoft Planetary Computer. Stand outlines: ESA WorldCover 2021 v200 (CC BY 4.0). Carbon density: field data of Schile et al. (2016), Dryad doi:10.15146/R3K59Z (CC0); see also Schile et al. 2017, Ecological Applications 27:859–874. Contains modified EnMAP data &#169;DLR 2022, 2025 (EnMAP data licence v1.1; raw data not redistributed). Satellite 813 is a planned incubation pathway, not used here.</p></details>
+  </div>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const D = __DATA__;
+const $ = s => document.querySelector(s);
+const cls = c => ({"stable":"stable","decline":"decline","severe decline":"severe","improving":"improving"}[c]);
+const fmt = (v, d=0) => v == null || isNaN(v) ? "n/a" : Number(v).toLocaleString("en-US", {maximumFractionDigits:d, minimumFractionDigits:d});
+const ST = Object.fromEntries(D.status.map(r => [r.stand, r]));
+let sel = 5;
+
+/* KPIs */
+const k = D.kpi;
+$("#kpis").innerHTML = [
+  [fmt(k.n), "stands monitored"], [fmt(k.area) + " ha", "mangrove area"],
+  [fmt(k.alerts), "active alerts today"], [fmt(k.severe) + " · " + fmt(k.severe_area) + " ha", "severe decline (stand 5)", "bad"],
+  [fmt(k.stock_p50/1000) + " kt C*", "carbon stock, field-based (90% range " + fmt(k.stock_p10/1000) + "–" + fmt(k.stock_p90/1000) + ")"]
+].map(a => `<div class="kpi ${a[2]||""}"><b>${a[0]}</b><span>${a[1]}</span></div>`).join("");
+$("#foot").textContent = "Data to " + k.last_obs + ". Screening indicators, not ground truth. Built for the Arab Youth Space Hackathon PoC.";
+
+/* Map */
+const feats = D.features; let minx=1e9,maxx=-1e9,miny=1e9,maxy=-1e9;
+const each = (g, f) => { const polys = g.type === "Polygon" ? [g.coordinates] : g.coordinates; polys.forEach(p => p.forEach(r => r.forEach(f))); };
+feats.forEach(f => each(f.geometry, ([x,y]) => { minx=Math.min(minx,x); maxx=Math.max(maxx,x); miny=Math.min(miny,y); maxy=Math.max(maxy,y); }));
+const lat0 = (miny+maxy)/2, kx = Math.cos(lat0*Math.PI/180), pad = 0.002;
+const W = 720, H = Math.round(W * ((maxy-miny+2*pad)) / ((maxx-minx+2*pad)*kx));
+const px = ([x,y]) => [((x-minx+pad)*kx)/((maxx-minx+2*pad)*kx)*W, (maxy+pad-y)/(maxy-miny+2*pad)*H];
+const map = $("#map"); map.setAttribute("viewBox", `0 0 ${W} ${H}`);
+const dOf = (g, proj) => (g.type === "Polygon" ? [g.coordinates] : g.coordinates).map(p => p.map(r => "M" + r.map(c => proj(c).map(v => v.toFixed(1)).join(",")).join("L") + "Z").join("")).join("");
+const CELLS = D.cells || [];
+const cellsSvg = CELLS.map(c => `<path d="${dOf(c.g, px)}" fill-rule="evenodd" class="c-${cls(c.cond)}" data-s="${c.s}"><title>Cell ${c.c} · stand ${c.s} · ${fmt(c.ha,1)} ha · ${c.cond}</title></path>`).join("");
+const standsSvg = feats.map(f => {
+  const s = ST[f.properties.stand], polys = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
+  const d = polys.map(p => p.map(r => "M" + r.map(c => px(c).map(v => v.toFixed(1)).join(",")).join("L") + "Z").join("")).join("");
+  return `<path d="${d}" fill-rule="evenodd" class="c-${cls(s.condition)} ${s.alert_now ? "alert" : ""}" data-s="${s.stand}" tabindex="0" role="button" aria-label="Stand ${s.stand}, ${s.area_ha} ha, ${s.condition}"><title>Stand ${s.stand} · ${fmt(s.area_ha,1)} ha · ${s.condition}</title></path>`;
+}).join("");
+map.innerHTML = `<g id="gStands">${standsSvg}</g><g id="gCells" style="display:none">${cellsSvg}</g>`;
+document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  $("#gStands").style.display = b.dataset.v === "stands" ? "" : "none"; $("#gCells").style.display = b.dataset.v === "cells" ? "" : "none";
+}));
+map.addEventListener("click", e => { const p = e.target.closest("path"); if (p) select(+p.dataset.s); });
+map.addEventListener("keydown", e => { const p = e.target.closest("path"); if (p && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); select(+p.dataset.s); } });
+
+/* Table */
+const order = {"severe decline":0, "decline":1, "improving":2, "stable":3};
+const rows = [...D.status].sort((a,b) => order[a.condition]-order[b.condition] || b.area_ha-a.area_ha);
+$("#tbl tbody").innerHTML = rows.map(r => `<tr tabindex="0" data-s="${r.stand}"><td>${r.stand}</td><td class="n">${fmt(r.area_ha,1)}</td><td><span class="pill ${cls(r.condition)}">${r.condition}</span></td><td class="n">${fmt(r.ndvi_change_pct,0)}%</td><td class="n">${fmt(r.ndmi_change_pct,0)}%</td><td class="n">${r.alerts_2022_2026}</td><td class="n">${fmt(r.stock_tC_p50/1000,1)}</td></tr>`).join("");
+$("#tbl tbody").addEventListener("click", e => { const t = e.target.closest("tr"); if (t) select(+t.dataset.s); });
+$("#tbl tbody").addEventListener("keydown", e => { const t = e.target.closest("tr"); if (t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); select(+t.dataset.s); } });
+
+/* Detail + chart */
+function chart(id) {
+  const s = D.series[id], n = s.months.length, w = 640, h1 = 150, h2 = 90, L = 38, R = 8, T = 8, gap = 26, Ht = T + h1 + gap + h2 + 22;
+  const x = i => L + (w - L - R) * i / (n - 1), mi = m => s.months.indexOf(m.slice(0,7));
+  const vals = [...s.ndmi, ...s.ndvi].filter(v => v != null); let lo = Math.min(...vals), hi = Math.max(...vals); const span = hi - lo || 1; lo -= .05*span; hi += .05*span;
+  const y1 = v => T + h1 * (1 - (v - lo) / (hi - lo)), zc = v => Math.max(-8, Math.min(3, v)), y2 = v => T + h1 + gap + h2 * (1 - (zc(v) + 8) / 11);
+  const path = (arr, f) => { let d = "", pen = false; arr.forEach((v,i) => { if (v == null) { pen = false; return; } d += (pen ? "L" : "M") + x(i).toFixed(1) + "," + f(v).toFixed(1); pen = true; }); return d; };
+  const eps = D.episodes.filter(e => e.stand === id).map(e => { const a = Math.max(0, s.months.findIndex(m => m >= e.start.slice(0,7))), bi = s.months.findIndex(m => m > e.end.slice(0,7)), b = bi < 0 ? n - 1 : bi;
+    return `<rect x="${x(a)}" y="${T}" width="${Math.max(2, x(b) - x(a))}" height="${h1 + gap + h2}" fill="var(--severe)" opacity=".10"/>`; }).join("");
+  const yrs = []; s.months.forEach((m,i) => { if (m.endsWith("-01")) yrs.push([i, m.slice(0,4)]); });
+  const ticks = yrs.map(([i,yr]) => `<line class="tick" x1="${x(i)}" x2="${x(i)}" y1="${T}" y2="${T+h1+gap+h2}"/><text x="${x(i)+3}" y="${Ht-6}">${yr}</text>`).join("");
+  const yl = [0,1,2,3].map(j => { const v = lo + (hi-lo)*j/3; return `<text x="${L-5}" y="${y1(v)+4}" text-anchor="end">${v.toFixed(2)}</text>`; }).join("");
+  const thr = y2(-D.rule.stand), thrc = y2(-D.rule.cell);
+  return `<svg viewBox="0 0 ${w} ${Ht}" width="100%" role="img" aria-label="Tide-corrected index and alert scores for stand ${id}">${ticks}${eps}${yl}
+    <path d="${path(s.ndmi, y1)}" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="${path(s.ndvi, y1)}" fill="none" stroke="var(--decline)" stroke-width="2"/>
+    <text x="${L+4}" y="${T+11}" style="fill:var(--accent);font-weight:600">NDMI (moisture)</text><text x="${L+112}" y="${T+11}" style="fill:var(--decline);font-weight:600">NDVI</text>
+    <line x1="${L}" x2="${w-R}" y1="${y2(0)}" y2="${y2(0)}" class="tick"/><line x1="${L}" x2="${w-R}" y1="${thr}" y2="${thr}" stroke="var(--ink)" stroke-dasharray="4 3" stroke-width="1"/>
+    <line x1="${L}" x2="${w-R}" y1="${thrc}" y2="${thrc}" stroke="var(--improving)" stroke-dasharray="4 3" stroke-width="1"/>
+    <path d="${path(s.zc || [], y2)}" fill="none" stroke="var(--improving)" stroke-width="1.4"/><path d="${path(s.z, y2)}" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+    <text x="${L+4}" y="${T+h1+gap+11}">alert scores: <tspan style="fill:var(--ink);font-weight:600">stand average</tspan> (alert at −${D.rule.stand}) · <tspan style="fill:var(--improving);font-weight:600">worst 200 m cell</tspan> (alert at −${D.rule.cell}) · red = alert episodes</text></svg>`;
+}
+function inset(id) {
+  const cs = CELLS.filter(c => c.s === id); if (!cs.length) return "";
+  let a=1e9,b=-1e9,c0=1e9,d=-1e9; cs.forEach(c => each(c.g, ([x,y]) => { a=Math.min(a,x); b=Math.max(b,x); c0=Math.min(c0,y); d=Math.max(d,y); }));
+  const p = 0.0006, w = 200, h = Math.max(80, Math.round(w * (d-c0+2*p) / ((b-a+2*p)*kx)));
+  const pj = ([x,y]) => [((x-a+p)*kx)/((b-a+2*p)*kx)*w, (d+p-y)/(d-c0+2*p)*h];
+  const bad = cs.filter(c => c.cond === "decline" || c.cond === "severe decline"), ha = bad.reduce((s,c) => s + c.ha, 0);
+  const txt = bad.length ? `<b>${bad.length} of ${cs.length} cells</b> (${fmt(ha,1)} ha of mangrove pixels) show ${bad.some(c => c.cond === "severe decline") ? "severe " : ""}decline. Send the inspection there first.`
+                         : `All ${cs.length} cells are ${[...new Set(cs.map(c => c.cond))].join(" or ")}: no part of the stand stands out.`;
+  return `<div class="inset"><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="200 m cells of stand ${id} coloured by condition">${cs.map(c => `<path d="${dOf(c.g, pj)}" fill-rule="evenodd" class="c-${cls(c.cond)}"><title>Cell ${c.c} · ${fmt(c.ha,1)} ha · ${c.cond} · NDVI ${fmt(c.dv,0)}%</title></path>`).join("")}</svg>
+    <div><h3 style="margin-bottom:2px">Where inside the stand (200 m cells)</h3><p class="note" style="margin:0">${txt} Cells count all their mangrove pixels, so cell area is coarser than a loss estimate.</p></div></div>`;
+}
+function select(id) {
+  sel = id; const r = ST[id];
+  document.querySelectorAll("#map path").forEach(p => p.classList.toggle("sel", +p.dataset.s === id));
+  document.querySelectorAll("#tbl tr[data-s]").forEach(t => t.classList.toggle("sel", +t.dataset.s === id));
+  $("#detail").innerHTML = `<h2>Stand ${id} <span class="pill ${cls(r.condition)}">${r.condition}</span> ${r.alert_now ? '<span class="pill" style="background:var(--alert)">alert now</span>' : ""}</h2>
+    <div class="stats">
+      <div><span>Area</span><b>${fmt(r.area_ha,1)} ha</b></div>
+      <div><span>NDVI: 2020–21 → now</span><b>${fmt(r.ndvi_base,2)} → ${fmt(r.ndvi_now,2)}</b></div>
+      <div><span>NDMI: 2020–21 → now</span><b>${fmt(r.ndmi_base,2)} → ${fmt(r.ndmi_now,2)}</b></div>
+      <div><span>Change (NDVI / NDMI)</span><b>${fmt(r.ndvi_change_pct,0)}% / ${fmt(r.ndmi_change_pct,0)}%</b></div>
+      <div><span>Alert episodes 2022–26</span><b>${r.alerts_2022_2026}</b></div>
+      <div><span>Alert scores now (stand / worst cell)</span><b>${fmt(r.stand_z_now,1)} / ${fmt(r.worst_cell_z_now,1)}</b></div>
+      <div><span>Carbon stock* (90% range)</span><b>${fmt(r.stock_tC_p10/1000,1)}–${fmt(r.stock_tC_p90/1000,1)} kt C</b></div>
+      <div><span>≈ CO₂e (median)*</span><b>${fmt(r.stock_tCO2e_p50/1000,1)} kt</b></div>
+    </div>${inset(id)}${chart(id)}
+    <p class="note" style="margin:6px 0 0">Monthly medians of the tide-corrected index (interior pixels only). Last observation ${r.last_obs}.${r.condition === "severe decline" ? " Carbon shown is an upper bound (outline includes non-mangrove flat)." : ""}</p>`;
+}
+select(sel);
+</script>

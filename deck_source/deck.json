@@ -1,0 +1,58 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-09-22T20:00:00Z"
+  },
+  "title": "Blue Carbon Guardian",
+  "order": [
+    "cover",
+    "problem",
+    "usecase",
+    "data",
+    "solution",
+    "innovation",
+    "cells",
+    "product",
+    "validation-real",
+    "hyperspectral",
+    "validation-sim",
+    "limits",
+    "carbon",
+    "business",
+    "roadmap",
+    "team"
+  ],
+  "sections": {
+    "s1": {
+      "description": "Title, the problem and who uses the product for which decision.",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Data (incl. EnMAP hyperspectral) and the approach as a workflow, with its two technical innovations.",
+      "start": "data"
+    },
+    "s3": {
+      "description": "Example outputs: the dashboard, five real conversions confirmed at sub-metre, the hyperspectral check.",
+      "start": "product"
+    },
+    "s4": {
+      "description": "Validation against chance and out of sample, and the limitations.",
+      "start": "validation-sim"
+    },
+    "s5": {
+      "description": "Impact (carbon, business) and next steps for incubation; the team.",
+      "start": "carbon"
+    }
+  },
+  "faces": {
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    },
+    "ibm-plex-mono": {
+      "family": "IBM Plex Mono",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    }
+  }
+}

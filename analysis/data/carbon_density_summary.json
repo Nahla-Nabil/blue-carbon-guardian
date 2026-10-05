@@ -1,0 +1,25 @@
+{
+ "local_n": 24,
+ "local_sites": [
+  "Eastern Mangrove",
+  "Jubail Island",
+  "Jubail Island East",
+  "Salaam"
+ ],
+ "local_mean": 108.39074160769208,
+ "local_p10": 48.14793591465161,
+ "local_p50": 94.91569538341211,
+ "local_p90": 190.23709790805097,
+ "uae_n": 108,
+ "uae_mean": 167.74241015737186,
+ "uae_p10": 65.60035110987258,
+ "uae_p50": 145.77755088811523,
+ "uae_p90": 298.21638697036354,
+ "ci90_lo": 78.73478201251957,
+ "ci90_hi": 138.47370513784665,
+ "n_sites": 4,
+ "soil_uncapped_local": 144.37561872934143,
+ "tree_local": 19.414271813683335,
+ "soil_local": 88.97646979400874,
+ "soil_depth_median": 106.0
+}

@@ -1,0 +1,40 @@
+<section id="validation-sim" data-transition="fade" style="background:#EEF3F1; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:28px">
+  <div style="display:flex; flex-direction:column; gap:14px">
+    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Validation 1 &#8212; Simulation</p>
+    <h2 style="font-size:56px; font-weight:700; line-height:1.15; color:#12302E">Can we detect a loss? Tested against pure chance</h2>
+  </div>
+  <p style="font-size:27px; color:#12302E; line-height:1.5">We injected artificial canopy loss into the real 2020&#8211;2026 series of stands with no known change, holding false alarms to about one per stand per year. A detection counts only if a <b>new</b> alert starts after the loss begins. The same test with <b>no</b> loss gives the chance rate.</p>
+  <table style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#12302E">
+    <tr style="background:#0F2B29">
+      <th style="width:40%; color:#EAF3F0; font-weight:600">Simulated loss</th>
+      <th style="width:20%; color:#EAF3F0; font-weight:600">Alert</th>
+      <th style="width:20%; color:#EAF3F0; font-weight:600">Detected</th>
+      <th style="width:20%; color:#EAF3F0; font-weight:600">By chance</th>
+    </tr>
+    <tr style="background:#FFFFFF">
+      <td>A tenth of a stand loses half its canopy</td>
+      <td>within 60 days</td>
+      <td><b>73%</b></td>
+      <td>13%</td>
+    </tr>
+    <tr style="background:#F4F8F7">
+      <td>A whole stand loses 10% of its canopy</td>
+      <td>within 6 months</td>
+      <td><b>63%</b></td>
+      <td>36%</td>
+    </tr>
+    <tr style="background:#FFFFFF">
+      <td>A whole stand loses 20% of its canopy</td>
+      <td>within 6 months</td>
+      <td><b>83%</b></td>
+      <td>36%</td>
+    </tr>
+  </table>
+  <div style="background:#0F2B29; border-radius:16px; padding:28px 40px">
+    <p style="font-size:29px; font-weight:500; color:#EAF3F0; line-height:1.5">One alert rule for the whole product: the <b>stand average OR any 200&#160;m cell</b>. The cells catch partial losses &#8212; how all four real conversions happened &#8212; that a stand average dilutes.</p>
+  </div>
+  <p style="font-size:23px; color:#4B6461">We corrected our own earlier test: it counted alerts that were already running, and it had no chance baseline (we had reported 58% / 90%). About 160&#8211;240 trials per row, so &#177;7 points. Out of sample (65 unseen stands, thresholds fixed): 0.79 false-alarm episodes per stand-year vs 0.96 calibrated.</p>
+  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team T0006</p>
+  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">11</p>
+  <aside>The honest version of this slide is stronger than the old one: every number has its chance baseline next to it. A partial loss inside a stand is caught about five times more often than chance within two months. Uniform thinning over a whole stand is harder, and we say so. No early-warning claim.</aside>
+</section>
