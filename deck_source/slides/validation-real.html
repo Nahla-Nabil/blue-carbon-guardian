@@ -1,32 +1,30 @@
-<section id="validation-real" data-transition="fade" style="background:#FBFBF8; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:20px">
-  <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Validation 2 &#8212; Real Events</p>
-    <h2 style="font-size:52px; font-weight:700; line-height:1.12; color:#12302E">Five real conversions, confirmed on sub-metre imagery</h2>
-  </div>
-  <div style="display:flex; flex-direction:row; gap:32px">
-    <div style="display:flex; flex-direction:column; gap:8px; flex:1">
-      <img src="/_blob/5288132c4311e6fcdd211802c53d8052" alt="Stand 5 outline over Sentinel-2 imagery in 2021 and 2026, showing a coastal reclamation with canals covering part of the mangrove polygon" style="width:808px; height:184px; object-fit:contain; border:1px solid #D8E3DF; border-radius:10px; background:#FFFFFF">
-      <p style="font-size:22px; color:#4B6461; line-height:1.4"><b>Stand 5</b>, 2021&#8594;2026: a reclamation with finger canals. Our alert on from Oct 2022, mostly from the cells that later converted.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:8px; flex:1">
-      <img src="/_blob/cdb6f513d7b5b62df43f149147663260" alt="Stand 9 outline over Sentinel-2 imagery in 2020 and 2026, showing a canal-style residential development covering the south-eastern part of the mangrove polygon" style="width:808px; height:184px; object-fit:contain; border:1px solid #D8E3DF; border-radius:10px; background:#FFFFFF">
-      <p style="font-size:22px; color:#4B6461; line-height:1.4"><b>Stand 9</b>, 2020&#8594;2026: a canal-style development takes the south-east. Stand average &#8220;stable&#8221;; 8 of 28 cells in severe decline.</p>
-    </div>
-  </div>
-  <div style="display:flex; flex-direction:row; gap:32px">
-    <div style="display:flex; flex-direction:column; gap:8px; flex:1">
-      <img src="images/stand12_key_years.png" alt="Stand 12 southern edge in August 2022, September 2023 and July 2026 with flagged cells in red: intact, then a new canal and reclamation lagoons, then construction inside the flagged cells" style="width:808px; height:158px; object-fit:contain; border:1px solid #D8E3DF; border-radius:10px; background:#FFFFFF">
-      <p style="font-size:22px; color:#4B6461; line-height:1.4"><b>Stand 12</b>, 2022&#8594;2023&#8594;2026: a new canal and reclamation take the southern edge. Found only by the cells; alert from Dec 2022.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:8px; flex:1">
-      <img src="images/stand18_key_years.png" alt="Stand 18 in September 2020, September 2023 and July 2026 with flagged cells in red: vegetated, then reclamation lagoons reach its edge, then the flagged part is sand and construction" style="width:808px; height:158px; object-fit:contain; border:1px solid #D8E3DF; border-radius:10px; background:#FFFFFF">
-      <p style="font-size:22px; color:#4B6461; line-height:1.4"><b>Stand 18</b>, 2020&#8594;2023&#8594;2026: the same development reaches it in 2025. Found only by the cells.</p>
-    </div>
-  </div>
-  <div style="background:#F7DEE2; border-radius:12px; padding:18px 28px">
-    <p style="font-size:24px; color:#12302E; line-height:1.45">Dated 0.3&#8211;0.5&#160;m captures (WorldView-2/3, Legion-1) confirm all four shown &#8212; and a fifth, stand 6, where a lagoon replaced part of the stand. At every site our alert began between the last undisturbed capture and the first one showing works &#8212; detection of works as they happen, not advance warning. All are partial losses: carbon figures are upper bounds.</p>
-  </div>
-  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team Blue Athar</p>
-  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">09</p>
+<section id="validation-real" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">Validation 1 &#183; real events</p>
+  <h2 class="h">Five real conversions, confirmed on sub-metre imagery</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div class="row" style="gap:26px;flex:1">
+  <div style="width:1000px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px"><div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px"><div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;background:#F4F8FF"><img src="images/stand5_before_after_2021_2026.png" style="display:block;max-width:100%;max-height:230px"></div><p class="s" style="font-size:18px"><b style="color:#06235A">Stand 5</b> &#183; reclamation with finger canals</p></div><div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px"><div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;background:#F4F8FF"><img src="images/stand9_before_after_2020_2026.png" style="display:block;max-width:100%;max-height:230px"></div><p class="s" style="font-size:18px"><b style="color:#06235A">Stand 9</b> &#183; canal development takes the south-east</p></div><div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px"><div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;background:#F4F8FF"><img src="images/stand12_key_years.png" style="display:block;max-width:100%;max-height:230px"></div><p class="s" style="font-size:18px"><b style="color:#06235A">Stand 12</b> &#183; found only by the cells</p></div><div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px"><div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;background:#F4F8FF"><img src="images/stand18_key_years.png" style="display:block;max-width:100%;max-height:230px"></div><p class="s" style="font-size:18px"><b style="color:#06235A">Stand 18</b> &#183; found only by the cells, 2025</p></div></div>
+  <div class="card" style="flex:1;padding:18px 22px;display:flex;flex-direction:column;justify-content:center"><p class="lab" style="color:#1E6FD9">When did the alert start?</p><svg width="640" height="430" viewBox="0 0 640 430" font-family="IBM Plex Sans"><line x1="120" x2="120" y1="10" y2="372" stroke="#D6E6FF"/><text x="120" y="398" font-size="19" fill="#4A5F86" text-anchor="middle">2022</text><line x1="277" x2="277" y1="10" y2="372" stroke="#D6E6FF"/><text x="277" y="398" font-size="19" fill="#4A5F86" text-anchor="middle">2023</text><line x1="434" x2="434" y1="10" y2="372" stroke="#D6E6FF"/><text x="434" y="398" font-size="19" fill="#4A5F86" text-anchor="middle">2024</text><line x1="591" x2="591" y1="10" y2="372" stroke="#D6E6FF"/><text x="591" y="398" font-size="19" fill="#4A5F86" text-anchor="middle">2025</text><text x="0" y="52" font-size="22" font-weight="700" fill="#06235A">Stand 5</text><rect x="157" y="32" width="142" height="30" rx="8" fill="#BFDDFF" stroke="#1E6FD9"/><path d="M248 28 l14 19 l-14 19 l-14 -19z" fill="#FF4D6D" stroke="#fff" stroke-width="2"/><text x="0" y="122" font-size="22" font-weight="700" fill="#06235A">Stand 9</text><rect x="157" y="102" width="142" height="30" rx="8" fill="#BFDDFF" stroke="#1E6FD9"/><path d="M266 98 l14 19 l-14 19 l-14 -19z" fill="#FF4D6D" stroke="#fff" stroke-width="2"/><text x="0" y="192" font-size="22" font-weight="700" fill="#06235A">Stand 12</text><rect x="157" y="172" width="142" height="30" rx="8" fill="#BFDDFF" stroke="#1E6FD9"/><path d="M271 168 l14 19 l-14 19 l-14 -19z" fill="#FF4D6D" stroke="#fff" stroke-width="2"/><text x="0" y="262" font-size="22" font-weight="700" fill="#06235A">Stand 6</text><rect x="157" y="242" width="142" height="30" rx="8" fill="#BFDDFF" stroke="#1E6FD9"/><path d="M297 238 l14 19 l-14 19 l-14 -19z" fill="#FF4D6D" stroke="#fff" stroke-width="2"/><text x="0" y="332" font-size="22" font-weight="700" fill="#06235A">Stand 18</text><rect x="413" y="312" width="180" height="30" rx="8" fill="#BFDDFF" stroke="#1E6FD9"/><path d="M564 308 l14 19 l-14 19 l-14 -19z" fill="#FF4D6D" stroke="#fff" stroke-width="2"/><rect x="120" y="410" width="26" height="14" rx="4" fill="#BFDDFF" stroke="#1E6FD9"/><text x="154" y="423" font-size="17" fill="#4A5F86">last intact → first capture with works</text><path d="M510 410 l8 8 l-8 8 l-8 -8z" fill="#FF4D6D"/><text x="524" y="423" font-size="17" fill="#4A5F86">our alert starts</text></svg></div>
+</div>
+<div class="card dk" style="margin-top:18px;padding:16px 28px"><p class="t w" style="font-size:22px">Dated 0.3&#8211;0.5 m captures (WorldView-2/3, Legion-1) confirm all five, including stand 6 where a lagoon replaced part of the stand. At every site the alert began <b>between the last intact and the first disturbed capture</b>: detection of works as they happen, not advance warning.</p></div></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">09 / 16</p></div>
   <aside>These are not simulations. Stands 5 and 9 were singled out by two independent methods (the time series and an epoch-difference indicator); stands 12 and 18 only by the 200 metre cells. All four were then checked on dated sub-metre captures from Esri World Imagery Wayback (Maxar WorldView-2/3, Legion-1): for example stand 5 was intact in March 2022, under construction in February 2023; our alert began in October 2022.</aside>
 </section>

@@ -1,24 +1,30 @@
-<section id="hyperspectral" data-transition="fade" style="background:#FBFBF8; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:22px">
-  <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Validation 3 &#8212; Hyperspectral (EnMAP)</p>
-    <h2 style="font-size:54px; font-weight:700; line-height:1.15; color:#12302E">An independent check, and a material fingerprint</h2>
-  </div>
-  <img src="/_blob/4f7aa84e740446007eb703059f094f76" alt="EnMAP reflectance spectra of stand 5 pixels that stayed vegetated and pixels that converted, November 2022 versus April 2025, plus a map of converted pixels in red and persistent pixels in green" style="width:1346px; height:380px; object-fit:contain; border:1px solid #D8E3DF; border-radius:10px; background:#FFFFFF">
-  <div style="display:flex; flex-direction:row; gap:24px">
-    <div style="display:flex; flex-direction:column; gap:6px; flex:1; background:#0F2B29; border-radius:14px; padding:22px 28px">
-      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:40px; font-weight:600; color:#3FC0A4">r = 0.84&#8211;0.99</p>
-      <p style="font-size:24px; color:#9FC1BB; line-height:1.4">EnMAP vs our Sentinel-2 indices, same date, across 25 and 14 stands</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:6px; flex:1; background:#0F2B29; border-radius:14px; padding:22px 28px">
-      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:40px; font-weight:600; color:#3FC0A4">62 vs 26 ha</p>
-      <p style="font-size:24px; color:#9FC1BB; line-height:1.4">Stand 5 conversion: EnMAP pixels vs our conservative Sentinel-2 flag</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:6px; flex:1; background:#F7EAD0; border-radius:14px; padding:22px 28px">
-      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:40px; font-weight:600; color:#12302E">F1 0.74 vs 0.72</p>
-      <p style="font-size:24px; color:#12302E; line-height:1.4">Full spectrum vs Sentinel-2-like bands as a classifier: no significant gain, and we say so</p>
-    </div>
-  </div>
-  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Contains modified EnMAP data &#169;DLR 2022, 2025 &#183; Team Blue Athar</p>
-  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">10</p>
+<section id="hyperspectral" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">Validation 2 &#183; hyperspectral (EnMAP)</p>
+  <h2 class="h">An independent check, and a material fingerprint</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div class="card" style="padding:16px 20px"><img src="images/enmap_stand5_two_epochs.png" style="display:block;width:100%"></div>
+<div class="row" style="margin-top:20px">
+  <div class="card" style="flex:1;display:flex;gap:20px;align-items:center"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg></div><div><p class="big" style="font-size:50px">r = 0.84&#8211;0.99</p><p class="s" style="margin-top:6px">EnMAP vs our Sentinel-2 indices, same dates, 25 and 14 stands</p></div></div><div class="card" style="flex:1;display:flex;gap:20px;align-items:center"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c3-12 5-12 7-6s4 6 6-2 4-6 7 2"/></svg></div><div><p class="big" style="font-size:50px">62 vs 26 ha</p><p class="s" style="margin-top:6px">stand 5 converted: EnMAP pixels vs our conservative Sentinel-2 flag</p></div></div><div class="card" style="flex:1;display:flex;gap:20px;align-items:center"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div><p class="big" style="font-size:50px">F1 0.74 vs 0.72</p><p class="s" style="margin-top:6px">full spectrum vs Sentinel-2-like bands as a classifier: no real gain, and we say so</p></div></div>
+</div>
+<p class="s" style="font-size:17px;margin-top:14px">Converted pixels change from a vegetation spectrum to a bright mineral-like one (sand and fill): reclamation, not dieback. Contains modified EnMAP data &#169; DLR 2022, 2025.</p></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">10 / 16</p></div>
   <aside>Left and centre: stand 5 pixels that converted go from a vegetation spectrum (red-edge jump, leaf-water absorptions) in 2022 to a bright, flat, mineral-like spectrum in 2025, consistent with sand or construction material. Right: pixels in red converted, in green persisted. What hyperspectral gave us: independent confirmation of our Sentinel-2 indices and a second area estimate that brackets our conservative flag. What it did not give us: a better classifier, or proof of early stress. Two dates in different seasons cannot separate stress from season and tide.</aside>
 </section>

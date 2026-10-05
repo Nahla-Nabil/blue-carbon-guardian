@@ -1,37 +1,33 @@
-<section id="product" data-transition="fade" style="background:#EEF3F1; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:30px">
-  <div style="display:flex; flex-direction:column; gap:14px">
-    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Product</p>
-    <h2 style="font-size:60px; font-weight:700; line-height:1.1; color:#12302E">From signal to decision</h2>
-  </div>
-  <div style="display:flex; flex-direction:row; gap:48px; align-items:flex-start">
-    <img src="images/dash_top_cells.png" alt="Blue Carbon Guardian dashboard: KPI strip, the condition map switched to 200 metre cells, and a stand detail panel" style="width:760px; height:436px; object-fit:contain; border:1px solid #D8E3DF; border-radius:12px">
-    <div style="display:flex; flex-direction:column; gap:18px; flex:1">
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:28px; color:#12302E; line-height:1.4">One alert: stand average OR any 200&#160;m cell, about one false alarm per stand-year</p>
-      </div>
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:28px; color:#12302E; line-height:1.4">Where inside the stand: a 200&#160;m cell map for the inspector</p>
-      </div>
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:28px; color:#12302E; line-height:1.4">Condition vs the stand&#8217;s own 2020&#8211;21 baseline, over a full year; carbon with a range</p>
-      </div>
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:28px; color:#12302E; line-height:1.4">One printable site report per stand, ready for a compliance file</p>
-      </div>
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:28px; color:#12302E; line-height:1.4">Templated wording &#8212; every sentence traces back to a number, never invented</p>
-      </div>
-    </div>
-  </div>
-  <div style="background:#0F2B29; border-radius:12px; padding:24px 30px">
-    <p style="font-size:28px; color:#EAF3F0; font-weight:600">Built for: environment agencies &#183; mangrove &amp; carbon-project developers &#183; EIA consultants &amp; regulators</p>
-  </div>
-  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team Blue Athar</p>
-  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">08</p>
+<section id="product" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">Example output &#183; the product</p>
+  <h2 class="h">From signal to decision, in one screen</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div class="row" style="gap:30px">
+  <div style="width:1080px;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(6,35,90,.25);border:1px solid #C3DDFF">
+    <div style="background:#06235A;padding:10px 16px;display:flex;gap:8px;align-items:center"><span style="width:12px;height:12px;border-radius:50%;background:#FF5F57"></span><span style="width:12px;height:12px;border-radius:50%;background:#FEBC2E"></span><span style="width:12px;height:12px;border-radius:50%;background:#28C840"></span>
+      <span class="mono" style="font-size:15px;color:#BFDFFF;margin-left:14px">dashboard/index.html &#183; Abu Dhabi pilot</span></div>
+    <img src="images/dashboard_full.png" style="display:block;width:100%"></div>
+  <div class="col" style="flex:1;gap:14px;justify-content:space-between"><div style="display:flex;gap:18px;align-items:flex-start"><div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><div><p class="t b" style="font-size:27px">One alert</p><p class="s" style="font-size:21px">stand average OR any 200 m cell, ~1 false alarm per stand-year</p></div></div><div style="display:flex;gap:18px;align-items:flex-start"><div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div><div><p class="t b" style="font-size:27px">Where to look</p><p class="s" style="font-size:21px">a 200 m cell map for the inspector</p></div></div><div style="display:flex;gap:18px;align-items:flex-start"><div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><div><p class="t b" style="font-size:27px">Condition</p><p class="s" style="font-size:21px">last 12 months vs the stand's own 2020&#8211;21 baseline</p></div></div><div style="display:flex;gap:18px;align-items:flex-start"><div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></svg></div><div><p class="t b" style="font-size:27px">Carbon at stake</p><p class="s" style="font-size:21px">stock with a range, from field data</p></div></div><div style="display:flex;gap:18px;align-items:flex-start"><div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><div><p class="t b" style="font-size:27px">Site report</p><p class="s" style="font-size:21px">one printable page per stand; every sentence traces back to a number</p></div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><span class="pill">dashboard</span><span class="pill">site reports</span><span class="pill">JSON alert API (concept)</span></div></div>
+</div></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">08 / 16</p></div>
   <aside>The dashboard and the site reports are the same numbers you have already seen &#8212; just organised for someone who has to decide whether to send an inspector.</aside>
 </section>

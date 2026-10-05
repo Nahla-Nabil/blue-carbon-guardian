@@ -1,33 +1,38 @@
-<section id="business" data-transition="fade" style="background:#EEF3F1; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:24px">
-  <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Business Model</p>
-    <h2 style="font-size:54px; font-weight:700; line-height:1.12; color:#12302E">A monitoring service with honest unit economics</h2>
-  </div>
-  <div style="display:flex; flex-direction:row; gap:24px">
-    <div style="display:flex; flex-direction:column; gap:10px; flex:1; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:24px 26px">
-      <h3 style="font-size:28px; font-weight:700; color:#0B7A66">Customers</h3>
-      <p style="font-size:23px; color:#12302E; line-height:1.45">Environment agencies (EAD, MOCCAE, Saudi NCVC)</p><p style="font-size:23px; color:#12302E; line-height:1.45">Planting programmes: ADNOC (10 M), Red Sea Global (50 M), carbon developers</p><p style="font-size:23px; color:#12302E; line-height:1.45">Coastal developers &amp; EIA consultants</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:10px; flex:1; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:24px 26px">
-      <h3 style="font-size:28px; font-weight:700; color:#0B7A66">Offer &#183; price (hypothesis)</h3>
-      <p style="font-size:23px; color:#12302E; line-height:1.45"><b>Monitor</b>: USD 12k per site per year (&#8776; USD 5 / ha)</p><p style="font-size:23px; color:#12302E; line-height:1.45"><b>Evidence</b>: + high-res check of every alert, audit pack: USD 25k</p><p style="font-size:23px; color:#12302E; line-height:1.45"><b>Development watch</b>: USD 8k per project per year</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:10px; flex:1; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:24px 26px">
-      <h3 style="font-size:28px; font-weight:700; color:#0B7A66">Cost to serve &#8776; USD 3.3k / site / yr</h3>
-      <p style="font-size:23px; color:#12302E; line-height:1.45">Compute &lt; USD 5 (<b>measured</b>: full 2020&#8211;26 archive in under 75 min)</p><p style="font-size:23px; color:#12302E; line-height:1.45">High-res images only when an alert fires: USD 500&#8211;750 (vs 5&#8211;8k for monthly coverage)</p><p style="font-size:23px; color:#12302E; line-height:1.45">Analyst time (assumption): USD 2k</p>
-    </div>
-  </div>
-  <div style="display:flex; flex-direction:row; gap:24px">
-    <div style="display:flex; flex-direction:column; gap:8px; flex:1.15; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:14px; padding:22px 26px">
-      <p style="font-size:24px; color:#12302E; line-height:1.45"><b>Competition.</b> Global Mangrove Watch offers free monthly loss alerts (Africa first, expanding; Gulf coverage not confirmed). We are complementary: tide-aware, calibrated, stand + cell level, with carbon and reports &#8212; and can use GMW extent as input.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:8px; flex:1; background:#0F2B29; border-radius:14px; padding:22px 26px">
-      <p style="font-size:22px; color:#9FC1BB; text-transform:uppercase; letter-spacing:1px; font-weight:600">The honest market</p>
-      <p style="font-size:24px; color:#EAF3F0; line-height:1.45">Gulf + Red Sea mangroves &#8776; 16 sites &#8594; USD 0.2&#8211;0.4 M / yr: a niche. The real potential: a national MRV contract for a 100-million-mangrove programme, a monitoring layer on gIQ, licensing.</p>
-    </div>
-  </div>
-  <p style="font-size:21px; color:#4B6461">Prices and analyst time are hypotheses for the pilot to test. Scenario and all 13 sources: docs/business_plan_draft.md.</p>
-  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team Blue Athar</p>
-  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">14</p>
+<section id="business" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">Business viability</p>
+  <h2 class="h">A monitoring service with honest unit economics</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div class="row" style="gap:22px">
+  <div class="card dk" style="flex:1;padding:22px 26px"><p class="lab" style="color:#8FD3FF">Monitor</p><p class="bigw" style="font-size:58px;margin-top:10px">$12k</p><p class="s ws">per site / year (&#8776; $5 / ha)</p><p class="t w" style="margin-top:12px;font-size:21px">alert, cell map, condition, carbon, monthly reports</p></div><div class="card" style="flex:1;padding:22px 26px"><p class="lab" style="color:#1E6FD9">Evidence</p><p class="big" style="font-size:58px;margin-top:10px">$25k</p><p class="s">per site / year</p><p class="t" style="margin-top:12px;font-size:21px">+ sub-metre check of every alert, audit pack</p></div><div class="card" style="flex:1;padding:22px 26px"><p class="lab" style="color:#1E6FD9">Development watch</p><p class="big" style="font-size:58px;margin-top:10px">$8k</p><p class="s">per project / year</p><p class="t" style="margin-top:12px;font-size:21px">for coastal developers and EIA consultants</p></div>
+  <div class="card" style="flex:1.1;padding:22px 26px"><p class="lab" style="color:#1E6FD9">Cost to serve &#8776; $3.3k / site / yr</p>
+    <div style="display:flex;height:34px;border-radius:9px;overflow:hidden;margin-top:16px"><div style="width:2%;background:#0EA5E9"></div><div style="width:20%;background:#2F80ED"></div><div style="width:78%;background:#0A3D91"></div></div>
+    <p class="s" style="margin-top:12px;font-size:18px"><b style="color:#0EA5E9">Compute</b> &lt; $5 (measured) &#183; <b style="color:#2F80ED">VHR on alert</b> $500&#8211;750 &#183; <b style="color:#0A3D91">Analyst</b> $2k (assumption)</p></div>
+</div>
+<div class="row" style="gap:22px;margin-top:20px;flex:1">
+  <div class="card" style="width:520px;padding:18px 24px"><p class="lab" style="color:#1E6FD9">Revenue scenario (hypothesis)</p><svg width="430" height="290" viewBox="0 -40 430 290" font-family="IBM Plex Sans"><defs><linearGradient id="gr" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1E6FD9"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs><rect x="30" y="190" width="90" height="20" rx="10" fill="url(#gr)"/><text x="75" y="180" font-size="24" font-weight="700" fill="#06235A" text-anchor="middle">$32k</text><text x="75" y="240" font-size="20" fill="#4A5F86" text-anchor="middle">2027</text><rect x="165" y="122" width="90" height="88" rx="10" fill="url(#gr)"/><text x="210" y="112" font-size="24" font-weight="700" fill="#06235A" text-anchor="middle">$142k</text><text x="210" y="240" font-size="20" fill="#4A5F86" text-anchor="middle">2028</text><rect x="300" y="18" width="90" height="192" rx="10" fill="url(#gr)"/><text x="345" y="8" font-size="24" font-weight="700" fill="#06235A" text-anchor="middle">$309k</text><text x="345" y="240" font-size="20" fill="#4A5F86" text-anchor="middle">2029</text></svg></div>
+  <div class="card" style="flex:1;padding:22px 26px"><p class="t b" style="font-size:26px">Customers</p><p class="s" style="margin-top:8px;font-size:22px">Agencies (EAD, MOCCAE, NCVC) &#183; planting programmes: ADNOC (10 M), Red Sea Global (50 M) &#183; carbon developers &#183; coastal developers and EIA consultants</p>
+    <p class="t b" style="margin-top:20px;font-size:26px">Competition</p><p class="s" style="margin-top:8px;font-size:22px">Global Mangrove Watch: free monthly loss alerts (Gulf coverage not confirmed). We are complementary: tide-aware, calibrated, stand + cell, carbon and reports.</p></div>
+  <div class="card dk" style="flex:1;padding:22px 26px"><p class="lab" style="color:#8FD3FF">The honest market</p><p class="t w" style="margin-top:14px;font-size:27px;line-height:1.5">Gulf + Red Sea &#8776; 16 sites &#8594; $0.2&#8211;0.4 M / yr: a niche. The real potential: a <b>national MRV contract</b>, a monitoring layer on <b>gIQ</b>, licensing.</p></div>
+</div>
+<p class="s" style="font-size:16px;margin-top:12px">Prices and analyst time are hypotheses for a pilot to test. All 13 sources: docs/business_plan_draft.md.</p></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">14 / 16</p></div>
   <aside>We are deliberately honest that the regional market alone is small. The cost side is measured, not guessed: satellites and compute are nearly free; the cost is people and targeted high-resolution checks. That is what makes a national contract or platform deal viable.</aside>
 </section>

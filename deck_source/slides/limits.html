@@ -1,40 +1,27 @@
-<section id="limits" data-transition="fade" style="background:#EEF3F1; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:24px">
-  <div style="display:flex; flex-direction:column; gap:12px">
-    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Limitations</p>
-    <h2 style="font-size:54px; font-weight:700; line-height:1.12; color:#12302E">Where it breaks &#8212; and what we do not claim</h2>
-  </div>
-  <div style="display:flex; flex-direction:row; gap:20px">
-    <div style="display:flex; flex-direction:column; gap:16px; flex:1">
-    <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:12px; padding:18px 24px">
-      <p style="font-size:25px; font-weight:700; color:#12302E">Detection, not early warning</p>
-      <p style="font-size:22px; color:#4B6461; line-height:1.4">Alerts fire as works happen. We never claim to see stress before it is visible.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:12px; padding:18px 24px">
-      <p style="font-size:25px; font-weight:700; color:#12302E">10 m pixels</p>
-      <p style="font-size:22px; color:#4B6461; line-height:1.4">Patches under ~0.6&#160;ha and young plantings are missed &#8212; Bahrain&#8217;s small stands included.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:12px; padding:18px 24px">
-      <p style="font-size:25px; font-weight:700; color:#12302E">Imagery, not site visits</p>
-      <p style="font-size:22px; color:#4B6461; line-height:1.4">Five conversions confirmed on dated sub-metre captures; not yet on permits or field records.</p>
-    </div>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:16px; flex:1">
-    <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:12px; padding:18px 24px">
-      <p style="font-size:25px; font-weight:700; color:#12302E">Simulated losses</p>
-      <p style="font-size:22px; color:#4B6461; line-height:1.4">Canopy-cover loss, not leaf stress; every detection rate shown next to its chance rate; &#177;7 points.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:12px; padding:18px 24px">
-      <p style="font-size:25px; font-weight:700; color:#12302E">Hyperspectral</p>
-      <p style="font-size:22px; color:#4B6461; line-height:1.4">EnMAP confirms our indices but was not a better classifier (F1 0.74 vs 0.72).</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:12px; padding:18px 24px">
-      <p style="font-size:25px; font-weight:700; color:#12302E">Carbon</p>
-      <p style="font-size:22px; color:#4B6461; line-height:1.4">Area &#215; field density from four sites (2013&#8211;14): a stock with a range, never a sequestration rate.</p>
-    </div>
-    </div>
-  </div>
-  <p style="font-size:22px; color:#4B6461">We withdrew our own first backtest figure (58% / 90%) when a null test showed its metric counted alerts already running.</p>
-  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team Blue Athar</p>
-  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">12</p>
+<section id="limits" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">Limitations</p>
+  <h2 class="h">Where it breaks &#8212; and what we do not claim</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:22px;flex:1"><div class="card" style="display:flex;flex-direction:column;gap:16px;padding:30px 32px;justify-content:center"><div class="ic" style="background:linear-gradient(135deg,#0A3D91,#2F80ED)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><p class="t b" style="font-size:30px">Detection, not early warning</p><p class="s" style="font-size:22px">Alerts fire as works happen. We never claim to see stress before it is visible.</p></div><div class="card" style="display:flex;flex-direction:column;gap:16px;padding:30px 32px;justify-content:center"><div class="ic" style="background:linear-gradient(135deg,#0A3D91,#2F80ED)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><p class="t b" style="font-size:30px">10 m pixels</p><p class="s" style="font-size:22px">Patches under ~0.6 ha and young plantings are missed, Bahrain's small stands included.</p></div><div class="card" style="display:flex;flex-direction:column;gap:16px;padding:30px 32px;justify-content:center"><div class="ic" style="background:linear-gradient(135deg,#0A3D91,#2F80ED)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><p class="t b" style="font-size:30px">Imagery, not site visits</p><p class="s" style="font-size:22px">Conversions confirmed on dated sub-metre captures, not yet on permits or field records.</p></div><div class="card" style="display:flex;flex-direction:column;gap:16px;padding:30px 32px;justify-content:center"><div class="ic" style="background:linear-gradient(135deg,#0A3D91,#2F80ED)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><p class="t b" style="font-size:30px">Simulated losses</p><p class="s" style="font-size:22px">Canopy-cover loss, not leaf stress; every rate next to its chance rate.</p></div><div class="card" style="display:flex;flex-direction:column;gap:16px;padding:30px 32px;justify-content:center"><div class="ic" style="background:linear-gradient(135deg,#0A3D91,#2F80ED)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c3-12 5-12 7-6s4 6 6-2 4-6 7 2"/></svg></div><p class="t b" style="font-size:30px">Hyperspectral</p><p class="s" style="font-size:22px">EnMAP confirms our indices but was not a better classifier (F1 0.74 vs 0.72).</p></div><div class="card" style="display:flex;flex-direction:column;gap:16px;padding:30px 32px;justify-content:center"><div class="ic" style="background:linear-gradient(135deg,#0A3D91,#2F80ED)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></svg></div><p class="t b" style="font-size:30px">Carbon</p><p class="s" style="font-size:22px">Area &#215; field density from four sites (2013&#8211;14): a stock with a range, never a sequestration rate.</p></div></div>
+<div class="card dk" style="margin-top:22px;padding:18px 30px"><p class="t w" style="font-size:23px"><b>Rule we kept:</b> no detection rate without its chance rate; no claim of advance warning, field verification or species discrimination.</p></div></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">12 / 16</p></div>
   <aside>We name the limits before a judge does. Each one has a concrete next step in the roadmap: very-high-resolution or Satellite 813 data for small stands, partner records for confirmation, more EnMAP dates for leaf-level stress.</aside>
 </section>

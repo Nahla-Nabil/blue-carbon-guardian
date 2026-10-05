@@ -10,7 +10,7 @@ BLOB = {"5288132c4311e6fcdd211802c53d8052": "stand5_before_after_2021_2026.png",
         "4f7aa84e740446007eb703059f094f76": "enmap_stand5_two_epochs.png", "1d8e15d4b42a2099938d3a16c7d394b2": "dash_map_only.png"}
 ICON = {"CheckCircle": "&#10003;", "Activity": "&#8767;", "Search": "&#9906;", "Database": "&#9636;", "Chart": "&#9638;"}
 HEAD = ('<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700'
-        '&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><style>*{margin:0;box-sizing:border-box} body{width:1920px;height:1080px}'
+        '&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@600&display=swap"><style>*{margin:0;box-sizing:border-box} body{width:1920px;height:1080px}'
         ' section{width:1920px;height:1080px;position:relative;overflow:hidden} aside{display:none}'
         ' x-icon{display:inline-flex;align-items:center;justify-content:center;flex:none;font-weight:700;font-size:26px}'
         ' table{border-collapse:collapse;width:100%} th,td{padding:14px 20px;text-align:left} h1,h2,h3,p{margin:0}</style>')
@@ -29,10 +29,10 @@ with sync_playwright() as p:
         f = TMP / f"{sid}.html"; f.write_text(HEAD + html, encoding="utf-8")
         pg.goto(f.as_uri()); pg.wait_for_timeout(900)
         pg.evaluate("document.querySelectorAll('x-icon').forEach(e => e.innerHTML = e.dataset.g || '&#8226;')")
-        low = pg.evaluate("""() => { let m = 0; document.querySelectorAll('section *').forEach(e => { if (getComputedStyle(e).position === 'absolute' || e.closest('aside')) return;
+        low = pg.evaluate("""() => { let m = 0; document.querySelectorAll('section *').forEach(e => { for (let q = e; q && q.tagName !== 'SECTION'; q = q.parentElement) if (getComputedStyle(q).position === 'absolute') return; if (e.closest('aside')) return;
                  const r = e.getBoundingClientRect(); if (r.height > 0) m = Math.max(m, r.bottom); }); return [Math.round(m), [...document.images].every(i => i.complete && i.naturalWidth > 0)]; }""")
         png = TMP / f"{sid}.png"; pg.screenshot(path=str(png)); pngs.append(png)
-        ok = low[0] <= 920 and low[1]; bad += [] if ok else [sid]
+        ok = low[0] <= 1000 and low[1]; bad += [] if ok else [sid]
         print(f"{sid:16s} lowest content {low[0]:4d}px  images ok {low[1]}  {'ok' if ok else 'CHECK'}")
     b.close()
 imgs = [Image.open(x).convert("RGB") for x in pngs]

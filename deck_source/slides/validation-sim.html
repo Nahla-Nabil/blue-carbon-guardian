@@ -1,40 +1,35 @@
-<section id="validation-sim" data-transition="fade" style="background:#EEF3F1; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:28px">
-  <div style="display:flex; flex-direction:column; gap:14px">
-    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Validation 1 &#8212; Simulation</p>
-    <h2 style="font-size:56px; font-weight:700; line-height:1.15; color:#12302E">Can we detect a loss? Tested against pure chance</h2>
+<section id="validation-sim" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">Validation 3 &#183; simulation and unseen stands</p>
+  <h2 class="h">Can we detect a loss? Tested against pure chance</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div class="row" style="gap:30px;flex:1">
+  <div class="card" style="width:1080px;padding:22px 30px;display:flex;flex-direction:column;justify-content:center"><p class="lab" style="color:#1E6FD9">Artificial loss injected into real stands with no known change</p>
+    <p class="s" style="margin:8px 0 14px">A detection counts only if a <b>new</b> alert starts after the loss begins. The same test with <b>no</b> loss gives the chance rate. ~160&#8211;240 trials per row (&#177;7 points).</p><svg width="1000" height="420" viewBox="0 0 1000 420" font-family="IBM Plex Sans"><defs><linearGradient id="gs"><stop offset="0" stop-color="#0A3D91"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs><text x="0" y="44" font-size="23" font-weight="600" fill="#06235A">A tenth of a stand loses half its canopy</text><text x="0" y="74" font-size="20" fill="#4A5F86">within 60 days</text><rect x="440" y="18" width="380" height="44" rx="10" fill="url(#gs)"/><text x="832" y="50" font-size="30" font-weight="700" fill="#1E6FD9">73 %</text><rect x="440" y="70" width="68" height="30" rx="8" fill="#C9D3E3"/><text x="520" y="92" font-size="21" fill="#4A5F86">13 % by chance</text><text x="0" y="176" font-size="23" font-weight="600" fill="#06235A">A whole stand loses 10 % of its canopy</text><text x="0" y="206" font-size="20" fill="#4A5F86">within 6 months</text><rect x="440" y="150" width="328" height="44" rx="10" fill="url(#gs)"/><text x="780" y="182" font-size="30" font-weight="700" fill="#1E6FD9">63 %</text><rect x="440" y="202" width="187" height="30" rx="8" fill="#C9D3E3"/><text x="639" y="224" font-size="21" fill="#4A5F86">36 % by chance</text><text x="0" y="308" font-size="23" font-weight="600" fill="#06235A">A whole stand loses 20 % of its canopy</text><text x="0" y="338" font-size="20" fill="#4A5F86">within 6 months</text><rect x="440" y="282" width="432" height="44" rx="10" fill="url(#gs)"/><text x="884" y="314" font-size="30" font-weight="700" fill="#1E6FD9">83 %</text><rect x="440" y="334" width="187" height="30" rx="8" fill="#C9D3E3"/><text x="639" y="356" font-size="21" fill="#4A5F86">36 % by chance</text></svg></div>
+  <div class="col" style="flex:1;gap:18px;justify-content:space-between">
+    <div class="card" style="padding:22px 26px;flex:1;display:flex;flex-direction:column;justify-content:center"><p class="lab" style="color:#4A5F86">Calibrated &#183; 25 pilot stands</p><p class="big" style="margin-top:8px">0.96</p><p class="s">false-alarm episodes per stand-year (117 stand-years)</p></div>
+    <div class="card dk" style="padding:22px 26px;flex:1;display:flex;flex-direction:column;justify-content:center"><p class="lab" style="color:#8FD3FF">Unseen &#183; 65 stands, thresholds fixed</p><p class="bigw" style="margin-top:8px">0.79</p><p class="s ws">per stand-year over 305 stand-years, incl. Saudi Tarut Bay</p></div>
   </div>
-  <p style="font-size:27px; color:#12302E; line-height:1.5">We injected artificial canopy loss into the real 2020&#8211;2026 series of stands with no known change, holding false alarms to about one per stand per year. A detection counts only if a <b>new</b> alert starts after the loss begins. The same test with <b>no</b> loss gives the chance rate.</p>
-  <table style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#12302E">
-    <tr style="background:#0F2B29">
-      <th style="width:40%; color:#EAF3F0; font-weight:600">Simulated loss</th>
-      <th style="width:20%; color:#EAF3F0; font-weight:600">Alert</th>
-      <th style="width:20%; color:#EAF3F0; font-weight:600">Detected</th>
-      <th style="width:20%; color:#EAF3F0; font-weight:600">By chance</th>
-    </tr>
-    <tr style="background:#FFFFFF">
-      <td>A tenth of a stand loses half its canopy</td>
-      <td>within 60 days</td>
-      <td><b>73%</b></td>
-      <td>13%</td>
-    </tr>
-    <tr style="background:#F4F8F7">
-      <td>A whole stand loses 10% of its canopy</td>
-      <td>within 6 months</td>
-      <td><b>63%</b></td>
-      <td>36%</td>
-    </tr>
-    <tr style="background:#FFFFFF">
-      <td>A whole stand loses 20% of its canopy</td>
-      <td>within 6 months</td>
-      <td><b>83%</b></td>
-      <td>36%</td>
-    </tr>
-  </table>
-  <div style="background:#0F2B29; border-radius:16px; padding:28px 40px">
-    <p style="font-size:29px; font-weight:500; color:#EAF3F0; line-height:1.5">One alert rule for the whole product: the <b>stand average OR any 200&#160;m cell</b>. The cells catch partial losses &#8212; how all four real conversions happened &#8212; that a stand average dilutes.</p>
-  </div>
-  <p style="font-size:23px; color:#4B6461">We corrected our own earlier test: it counted alerts that were already running, and it had no chance baseline (we had reported 58% / 90%). About 160&#8211;240 trials per row, so &#177;7 points. Out of sample (65 unseen stands, thresholds fixed): 0.79 false-alarm episodes per stand-year vs 0.96 calibrated.</p>
-  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team Blue Athar</p>
-  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">11</p>
+</div>
+<div class="card" style="margin-top:18px;padding:14px 26px;display:flex;gap:18px;align-items:center;border-left:6px solid #FFB020"><div class="ic" style="background:linear-gradient(135deg,#FFB020,#FF8A00)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+  <p class="t" style="font-size:21px">We corrected our own first test: it counted alerts that were already running and had no chance baseline (it reported 58 % / 90 %). We withdrew it.</p></div></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">11 / 16</p></div>
   <aside>The honest version of this slide is stronger than the old one: every number has its chance baseline next to it. A partial loss inside a stand is caught about five times more often than chance within two months. Uniform thinning over a whole stand is harder, and we say so. No early-warning claim.</aside>
 </section>

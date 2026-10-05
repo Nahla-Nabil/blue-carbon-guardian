@@ -1,32 +1,38 @@
-<section id="problem" data-transition="fade" style="background:#EEF3F1; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px">
-  <div style="display:flex; flex-direction:column; gap:14px">
-    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">The Problem</p>
-    <h2 style="font-size:64px; font-weight:700; line-height:1.1; color:#12302E">Restoration is scaling faster than monitoring</h2>
+<section id="problem" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">The problem</p>
+  <h2 class="h">Restoration is scaling faster than monitoring</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div class="row" style="gap:40px;flex:1">
+  <div class="col" style="width:880px;gap:18px;justify-content:space-between">
+    <div class="card" style="display:flex;gap:26px;align-items:center;padding:22px 28px"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></svg></div><div style="width:270px;flex:none"><p class="big" style="font-size:54px;white-space:nowrap">100 M</p></div><div><p class="t b">mangroves pledged by the UAE by 2030</p><p class="s">COP26, 2021 &#183; Abu Dhabi Mangrove Initiative, 2022</p></div></div><div class="card" style="display:flex;gap:26px;align-items:center;padding:22px 28px"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></svg></div><div style="width:270px;flex:none"><p class="big" style="font-size:54px;white-space:nowrap">100 M+</p></div><div><p class="t b">mangroves pledged by Saudi Arabia by 2030</p><p class="s">Saudi Green Initiative</p></div></div><div class="card" style="display:flex;gap:26px;align-items:center;padding:22px 28px"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><div style="width:270px;flex:none"><p class="big" style="font-size:54px;white-space:nowrap">Feb 2026</p></div><div><p class="t b">first GCC mangrove monitoring guide</p><p class="s">EAD + IUCN Mangrove Specialist Group</p></div></div>
+    <div class="card dk" style="padding:24px 30px"><p class="lab" style="color:#8FD3FF">Today</p><p class="t w" style="margin-top:8px">Periodic field surveys and one-off studies; a 2025 regional review calls Gulf monitoring <b>&#8220;uneven&#8221;</b>. No standing alert for each stand, no independent check of carbon claims.</p></div>
   </div>
-  <div style="display:flex; flex-direction:row; gap:48px">
-    <div style="display:flex; flex-direction:column; gap:20px; flex:1.3">
-      <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:16px; padding:26px 30px">
-        <h3 style="font-size:34px; font-weight:700; color:#12302E">100 million mangroves by 2030</h3>
-        <p style="font-size:24px; color:#4B6461">UAE national pledge, COP26 2021 &#8212; Abu Dhabi Mangrove Initiative launched 2022</p>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:16px; padding:26px 30px">
-        <h3 style="font-size:34px; font-weight:700; color:#12302E">100+ million mangroves by 2030</h3>
-        <p style="font-size:24px; color:#4B6461">Saudi Arabia, Saudi Green Initiative</p>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:6px; background:#FFFFFF; border:1px solid #D8E3DF; border-radius:16px; padding:26px 30px">
-        <h3 style="font-size:32px; font-weight:700; color:#12302E">The regulator is asking for monitoring</h3>
-        <p style="font-size:24px; color:#4B6461">EAD + IUCN Mangrove Specialist Group: first mangrove monitoring guide for the GCC, Feb 2026</p>
-      </div>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:24px; flex:1; background:#0F2B29; border-radius:16px; padding:36px; justify-content:space-between">
-      <div style="display:flex; flex-direction:column; gap:8px">
-        <p style="font-size:44px; font-weight:700; color:#3FC0A4; font-family:'IBM Plex Mono', 'Courier New', monospace">SDG 13 &#183; 14 &#183; 15</p>
-        <p style="font-size:24px; color:#9FC1BB">Climate action &#183; Life below water &#183; Life on land</p>
-      </div>
-      <p style="font-size:28px; color:#EAF3F0; line-height:1.5">Today: periodic field surveys and one-off studies &#8212; a 2025 regional review calls Gulf MRV &#8220;uneven&#8221;. No standing alert layer for individual stands. No independent stock check for carbon claims.</p>
-    </div>
+  <div class="card" style="flex:1;padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between">
+    <p class="lab" style="color:#FF4D6D">This is happening now &#183; stand 5, Abu Dhabi</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:12px"><div style="position:relative"><img src="images/s2_stand5_2021-11.png" style="display:block;width:100%;height:232px;object-fit:cover;border-radius:12px"><span style="position:absolute;left:10px;top:10px;background:#06235A;color:#fff;font-weight:700;font-size:17px;padding:4px 10px;border-radius:8px">Nov 2021 &#183; intact</span></div><div style="position:relative"><img src="images/s2_stand5_2022-10.png" style="display:block;width:100%;height:232px;object-fit:cover;border-radius:12px"><span style="position:absolute;left:10px;top:10px;background:#FF4D6D;color:#fff;font-weight:700;font-size:17px;padding:4px 10px;border-radius:8px">Oct 2022 &#183; works start, alert fires</span></div><div style="position:relative"><img src="images/s2_stand5_2023-06.png" style="display:block;width:100%;height:232px;object-fit:cover;border-radius:12px"><span style="position:absolute;left:10px;top:10px;background:#06235A;color:#fff;font-weight:700;font-size:17px;padding:4px 10px;border-radius:8px">Jun 2023 &#183; canals cut</span></div><div style="position:relative"><img src="images/s2_stand5_2026-05.png" style="display:block;width:100%;height:232px;object-fit:cover;border-radius:12px"><span style="position:absolute;left:10px;top:10px;background:#06235A;color:#fff;font-weight:700;font-size:17px;padding:4px 10px;border-radius:8px">May 2026 &#183; development</span></div></div>
+    <p class="s" style="font-size:17px;margin-top:10px">Sentinel-2 true colour, contains modified Copernicus Sentinel data. Our alert began on 25 Oct 2022, during the works.</p>
+    <div style="display:flex;gap:10px;margin-top:14px"><span class="pill" style="background:#E6F4EA;color:#2E7D32;border-color:#BFE3C6">SDG 13</span><span class="pill">SDG 14</span><span class="pill" style="background:#EEF8E6;color:#3D7A1F;border-color:#CBE8B5">SDG 15</span></div>
   </div>
-  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Sources: ead.gov.ae &#183; admangroves.ae &#183; spa.gov.sa &#183; Frontiers Mar. Sci. 2025 (doi:10.3389/fmars.2025.1695426)</p>
-  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">02</p>
+</div>
+<p class="s" style="font-size:16px;margin-top:16px">Sources: ead.gov.ae &#183; admangroves.ae &#183; spa.gov.sa &#183; Frontiers in Marine Science 2025 (doi:10.3389/fmars.2025.1695426)</p></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">02 / 16</p></div>
   <aside>Two governments are pledging over 200 million mangroves combined by 2030. An independent scientific review says monitoring and verification for the region is still uneven. That gap is what we built for.</aside>
 </section>

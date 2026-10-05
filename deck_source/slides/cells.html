@@ -1,30 +1,38 @@
-<section id="cells" data-transition="fade" style="background:#EEF3F1; color:#12302E; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:28px">
-  <div style="display:flex; flex-direction:column; gap:14px">
-    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B7A66">Technical Innovation 2</p>
-    <h2 style="font-size:56px; font-weight:700; line-height:1.12; color:#12302E">A stand average hides partial loss. 200&#160;m cells do not.</h2>
+<section id="cells" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">Technical innovation 2</p>
+  <h2 class="h">A stand average hides partial loss. 200 m cells do not.</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div class="row" style="gap:30px;flex:1">
+  <div class="card" style="width:1010px;padding:16px;display:flex;flex-direction:column;justify-content:center"><img src="images/alert_story_2023-01.png" style="display:block;width:100%;border-radius:14px">
+    <p class="s" style="font-size:17px;margin-top:8px">Stand 5, winter 2022&#8211;23 (real data): 200 m cells turn red while the stand average barely moves. Contains modified Copernicus Sentinel data.</p></div>
+  <div class="col" style="flex:1;gap:16px;justify-content:space-between">
+    <div class="card" style="padding:20px 24px"><p class="big">8 of 28</p><p class="t" style="margin-top:8px">cells of stand 9 in severe decline while its average reads <b>&#8220;stable&#8221;</b></p></div>
+    <div class="card" style="padding:20px 24px"><p class="big">3 of 5</p><p class="t" style="margin-top:8px">real conversions found <b>only</b> by the cells (stands 12, 18, 6)</p></div>
+    <div class="card dk" style="padding:18px 24px"><p class="lab" style="color:#8FD3FF">One alert rule</p>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap"><span class="pill">stand &#8804; &#8722;1.5&#963;</span><b style="color:#8FD3FF;font-size:22px">OR</b><span class="pill">any cell &#8804; &#8722;3.5&#963;</span></div>
+      <p class="s ws" style="margin-top:10px;font-size:18px">calibrated together: 0.96 false-alarm episodes per stand-year</p></div>
   </div>
-  <div style="display:flex; flex-direction:row; gap:48px; align-items:flex-start">
-    <img src="images/dash_stand9_cells_chart.png" alt="Stand 9 in our dashboard: 200 metre cells coloured by condition, with the south-eastern cells in severe decline, and below it the stand-average and worst-cell alert scores from 2020 to 2026" style="width:600px; height:606px; object-fit:contain; border:1px solid #D8E3DF; border-radius:12px; background:#FFFFFF">
-    <div style="display:flex; flex-direction:column; gap:22px; flex:1">
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:27px; color:#12302E; line-height:1.45">Stand 9 reads &#8220;stable&#8221; on average &#8212; but <b>8 of its 28 cells</b> are in severe decline: exactly the part that converted.</p>
-      </div>
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:27px; color:#12302E; line-height:1.45">Three of our five real conversions (stands 12, 18 and 6) were found <b>only</b> by the cells.</p>
-      </div>
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:27px; color:#12302E; line-height:1.45">One alert rule: <b>stand average OR any cell</b>, calibrated together to about one false alarm per stand-year (0.96 measured).</p>
-      </div>
-      <div style="display:flex; flex-direction:row; align-items:flex-start; gap:14px">
-        <x-icon name="CheckCircle" style="color:#0B7A66; width:30px; height:30px"></x-icon>
-        <p style="font-size:27px; color:#12302E; line-height:1.45">A partial loss is caught within 60 days in <b>73%</b> of simulated cases with cells, <b>25%</b> with the stand average alone &#8212; 13% by chance.</p>
-      </div>
-    </div>
-  </div>
-  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team Blue Athar</p>
-  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">07</p>
+</div>
+<div class="card" style="margin-top:18px;padding:16px 28px;display:flex;gap:40px;align-items:center"><p class="t b" style="width:430px">Partial loss caught within 60 days (simulated)</p>
+  <div style="flex:1"><div style="height:24px;width:379.6px;border-radius:8px;background:linear-gradient(90deg,#0A3D91,#0EA5E9)"></div><p class="s" style="margin-top:6px"><b style="color:#06235A">73 %</b> stand + cells</p></div><div style="flex:1"><div style="height:24px;width:130.0px;border-radius:8px;background:#7FB6F5"></div><p class="s" style="margin-top:6px"><b style="color:#06235A">25 %</b> stand average alone</p></div><div style="flex:1"><div style="height:24px;width:67.60000000000001px;border-radius:8px;background:#C9D3E3"></div><p class="s" style="margin-top:6px"><b style="color:#06235A">13 %</b> by chance</p></div></div></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">07 / 16</p></div>
   <aside>Image: our dashboard for stand 9. Blue line: the worst 200 metre cell drops below its alert level from late 2022 while the stand average (black) barely moves. The alert levels were set only from false-alarm data, never tuned on detections.</aside>
 </section>
