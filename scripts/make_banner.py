@@ -21,7 +21,7 @@ LOGO = """<svg width="200" height="200" viewBox="0 0 240 240"><defs><linearGradi
 <circle cx="47" cy="68" r="10" fill="#A9E4FF"/></svg>"""
 
 HTML = f"""<!doctype html><meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>*{{margin:0;box-sizing:border-box}} body{{width:1920px;height:720px;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;color:#fff;
 background:radial-gradient(900px 520px at 78% 30%, rgba(76,169,255,.35), transparent 70%), radial-gradient(700px 500px at 12% 110%, rgba(0,212,255,.22), transparent 70%),
 linear-gradient(120deg,#030B26 0%,#06235A 38%,#0B4A9E 72%,#1477D6 100%)}}
@@ -57,10 +57,10 @@ linear-gradient(120deg,#030B26 0%,#06235A 38%,#0B4A9E 72%,#1477D6 100%)}}
   <div style="display:flex;gap:14px;font-size:12.5px;color:#D8EEFF;margin-top:4px;white-space:nowrap"><span><i class="sw" style="background:#4FA8F0"></i>monitored stand</span>
   <span><i class="sw" style="background:#FF6B85"></i>conversion confirmed (0.3&ndash;0.5 m)</span></div></div>
 <div style="position:absolute;left:90px;top:70px;display:flex;gap:44px;align-items:center">{LOGO}<div>
-  <div class="mono" style="font-size:19px;color:#8FD3FF">Arab Youth Space Hackathon 2026 · Challenge 813 · Team T0006</div>
+  <div class="mono" style="font-size:19px;color:#8FD3FF">Arab Youth Space Hackathon 2026 · Challenge 813</div>
   <div style="font-size:88px;font-weight:700;line-height:1.02;margin:10px 0 8px;background:linear-gradient(90deg,#FFFFFF 0%,#CBEBFF 60%,#7FD3FF 100%);-webkit-background-clip:text;color:transparent">Blue Carbon Guardian</div>
   <div style="font-size:30px;color:#D8EEFF">Tide-aware satellite monitoring for Gulf mangroves &mdash; from alert to evidence</div>
-  <div style="margin-top:16px"><span class="tag">Theme: Ecosystem Health &amp; Blue Carbon</span><span class="tag">by Nahla Nabil</span></div></div></div>
+  <div style="margin-top:16px"><span class="tag">Theme: Ecosystem Health &amp; Blue Carbon</span><span class="tag" style="background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.55);color:#fff;font-weight:600">Team Blue Athar · <span style="font-family:'IBM Plex Sans Arabic',sans-serif">الأثر الأزرق</span></span><span class="tag">by Nahla Nabil</span></div></div></div>
 <div style="position:absolute;left:90px;top:440px;display:flex;gap:16px">
   <div class="chip"><b>&minus;29&ndash;35%</b><span>noise after tide model</span><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7FD3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 18c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg></div>
   <div class="chip"><b>91 stands</b><span>Abu Dhabi + Tarut Bay (KSA)</span><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7FD3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>

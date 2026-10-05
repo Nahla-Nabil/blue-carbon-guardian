@@ -10,7 +10,7 @@ Screens: the dashboard (`dashboard/index.html`) and the deck (`deck_source/`). S
 | 0:55-1:20 | Case-study card: stands 5, 12, 18 | "We found five real conversions inside our stands, all confirmed on sub-metre satellite images. Three of them only the cells caught. We claim detection, not advance warning, and every simulated detection rate is shown next to the rate by chance." |
 | 1:20-1:35 | EnMAP card, then carbon | "An independent hyperspectral satellite, EnMAP, confirms our indices and shows stand 5 turning from vegetation into sand. Carbon comes from field plots: 108 tonnes per hectare, with a range." |
 | 1:35-1:50 | A site report | "Each stand gets an automatic report: where to inspect, what changed, what is at stake. Every sentence traces back to a number." |
-| 1:50-2:00 | Roadmap, team | "Next: a pilot with a partner, Satellite 813 on gIQ, and scale across the Gulf. Built by Nahla Nabil, Team T0006." |
+| 1:50-2:00 | Roadmap, team | "Next: a pilot with a partner, Satellite 813 on gIQ, and scale across the Gulf. Built by Nahla Nabil, Team Blue Athar." |
 
 Do NOT say: "before it is visible", "early warning", "hyperspectral improves classification", "precise sequestration rate", "58 % / 90 %".
 Footer on hyperspectral frames: "Contains modified EnMAP data (c) DLR 2022, 2025."

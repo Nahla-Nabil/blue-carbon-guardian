@@ -12,8 +12,27 @@
   <img src="https://img.shields.io/badge/Confirmed-5%20real%20events%20at%200.3--0.5%20m-0EA5E9" alt="Events">
   <img src="https://img.shields.io/badge/License-MIT-0B2A5B" alt="MIT">
 </p>
+<p align="center">
+  <img src="https://img.shields.io/badge/SDG%2013-Climate%20Action-3F7E44" alt="SDG 13">
+  <img src="https://img.shields.io/badge/SDG%2014-Life%20Below%20Water-0A97D9" alt="SDG 14">
+  <img src="https://img.shields.io/badge/SDG%2015-Life%20on%20Land-56C02B" alt="SDG 15">
+</p>
 
-<p align="center"><b>Team T0006 · Nahla Nabil · Country representation: Palestine</b></p>
+<p align="center"><b>Team Blue Athar · الأثر الأزرق</b> · Nahla Nabil · Country representation: Palestine<br>
+<sub><i>"Every lost mangrove leaves a trace (athar). We find it from space."</i></sub></p>
+
+<p align="center">
+<a href="#judges">🏆 For the judges</a> ·
+<a href="#1-business-use-case">💼 Use case</a> ·
+<a href="#2-the-problem">🌱 Problem</a> ·
+<a href="#3-data-used">🛰️ Data</a> ·
+<a href="#4-technical-approach">⚙️ Approach</a> ·
+<a href="#5-installation">📦 Install</a> ·
+<a href="#6-how-to-run">▶️ Run</a> ·
+<a href="#7-example-input-and-output">🖼️ Examples</a> ·
+<a href="#8-results-and-limitations">📊 Results</a> ·
+<a href="#9-author-tools-licence-and-attribution">👩‍💻 Author</a>
+</p>
 
 > **We watch Gulf mangroves from space, stand by stand and in 200 m cells.** The system flags losses with a calibrated false-alarm rate, shows where
 > inside a stand to inspect, and reports the carbon at stake. It runs on free Sentinel-2 imagery with a tide model, and it is checked against EnMAP
@@ -34,10 +53,35 @@ Contains modified Copernicus Sentinel data 2021–2026. Built by <code>scripts/a
 <td align="center"><b>≈ 247 kt C</b><br><sub>carbon stock, pilot area</sub></td></tr>
 </table>
 
-<p align="center"><a href="docs/demo_video.mp4"><img src="docs/assets/demo_preview.gif" alt="Demo video preview: click to open the full 2-minute video" width="80%"></a><br>
-<sub>▶ <a href="docs/demo_video.mp4"><b>Watch the 2:14 demo video</b></a> (English narration, Arabic subtitles) · <a href="docs/slides.pdf"><b>Slides (PDF)</b></a> ·
-<a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> · <a href="dashboard/index.html"><b>Dashboard</b></a> (download and open)</sub></p>
+<!-- VIDEO_PLAYER -->
+<p align="center"><a href="docs/demo_video.mp4"><img src="docs/assets/video_poster.png" alt="Demo video: click to play the 2-minute video" width="80%"></a><br>
+<sub>▶ <a href="docs/demo_video.mp4"><b>Play the 2:14 demo video</b></a> (English narration, Arabic subtitles) ·
+<a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
+<a href="dashboard/index.html"><b>Dashboard</b></a> (download and open)</sub></p>
 
+<a id="judges"></a>
+## 🏆 For the judges: each criterion and where the evidence is
+| Criterion | What we show | Evidence |
+|---|---|---|
+| 💡 **Creativity / innovation** | A **tide-aware** monitor: on Gulf tidal flats the tide, not the trees, drives most index noise, so we model it out. A **200 m cell** trigger finds partial losses that stand averages hide. | 29-35 % less noise; 3 of the 5 real losses were seen **only** by cells ([§8](#8-results-and-limitations)) |
+| 🧪 **Validity / technical soundness** | Every detection rate is quoted **with its chance rate**; thresholds tested on stands the model never saw; real events confirmed on dated sub-metre imagery; one of our own early claims withdrawn | 73 % vs 13 % by chance; 0.79 false alarms per stand-year out of sample; 5 conversions confirmed ([§8](#8-results-and-limitations)) |
+| 🌈 **Hyperspectral bonus** | Two EnMAP epochs (224 bands) over the pilot: an independent check of Sentinel-2 and a spectral read of what the land became | r = 0.84-0.99 with Sentinel-2; stand 5 turns from a vegetation to a mineral spectrum ([§8](#what-hyperspectral-added)) |
+| 🛠️ **Practical application / product** | Self-contained dashboard, automatic site reports, alert API concept; the notebook runs offline in about 25 s | [`dashboard/`](dashboard/index.html), [`reports/`](reports/), [`docs/api_alert_concept.md`](docs/api_alert_concept.md), [how a user receives it](#how-a-user-receives-it) |
+| 🌍 **Benefits, relevance, SDGs** | UAE and Saudi pledges of 100 M mangroves each by 2030; Abu Dhabi's Gulf mangrove monitoring guide (Feb 2026); carbon at stake per stand | ≈ 247 kt C in the pilot area; SDG 13, 14, 15 ([§2](#2-the-problem)) |
+| 💼 **Business viability** | Three priced tiers (hypotheses for a pilot), measured cost to serve, competitors named | about USD 3.3k cost per site per year; [`docs/business_plan_draft.md`](docs/business_plan_draft.md) (13 sources) |
+| 🎤 **Presentation** | 2-minute video, 16 slides in the guide's order, this README | [`docs/demo_video.mp4`](docs/demo_video.mp4), [`docs/slides.pdf`](docs/slides.pdf) |
+
+**What is new compared with what exists today**
+| | Field surveys | One-off satellite maps | Free loss alerts (Global Mangrove Watch) | **Blue Carbon Guardian** |
+|---|:-:|:-:|:-:|:-:|
+| How often | campaigns | yearly or less | monthly | **every ~5 days** |
+| Corrects for the tide | n/a | not usually | not documented | ✅ |
+| Says *where inside* a stand | ✅ | ➖ | ➖ | ✅ 200 m cells |
+| Published false-alarm rate | n/a | n/a | accuracy only | ✅ about 1 per stand-year |
+| Carbon at stake per alert | ➖ | ➖ | ➖ | ✅ |
+| Gulf coverage | ✅ | ✅ | not confirmed | ✅ Abu Dhabi + Tarut Bay |
+
+<sub>We see Global Mangrove Watch as complementary, not as a rival (details and sources in the business plan).</sub>
 
 ---
 
@@ -115,6 +159,26 @@ flowchart LR
 Code: [`src/bcg/monitor.py`](src/bcg/monitor.py) (core) and [`analysis/`](analysis/) (34 numbered scripts with a summary per result; index in
 [`analysis/README.md`](analysis/README.md)).
 
+<a id="how-a-user-receives-it"></a>
+### How a user receives it
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"actorBkg":"#E8F2FF","actorBorder":"#1E6FD9","actorTextColor":"#06235A","actorLineColor":"#9CC8F0","signalColor":"#1E6FD9","signalTextColor":"#06235A","labelBoxBkgColor":"#D6E8FF","labelBoxBorderColor":"#1E6FD9","loopTextColor":"#06235A"}}}%%
+sequenceDiagram
+    participant S as 🛰️ Sentinel-2 (every ~5 days)
+    participant P as ⚙️ Blue Carbon Guardian
+    participant A as 🏛️ Agency / project developer
+    participant I as 👷 Inspector
+    S->>P: new scene (cloud-optimised, read in place)
+    P->>P: tide-aware model per stand and per 200 m cell
+    alt alert: stand ≤ −1.5σ OR any cell ≤ −3.5σ
+        P->>P: check the flagged cells on sub-metre imagery (Evidence tier)
+        P->>A: alert by email / JSON API, cell map, carbon at stake
+        A->>I: inspect only the flagged cells
+    else no alert
+        P->>A: monthly site report (condition, trend, carbon)
+    end
+```
+
 ## 5. Installation
 Requires **Python 3.12** (tested on 3.12.10). No GPU, no credentials, no API keys.
 ```bash
@@ -167,6 +231,43 @@ Full pipeline from the satellite archive (needs internet; about 20-60 min per Se
 | Stand 5 loss | **26-62 ha** | two independent methods (Sentinel-2 change indicator, EnMAP pixels) |
 | Carbon stock, pilot area | **≈ 247 kt C** (180-316) | 24 field plots near the stands |
 
+### When did the alert start? (dated sub-metre captures)
+Each bar is the gap between the last capture showing intact mangrove and the first showing works. The red diamond is the start of our alert.
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"doneTaskBkgColor":"#9CC8F0","doneTaskBorderColor":"#1E6FD9","critBkgColor":"#FF4D6D","critBorderColor":"#C8384F","sectionBkgColor":"#F2F7FF","altSectionBkgColor":"#FFFFFF"}}}%%
+gantt
+    dateFormat YYYY-MM-DD
+    axisFormat %b %Y
+    section Stand 5
+    intact to works visible :done, 2022-03-28, 2023-02-22
+    alert :milestone, crit, 2022-10-25, 0d
+    section Stand 9
+    intact to works visible :done, 2022-03-28, 2023-02-22
+    alert :milestone, crit, 2022-12-07, 0d
+    section Stand 12
+    intact to works visible :done, 2022-03-28, 2023-02-22
+    alert :milestone, crit, 2022-12-17, 0d
+    section Stand 6
+    intact to works visible :done, 2022-03-28, 2023-02-22
+    alert :milestone, crit, 2023-02-17, 0d
+    section Stand 18
+    intact to works visible :done, 2023-11-14, 2025-01-06
+    alert :milestone, crit, 2024-10-29, 0d
+```
+<sub>Captures: WorldView-2/3 and Legion-1, 0.3-0.5 m, via Esri World Imagery Wayback (viewed only). Stand 9: works were under way next to the stand.
+This is detection **during** the works, not advance warning. Details: [`analysis/34_vhr_summary.md`](analysis/34_vhr_summary.md).</sub>
+
+<a id="what-hyperspectral-added"></a>
+### What hyperspectral (EnMAP) added
+<p align="center"><img src="docs/assets/enmap_stand5.png" alt="EnMAP spectra of stand 5 in November 2022 and April 2025: persistent pixels keep a vegetation spectrum, converted pixels change to a bright mineral-like spectrum" width="95%"><br>
+<sub>Stand 5 on EnMAP, Nov 2022 vs Apr 2025: persistent pixels keep a vegetation spectrum; the 685 converted pixels (about 62 ha) turn into a bright,
+mineral-like one (sand and fill). Contains modified EnMAP data © DLR 2022, 2025.</sub></p>
+
+- **Independent check:** EnMAP-derived indices match our Sentinel-2 indices on the same dates (r = 0.84-0.99 across stands).
+- **What the land became:** the converted part of stand 5 has a mineral spectrum, which points to reclamation, not dieback.
+- **Honest result:** as a mangrove classifier, EnMAP did not beat multispectral bands here (F1 0.74 vs 0.72). Satellite 813 (~205 bands) slots into the
+  same step at incubation.
+
 **⚠️ Limits, stated honestly:**
 - The alert is detection of works as they happen, **not advance warning**.
 - Patches under about 0.6 ha and young plantings are not seen at 10 m.
@@ -179,7 +280,7 @@ Full pipeline from the satellite archive (needs internet; about 20-60 min per Se
 - We **withdrew** our own first backtest figure (58 % / 90 %) when a null test showed that its metric counted alerts that were already running.
 
 ## 9. Author, tools, licence and attribution
-**👩‍💻 Author: Nahla Nabil** (Bahrain), Team T0006. Idea, satellite data pipeline, tide-aware model, validation, dashboard and business case.
+**👩‍💻 Author: Nahla Nabil** (Bahrain), Team Blue Athar. Idea, satellite data pipeline, tide-aware model, validation, dashboard and business case.
 
 | 🧰 Tools | Used for |
 |---|---|
@@ -216,4 +317,18 @@ deck_source/                              slide sources
 video/                                    demo-video sources (narration EN + AR, motion graphics, renderer)
 scripts/                                  sample-input and notebook builders, slide export, README visuals (banner, alert story), EnMAP download helper
 ```
+</details>
+
+<details><summary><b>✅ PoC submission checklist (official guide)</b></summary>
+
+| Requirement | Where |
+|---|---|
+| README with the 10 points, in order | this file: title block, then sections 1-9 |
+| Functioning notebook with outputs committed | [`notebooks/01_blue_carbon_guardian.ipynb`](notebooks/01_blue_carbon_guardian.ipynb) |
+| Pinned `requirements.txt` and Python version | [`requirements.txt`](requirements.txt), Python 3.12 |
+| Example input | [`data/sample_input/`](data/sample_input/) (real data + exact STAC parameters) |
+| Example output | [`results/`](results/) |
+| Slides PDF | [`docs/slides.pdf`](docs/slides.pdf) |
+| Licence and data attribution | [`LICENSE`](LICENSE), section 3 |
+| No credentials, no restricted imagery | raw EnMAP scenes and Esri imagery are not in the repository |
 </details>

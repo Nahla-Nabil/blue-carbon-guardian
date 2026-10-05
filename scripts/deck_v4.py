@@ -15,7 +15,7 @@ def sec(id_, bg, gap):
             f"padding:128px 128px 160px; display:flex; flex-direction:column; gap:{gap}px\">")
 
 
-FOOT = ('  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team T0006</p>\n'
+FOOT = ('  <p style="position:absolute; left:128px; bottom:64px; font-size:24px; color:#4B6461">Blue Carbon Guardian &#183; Team Blue Athar</p>\n'
         '  <p style="position:absolute; right:128px; bottom:64px; font-size:24px; color:#4B6461">00</p>')
 
 # ---- use case -------------------------------------------------------------------------------------------------------------------------------
@@ -119,9 +119,9 @@ open("slides/limits.html", "w", encoding="utf-8").write(f"""{sec("limits", "#EEF
 
 # ---- cover: theme + country -----------------------------------------------------------------------------------------------------------------
 p = "slides/cover.html"; t = open(p, encoding="utf-8").read()
-a = "Arab Youth Space Hackathon &#183; Challenge 813 &#183; Team T0006</p>"
+a = "Arab Youth Space Hackathon &#183; Challenge 813 &#183; Team Blue Athar</p>"
 if a in t:
-    t = t.replace(a, "Arab Youth Space Hackathon &#183; Challenge 813 &#183; Team T0006 &#183; Palestine</p>\n  <p style=\"font-size:26px; font-weight:600; color:#9FC1BB\">Theme: Ecosystem Health, Biodiversity &amp; Blue Carbon</p>")
+    t = t.replace(a, "Arab Youth Space Hackathon &#183; Challenge 813 &#183; Team Blue Athar &#183; Palestine</p>\n  <p style=\"font-size:26px; font-weight:600; color:#9FC1BB\">Theme: Ecosystem Health, Biodiversity &amp; Blue Carbon</p>")
 open(p, "w", encoding="utf-8").write(t)
 
 # ---- order, sections, renumber ---------------------------------------------------------------------------------------------------------------

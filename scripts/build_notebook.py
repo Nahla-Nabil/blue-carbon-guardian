@@ -7,7 +7,7 @@ md, code = nbf.v4.new_markdown_cell, nbf.v4.new_code_cell
 cells = [
 md("""# Blue Carbon Guardian: tide-aware mangrove monitoring (main analysis)
 
-**Team T0006 · Arab Youth Space Hackathon 2026, Challenge 813 · Theme: Ecosystem Health, Biodiversity & Blue Carbon**
+**Team Blue Athar · Arab Youth Space Hackathon 2026, Challenge 813 · Theme: Ecosystem Health, Biodiversity & Blue Carbon**
 
 This notebook reproduces the headline results of the proof of concept from the small example input in `data/sample_input/`, which is real Sentinel-2 L2A
 data for 25 mangrove stands near Abu Dhabi, 2020-2026:

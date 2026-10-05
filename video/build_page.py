@@ -73,7 +73,7 @@ const intro1 = el("intro1", `<div class="mono" style="font-size:26px">Mangrove p
   <div style="font-size:40px;color:#9FC1BB">mangroves · UAE <span style="color:#3FC0A4">+</span> Saudi Arabia</div>`, {left:"160px", top:"300px"});
 const intro2 = el("intro2", `<div style="font-size:64px;font-weight:300;line-height:1.25;max-width:1500px">Who checks, <b style="font-weight:700;color:#9FE7D5">stand by stand</b>, that they survive &mdash;<br>and how much carbon they hold?</div>`, {left:"160px", top:"360px"});
 const title = el("title", `<div style="display:flex;align-items:center;gap:60px"><div id="logoT">${LOGO}</div><div>
-  <div class="mono" style="font-size:24px">Arab Youth Space Hackathon 2026 · Challenge 813 · Team T0006</div>
+  <div class="mono" style="font-size:24px">Arab Youth Space Hackathon 2026 · Challenge 813 · Team Blue Athar</div>
   <div class="big" style="font-size:132px;line-height:1.02;margin:14px 0">Blue Carbon<br>Guardian</div>
   <div style="font-size:40px;color:#9FC1BB">Tide-aware satellite monitoring for Gulf mangroves</div></div></div>`, {left:"170px", top:"250px"});
 const tideL = el("tideL", `<svg width="760" height="520" viewBox="0 0 760 520"><defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FA9C8" stop-opacity=".85"/><stop offset="1" stop-color="#0B3B4A" stop-opacity=".9"/></linearGradient></defs>
@@ -119,7 +119,7 @@ const nx = el("nx", `<div class="mono" style="font-size:26px;margin-bottom:34px"
   `</div><div style="font-size:34px;margin-top:50px;color:#EAF3F0">Free satellite data · compute &lt; USD 5 per site-year (measured) · cost to serve ≈ USD 3.3k</div>`, {left:"150px", top:"330px"});
 const outro = el("outro", `<div style="display:flex;flex-direction:column;align-items:center;text-align:center"><div id="logoO">${LOGO}</div>
   <div class="big" style="font-size:110px;margin-top:20px">Blue Carbon Guardian</div><div style="font-size:48px;color:#9FE7D5;font-style:italic;margin-top:10px">From light to insight.</div>
-  <div style="font-size:32px;color:#EAF3F0;margin-top:40px">Nahla Nabil · Team T0006 · Arab Youth Space Hackathon 2026 · Challenge 813</div>
+  <div style="font-size:32px;color:#EAF3F0;margin-top:40px">Nahla Nabil · Team Blue Athar · Arab Youth Space Hackathon 2026 · Challenge 813</div>
   <div style="font-size:22px;color:#7E9B97;margin-top:30px">Contains modified Copernicus Sentinel data 2020–2026 · Contains modified EnMAP data © DLR 2022, 2025 · ESA WorldCover 2021 (CC BY 4.0) · Schile et al. 2016 (CC0)</div></div>`,
   {left:"0", top:"170px", width:"1920px"});
 
