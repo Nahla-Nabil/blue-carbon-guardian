@@ -55,7 +55,7 @@ showing works (Feb 2023). Contains modified Copernicus Sentinel data 2021–2026
 
 https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
 
-<p align="center"><sub><a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
+<p align="center"><sub><a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="docs/summary_ar.pdf"><b>Arabic summary · ملخص عربي (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
 <a href="dashboard/index.html"><b>Dashboard</b></a> (download and open) · <a href="docs/demo_video.mp4">full-resolution video file</a></sub></p>
 
 ---
