@@ -1,11 +1,13 @@
 """Render deck_source/ (Slides Artifact format) slide by slide at 1920 x 1080 in Chrome, check that no slide overflows, and export docs/slides.pdf
 (the PDF attached to the submission form). Images referenced as /_blob/<id> are mapped to deck_source/images/; <x-icon> is drawn as a simple glyph.
-Run from the repository root: python scripts/export_slides_pdf.py   (needs: pip install playwright; python -m playwright install chromium, or Chrome)"""
+Run from the repository root: python scripts/export_slides_pdf.py [deck_dir] [output.pdf]
+(defaults: deck_source docs/slides.pdf; the final-judging deck is: python scripts/export_slides_pdf.py deck_final docs/final_deck.pdf)  (needs: pip install playwright; python -m playwright install chromium, or Chrome)"""
 import json, pathlib, sys
 from PIL import Image
 from playwright.sync_api import sync_playwright
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent; DECK = ROOT / "deck_source"; OUT = ROOT / "docs"; TMP = OUT / "_slide_png"; TMP.mkdir(parents=True, exist_ok=True)
+ROOT = pathlib.Path(__file__).resolve().parent.parent; DECK = ROOT / (sys.argv[1] if len(sys.argv) > 1 else "deck_source"); PDF = ROOT / (sys.argv[2] if len(sys.argv) > 2 else "docs/slides.pdf")
+IMG = ROOT / "deck_source" / "images"; OUT = ROOT / "docs"; TMP = OUT / "_slide_png"; TMP.mkdir(parents=True, exist_ok=True)
 BLOB = {"5288132c4311e6fcdd211802c53d8052": "stand5_before_after_2021_2026.png", "cdb6f513d7b5b62df43f149147663260": "stand9_before_after_2020_2026.png",
         "4f7aa84e740446007eb703059f094f76": "enmap_stand5_two_epochs.png", "1d8e15d4b42a2099938d3a16c7d394b2": "dash_map_only.png"}
 ICON = {"CheckCircle": "&#10003;", "Activity": "&#8767;", "Search": "&#9906;", "Database": "&#9636;", "Chart": "&#9638;"}
@@ -22,8 +24,8 @@ with sync_playwright() as p:
     pg = b.new_page(viewport={"width": 1920, "height": 1080})
     for sid in order:
         html = (DECK / "slides" / f"{sid}.html").read_text(encoding="utf-8")
-        for k, v in BLOB.items(): html = html.replace(f"/_blob/{k}", (DECK / "images" / v).as_uri())
-        html = html.replace('src="images/', f'src="{(DECK / "images").as_uri()}/')
+        for k, v in BLOB.items(): html = html.replace(f"/_blob/{k}", (IMG / v).as_uri())
+        html = html.replace('src="images/', f'src="{IMG.as_uri()}/')
         for name, glyph in ICON.items(): html = html.replace(f'<x-icon name="{name}"', f'<x-icon name="{name}"').replace(f'name="{name}" style="', f'name="{name}" data-g="{glyph}" style="')
         html = html.replace("></x-icon>", "></x-icon>")
         f = TMP / f"{sid}.html"; f.write_text(HEAD + html, encoding="utf-8")
@@ -36,6 +38,6 @@ with sync_playwright() as p:
         print(f"{sid:16s} lowest content {low[0]:4d}px  images ok {low[1]}  {'ok' if ok else 'CHECK'}")
     b.close()
 imgs = [Image.open(x).convert("RGB") for x in pngs]
-imgs[0].save(OUT / "slides.pdf", save_all=True, append_images=imgs[1:], resolution=144)
-print(f"docs/slides.pdf: {len(imgs)} pages" + (f" | CHECK: {bad}" if bad else " | all slides fit"))
+imgs[0].save(PDF, save_all=True, append_images=imgs[1:], resolution=144)
+print(f"{PDF.relative_to(ROOT)}: {len(imgs)} pages" + (f" | CHECK: {bad}" if bad else " | all slides fit"))
 sys.exit(1 if bad else 0)

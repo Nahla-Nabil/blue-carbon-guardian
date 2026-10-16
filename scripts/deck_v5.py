@@ -455,6 +455,7 @@ S["team"] = dark("team", f"""
     <p class="mono" style="font-size:22px;color:#BFDFFF;margin-top:44px">nahla-nabil.github.io/blue-carbon-guardian &#183; github.com/Nahla-Nabil/blue-carbon-guardian</p>
   </div>""")
 
-for sid in ORDER:
-    (SL / f"{sid}.html").write_text(S[sid], encoding="utf-8")
-print("wrote", len(ORDER), "slides")
+if __name__ == "__main__":  # importable by scripts/deck_final.py without rewriting the PoC deck
+    for sid in ORDER:
+        (SL / f"{sid}.html").write_text(S[sid], encoding="utf-8")
+    print("wrote", len(ORDER), "slides")

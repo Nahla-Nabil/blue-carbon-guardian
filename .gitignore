@@ -27,3 +27,10 @@ analysis/data/substand/cells.npy
 analysis/data/scaleout_cells/*_cells.npy
 # demo-video intermediates (rebuilt by video/make_audio.py, build_page.py, render.py)
 video/build/
+
+deck_pptx/node_modules/
+deck_pptx/build/
+
+# private notes copy and PowerPoint lock files
+AGENTS.md
+~$*

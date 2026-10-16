@@ -57,7 +57,7 @@ showing works (Feb 2023). Contains modified Copernicus Sentinel data 2021–2026
 
 https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
 
-<p align="center"><sub><a href="docs/slides.pdf"><b>Slides (PDF)</b></a> · <a href="docs/summary_ar.pdf"><b>Arabic summary · ملخص عربي (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
+<p align="center"><sub><a href="docs/Blue_Carbon_Guardian_final.pptx"><b>Final pitch deck (PowerPoint)</b></a> · <a href="docs/Blue_Carbon_Guardian_final.pdf"><b>Final deck (PDF)</b></a> · <a href="docs/slides.pdf">PoC slides (PDF)</a> · <a href="docs/summary_ar.pdf"><b>Arabic summary · ملخص عربي (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
 <a href="https://nahla-nabil.github.io/blue-carbon-guardian/"><b>Live website &amp; monitor</b></a> · <a href="docs/demo_video.mp4">full-resolution video file</a></sub></p>
 
 ---
@@ -77,6 +77,28 @@ The product, open in any browser with nothing to install (hosted on GitHub Pages
 
 ---
 
+## 🎤 Final pitch deck (final judging, October 2026)
+An 8-minute pitch built around the final evaluation criteria, with the live website demo early in the talk.
+
+| File | What it is |
+|---|---|
+| [`docs/Blue_Carbon_Guardian_final.pptx`](docs/Blue_Carbon_Guardian_final.pptx) | 16 slides (15 + one backup) with Morph transitions, automatic entrance animations and embedded videos: an animated satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo as a backup |
+| [`docs/Blue_Carbon_Guardian_final.pdf`](docs/Blue_Carbon_Guardian_final.pdf) | The same deck as a PDF (still frames in place of the videos) |
+| [`docs/pitch_script.md`](docs/pitch_script.md) | The timed talk track (about 7.5 minutes): what to say and what to click, also stored in the deck's speaker notes |
+
+| Final criterion | Slides |
+|---|---|
+| Team capability and expertise | 14 (roles, responsibilities, expertise; the gap we will close in incubation) |
+| Quality of space-data use and analytics | 5 (five independent sources, quality control), 6 (EnMAP hyperspectral), 7 (tide model) |
+| Problem relevance, user need, impact | 2 (problem and what we solve), 4 (users and decisions), 12 (carbon and business) |
+| Innovation and differentiation | 7 (tide model), 8 (200 m cells), 9 (comparison with what exists today) |
+| Scientific validity and feasibility | 10 (five real events on sub-metre imagery), 11 (rates against chance, unseen stands, what we do not claim) |
+| Development potential, documentation, reproducibility | 13 (public code, 24-second re-run, clean-machine test; scale-out and incubation plan) |
+
+Rebuild: `python deck_pptx/assets.py`, `python deck_pptx/media.py`, `python scripts/deck_final.py`, then in `deck_pptx/`: `npm install`, `node build.js`, `python animate.py`, and `powershell -File render.ps1` (needs PowerPoint on Windows, with PowerPoint closed; it embeds the videos and exports the PDF).
+
+---
+
 <a id="judges"></a>
 ## 🏆 For the judges: each criterion and where the evidence is
 | Criterion | What we show | Evidence |
@@ -87,7 +109,7 @@ The product, open in any browser with nothing to install (hosted on GitHub Pages
 | 🛠️ **Practical application / product** | Self-contained dashboard, automatic site reports, alert API concept; the notebook runs offline in about 25 s | [`dashboard/`](dashboard/index.html), [`reports/`](reports/), [`docs/api_alert_concept.md`](docs/api_alert_concept.md), [how a user receives it](#how-a-user-receives-it) |
 | 🌍 **Benefits, relevance, SDGs** | UAE and Saudi pledges of 100 M mangroves each by 2030; Abu Dhabi's Gulf mangrove monitoring guide (Feb 2026); carbon at stake per stand | ≈ 247 kt C in the pilot area; SDG 13, 14, 15 ([§2](#2-the-problem)) |
 | 💼 **Business viability** | Three priced tiers (hypotheses for a pilot), measured cost to serve, competitors named | about USD 3.3k cost per site per year; [`docs/business_plan_draft.md`](docs/business_plan_draft.md) (13 sources) |
-| 🎤 **Presentation** | 2-minute video, 16 slides in the guide's order, this README | [`docs/demo_video.mp4`](docs/demo_video.mp4), [`docs/slides.pdf`](docs/slides.pdf) |
+| 🎤 **Presentation** | Final pitch deck with live demo and embedded videos, 2-minute video, PoC slides, this README | [`docs/Blue_Carbon_Guardian_final.pptx`](docs/Blue_Carbon_Guardian_final.pptx), [`docs/demo_video.mp4`](docs/demo_video.mp4), [`docs/slides.pdf`](docs/slides.pdf) |
 
 **What is new compared with what exists today**
 | | Field surveys | One-off satellite maps | Free loss alerts (Global Mangrove Watch) | **Blue Carbon Guardian** |
@@ -330,8 +352,10 @@ src/bcg/monitor.py                        core model (tide-aware monitor, condit
 analysis/                                 full pipeline: 34 numbered scripts, a summary .md per result, data/ tables, figures/
 dashboard/index.html                      product demo (self-contained)
 reports/                                  automatic per-stand site reports
-docs/                                     slides.pdf, demo_video.mp4, business plan, API and alert concept, README assets
-deck_source/                              slide sources
+docs/                                     final pitch deck (.pptx/.pdf), pitch script, PoC slides.pdf, demo_video.mp4, business plan, API and alert concept, README assets
+deck_source/                              PoC slide sources
+deck_final/                               final-judging slides (HTML version), built by scripts/deck_final.py
+deck_pptx/                                final pitch deck as PowerPoint: assets, videos, slides, animations (build steps above)
 video/                                    demo-video sources (narration EN + AR, motion graphics, renderer)
 scripts/                                  sample-input and notebook builders, slide export, README visuals (banner, alert story), EnMAP download helper
 ```

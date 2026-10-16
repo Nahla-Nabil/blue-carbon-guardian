@@ -1,0 +1,36 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-09-22T20:00:00Z"
+  },
+  "title": "Blue Carbon Guardian - final",
+  "order": [
+    "cover",
+    "problem",
+    "product",
+    "usecase",
+    "data",
+    "hyperspectral",
+    "innovation",
+    "cells",
+    "different",
+    "validation-real",
+    "validation",
+    "impact",
+    "scale",
+    "team",
+    "close"
+  ],
+  "sections": {},
+  "faces": {
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    },
+    "ibm-plex-mono": {
+      "family": "IBM Plex Mono",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    }
+  }
+}
