@@ -8,10 +8,10 @@ from playwright.sync_api import sync_playwright
 OUT = pathlib.Path(__file__).resolve().parent / "build" / "assets"; OUT.mkdir(parents=True, exist_ok=True)
 
 THEME = """%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI, Arial","fontSize":"20px","background":"transparent",
-"primaryColor":"#17304F","primaryTextColor":"#E8EEF6","primaryBorderColor":"#7F9FC6","lineColor":"#93AFCF","secondaryColor":"#1D3A5E","tertiaryColor":"#132A46",
-"actorBkg":"#17304F","actorBorder":"#7F9FC6","actorTextColor":"#E8EEF6","actorLineColor":"#5E7DA3","signalColor":"#A9C1DD","signalTextColor":"#E1E9F3",
-"labelBoxBkgColor":"#22406A","labelBoxBorderColor":"#7F9FC6","labelTextColor":"#E8EEF6","loopTextColor":"#E1E9F3","noteBkgColor":"#22406A","noteTextColor":"#E8EEF6",
-"activationBkgColor":"#22406A","activationBorderColor":"#7F9FC6","sequenceNumberColor":"#0B1B30","edgeLabelBackground":"#0F2440"}}}%%"""
+"primaryColor":"#EEF4FB","primaryTextColor":"#1B2B40","primaryBorderColor":"#7F9FC6","lineColor":"#6E8FB5","secondaryColor":"#E3EDF8","tertiaryColor":"#F5F8FC",
+"actorBkg":"#E3EDF8","actorBorder":"#6E95C2","actorTextColor":"#1B2B40","actorLineColor":"#9AB3CF","signalColor":"#4F7BAA","signalTextColor":"#1B2B40",
+"labelBoxBkgColor":"#D6E4F4","labelBoxBorderColor":"#6E95C2","labelTextColor":"#1B2B40","loopTextColor":"#3A4D63","noteBkgColor":"#F5ECD9","noteTextColor":"#1B2B40",
+"activationBkgColor":"#D6E4F4","activationBorderColor":"#6E95C2","sequenceNumberColor":"#FFFFFF","edgeLabelBackground":"#FFFFFF"}}}%%"""
 
 WORKFLOW = THEME + """
 flowchart LR
@@ -24,11 +24,11 @@ flowchart LR
     F --> G
     H["<b>Field carbon</b><br/>108 t C/ha"] --> G
     I["<b>Independent checks</b><br/>EnMAP · sub-metre captures"] -.-> G
-    classDef step fill:#17304F,stroke:#7F9FC6,color:#E8EEF6,stroke-width:1.5px
-    classDef core fill:#2B4F7E,stroke:#A9C1DD,color:#FFFFFF,stroke-width:2px
-    classDef alert fill:#4A3240,stroke:#D9A0A8,color:#FBECEE,stroke-width:1.5px
-    classDef out fill:#3B3A2C,stroke:#D8BE84,color:#F6EED9,stroke-width:2px
-    classDef side fill:#132A46,stroke:#5E7DA3,color:#C9D6E6,stroke-width:1px
+    classDef step fill:#EEF4FB,stroke:#7F9FC6,color:#1B2B40,stroke-width:1.5px
+    classDef core fill:#D6E6F7,stroke:#4F7BAA,color:#1B2B40,stroke-width:2px
+    classDef alert fill:#F8E4E7,stroke:#C0606E,color:#5A2630,stroke-width:1.5px
+    classDef out fill:#F5ECD9,stroke:#B08A3E,color:#4A3A16,stroke-width:2px
+    classDef side fill:#F7F9FC,stroke:#9AAFC6,color:#3A4D63,stroke-width:1px
     class A,B,C,F step
     class D core
     class E alert

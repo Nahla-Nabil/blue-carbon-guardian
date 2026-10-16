@@ -32,6 +32,39 @@ def background(name, glow_xy, seed):
     Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.6)).save(OUT / f"{name}.png", optimize=True)
 
 
+def background_light(name, glow_xy, seed):
+    """Near-white page with a soft blue wash and faint contour lines (content slides)."""
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    tt = (x / W * 0.5 + y / H * 0.5)
+    img = np.array([251, 253, 255])[None, None, :] * (1 - tt[..., None]) + np.array([232, 240, 250])[None, None, :] * tt[..., None]
+    gx, gy = glow_xy
+    d = np.sqrt((x - gx * W) ** 2 + (y - gy * H) ** 2) / W
+    img -= np.array([22, 12, 2])[None, None, :] * np.exp(-(d / 0.35) ** 2)[..., None]
+    rng = np.random.default_rng(seed); field = np.zeros((H, W), np.float32)
+    for _ in range(5):
+        fx, fy, ph = rng.uniform(1.2, 3.2), rng.uniform(0.8, 2.4), rng.uniform(0, 6.28)
+        field += np.sin(x / W * fx * 6.28 + ph) * np.cos(y / H * fy * 6.28 + ph * 0.7)
+    lines = np.abs((field * 3.2) % 1 - 0.5) < 0.016
+    img[lines] -= np.array([14, 8, 3])
+    Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.6)).save(OUT / f"{name}.png", optimize=True)
+
+
+def background_hero(name, seed):
+    """Soft medium blue (cover and closing slide): much lighter than a night-sky navy, still carries white text."""
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    tt = (x / W * 0.6 + y / H * 0.4)
+    img = np.array([40, 76, 124])[None, None, :] * (1 - tt[..., None]) + np.array([76, 116, 166])[None, None, :] * tt[..., None]
+    d = np.sqrt((x - 0.82 * W) ** 2 + (y - 0.2 * H) ** 2) / W
+    img += np.array([30, 40, 50])[None, None, :] * np.exp(-(d / 0.4) ** 2)[..., None]
+    rng = np.random.default_rng(seed); field = np.zeros((H, W), np.float32)
+    for _ in range(5):
+        fx, fy, ph = rng.uniform(1.2, 3.2), rng.uniform(0.8, 2.4), rng.uniform(0, 6.28)
+        field += np.sin(x / W * fx * 6.28 + ph) * np.cos(y / H * fy * 6.28 + ph * 0.7)
+    lines = np.abs((field * 3.2) % 1 - 0.5) < 0.016
+    img[lines] += np.array([18, 22, 26])
+    Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.6)).save(OUT / f"{name}.png", optimize=True)
+
+
 def glow(name, rgb, size=900):
     y, x = np.mgrid[0:size, 0:size].astype(np.float32)
     d = np.sqrt((x - size / 2) ** 2 + (y - size / 2) ** 2) / (size / 2)
@@ -54,12 +87,12 @@ def stand_map(name, w=1600, pad=40, labels=True):
         for f in gj["features"]:
             if (f["properties"]["stand"] in conv) != hot:
                 continue
-            fill, line = ((222, 151, 161, 200), (240, 200, 206, 255)) if hot else ((120, 160, 210, 130), (190, 212, 238, 230))
+            fill, line = ((200, 104, 118, 190), (168, 72, 86, 255)) if hot else ((92, 132, 182, 150), (62, 100, 150, 235))
             for r in rings(f):
                 dr.polygon([pj(c) for c in r], fill=fill, outline=line, width=2 * S)
     im = im.resize((w + 2 * pad, h + 2 * pad), Image.LANCZOS)
     base = im.copy()
-    halo = im.filter(ImageFilter.GaussianBlur(14))  # soft neon halo
+    halo = im.filter(ImageFilter.GaussianBlur(6))  # soft neon halo
     out = Image.alpha_composite(halo, base)
     if labels:
         dr = ImageDraw.Draw(out)
@@ -94,6 +127,8 @@ if __name__ == "__main__":
     background("bg_a", (0.85, 0.15), 1)
     background("bg_b", (0.12, 0.85), 2)
     background("bg_c", (0.5, 0.5), 3)
+    background_light("bg_light_a", (0.85, 0.15), 1); background_light("bg_light_b", (0.12, 0.85), 2); background_light("bg_light_c", (0.5, 0.4), 3)
+    background_hero("bg_hero", 4)
     glow("glow_cyan", (120, 170, 215)); glow("glow_blue", (90, 130, 190)); glow("glow_gold", (242, 193, 78))
     stand_map("stand_map")
     stand_map("stand_map_plain", labels=False)
