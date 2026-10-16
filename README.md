@@ -82,18 +82,18 @@ An 8-minute pitch built around the final evaluation criteria, with the live webs
 
 | File | What it is |
 |---|---|
-| [`docs/Blue_Carbon_Guardian_final.pptx`](docs/Blue_Carbon_Guardian_final.pptx) | 16 slides (15 + one backup) with Morph transitions, automatic entrance animations and embedded videos: an animated satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo as a backup |
+| [`docs/Blue_Carbon_Guardian_final.pptx`](docs/Blue_Carbon_Guardian_final.pptx) | 17 slides (16 + one backup) with Morph transitions, automatic entrance animations and embedded videos: an animated satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo as a backup |
 | [`docs/Blue_Carbon_Guardian_final.pdf`](docs/Blue_Carbon_Guardian_final.pdf) | The same deck as a PDF (still frames in place of the videos) |
 | [`docs/pitch_script.md`](docs/pitch_script.md) | The timed talk track (about 7.5 minutes): what to say and what to click, also stored in the deck's speaker notes |
 
 | Final criterion | Slides |
 |---|---|
-| Team capability and expertise | 14 (roles, responsibilities, expertise; the gap we will close in incubation) |
-| Quality of space-data use and analytics | 5 (five independent sources, quality control), 6 (EnMAP hyperspectral), 7 (tide model) |
-| Problem relevance, user need, impact | 2 (problem and what we solve), 4 (users and decisions), 12 (carbon and business) |
-| Innovation and differentiation | 7 (tide model), 8 (200 m cells), 9 (comparison with what exists today) |
-| Scientific validity and feasibility | 10 (five real events on sub-metre imagery), 11 (rates against chance, unseen stands, what we do not claim) |
-| Development potential, documentation, reproducibility | 13 (public code, 24-second re-run, clean-machine test; scale-out and incubation plan) |
+| Team capability and expertise | 15 (roles, responsibilities, expertise; the gap we will close in incubation) |
+| Quality of space-data use and analytics | 5 (five independent sources, quality control), 6 (EnMAP hyperspectral), 7 (the full method), 8 (tide model) |
+| Problem relevance, user need, impact | 2 (problem and what we solve), 4 (users and decisions), 7 (how a user receives an alert), 13 (carbon and business) |
+| Innovation and differentiation | 8 (tide model), 9 (200 m cells), 10 (comparison with what exists today) |
+| Scientific validity and feasibility | 7 (method), 11 (five real events on sub-metre imagery), 12 (rates against chance, unseen stands, what we do not claim) |
+| Development potential, documentation, reproducibility | 14 (public code, 24-second re-run, clean-machine test; scale-out and incubation plan) |
 
 Rebuild: `python deck_pptx/assets.py`, `python deck_pptx/media.py`, `python scripts/deck_final.py`, then in `deck_pptx/`: `npm install`, `node build.js`, `python animate.py`, and `powershell -File render.ps1` (needs PowerPoint on Windows, with PowerPoint closed; it embeds the videos and exports the PDF).
 

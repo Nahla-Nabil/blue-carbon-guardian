@@ -18,9 +18,9 @@ icon, light, dark = v.icon, v.light, v.dark
 for k in ("team", "validation", "impact", "scale", "close", "different"):
     v.NOTES[k] = ""  # notes are attached below
 
-ORDER = ["cover", "problem", "product", "usecase", "data", "hyperspectral", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "team", "close"]
+ORDER = ["cover", "problem", "product", "usecase", "data", "hyperspectral", "solution", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "team", "close"]
 TOTAL = len(ORDER)
-S = {k: v.S[k] for k in ("cover", "problem", "usecase", "data", "innovation", "cells", "product", "validation-real", "hyperspectral")}
+S = {k: v.S[k] for k in ("cover", "problem", "usecase", "data", "innovation", "cells", "product", "validation-real", "hyperspectral", "solution")}
 
 # ---- small edits to reused slides ------------------------------------------------------------------------------------
 S["cover"] = S["cover"].replace("Arab Youth Space Hackathon 2026 &#183; Challenge 813", "Arab Youth Space Hackathon 2026 &#183; Challenge 813 &#183; Final")
@@ -169,18 +169,21 @@ SAY: "And every stand gets a one-page report with the carbon at stake."
 DO: Alt+Tab back to PowerPoint → press → .
 FALLBACK: if the site does not load, stay on this slide — the recording plays the same steps; narrate it with the same lines."""),
 
- "usecase": (20, """SAY: "Three users, three decisions.
-Agencies: which stands do we inspect this month. Planting and carbon developers: is the carbon we report still there. Developers and regulators: did the works stay outside the mangrove line.
-One flow for all three: new scene, alert, cell map, inspection, report."
+ "usecase": (15, """SAY: "Three users, three decisions.
+Agencies: which stands do we inspect this month. Planting and carbon developers: is the carbon we report still there. Developers and regulators: did the works stay outside the mangrove line."
 
 DO: press → ."""),
 
- "data": (20, """SAY: "The analysis rests on five independent data sources: 778 Sentinel-2 dates over six years, EnMAP hyperspectral, ESA WorldCover, field carbon plots, and dated sub-metre imagery.
-Every image is cloud-masked, we use only interior pixels, we model the tide, and every finding is cross-checked by a second source.
-25 stands in depth — plus 66 the model never saw, including Saudi Arabia."
+ "data": (15, """SAY: "The analysis rests on five independent data sources: 778 Sentinel-2 dates over six years, EnMAP hyperspectral, ESA WorldCover, field carbon plots, and dated sub-metre imagery.
+Every image is cloud-masked, only interior pixels are used, and every finding is cross-checked by a second source."
 
 DO: press → ."""),
 
+ "solution": (25, """SAY: "Here is the whole method on one slide." (follow the boxes left to right as they appear)
+"Stands are cut into 200-metre cells. Every Sentinel-2 date gives indices per stand and per cell. The tide-aware model predicts what each should look like. An alert fires when the stand, or any single cell, falls too far below — and the decision layer adds the cell map and the carbon at stake."
+(point at the bottom row) "For the user: no alert, a monthly report. An alert: we check the flagged cells on sub-metre imagery, send the cell map and the carbon at stake, and the inspector visits only those cells."
+
+DO: press → ."""),
  "innovation": (35, """SAY: "Now the hard part — the one that breaks most monitors in the Gulf: the tide.
 When the tide comes in, flooded mangroves look, from space, like dying mangroves. In this illustration the same trees drop from 0.30 to 0.18.
 On our stands, index noise follows wetness with a correlation of minus 0.9.
