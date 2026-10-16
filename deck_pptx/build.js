@@ -17,8 +17,8 @@ const IMG = (f) => path.join(ROOT, "deck_source", "images", f);
 const OUT = path.join(__dirname, "build", "blue_carbon_guardian_final.pptx");
 
 // ---- palette (deep navy, two blues, gold for key numbers, coral for loss) ----
-const PANEL = "0D2240", LINE = "2A4F80", TXT = "F3F7FA", MUTED = "A3B8CB";
-const TEAL = "4DA3FF", TEAL_L = "A8D1FF", GOLD = "F2C14E", CORAL = "FF6B81", BLUE = "38BDF8"; // TEAL = accent blue (name kept from v1)
+const PANEL = "0F2440", LINE = "2C4466", TXT = "F3F7FA", MUTED = "A3B8CB";
+const TEAL = "8FB4DE", TEAL_L = "CBDDF1", GOLD = "D8BE84", CORAL = "DE97A1", BLUE = "86B3D3"; // TEAL = accent blue (name kept from v1)
 const HEAD = "Segoe UI Semibold", BODY = "Segoe UI", LIGHT = "Segoe UI Light";
 const NOTES = JSON.parse(fs.readFileSync(path.join(__dirname, "notes.json"), "utf8"));
 
@@ -68,8 +68,8 @@ const T = (s, name, text, x, y, w, h, o = {}) =>
   s.addText(text, { objectName: name, x, y, w, h, isTextBox: true, margin: 0, fontFace: o.face ?? BODY, fontSize: o.size ?? 14, color: o.color ?? TXT,
     bold: o.bold, align: o.align ?? "left", valign: o.valign ?? "top", charSpacing: o.cs, lineSpacingMultiple: o.ls ?? 1.05, italic: o.italic, fit: "none" });
 const glows = (s, a, b) => {
-  s.addImage({ objectName: "!!glow1", path: A("glow_cyan.png"), x: a[0], y: a[1], w: a[2], h: a[2], transparency: 30 });
-  s.addImage({ objectName: "!!glow2", path: A("glow_blue.png"), x: b[0], y: b[1], w: b[2], h: b[2], transparency: 40 });
+  s.addImage({ objectName: "!!glow1", path: A("glow_cyan.png"), x: a[0], y: a[1], w: a[2], h: a[2], transparency: 62 });
+  s.addImage({ objectName: "!!glow2", path: A("glow_blue.png"), x: b[0], y: b[1], w: b[2], h: b[2], transparency: 65 });
 };
 function slide(master, kicker, title, glowA, glowB, key) {
   const s = pres.addSlide({ masterName: master });
@@ -92,7 +92,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     glows(s, [7.4, -2.6, 7.5], [-3.2, 3.6, 7]);
     s.addNotes(NOTES.cover);
     const vw = 5.15, vh = vw * 1120 / 1280;
-    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { objectName: "a3zoom_vframe", x: 7.65 - 0.06, y: 1.25 - 0.06, w: vw + 0.12, h: vh + 0.12, rectRadius: 0.1, fill: { color: "0A1E3C" }, line: { color: "4DA3FF", width: 1.25 }, shadow: shadow() });
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { objectName: "a3zoom_vframe", x: 7.65 - 0.06, y: 1.25 - 0.06, w: vw + 0.12, h: vh + 0.12, rectRadius: 0.1, fill: { color: "0A1E3C" }, line: { color: "8FB4DE", width: 1.25 }, shadow: shadow() });
     s.addImage({ objectName: "vid_cover", path: path.join(__dirname, "build", "media", "cover_scan.png"), x: 7.65, y: 1.25, w: vw, h: vh });
     s.addImage({ objectName: "z0drift_sat", data: await iconPng("LuSatellite", "CFE6FF"), x: -0.7, y: 0.32, w: 0.42, h: 0.42 });
     T(s, "a0fade_kick", "ARAB YOUTH SPACE HACKATHON 2026  ·  CHALLENGE 813  ·  FINAL", 0.7, 1.3, 8.2, 0.32, { face: HEAD, size: 11, color: TEAL, cs: 2 });
@@ -121,11 +121,11 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a${i + 1}float_s${i}t`, st[i][1], 3.0, y + 0.2, 3.35, 0.4, { face: HEAD, size: 14 });
       T(s, `a${i + 1}float_s${i}c`, st[i][2], 3.0, y + 0.62, 3.35, 0.3, { size: 11, color: MUTED });
     }
-    card(s, "a4float_today", 0.6, 5.55, 5.9, 1.2, { fill: "10305C", tr: 5 });
+    card(s, "a4float_today", 0.6, 5.55, 5.9, 1.2, { fill: "15304F", tr: 5 });
     T(s, "a4float_todayt", [{ text: "TODAY  ", options: { bold: true, color: CORAL, fontFace: HEAD } }, { text: "field surveys and one-off studies, no standing alert.", options: { breakLine: true } },
       { text: "WE SOLVE  ", options: { bold: true, color: TEAL_L, fontFace: HEAD } }, { text: "a calibrated alert every ~5 days that says where to inspect and what carbon is at stake." }], 0.85, 5.6, 5.45, 1.1, { size: 13, valign: "middle", ls: 1.15 });
     label(s, "a1fade_l", "This is happening now  ·  stand 5, Abu Dhabi", 6.95, 1.85, 5.8, CORAL);
-    const ch = [["s2_stand5_2021-11.png", "Nov 2021 · intact", "1F4E79"], ["s2_stand5_2022-10.png", "Oct 2022 · works start, alert fires", "C2334D"], ["s2_stand5_2023-06.png", "Jun 2023 · canals cut", "1F4E79"], ["s2_stand5_2026-05.png", "May 2026 · development", "1F4E79"]];
+    const ch = [["s2_stand5_2021-11.png", "Nov 2021 · intact", "2C4C70"], ["s2_stand5_2022-10.png", "Oct 2022 · works start, alert fires", "A5545F"], ["s2_stand5_2023-06.png", "Jun 2023 · canals cut", "2C4C70"], ["s2_stand5_2026-05.png", "May 2026 · development", "2C4C70"]];
     for (let i = 0; i < 4; i++) {
       const x = 6.95 + (i % 2) * 2.93, y = 2.22 + Math.floor(i / 2) * 2.2, o = 2 + i;
       s.addImage({ objectName: `a${o}zoom_c${i}`, path: IMG(ch[i][0]), x, y, w: 2.8, h: 2.05, sizing: { type: "cover", w: 2.8, h: 2.05 }, rounding: false });
@@ -153,7 +153,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a${o}float_f${i}d`, F[i][2], 9.25, y + 0.3, 3.45, 0.5, { size: 12, color: MUTED });
     }
     s.addShape(pres.shapes.ROUNDED_RECTANGLE, { objectName: "a8ping_liver", x: 8.5, y: 6.25, w: 4.2, h: 0.48, rectRadius: 0.24, fill: { type: "none" }, line: { color: CORAL, width: 2 } });
-    pill(s, "a7pop_live", "●  LIVE DEMO  ·  open stand 9 on the website", 8.5, 6.25, 4.2, { h: 0.48, size: 13, fill: CORAL, line: CORAL, color: "FFD6DD", tr: 80 });
+    pill(s, "a7pop_live", "●  LIVE DEMO  ·  open stand 9 on the website", 8.5, 6.25, 4.2, { h: 0.48, size: 13, fill: CORAL, line: CORAL, color: "F1DDE0", tr: 80 });
   }
 
   // =============== 4 · USERS ===============
@@ -175,7 +175,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a${o}float_p${i}g`, P[i][5], x + 0.33, 4.35, 3.3, 0.88, { size: 13, color: TEAL_L, valign: "middle", face: HEAD });
     }
     const F = [["LuSatellite", "New scene", "every ~5 days"], ["LuBell", "Alert", "~1 false alarm / stand-yr"], ["LuLayoutGrid", "Cell map", "where to look"], ["LuSearch", "Inspection", "only flagged cells"], ["LuFileText", "Site report", "carbon at stake"]];
-    card(s, "a4fade_flow", 0.6, 5.6, 12.13, 1.15, { fill: "0C2D5C", tr: 10 });
+    card(s, "a4fade_flow", 0.6, 5.6, 12.13, 1.15, { fill: "13294A", tr: 10 });
     for (let i = 0; i < 5; i++) {
       const x = 0.95 + i * 2.42, o = 5 + i;
       await iconCircle(s, `a${o}pop_f${i}`, F[i][0], x, 5.85, 0.62);
@@ -197,10 +197,10 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     for (let i = 0; i < 5; i++) {
       const y = 1.85 + i * 0.99, o = 2 + i;
       card(s, `a${o}float_d${i}`, 5.6, y, 7.13, 0.86);
-      await iconCircle(s, `a${o}float_d${i}ic`, src[i][0], 5.8, y + 0.17, 0.52, i === 1 ? "A78BFA" : TEAL);
+      await iconCircle(s, `a${o}float_d${i}ic`, src[i][0], 5.8, y + 0.17, 0.52, i === 1 ? "AFA3D3" : TEAL);
       T(s, `a${o}float_d${i}t`, src[i][1], 6.5, y + 0.12, 4, 0.34, { face: HEAD, size: 15 });
       T(s, `a${o}float_d${i}d`, src[i][2], 6.5, y + 0.46, 4.2, 0.3, { size: 12, color: MUTED });
-      pill(s, `a${o}float_d${i}p`, src[i][3], 11.18, y + 0.23, 1.35, { h: 0.4, size: 13, fill: i === 1 ? "A78BFA" : GOLD, line: i === 1 ? "A78BFA" : GOLD, color: i === 1 ? "DDD3FF" : "FFE3A3" });
+      pill(s, `a${o}float_d${i}p`, src[i][3], 11.18, y + 0.23, 1.35, { h: 0.4, size: 13, fill: i === 1 ? "AFA3D3" : GOLD, line: i === 1 ? "AFA3D3" : GOLD, color: i === 1 ? "DED8EE" : "EDE0C0" });
     }
     T(s, "a7fade_cap", "Quality control: cloud masks · interior pixels only · tide model · second-source checks", 5.6, 6.83, 7.1, 0.25, { size: 11, color: MUTED });
   }
@@ -211,7 +211,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     const iw = 11.85, ih = iw * 528 / 1870;
     s.addShape(pres.shapes.ROUNDED_RECTANGLE, { objectName: "a1zoom_ef", x: 0.6, y: 1.85, w: 12.13, h: ih + 0.28, rectRadius: 0.1, fill: { color: "FFFFFF" }, line: { type: "none" }, shadow: shadow() });
     s.addImage({ objectName: "a1zoom_ei", path: IMG("enmap_stand5_two_epochs.png"), x: 0.74, y: 1.99, w: iw, h: ih });
-    const C = [["r = 0.84–0.99", "agreement with our Sentinel-2 indices on the same dates (25 and 14 stands)", "C4B5FD"],
+    const C = [["r = 0.84–0.99", "agreement with our Sentinel-2 indices on the same dates (25 and 14 stands)", "C9C1E3"],
       ["62 vs 26 ha", "stand-5 loss: EnMAP pixel count vs our conservative Sentinel-2 flag", GOLD],
       ["Vegetation → mineral", "converted pixels take the spectrum of sand and fill: reclamation, not dieback", CORAL]];
     for (let i = 0; i < 3; i++) {
@@ -223,50 +223,40 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     T(s, "a5fade_hc", "Honest limit: as a classifier, the full spectrum is no better than Sentinel-2-like bands (F1 0.74 vs 0.72). Contains modified EnMAP data © DLR 2022, 2025.", 0.6, 6.75, 11.5, 0.22, { size: 10, color: "8AA3BC" });
   }
 
-  // =============== 7 · HOW IT WORKS ===============
+  // =============== 7 · HOW IT WORKS (README workflow diagram) ===============
   {
-    const s = slide("OCEAN_C", "Approach · how it works", "From satellite pixels to an inspection decision", [3.6, -3.4, 6], [-2.6, 3.8, 6], "solution");
-    // --- pipeline (README workflow diagram) ---
-    const N = [["LuLayoutGrid", "Stands & 200 m cells", "WorldCover 2021 ≥ 3 ha · interior pixels only"],
-      ["LuSatellite", "Sentinel-2 series", "778 dates · cloud mask · NDVI, red edge, moisture, wetness"],
-      ["LuWaves", "Tide-aware model", "trend + season + tide terms, refitted every month"],
-      ["LuBell", "Alert & condition", "stand ≤ −1.5σ OR any cell ≤ −3.5σ · last 12 months vs 2020–21"],
-      ["LuTarget", "Decision layer", "cell map · carbon at stake · dashboard · site reports"]];
-    const nw = 2.18, gap = 0.31;
-    for (let i = 0; i < 5; i++) {
-      const x = 0.6 + i * (nw + gap), o = 1 + i, hot = i === 2, end = i === 4;
-      card(s, `a${o}pop_n${i}`, x, 1.85, nw, 1.95, hot ? { fill: "1D4F9A", tr: 0, line: "4DA3FF", lw: 1.25 } : end ? { fill: "0C2D5C", tr: 0, line: GOLD, lw: 1.25 } : {});
-      await iconCircle(s, `a${o}pop_n${i}ic`, N[i][0], x + 0.18, 2.02, 0.52, end ? GOLD : TEAL);
-      T(s, `a${o}pop_n${i}t`, N[i][1], x + 0.18, 2.62, nw - 0.3, 0.34, { face: HEAD, size: 14, color: end ? GOLD : TXT });
-      T(s, `a${o}pop_n${i}d`, N[i][2], x + 0.18, 2.98, nw - 0.3, 0.78, { size: 11, color: hot ? "DCEBFF" : MUTED });
-      if (i < 4) s.addShape(pres.shapes.LINE, { objectName: `a${o}fade_na${i}`, x: x + nw + 0.04, y: 2.82, w: gap - 0.08, h: 0, line: { color: TEAL, width: 2, endArrowType: "triangle" } });
-    }
-    const xEnd = 0.6 + 4 * (nw + gap);
-    pill(s, "a6float_in1", "+ Field carbon · 108 t C/ha", xEnd, 3.88, nw, { h: 0.28, size: 10, fill: GOLD, line: GOLD, color: "FFE3A3" });
-    pill(s, "a6float_in2", "+ Checks · EnMAP · sub-metre", xEnd, 4.2, nw, { h: 0.28, size: 10, fill: "A78BFA", line: "A78BFA", color: "DDD3FF" });
-    // --- how a user receives it (README sequence diagram) ---
-    card(s, "a7fade_uc", 0.6, 4.55, 12.13, 2.2, { fill: "0A1D3F", tr: 10 });
-    label(s, "a7fade_ul", "How a user receives it", 0.85, 4.68, 5);
-    pill(s, "a8pop_u0", "New scene · every ~5 days", 0.85, 5.45, 2.3, { h: 0.5, size: 12 });
-    s.addShape(pres.shapes.LINE, { objectName: "a8fade_ua0", x: 3.2, y: 5.7, w: 0.35, h: 0, line: { color: TEAL, width: 1.75, endArrowType: "triangle" } });
-    s.addShape(pres.shapes.DIAMOND, { objectName: "a9pop_ud", x: 3.6, y: 5.2, w: 1.2, h: 1.0, fill: { color: "1D4F9A" }, line: { color: TEAL, width: 1.25 } });
-    T(s, "a9pop_udt", "Alert?", 3.6, 5.2, 1.2, 1.0, { face: HEAD, size: 13, align: "center", valign: "middle" });
-    s.addShape(pres.shapes.LINE, { objectName: "a10fade_uy", x: 4.8, y: 5.29, w: 0.55, h: 0, line: { color: CORAL, width: 1.75, endArrowType: "triangle" } });
-    T(s, "a10fade_uyt", "yes", 4.85, 4.98, 0.5, 0.26, { size: 10, color: CORAL, face: HEAD });
-    const Y = [["LuSearch", "Check flagged cells on sub-metre imagery"], ["LuBell", "Email / JSON API: cell map + carbon at stake"], ["LuMapPin", "Inspector visits only the flagged cells"]];
-    for (let i = 0; i < 3; i++) {
-      const x = 5.42 + i * 2.45, o = 10 + i;
-      s.addShape(pres.shapes.ROUNDED_RECTANGLE, { objectName: `a${o}pop_y${i}`, x, y: 4.98, w: 2.25, h: 0.62, rectRadius: 0.1, fill: { color: CORAL, transparency: 84 }, line: { color: CORAL, width: 1 } });
-      T(s, `a${o}pop_y${i}t`, Y[i][1], x + 0.12, 4.98, 2.05, 0.62, { size: 11, valign: "middle", color: "FFE1E6" });
-      if (i < 2) s.addShape(pres.shapes.LINE, { objectName: `a${o}fade_ya${i}`, x: x + 2.27, y: 5.29, w: 0.16, h: 0, line: { color: CORAL, width: 1.5, endArrowType: "triangle" } });
-    }
-    s.addShape(pres.shapes.LINE, { objectName: "a13fade_un", x: 4.8, y: 6.11, w: 0.55, h: 0, line: { color: TEAL, width: 1.75, endArrowType: "triangle" } });
-    T(s, "a13fade_unt", "no", 4.85, 6.16, 0.5, 0.26, { size: 10, color: TEAL_L, face: HEAD });
-    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { objectName: "a13pop_n", x: 5.42, y: 5.82, w: 7.15, h: 0.58, rectRadius: 0.1, fill: { color: TEAL, transparency: 85 }, line: { color: TEAL, width: 1 } });
-    T(s, "a13pop_nt", "Monthly site report: condition, trend and carbon stock for every stand", 5.56, 5.82, 6.9, 0.58, { size: 12, valign: "middle", color: TEAL_L });
+    const s = slide("OCEAN_C", "Approach · how it works", "From satellite pixels to a decision", [3.6, -3.4, 6], [-2.6, 3.8, 6], "solution");
+    card(s, "a1zoom_wfc", 0.6, 1.85, 12.13, 4.72, { fill: "0B1B30", tr: 8 });
+    const ww = 11.7, wh = ww * 664 / 1737;
+    s.addImage({ objectName: "a1zoom_wf", path: A("diagram_workflow.png"), x: 0.6 + (12.13 - ww) / 2, y: 1.85 + (4.72 - wh) / 2, w: ww, h: wh });
+    const K = [["Core model", "8FB4DE"], ["Alert rule", "DE97A1"], ["Output to the user", "D8BE84"], ["Inputs and checks", "7F9FC6"]];
+    T(s, "a2fade_wl", "Read left to right:", 0.6, 6.68, 1.9, 0.3, { size: 12, color: MUTED });
+    K.forEach(([t, c], i) => {
+      s.addShape(pres.shapes.ROUNDED_RECTANGLE, { objectName: `a2fade_wk${i}`, x: 2.45 + i * 2.35, y: 6.75, w: 0.26, h: 0.16, rectRadius: 0.04, fill: { color: c, transparency: 30 }, line: { color: c, width: 0.75 } });
+      T(s, `a2fade_wkt${i}`, t, 2.8 + i * 2.35, 6.68, 2.0, 0.3, { size: 12, color: "CFDCE8" });
+    });
   }
 
-  // =============== 8 · TIDE INNOVATION ===============
+  // =============== 8 · HOW A USER RECEIVES IT (README sequence diagram) ===============
+  {
+    const s = slide("OCEAN_B", "Delivery · how a user receives it", "One alert, one message, one targeted visit", [-2.4, -2.6, 6], [9, 3.6, 6], "sequence");
+    card(s, "a1zoom_sqc", 0.6, 1.85, 8.25, 4.9, { fill: "0B1B30", tr: 8 });
+    const SQ = require("fs").readFileSync(A("diagram_sequence.png")); const sw = SQ.readUInt32BE(16), sh = SQ.readUInt32BE(20);
+    let qw = 7.95, qh = qw * sh / sw; if (qh > 4.6) { qh = 4.6; qw = qh * sw / sh; }
+    s.addImage({ objectName: "a1zoom_sq", path: A("diagram_sequence.png"), x: 0.6 + (8.25 - qw) / 2, y: 1.85 + (4.9 - qh) / 2, w: qw, h: qh });
+    const E = [["LuSatellite", "Every ~5 days", "a new Sentinel-2 scene is read in place and run through the tide-aware model, per stand and per 200 m cell", TEAL],
+      ["LuBell", "If an alert fires", "we check the flagged cells on sub-metre imagery, then send the alert by email or JSON API with the cell map and the carbon at stake", CORAL],
+      ["LuFileText", "If nothing changes", "the user still gets a monthly site report: condition, trend and carbon stock for every stand", GOLD]];
+    for (let i = 0; i < 3; i++) {
+      const y = 1.85 + i * 1.66, o = 2 + i;
+      card(s, `a${o}float_e${i}`, 9.1, y, 3.63, 1.52);
+      await iconCircle(s, `a${o}float_e${i}ic`, E[i][0], 9.28, y + 0.16, 0.48, E[i][3]);
+      T(s, `a${o}float_e${i}t`, E[i][1], 9.88, y + 0.2, 2.75, 0.34, { face: HEAD, size: 14, color: E[i][3] === TEAL ? TXT : E[i][3] });
+      T(s, `a${o}float_e${i}d`, E[i][2], 9.28, y + 0.72, 3.3, 0.78, { size: 11, color: "CFDCE8" });
+    }
+  }
+
+  // =============== 9 · TIDE INNOVATION ===============
   {
     const s = slide("OCEAN_A", "Technical innovation 1", "The tide looks like tree loss — until you correct for it", [9.2, -2.5, 6], [-1.5, 3.8, 5.5], "innovation");
     card(s, "a1float_ill", 0.6, 1.85, 6.0, 3.55);
@@ -277,7 +267,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a2fade_pt${p}`, p === 0 ? "Low tide" : "High tide", x0 + 0.15, 2.48, 2, 0.3, { face: HEAD, size: 14 });
       for (let t = 0; t < 5; t++) {
         s.addShape(pres.shapes.RECTANGLE, { objectName: `a2fade_tr${p}_${t}`, x: x0 + 0.3 + t * 0.47, y: 3.55, w: 0.04, h: 1.1, fill: { color: "6B5B4B" }, line: { type: "none" } });
-        s.addShape(pres.shapes.OVAL, { objectName: `a2fade_tc${p}_${t}`, x: x0 + 0.13 + t * 0.47, y: 3.2, w: 0.38, h: 0.38, fill: { color: "2E9E6B" }, line: { type: "none" } });
+        s.addShape(pres.shapes.OVAL, { objectName: `a2fade_tc${p}_${t}`, x: x0 + 0.13 + t * 0.47, y: 3.2, w: 0.38, h: 0.38, fill: { color: "5E977A" }, line: { type: "none" } });
       }
       s.addShape(pres.shapes.RECTANGLE, { objectName: `a3rise_w${p}`, x: x0 + 0.02, y: wl, w: 2.61, h: 4.73 - wl, fill: { color: BLUE, transparency: 45 }, line: { type: "none" } });
       T(s, `a4fade_nv${p}`, [{ text: "NDVI ", options: { color: MUTED } }, { text: p === 0 ? "0.30" : "0.18", options: { bold: true, color: p === 0 ? TEAL_L : CORAL } }], x0, 4.82, 2.65, 0.35, { size: 15, align: "center" });
@@ -287,19 +277,19 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     s.addChart(pres.charts.BAR, [
       { name: "without tide model", labels: ["NDVI", "NDRE (red edge)", "NDMI (moisture)"], values: [0.0436, 0.0283, 0.0433] },
       { name: "with tide model", labels: ["NDVI", "NDRE (red edge)", "NDMI (moisture)"], values: [0.0298, 0.0183, 0.0306] }],
-      { objectName: "a3wipe_chart", x: 7.0, y: 2.0, w: 5.6, h: 3.3, barDir: "col", barGapWidthPct: 60, chartColors: ["4A6378", TEAL],
+      { objectName: "a3wipe_chart", x: 7.0, y: 2.0, w: 5.6, h: 3.3, barDir: "col", barGapWidthPct: 60, chartColors: ["566C82", TEAL],
         showTitle: true, title: "Date-to-date noise, 25 stands, 2020–2026", titleColor: TXT, titleFontFace: BODY, titleFontSize: 13,
         showLegend: true, legendPos: "b", legendColor: MUTED, legendFontFace: BODY, legendFontSize: 11,
         showValue: true, dataLabelPosition: "outEnd", dataLabelColor: TXT, dataLabelFontSize: 10, dataLabelFormatCode: "0.000", dataLabelFontFace: BODY,
         catAxisLabelColor: MUTED, catAxisLabelFontFace: BODY, catAxisLabelFontSize: 11, valAxisHidden: true, valGridLine: { style: "none" }, catGridLine: { style: "none" },
         catAxisLineColor: LINE });
-    card(s, "a5float_st", 0.6, 5.6, 12.13, 1.15, { fill: "0C2D5C", tr: 5 });
+    card(s, "a5float_st", 0.6, 5.6, 12.13, 1.15, { fill: "13294A", tr: 5 });
     await iconCircle(s, "a5float_stic", "LuWaves", 0.9, 5.88, 0.6);
     T(s, "a5float_stn", "−29 to −35 %", 1.7, 5.6, 3.1, 1.15, { face: LIGHT, size: 32, color: GOLD, valign: "middle" });
     T(s, "a5float_stt", "We regress every index on trend, season and tidal state before flagging anything. Noise falls on every index.", 4.85, 5.6, 7.7, 1.15, { size: 15, valign: "middle" });
   }
 
-  // =============== 9 · CELLS ===============
+  // =============== 10 · CELLS ===============
   {
     const s = slide("OCEAN_C", "Technical innovation 2", "A stand average hides partial loss. 200 m cells do not.", [-2, -2.8, 6], [9, 3.4, 6.5], "cells");
     s.addImage({ objectName: "vid_cells", path: path.join(__dirname, "build", "media", "alert_story.png"), x: 0.6, y: 1.85, w: 7.7, h: 7.7 * 520 / 1100 });
@@ -318,15 +308,15 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a${2 + i}float_c${i}n`, c[i][0], 8.8, y + 0.15, 3.8, 0.65, { face: LIGHT, size: 34, color: i === 0 ? CORAL : GOLD });
       T(s, `a${2 + i}float_c${i}t`, c[i][1], 8.8, y + 0.82, 3.75, 0.6, { size: 13 });
     }
-    card(s, "a4float_rule", 8.55, 5.09, 4.18, 1.66, { fill: "0C2D5C", tr: 5 });
+    card(s, "a4float_rule", 8.55, 5.09, 4.18, 1.66, { fill: "13294A", tr: 5 });
     label(s, "a4float_rulel", "One alert rule", 8.8, 5.24, 3.5);
     pill(s, "a4float_r1", "stand ≤ −1.5σ", 8.8, 5.6, 1.6, { size: 13 });
     T(s, "a4float_or", "OR", 10.45, 5.6, 0.45, 0.4, { face: HEAD, size: 13, color: GOLD, align: "center", valign: "middle" });
-    pill(s, "a4float_r2", "any cell ≤ −3.5σ", 10.95, 5.6, 1.62, { size: 13, fill: CORAL, line: CORAL, color: "FFC7D0" });
+    pill(s, "a4float_r2", "any cell ≤ −3.5σ", 10.95, 5.6, 1.62, { size: 13, fill: CORAL, line: CORAL, color: "EFD3D7" });
     T(s, "a4float_rulet", "calibrated together: 0.96 false-alarm episodes per stand-year", 8.8, 6.12, 3.8, 0.5, { size: 12, color: MUTED });
   }
 
-  // =============== 10 · HOW WE DIFFER ===============
+  // =============== 11 · HOW WE DIFFER ===============
   {
     const s = slide("OCEAN_B", "Innovation & differentiation", "How we differ from what exists today", [-2.4, -2.4, 6.5], [8.8, 3.6, 6.5], "different");
     const head = ["", "Field surveys", "One-off satellite maps", "Free loss alerts (Global Mangrove Watch)", "Blue Carbon Guardian"];
@@ -338,16 +328,16 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       ["Gulf coverage", "✓", "✓", "not confirmed", "✓  Abu Dhabi + Tarut Bay"]];
     const cell = (t, i, j) => ({ text: t, options: {
       bold: j === 0 || j === 4, color: j === 4 ? "FFFFFF" : j === 0 ? TXT : (t === "—" || t === "n/a" ? "6F89A0" : "CFDCE8"),
-      fill: { color: j === 4 ? "1D4F9A" : (i % 2 ? "0C2246" : "0E2850") }, align: j === 0 ? "left" : "center", valign: "middle", fontFace: j === 0 || j === 4 ? HEAD : BODY } });
-    const table = [head.map((t, j) => ({ text: t, options: { bold: true, color: j === 4 ? "FFFFFF" : TEAL_L, fill: { color: j === 4 ? "2F6FD0" : "0A1D3F" }, align: j === 0 ? "left" : "center", valign: "middle", fontFace: HEAD, fontSize: 12 } })),
+      fill: { color: j === 4 ? "27466D" : (i % 2 ? "0E2240" : "112644") }, align: j === 0 ? "left" : "center", valign: "middle", fontFace: j === 0 || j === 4 ? HEAD : BODY } });
+    const table = [head.map((t, j) => ({ text: t, options: { bold: true, color: j === 4 ? "FFFFFF" : TEAL_L, fill: { color: j === 4 ? "34587F" : "0A1D3F" }, align: j === 0 ? "left" : "center", valign: "middle", fontFace: HEAD, fontSize: 12 } })),
       ...rows.map((r, i) => r.map((t, j) => cell(t, i, j)))];
     s.addTable(table, { objectName: "a1float_tbl", x: 0.6, y: 1.85, w: 12.13, colW: [3.0, 1.9, 2.1, 2.45, 2.68], rowH: 0.52, fontSize: 13, margin: 0.08,
-      border: { type: "solid", color: "24467A", pt: 0.75 } });
-    card(s, "a3float_dm", 0.6, 5.75, 12.13, 1.0, { fill: "0C2D5C", tr: 5 });
+      border: { type: "solid", color: "2C4466", pt: 0.75 } });
+    card(s, "a3float_dm", 0.6, 5.75, 12.13, 1.0, { fill: "13294A", tr: 5 });
     T(s, "a3float_dmt", [{ text: "Complementary, not competing: ", options: { bold: true, color: TEAL_L } }, { text: "Global Mangrove Watch flags loss worldwide; we add the tide model, the 200 m cells, a measured false-alarm rate and the carbon at stake — built and tested for the Gulf." }], 0.85, 5.75, 11.7, 1.0, { size: 14, valign: "middle" });
   }
 
-  // =============== 11 · REAL EVENTS ===============
+  // =============== 12 · REAL EVENTS ===============
   {
     const s = slide("OCEAN_A", "Validation 1 · real events", "Five real conversions, confirmed on sub-metre imagery", [-2.2, -2.6, 6], [9.2, 3.6, 6], "validation-real");
     const tiles = [["stand5_before_after_2021_2026.png", 1806 / 802, "Stand 5", "reclamation with finger canals"], ["stand9_before_after_2020_2026.png", 2206 / 1468, "Stand 9", "canal development, south-east"],
@@ -380,28 +370,28 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     T(s, "a8fade_lg1t", "last intact → first capture with works", 8.82, 5.27, 2.4, 0.26, { size: 10, color: MUTED });
     s.addShape(pres.shapes.DIAMOND, { objectName: "a8fade_lg2", x: 11.3, y: 5.3, w: 0.18, h: 0.18, fill: { color: CORAL }, line: { type: "none" } });
     T(s, "a8fade_lg2t", "our alert starts", 11.53, 5.27, 1.1, 0.26, { size: 10, color: MUTED });
-    card(s, "a9float_msg", 8.25, 5.75, 4.48, 1.0, { fill: "0C2D5C", tr: 5 });
+    card(s, "a9float_msg", 8.25, 5.75, 4.48, 1.0, { fill: "13294A", tr: 5 });
     T(s, "a9float_msgt", [{ text: "Every alert began inside the window. ", options: { bold: true, color: TEAL_L } }, { text: "Detection as works happen, not advance warning." }], 8.45, 5.75, 4.15, 1.0, { size: 13, valign: "middle" });
   }
 
-  // =============== 12 · VALIDATION ===============
+  // =============== 13 · VALIDATION ===============
   {
     const s = slide("OCEAN_C", "Validation 2 · chance, unseen stands, second sensor", "Every rate next to its chance rate", [4, -3.4, 6], [-2.4, 3.8, 6], "validation");
     card(s, "a1float_cc", 0.6, 1.85, 7.45, 3.95);
     s.addChart(pres.charts.BAR, [
       { name: "detected", labels: ["Whole stand loses 20 % · 6 months", "Whole stand loses 10 % · 6 months", "A tenth of a stand loses half · 60 days"], values: [83, 63, 73] },
       { name: "by chance (same test, no loss)", labels: ["Whole stand loses 20 % · 6 months", "Whole stand loses 10 % · 6 months", "A tenth of a stand loses half · 60 days"], values: [36, 36, 13] }],
-      { objectName: "a2wipe_sim", x: 0.75, y: 1.95, w: 7.15, h: 3.75, barDir: "bar", barGapWidthPct: 55, chartColors: [TEAL, "4A6378"],
+      { objectName: "a2wipe_sim", x: 0.75, y: 1.95, w: 7.15, h: 3.75, barDir: "bar", barGapWidthPct: 55, chartColors: [TEAL, "566C82"],
         showTitle: true, title: "Artificial loss injected into stands with no known change", titleColor: TXT, titleFontFace: BODY, titleFontSize: 13,
         showLegend: true, legendPos: "b", legendColor: MUTED, legendFontFace: BODY, legendFontSize: 11,
         showValue: true, dataLabelPosition: "outEnd", dataLabelColor: TXT, dataLabelFontSize: 12, dataLabelFormatCode: '0" %"', dataLabelFontFace: BODY,
         catAxisLabelColor: TXT, catAxisLabelFontFace: BODY, catAxisLabelFontSize: 11, valAxisHidden: true, valAxisMaxVal: 100, valAxisMinVal: 0, valGridLine: { style: "none" }, catGridLine: { style: "none" }, catAxisLineColor: LINE });
     T(s, "a3fade_simc", "A detection counts only if a new alert starts after the loss begins. ~160–240 trials per row.", 0.6, 5.88, 7.45, 0.3, { size: 11, color: MUTED });
-    const K = [["Calibrated · 25 stands", "0.96", "false-alarm episodes per stand-year", GOLD], ["Unseen · 65 stands", "0.79", "per stand-year, 305 stand-years, incl. Saudi Tarut Bay", TEAL_L], ["EnMAP · same dates", "r = 0.84–0.99", "vs our Sentinel-2 indices; stand-5 loss 62 ha vs our 26 ha", "C4B5FD"]];
+    const K = [["Calibrated · 25 stands", "0.96", "false-alarm episodes per stand-year", GOLD], ["Unseen · 65 stands", "0.79", "per stand-year, 305 stand-years, incl. Saudi Tarut Bay", TEAL_L], ["EnMAP · same dates", "r = 0.84–0.99", "vs our Sentinel-2 indices; stand-5 loss 62 ha vs our 26 ha", "C9C1E3"]];
     for (let i = 0; i < 3; i++) {
       const y = 1.85 + i * 1.36;
-      card(s, `a${3 + i}float_k${i}`, 8.3, y, 4.43, 1.24, i === 1 ? { fill: "0C2D5C", tr: 5 } : {});
-      label(s, `a${3 + i}float_k${i}l`, K[i][0], 8.52, y + 0.12, 4.1, i === 2 ? "C4B5FD" : TEAL);
+      card(s, `a${3 + i}float_k${i}`, 8.3, y, 4.43, 1.24, i === 1 ? { fill: "13294A", tr: 5 } : {});
+      label(s, `a${3 + i}float_k${i}l`, K[i][0], 8.52, y + 0.12, 4.1, i === 2 ? "C9C1E3" : TEAL);
       T(s, `a${3 + i}float_k${i}n`, K[i][1], 8.52, y + 0.38, 4.1, 0.5, { face: LIGHT, size: 26, color: K[i][3] });
       T(s, `a${3 + i}float_k${i}t`, K[i][2], 8.52, y + 0.86, 4.1, 0.32, { size: 11, color: MUTED });
     }
@@ -409,13 +399,13 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     T(s, "a6float_claimt", [{ text: "What we do not claim: ", options: { bold: true, color: GOLD } }, { text: "advance warning, field verification, species discrimination, or that hyperspectral classifies better (F1 0.74 vs 0.72). We withdrew our own first test (58 % / 90 %): it had no chance baseline." }], 0.85, 6.22, 11.7, 0.6, { size: 12, valign: "middle" });
   }
 
-  // =============== 13 · IMPACT & BUSINESS ===============
+  // =============== 14 · IMPACT & BUSINESS ===============
   {
     const s = slide("OCEAN_A", "Impact & business viability", "Carbon at stake, and who pays to protect it", [8.4, -3, 6.5], [-2.6, 3.4, 6], "impact");
     const kp = [["108 t C/ha", "field density near the stands (90 % CI 79–138); 82 % of it is in the soil", GOLD], ["247 kt C", "pilot stock, 2,281 ha (range 180–316) ≈ 907 kt CO₂e", GOLD], ["2.8–6.7 kt C", "stock on the 26–62 ha lost at stand 5: what one alert puts on the table", CORAL]];
     for (let i = 0; i < 3; i++) {
       const x = 0.6 + i * 4.1;
-      card(s, `a${1 + i}float_kp${i}`, x, 1.85, 3.93, 1.4, i === 2 ? { fill: "3A1A2A", tr: 20, line: "7A3A50" } : {});
+      card(s, `a${1 + i}float_kp${i}`, x, 1.85, 3.93, 1.4, i === 2 ? { fill: "33252C", tr: 20, line: "6A4A54" } : {});
       T(s, `a${1 + i}float_kp${i}n`, kp[i][0], x + 0.25, 1.95, 3.5, 0.62, { face: LIGHT, size: 32, color: kp[i][2] });
       T(s, `a${1 + i}float_kp${i}t`, kp[i][1], x + 0.25, 2.6, 3.5, 0.6, { size: 12, color: MUTED });
     }
@@ -434,12 +424,12 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     card(s, "a6float_comp", 8.05, 3.45, 4.68, 1.55);
     label(s, "a6float_compl", "Competition", 8.3, 3.6, 4);
     T(s, "a6float_compt", "Global Mangrove Watch sends free monthly loss alerts (Gulf coverage not confirmed). We are complementary: tide-aware, calibrated, stand + cell, carbon and reports.", 8.3, 3.9, 4.25, 1.05, { size: 12 });
-    card(s, "a7float_mk", 8.05, 5.15, 4.68, 1.6, { fill: "0C2D5C", tr: 5 });
+    card(s, "a7float_mk", 8.05, 5.15, 4.68, 1.6, { fill: "13294A", tr: 5 });
     label(s, "a7float_mkl", "The honest market", 8.3, 5.28, 4);
     T(s, "a7float_mkt", [{ text: "Gulf + Red Sea subscriptions ≈ $0.2–0.4 M / yr. The real prize: a " }, { text: "national MRV contract", options: { bold: true, color: GOLD } }, { text: " or a monitoring layer on " }, { text: "gIQ", options: { bold: true, color: GOLD } }, { text: ". SDG 13 · 14 · 15." }], 8.3, 5.58, 4.25, 1.1, { size: 13 });
   }
 
-  // =============== 14 · SCALE & REPRODUCIBILITY ===============
+  // =============== 15 · SCALE & REPRODUCIBILITY ===============
   {
     const s = slide("OCEAN_B", "Beyond the proof of concept", "Reproducible today, built to scale tomorrow", [-2.6, -2.2, 6.5], [8.9, 3.4, 6.5], "scale");
     card(s, "a1float_rc", 0.6, 1.85, 5.95, 4.9);
@@ -459,7 +449,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     s.addShape(pres.shapes.LINE, { objectName: "a2fade_spine", x: 7.2, y: 2.6, w: 0, h: 3.2, line: { color: TEAL, width: 1.5, dashType: "dash" } });
     for (let i = 0; i < 3; i++) {
       const y = 2.22 + i * 1.53, o = 3 + i * 2;
-      card(s, `a${o}float_p${i}`, 7.55, y, 5.18, 1.38, P[i][3] ? { fill: "0C2D5C", tr: 5 } : {});
+      card(s, `a${o}float_p${i}`, 7.55, y, 5.18, 1.38, P[i][3] ? { fill: "13294A", tr: 5 } : {});
       await iconCircle(s, `a${o}pop_p${i}ic`, P[i][0], 6.92, y + 0.41, 0.56, P[i][3] ? GOLD : TEAL);
       T(s, `a${o}float_p${i}t`, P[i][1], 7.8, y + 0.12, 4.7, 0.34, { face: HEAD, size: 15, color: P[i][3] ? GOLD : TXT });
       T(s, `a${o}float_p${i}d`, P[i][2], 7.8, y + 0.48, 4.75, 0.85, { size: 12, color: "CFDCE8" });
@@ -467,10 +457,10 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     T(s, "a8fade_src", "Areas: Frontiers in Marine Science 2025. Compute measured; prices assumed.", 6.85, 6.75, 5.2, 0.22, { size: 9, color: "6F89A0" });
   }
 
-  // =============== 15 · TEAM ===============
+  // =============== 16 · TEAM ===============
   {
     const s = slide("OCEAN_B", "The team", "One engineer, every role — delivered in the open", [-2.4, 2.4, 6.5], [9.4, -3, 6], "team");
-    card(s, "a1float_panel", 0.6, 1.85, 4.55, 4.9, { fill: "0C2D5C", tr: 8 });
+    card(s, "a1float_panel", 0.6, 1.85, 4.55, 4.9, { fill: "13294A", tr: 8 });
     await iconCircle(s, "a1float_av", "LuUsers", 0.88, 2.1, 0.72);
     T(s, "a1float_name", "Nahla Nabil", 1.78, 2.07, 3.2, 0.48, { face: HEAD, size: 24 });
     T(s, "a1float_role", "Team lead  ·  Bahrain", 1.78, 2.55, 3.2, 0.3, { size: 13, color: MUTED });
@@ -500,7 +490,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     T(s, "a5float_gapt", [{ text: "Incubation gap we will close:  ", options: { bold: true, color: TEAL_L } }, { text: "a mangrove ecologist mentor · a restoration or agency partner · a GIS analyst" }], 5.7, 6.12, 6.9, 0.63, { size: 13, valign: "middle" });
   }
 
-  // =============== 16 · CLOSE ===============
+  // =============== 17 · CLOSE ===============
   {
     const s = pres.addSlide({ masterName: "HERO" });
     glows(s, [-2.4, -3, 7.5], [7.8, 2.6, 7.5]);
@@ -521,7 +511,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     T(s, "a7fade_ty", "Thank you", 9.9, 6.38, 2.62, 0.45, { face: HEAD, size: 20, color: GOLD, align: "right" });
   }
 
-  // =============== 17 · BACKUP: DEMO VIDEO ===============
+  // =============== 18 · BACKUP: DEMO VIDEO ===============
   {
     const s = slide("OCEAN_C", "Backup · for questions", "The 2-minute product demo", [8.8, -3, 6], [-2.6, 3.4, 6], "backup");
     const vw = 8.5, vh = vw * 9 / 16, vx = (13.333 - vw) / 2;

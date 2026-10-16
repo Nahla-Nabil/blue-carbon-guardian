@@ -19,14 +19,14 @@ def background(name, glow_xy, seed):
     img = top[None, None, :] * (1 - t[..., None]) + bot[None, None, :] * t[..., None]
     gx, gy = glow_xy
     d = np.sqrt((x - gx * W) ** 2 + (y - gy * H) ** 2) / W
-    img += np.array([25, 75, 165])[None, None, :] * np.exp(-(d / 0.33) ** 2)[..., None] * 0.55
+    img += np.array([18, 48, 98])[None, None, :] * np.exp(-(d / 0.33) ** 2)[..., None] * 0.55
     rng = np.random.default_rng(seed)
     field = np.zeros((H, W), np.float32)
     for _ in range(5):  # smooth pseudo-terrain for contour lines
         fx, fy, ph = rng.uniform(1.2, 3.2), rng.uniform(0.8, 2.4), rng.uniform(0, 6.28)
         field += np.sin(x / W * fx * 6.28 + ph) * np.cos(y / H * fy * 6.28 + ph * 0.7)
     lines = np.abs((field * 3.2) % 1 - 0.5) < 0.018
-    img[lines] += np.array([45, 105, 200]) * 0.22
+    img[lines] += np.array([45, 95, 160]) * 0.12
     v = np.sqrt(((x / W - 0.5) * 1.1) ** 2 + ((y / H - 0.5) * 1.3) ** 2)
     img *= (1 - 0.45 * np.clip(v - 0.25, 0, 1))[..., None]
     Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.6)).save(OUT / f"{name}.png", optimize=True)
@@ -54,7 +54,7 @@ def stand_map(name, w=1600, pad=40, labels=True):
         for f in gj["features"]:
             if (f["properties"]["stand"] in conv) != hot:
                 continue
-            fill, line = ((255, 107, 129, 200), (255, 170, 185, 255)) if hot else ((77, 163, 255, 130), (165, 212, 255, 235))
+            fill, line = ((222, 151, 161, 200), (240, 200, 206, 255)) if hot else ((120, 160, 210, 130), (190, 212, 238, 230))
             for r in rings(f):
                 dr.polygon([pj(c) for c in r], fill=fill, outline=line, width=2 * S)
     im = im.resize((w + 2 * pad, h + 2 * pad), Image.LANCZOS)
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     background("bg_a", (0.85, 0.15), 1)
     background("bg_b", (0.12, 0.85), 2)
     background("bg_c", (0.5, 0.5), 3)
-    glow("glow_cyan", (56, 189, 248)); glow("glow_blue", (56, 140, 248)); glow("glow_gold", (242, 193, 78))
+    glow("glow_cyan", (120, 170, 215)); glow("glow_blue", (90, 130, 190)); glow("glow_gold", (242, 193, 78))
     stand_map("stand_map")
     stand_map("stand_map_plain", labels=False)
     website_shot()

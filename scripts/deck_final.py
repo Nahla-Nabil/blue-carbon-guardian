@@ -15,10 +15,10 @@ import deck_v5 as v  # builds the PoC slides in memory (v.S); does not write the
 OUT = ROOT / "deck_final"; SL = OUT / "slides"; SL.mkdir(parents=True, exist_ok=True)
 NAVY, BLUE, CYAN, ICE, CORAL, AMBER, MUTED = v.NAVY, v.BLUE, v.CYAN, v.ICE, v.CORAL, v.AMBER, v.MUTED
 icon, light, dark = v.icon, v.light, v.dark
-for k in ("team", "validation", "impact", "scale", "close", "different"):
+for k in ("team", "validation", "impact", "scale", "close", "different", "sequence"):
     v.NOTES[k] = ""  # notes are attached below
 
-ORDER = ["cover", "problem", "product", "usecase", "data", "hyperspectral", "solution", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "team", "close"]
+ORDER = ["cover", "problem", "product", "usecase", "data", "hyperspectral", "solution", "sequence", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "team", "close"]
 TOTAL = len(ORDER)
 S = {k: v.S[k] for k in ("cover", "problem", "usecase", "data", "innovation", "cells", "product", "validation-real", "hyperspectral", "solution")}
 
@@ -119,6 +119,12 @@ S["different"] = light("different", 9, "Innovation &amp; differentiation", "How 
 <div class="card" style="padding:10px 14px"><table><tr>{_th}</tr>{_tr}</table></div>
 <div class="card dk" style="margin-top:22px;padding:20px 30px"><p class="t w" style="font-size:24px"><b>Complementary, not competing:</b> Global Mangrove Watch flags loss worldwide; we add the tide model, the 200 m cells, a measured false-alarm rate and the carbon at stake &#8212; built and tested for the Gulf.</p></div>""")
 
+
+# ---- NEW: how a user receives it (README sequence diagram) -------------------------------------------------------------
+S["sequence"] = light("sequence", 8, "Delivery &#183; how a user receives it", "One alert, one message, one targeted visit", f"""
+<div class="row" style="gap:26px;flex:1"><div class="card" style="flex:1.6;padding:18px;background:#0B1B30;display:flex;align-items:center"><img src="images/diagram_sequence.png" style="width:100%"></div>
+<div class="col" style="flex:1;gap:16px">{"".join(f'<div class="card" style="flex:1;padding:18px 22px"><p class="t b">{a}</p><p class="s" style="margin-top:6px">{b}</p></div>' for a, b in [("Every ~5 days", "a new Sentinel-2 scene runs through the tide-aware model, per stand and per 200 m cell"), ("If an alert fires", "sub-metre check of the flagged cells, then an email or JSON alert with the cell map and the carbon at stake"), ("If nothing changes", "a monthly site report: condition, trend and carbon stock")])}</div></div>""")
+
 # ---- NEW: close ------------------------------------------------------------------------------------------------------
 S["close"] = dark("close", f"""
   <div style="position:absolute;left:110px;top:190px;width:1700px">
@@ -179,9 +185,14 @@ Every image is cloud-masked, only interior pixels are used, and every finding is
 
 DO: press → ."""),
 
- "solution": (25, """SAY: "Here is the whole method on one slide." (follow the boxes left to right as they appear)
-"Stands are cut into 200-metre cells. Every Sentinel-2 date gives indices per stand and per cell. The tide-aware model predicts what each should look like. An alert fires when the stand, or any single cell, falls too far below — and the decision layer adds the cell map and the carbon at stake."
-(point at the bottom row) "For the user: no alert, a monthly report. An alert: we check the flagged cells on sub-metre imagery, send the cell map and the carbon at stake, and the inspector visits only those cells."
+ "solution": (20, """SAY: "Here is the whole method, left to right.
+We cut every stand into 200-metre cells and read every Sentinel-2 date. The tide-aware model — in blue — predicts what each stand and each cell should look like.
+If reality falls too far below, the alert rule — in rose — fires. The decision layer — in sand — adds the cell map and the carbon at stake, with EnMAP and sub-metre imagery as independent checks."
+
+DO: point along the boxes as you speak, then press → ."""),
+ "sequence": (20, """SAY: "And this is what the user experiences.
+Every five days a new scene runs through the model. If an alert fires, we first check the flagged cells on sub-metre imagery, then send the alert with the cell map and the carbon at stake — and the inspector visits only those cells.
+If nothing changes, the user still gets a monthly report. No dashboards to watch: the system comes to them."
 
 DO: press → ."""),
  "innovation": (35, """SAY: "Now the hard part — the one that breaks most monitors in the Gulf: the tide.
@@ -192,18 +203,15 @@ Noise falls by 29 to 35 percent on every index. That is what makes a reliable al
 
 DO: wait for the water to rise in the illustration, then press → on "reliable alert"."""),
 
- "cells": (30, """SAY: "Our second innovation: averages hide damage.
-This is real data from stand 5. Watch the cells turn red while the stand average barely moves.
-Three of our five real conversions were found only by the cells.
-So the alert has one rule: the stand average OR any single cell — calibrated together to about one false alarm per stand per year.
+ "cells": (25, """SAY: "Our second innovation: averages hide damage.
+Real data from stand 5: watch the cells turn red while the stand average barely moves. Three of our five real conversions were found only by the cells.
 In simulation, a partial loss is caught within 60 days 73 percent of the time — against 13 percent by chance."
 
 DO: press → ."""),
 
- "validation-real": (40, """SAY: "Does it work on real events? Five real conversions, all confirmed on 30-to-50-centimetre imagery.
-On the right: the blue bar is the window between the last intact image and the first image showing works. The red diamond is when our alert started.
-Every alert falls inside that window." (point at stand 5's diamond)
-"To be precise: this is detection while the works happen — not a prediction before they start. We never claim advance warning."
+ "validation-real": (35, """SAY: "Does it work on real events? Five real conversions, all confirmed on 30-to-50-centimetre imagery.
+The blue bar is the window between the last intact image and the first image showing works; the diamond is when our alert started. Every alert falls inside that window." (point at stand 5's diamond)
+"This is detection while the works happen — not a prediction. We never claim advance warning."
 
 DO: press → ."""),
 

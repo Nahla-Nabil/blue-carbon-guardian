@@ -53,7 +53,7 @@ def cover_scan(W=1280, fps=30, secs=8):
     base = np.zeros((H, W, 3), np.float32)
     base[:] = np.array([6, 18, 38]) * (1 - yy / H)[..., None] + np.array([10, 36, 78]) * (yy / H)[..., None]
     grid = ((xx % 64) < 1.2) | ((yy % 64) < 1.2); base[grid] += 9
-    BLUE, BLUE_L, CORAL = np.array([77, 163, 255]), np.array([170, 214, 255]), np.array([255, 107, 129])
+    BLUE, BLUE_L, CORAL = np.array([120, 160, 210]), np.array([196, 214, 236]), np.array([222, 151, 161])
     n = fps * secs; trail = 260; frames = OUT / "_scan"; shutil.rmtree(frames, ignore_errors=True); frames.mkdir()
     f_hud, f_small, f_lab = FONT(26), FONT(20, False), FONT(22)
     for i in range(n):
@@ -68,9 +68,9 @@ def cover_scan(W=1280, fps=30, secs=8):
         img += gh[..., None] * CORAL * 0.45
         img = img * (1 - a_h[..., None]) + CORAL * a_h[..., None]
         img = np.maximum(img, (en * (0.5 + 0.5 * lit))[..., None] * BLUE_L)
-        img = np.maximum(img, eh[..., None] * np.array([255, 190, 200]))
+        img = np.maximum(img, eh[..., None] * np.array([240, 205, 210]))
         beam = np.exp(-((xx - sx) / 3.0) ** 2); halo = np.exp(-((xx - sx) / 40.0) ** 2) * 0.35
-        img += (beam + halo)[..., None] * np.array([150, 205, 255])
+        img += (beam + halo)[..., None] * np.array([170, 200, 232])
         im = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)); dr = ImageDraw.Draw(im, "RGBA")
         for k, (cx, cy) in cent.items():                         # ping rings after the beam passes
             age = (sx - cx) / (W + 2 * trail) * secs
@@ -79,12 +79,12 @@ def cover_scan(W=1280, fps=30, secs=8):
                     a2 = age - j * 0.45
                     if 0 <= a2 < 1.6:
                         r = 14 + a2 * 70; al = int(220 * (1 - a2 / 1.6))
-                        dr.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(255, 140, 160, al), width=4)
+                        dr.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(230, 170, 178, al), width=4)
             dr.ellipse([cx - 19, cy - 19, cx + 19, cy + 19], fill=(255, 255, 255, 240))
             dr.text((cx, cy), str(k), font=f_lab, fill=(8, 26, 46, 255), anchor="mm")
-        dr.text((pad - 30, 26), "SENTINEL-2  ·  LIVE SCAN  ·  ABU DHABI PILOT", font=f_hud, fill=(170, 214, 255, 255))
+        dr.text((pad - 30, 26), "SENTINEL-2  ·  LIVE SCAN  ·  ABU DHABI PILOT", font=f_hud, fill=(196, 214, 236, 255))
         dot = 255 if (i // 15) % 2 == 0 else 90
-        dr.ellipse([W - pad - 10, 34, W - pad + 4, 48], fill=(255, 107, 129, dot))
+        dr.ellipse([W - pad - 10, 34, W - pad + 4, 48], fill=(222, 151, 161, dot))
         dr.text((W - pad - 18, 41), "REC", font=f_small, fill=(255, 180, 190, 255), anchor="rm")
         dr.text((pad - 30, H - 34), "25 stands · 2,281 ha   ·   coral = 5 conversions confirmed on sub-metre imagery", font=f_small, fill=(160, 190, 225, 255), anchor="lm")
         im.save(frames / f"f{i:04d}.png")
