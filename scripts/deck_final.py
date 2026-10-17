@@ -39,14 +39,17 @@ rc = "".join(f'<div class="card" style="display:flex;gap:20px;align-items:center
 skills = ["AI / LLM backend engineering", "machine learning", "computer vision (deepfake detection)", "federated learning", "semantic search systems", "Python geospatial stack"]
 S["team"] = light("team", 2, "The team", "One engineer, every role &#8212; delivered in the open", f"""
 <div class="row" style="gap:28px;flex:1">
-  <div class="card dk" style="width:560px;padding:30px 34px;display:flex;flex-direction:column;gap:16px;justify-content:space-between">
-    <div style="display:flex;gap:20px;align-items:center">{icon("users", 36, bg="rgba(255,255,255,.15)")}<div><p style="font-size:40px;font-weight:700">Nahla Nabil</p><p class="s ws" style="font-size:20px">Team lead &#183; Bahrain &#183; Team Blue Athar</p></div></div>
-    <p class="lab" style="color:#8FD3FF;margin-top:6px">Relevant expertise</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap">{"".join(f'<span class="pill" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(169,228,255,.4);font-size:17px">{x}</span>' for x in skills)}</div>
-    <p class="lab" style="color:#8FD3FF;margin-top:6px">Community</p>
-    <p class="t w" style="font-size:21px">NASA Space Apps Challenge local lead: organising and mentoring space-data teams</p>
-    <p class="lab" style="color:#8FD3FF;margin-top:6px">How one person delivered this</p>
-    <p class="t w" style="font-size:20px">An AI-assisted engineering workflow (Claude Code) that I direct and review; every number is reproducible from the public code.</p>
+  <div class="card dk" style="width:560px;padding:26px 30px;display:flex;flex-direction:column;gap:12px;justify-content:space-between">
+    <div style="display:flex;gap:20px;align-items:center"><img src="images/nahla.png" style="width:130px;height:130px;border-radius:50%;border:4px solid #8FD3FF"><div><p style="font-size:38px;font-weight:700">Nahla Nabil</p><p class="s ws" style="font-size:19px">Team lead &#183; AI engineer &#183; IEEE researcher &#183; Bahrain</p></div></div>
+    <p class="lab" style="color:#8FD3FF;margin-top:4px">Education</p>
+    <p class="t w" style="font-size:20px"><b>BSc Artificial Intelligence</b> &#183; Arab Open University, Bahrain &#183; final semester &#183; First-Class Honours standing</p>
+    <p class="lab" style="color:#8FD3FF;margin-top:4px">Relevant expertise</p>
+    <ul style="color:#fff;font-size:18px;line-height:1.45;padding-left:22px;margin:0">
+      <li>2 IEEE papers: federated learning for industrial IoT (ICCA 2025); random-forest audit of GCC sustainability indicators (ICAISET 2026)</li>
+      <li>AI &amp; LLM product engineering (Doo Bahrain; FlyRank backend AI)</li>
+      <li>Machine learning, computer vision (deepfake detection), Python geospatial stack</li></ul>
+    <p class="lab" style="color:#8FD3FF;margin-top:4px">Community</p>
+    <p class="t w" style="font-size:19px">NASA Space Apps Challenge local lead (Muharraq): organising and mentoring space-data teams</p>
   </div>
   <div class="col" style="flex:1;gap:14px">
     <p class="lab" style="color:{BLUE}">Roles &amp; responsibilities in this project</p>
@@ -100,11 +103,11 @@ ph = [("check", "Proven now", ["91 stands, 2 countries, 2 Sentinel-2 tiles", "65
       ("target", "Scale", ["Gulf &#8776; 165 km&#178; + Red Sea &#8776; 200 km&#178; of mangrove", "sub-metre data for small stands (Bahrain)", "national MRV &#183; platform licensing"])]
 phc = "".join(f'<div class="card{" dk" if k == 0 else ""}" style="padding:18px 26px;flex:1;display:flex;flex-direction:column;justify-content:center"><div style="display:flex;gap:14px;align-items:center">{icon(i, 26)}<p class="t b" style="font-size:24px{";color:#fff" if k == 0 else ""}">{a}</p></div>'
               f'<p class="s{" ws" if k == 0 else ""}" style="margin-top:10px;font-size:21px">{" &#183; ".join(items)}</p></div>' for k, (i, a, items) in enumerate(ph))
-S["scale"] = light("scale", 12, "Beyond the proof of concept", "Reproducible today, built to scale tomorrow", f"""
+S["scale"] = light("scale", 12, "Bonus criteria &#183; beyond the proof of concept", "Reproducible today, built to scale tomorrow", f"""
 <div class="row" style="gap:28px;flex:1">
-  <div class="card" style="flex:1;padding:24px 30px;display:flex;flex-direction:column;gap:16px;justify-content:space-between"><p class="lab" style="color:{BLUE}">Documentation &amp; reproducibility</p>{rp}
+  <div class="card" style="flex:1;padding:24px 30px;display:flex;flex-direction:column;gap:16px;justify-content:space-between"><p class="lab" style="color:{BLUE}">Bonus &#183; documentation, evidence &amp; reproducibility</p>{rp}
     <p class="mono" style="font-size:17px;color:{BLUE}">github.com/Nahla-Nabil/blue-carbon-guardian</p></div>
-  <div class="col" style="flex:1.15;gap:16px"><p class="lab" style="color:{BLUE}">Scalability</p>{phc}</div>
+  <div class="col" style="flex:1.15;gap:16px"><p class="lab" style="color:{BLUE}">Bonus &#183; scalability beyond the PoC</p>{phc}</div>
 </div>
 <p class="s" style="font-size:16px;margin-top:12px">Mangrove areas: Frontiers in Marine Science 2025 (doi:10.3389/fmars.2025.1695426). Compute measured on our runs; prices and analyst time are assumptions.</p>""")
 
@@ -233,8 +236,8 @@ It already transferred to unseen stands and a second country, at under five doll
 
 DO: press → ."""),
 
- "team": (25, """SAY: "Who built this? A team of one. I held every role on this slide — satellite pipeline, statistics, product and business case.
-My background is AI and machine-learning engineering, and I lead NASA Space Apps locally. I worked with an AI-assisted engineering workflow that I direct and review — and every number is public and checkable.
+ "team": (30, """SAY: "Who built this? A team of one. I held every role on this slide — satellite pipeline, statistics, product and business case.
+I'm finishing a BSc in Artificial Intelligence at the Arab Open University in Bahrain, with First-Class Honours standing; I have two IEEE papers in machine learning, and I lead NASA Space Apps locally. I worked with an AI-assisted engineering workflow that I direct and review — and every number is public and checkable.
 In incubation I will add what I don't have: a mangrove ecologist and a field partner."
 
 DO: press → ."""),

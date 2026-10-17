@@ -440,9 +440,9 @@ const pill = (s, name, text, x, y, w, o = {}) => {
 
   // =============== 15 · SCALE & REPRODUCIBILITY ===============
   {
-    const s = slide("OCEAN_B", "Beyond the proof of concept", "Reproducible today, built to scale tomorrow", [-2.6, -2.2, 6.5], [8.9, 3.4, 6.5], "scale");
+    const s = slide("OCEAN_B", "Bonus criteria · beyond the proof of concept", "Reproducible today, built to scale tomorrow", [-2.6, -2.2, 6.5], [8.9, 3.4, 6.5], "scale");
     card(s, "a1float_rc", 0.6, 1.85, 5.95, 4.9);
-    label(s, "a1float_rl", "Documentation & reproducibility", 0.85, 2.0, 5.5);
+    label(s, "a1float_rl", "Bonus · documentation & reproducibility", 0.85, 2.0, 5.6);
     const R = [["LuGithub", "Public repository, MIT licence", "code, notebook, figures, provenance and licences"], ["LuCheckCircle", "Re-runs end to end in ~24 s", "outputs committed · pinned requirements · example in/out"],
       ["LuShieldCheck", "Clean-machine test passed", "fresh environment, same numbers, 0 errors"], ["LuSearch", "Every number traceable", "each figure comes from a script and a written summary"], ["LuMonitor", "Live website + site reports", "anyone can open the monitor and check a stand"]];
     for (let i = 0; i < 5; i++) {
@@ -451,7 +451,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a${o}float_r${i}t`, R[i][1], 1.55, y - 0.02, 4.8, 0.32, { face: HEAD, size: 15 });
       T(s, `a${o}float_r${i}d`, R[i][2], 1.55, y + 0.3, 4.85, 0.3, { size: 12, color: MUTED });
     }
-    label(s, "a1fade_sl", "Scalability", 6.85, 1.85, 5);
+    label(s, "a1fade_sl", "Bonus · scalability beyond the PoC", 6.85, 1.85, 5.8);
     const P = [["LuCheckCircle", "Proven now", "91 stands · 2 countries · 2 Sentinel-2 tiles · 65 unseen stands at 0.79 false alarms / stand-yr · compute < $5 per site per year", true],
       ["LuFlag", "Incubation", "Satellite 813 in the spectral step · deployment on gIQ · a pilot customer + site records · more EnMAP dates", false],
       ["LuRocket", "Scale", "Gulf ≈ 165 km² + Red Sea ≈ 200 km² of mangrove · sub-metre data for small stands (Bahrain) · national MRV, licensing", false]];
@@ -470,17 +470,20 @@ const pill = (s, name, text, x, y, w, o = {}) => {
   {
     const s = slide("OCEAN_B", "The team", "One engineer, every role — delivered in the open", [-2.4, 2.4, 6.5], [9.4, -3, 6], "team");
     card(s, "a1float_panel", 0.6, 1.85, 4.55, 4.9, { fill: "E8F0F9", tr: 8 });
-    await iconCircle(s, "a1float_av", "LuUsers", 0.88, 2.1, 0.72);
-    T(s, "a1float_name", "Nahla Nabil", 1.78, 2.07, 3.2, 0.48, { face: HEAD, size: 24 });
-    T(s, "a1float_role", "Team lead  ·  Bahrain", 1.78, 2.55, 3.2, 0.3, { size: 13, color: MUTED });
-    label(s, "a2fade_l1", "Relevant expertise", 0.88, 3.07, 4);
-    s.addText(["AI / LLM backend engineering", "Machine learning & computer vision (deepfake detection)", "Federated learning · semantic search systems", "Python geospatial stack"].map((t, i, a) =>
-      ({ text: t, options: { bullet: { indent: 14 }, breakLine: i < a.length - 1 } })),
-      { objectName: "a2fade_skills", x: 0.88, y: 3.38, w: 4.1, h: 1.35, fontFace: BODY, fontSize: 13, color: TXT, paraSpaceAfter: 4, margin: 0, valign: "top", isTextBox: true });
-    label(s, "a3fade_l2", "Community", 0.88, 4.8, 4);
-    T(s, "a3fade_comm", "NASA Space Apps Challenge local lead: organising and mentoring space-data teams", 0.88, 5.08, 4.05, 0.55, { size: 13 });
-    label(s, "a3fade_l3", "How one person delivered this", 0.88, 5.72, 4);
-    T(s, "a3fade_ai", "An AI-assisted engineering workflow (Claude Code) that I direct and review; every number is reproducible from the public code.", 0.88, 6.0, 4.05, 0.7, { size: 12, color: "3A4D63" });
+    s.addShape(pres.shapes.OVAL, { objectName: "a1float_avring", x: 0.8, y: 2.02, w: 1.32, h: 1.32, fill: { color: "FFFFFF" }, line: { color: TEAL, width: 2 } });
+    s.addImage({ objectName: "a1float_av", path: path.join(__dirname, "nahla.png"), x: 0.85, y: 2.07, w: 1.22, h: 1.22 });
+    T(s, "a1float_name", "Nahla Nabil", 2.28, 2.1, 2.8, 0.45, { face: HEAD, size: 22 });
+    T(s, "a1float_role", "Team lead · AI engineer · IEEE researcher", 2.28, 2.55, 2.8, 0.5, { size: 11, color: MUTED });
+    T(s, "a1float_ctry", "Bahrain", 2.28, 2.84, 2.8, 0.28, { size: 11, color: MUTED });
+    label(s, "a2fade_l0", "Education", 0.88, 3.42, 4);
+    T(s, "a2fade_edu", [{ text: "BSc Artificial Intelligence", options: { bold: true } }, { text: " · Arab Open University, Bahrain · final semester · First-Class Honours standing" }], 0.88, 3.66, 4.1, 0.5, { size: 11.5 });
+    label(s, "a2fade_l1", "Relevant expertise", 0.88, 4.24, 4);
+    s.addText(["2 IEEE papers (ICCA 2025, ICAISET 2026): federated learning for industrial IoT; random-forest audit of GCC sustainability",
+      "AI & LLM product engineering (Doo Bahrain; FlyRank backend AI)", "Machine learning, computer vision (deepfake detection), Python geospatial stack"].map((t, i, a) =>
+      ({ text: t, options: { bullet: { indent: 12 }, breakLine: i < a.length - 1 } })),
+      { objectName: "a2fade_skills", x: 0.88, y: 4.5, w: 4.15, h: 1.4, fontFace: BODY, fontSize: 10.5, color: TXT, paraSpaceAfter: 3, margin: 0, valign: "top", isTextBox: true });
+    label(s, "a3fade_l2", "Community", 0.88, 6.0, 4);
+    T(s, "a3fade_comm", "NASA Space Apps Challenge local lead (Muharraq): organising and mentoring space-data teams", 0.88, 6.22, 4.15, 0.45, { size: 10 });
     const roles = [["LuTarget", "Project lead & owner", "problem framing, user needs, scope, every claim"],
       ["LuSatellite", "EO data engineer", "778 Sentinel-2 dates, EnMAP reader, sub-metre checks"],
       ["LuLineChart", "Modelling & statistics", "tide-aware model, stand + cell alert, calibration"],
@@ -507,7 +510,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     s.addNotes(NOTES.close);
     T(s, "a0fade_k", [{ text: "TEAM BLUE ATHAR  ·  ", options: { charSpacing: 4 } }, { text: "الأثر الأزرق", options: { charSpacing: 0 } }], 0.8, 1.05, 8, 0.36, { face: HEAD, size: 13, color: TEAL });
     T(s, "a1float_tag", "Every lost mangrove leaves a trace.\nWe find it from space.", 0.76, 1.5, 11.5, 1.75, { face: HEAD, size: 46, ls: 1.0 });
-    T(s, "a1float_merit", "A working product  ·  five real events confirmed  ·  every number reproducible", 0.8, 3.12, 11.7, 0.4, { face: HEAD, size: 16, color: GOLD });
+    T(s, "a1float_merit", "Overall value:  a working product  ·  five real events confirmed  ·  every number reproducible", 0.8, 3.12, 11.7, 0.4, { face: HEAD, size: 16, color: GOLD });
     const K = [["Tide-aware", "29–35 % less noise"], ["5 of 5", "conversions alerted during the works, 3 only by cells"], ["0.79", "false alarms / stand-yr on unseen stands"], ["Open", "public code, re-runs in ~24 s"]];
     for (let i = 0; i < 4; i++) {
       const x = 0.8 + i * 2.97, o = 2 + i;
