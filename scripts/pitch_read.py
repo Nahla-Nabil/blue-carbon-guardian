@@ -1,0 +1,345 @@
+"""Read-aloud speaker notes for the final pitch: every spoken English line, and under it the same words in Arabic letters
+(pronunciation help). Marks: "/" short pause (breath), "‖" full stop, "▶" an action (do it, do not say it).
+Used by scripts/deck_final.py, which puts these notes into the PowerPoint and docs/pitch_script.md.
+Letters: ڤ = v, پ = p, غ = g (as in "good").
+"""
+
+RAW = r"""
+@cover
+! كيف تقرئي: السطر الإنجليزي = اللي بتقوليه. السطر تحته = نفس الكلام بحروف عربية.
+! /  = وقفة صغيرة (خذي نفَس)     ‖  = وقفة كاملة     ▶ = شي بتعمليه (لا تقوليه)     ڤ = v     پ = p     غ = g
+! قبل ما تبلشي: العرض بوضع Presenter View · المتصفح مفتوح على الموقع (قسم Monitor) · الإشعارات مطفية · شاركي نافذة الشرائح بس، مش الشاشة كلها.
+Good morning. / I'm Nahla Nabil, / team Blue Athar. ‖
+غود مورنينغ. / آيم نهلة نبيل، / تيم بلو أثر. ‖
+What you are watching / is a satellite pass / over twenty-five mangrove stands in Abu Dhabi. ‖
+وَت يو آر وَتشينغ / إز أ ساتلايت پاس / أوڤر توينتي فايف مانغروڤ ستاندز إن أبوظبي. ‖
+The five in red / were lost to construction / between 2022 and 2025 — / and our system raised an alert on every one of them / while the works were happening. ‖
+ذا فايف إن رِد / وِر لوست تو كونستراكشن / بيتوين توينتي توينتي تو آند توينتي توينتي فايف — / آند آور سيستم ريزد آن أليرت أون إيڤري وَن أوف ذِم / وايل ذا وركس وِر هاپنينغ. ‖
+This is Blue Carbon Guardian. ‖
+ذيس إز بلو كاربون غارديان. ‖
+> خلّي الماسح يكمّل لفّة وحدة، بعدين اضغطي السهم →
+
+@team
+Before the problem — / who is behind this. ‖ A team of one. ‖
+بيفور ذا پروبلم — / هو إز بيهايند ذيس. ‖ أ تيم أوف وَن. ‖
+I held every role on this slide — / satellite pipeline, statistics, / product and business case. ‖
+آي هِلد إيڤري رول أون ذيس سلايد — / ساتلايت پايپلاين، ستاتيستيكس، / پرودَكت آند بيزنس كيس. ‖
+I'm finishing a BSc in Artificial Intelligence / at the Arab Open University in Bahrain, / with First-Class Honours standing. ‖
+آيم فينيشينغ أ بي إس سي إن آرتيفيشال إنتليجنس / آت ذي أراب أوپن يونيڤرستي إن البحرين، / وِذ فيرست كلاس أونرز ستاندينغ. ‖
+I have two IEEE papers in machine learning, / and I lead NASA Space Apps locally. ‖
+آي هاڤ تو آي تريپل إي پيپرز إن ماشين ليرنينغ، / آند آي ليد ناسا سپيس آپس لوكالي. ‖
+I worked with an AI-assisted engineering workflow / that I direct and review — / and every number is public and checkable. ‖
+آي وركت وِذ آن إي آي أسيستِد إنجينيرينغ وركفلو / ذات آي دايركت آند ريڤيو — / آند إيڤري نامبر إز پابليك آند تشيكابل. ‖
+In incubation / I will add what I don't have: / a mangrove ecologist / and a field partner. ‖
+إن إنكيوبيشن / آي ويل آد وَت آي دونت هاڤ: / أ مانغروڤ إيكولوجيست / آند أ فيلد پارتنر. ‖
+> اضغطي السهم →
+
+@problem
+The Gulf is planting mangroves at record scale: / 100 million pledged by the UAE, / more than 100 million by Saudi Arabia. ‖
+ذا غَلف إز پلانتينغ مانغروڤز آت ريكورد سكيل: / وَن هاندرد مِليون پليدجد باي ذا يو إي إي، / مور ذان وَن هاندرد مِليون باي ساودي أريبيا. ‖
+But planting is scaling faster than watching. ‖ Look at stand 5. ‖
+بَت پلانتينغ إز سكيلينغ فاستر ذان وَتشينغ. ‖ لوك آت ستاند فايف. ‖
+> أشّري على الصور، من اليسار لليمين
+November 2021: intact. ‖ October 2022: works start — / and that is when our alert fired. ‖
+نوڤمبر توينتي توينتي وَن: إنتاكت. ‖ أوكتوبر توينتي توينتي تو: وركس ستارت — / آند ذات إز وِن آور أليرت فايرد. ‖
+2023: canals. ‖ Today: a canal development. ‖
+توينتي توينتي ثري: كانالز. ‖ توداي: أ كانال ديڤيلوپمنت. ‖
+Today, a loss like this is found at the next field survey — / after the fact. ‖
+توداي، أ لوس لايك ذيس إز فاوند آت ذا نِكست فيلد سيرڤي — / آفتر ذا فاكت. ‖
+What we solve: / a calibrated alert every five days / that says where to inspect, / and what carbon is at stake. ‖
+وَت وي سولڤ: / أ كاليبريتِد أليرت إيڤري فايف دايز / ذات سيز وير تو إنسپكت، / آند وَت كاربون إز آت ستيك. ‖
+> اضغطي السهم →
+
+@product
+So here is what we built. ‖ Let me show you — live. ‖
+سو هير إز وَت وي بيلت. ‖ لِت مي شو يو — لايڤ. ‖
+> Alt+Tab ← روحي للمتصفح (قسم Monitor)
+Every stand is coloured by its condition. ‖ Stand 5, in red: / severe decline. ‖
+إيڤري ستاند إز كالرد باي إتس كونديشن. ‖ ستاند فايف، إن رِد: / سيڤير ديكلاين. ‖
+> اضغطي "200 m cells" فوق الخريطة
+Now the key idea: / we split every stand into 200-metre cells. ‖
+ناو ذا كي آيديا: / وي سپليت إيڤري ستاند إنتو تو هاندرد ميتر سِلز. ‖
+> انزلي للجدول ← اضغطي على صف رقم 9 ← اطلعي للخريطة
+Stand 9. ‖ On average it reads 'stable'. ‖ But 8 of its 28 cells / are in severe decline. ‖ That is exactly where you send the inspector. ‖
+ستاند ناين. ‖ أون آڤريج إت ريدز "ستيبل". ‖ بَت إيت أوف إتس توينتي إيت سِلز / آر إن سيڤير ديكلاين. ‖ ذات إز إغزاكتلي وير يو سِند ذي إنسپكتر. ‖
+> حرّكي الماوس فوق رسم الإنذار (Alert score)
+Blue is the stand average, / red is the worst single cell. ‖ The red line plunges far below its threshold — / the cells see the damage much more sharply / than the average does. ‖
+بلو إز ذا ستاند آڤريج، / رِد إز ذا ورست سينغل سِل. ‖ ذا رِد لاين پلانجِز فار بيلو إتس ثريشولد — / ذا سِلز سي ذا دامِج ماتش مور شارپلي / ذان ذي آڤريج داز. ‖
+> (بس إذا عندك وقت) اضغطي "Open the site report" ← 3 ثواني ← Ctrl+W
+And every stand gets a one-page report / with the carbon at stake. ‖
+آند إيڤري ستاند غِتس أ وَن پيج ريپورت / وِذ ذا كاربون آت ستيك. ‖
+> Alt+Tab ← ارجعي للباوربوينت ← اضغطي السهم →
+! إذا الموقع ما اشتغل: ضلّي على هالشريحة، الفيديو بيعرض نفس الخطوات، وقولي نفس الكلام.
+
+@usecase
+Three users, three decisions. ‖
+ثري يوزرز، ثري ديسيجنز. ‖
+Agencies: / which stands do we inspect this month. ‖
+إيجنسيز: / ويتش ستاندز دو وي إنسپكت ذيس مَنث. ‖
+Planting and carbon developers: / is the carbon we report still there. ‖
+پلانتينغ آند كاربون ديڤيلوپرز: / إز ذا كاربون وي ريپورت ستيل ذير. ‖
+Developers and regulators: / did the works stay outside the mangrove line. ‖
+ديڤيلوپرز آند ريغيوليتورز: / ديد ذا وركس ستاي آوتسايد ذا مانغروڤ لاين. ‖
+> اضغطي السهم →
+
+@data
+The analysis rests on five independent data sources: / 778 Sentinel-2 dates over six years, / EnMAP hyperspectral, / ESA WorldCover, / field carbon plots, / and dated sub-metre imagery. ‖
+ذي أناليسيس رِستس أون فايف إنديپندنت داتا سورسِز: / سِڤن هاندرد سِڤنتي إيت سِنتينِل تو دايتس أوڤر سِكس ييرز، / إن ماب هايپرسپكترال، / إي إس إيه وورلد كاڤر، / فيلد كاربون پلوتس، / آند دايتِد ساب ميتر إميجري. ‖
+Every image is cloud-masked, / only interior pixels are used, / and every finding is cross-checked by a second source. ‖
+إيڤري إميج إز كلاود ماسكت، / أونلي إنتيرير پيكسلز آر يوزد، / آند إيڤري فايندينغ إز كروس تشيكت باي أ سِكند سورس. ‖
+> اضغطي السهم →
+
+@hyperspectral
+Here is the second source at work: / EnMAP hyperspectral, 224 bands. ‖
+هير إز ذا سِكند سورس آت وورك: / إن ماب هايپرسپكترال، تو هاندرد توينتي فور باندز. ‖
+On stand 5, / the green curves are the vegetation in 2022; / the red dashed curves are the same pixels in 2025 — / the spectrum of sand and fill. ‖
+أون ستاند فايف، / ذا غرين كيرڤز آر ذا ڤيجيتيشن إن توينتي توينتي تو؛ / ذا رِد داشت كيرڤز آر ذا سيم پيكسلز إن توينتي توينتي فايف — / ذا سپكترَم أوف ساند آند فِل. ‖
+That is reclamation, / not dieback. ‖
+ذات إز ريكلاميشن، / نوت داي باك. ‖
+On the same dates, / EnMAP agrees with our Sentinel-2 indices / with r up to 0.99. ‖
+أون ذا سيم دايتس، / إن ماب أغريز وِذ آور سِنتينِل تو إنديسيز / وِذ آر أپ تو زيرو پوينت ناين ناين. ‖
+> اضغطي السهم →
+
+@sat813
+And this is where Satellite 813 comes in. ‖
+آند ذيس إز وير ساتلايت إيت وَن ثري كامز إن. ‖
+Sentinel-2 tells us when something changed, / every five days. ‖
+سِنتينِل تو تِلز أس وِن سامثينغ تشينجد، / إيڤري فايف دايز. ‖
+Satellite 813 tells us what: / once a cell is flagged, / we task 813 over just that cell. ‖
+ساتلايت إيت وَن ثري تِلز أس وَت: / وَنس أ سِل إز فلاغد، / وي تاسك إيت وَن ثري أوڤر جاست ذات سِل. ‖
+Every index we use sits inside 813's range, / at 20 metres. ‖
+إيڤري إندكس وي يوز سِتس إنسايد إيت وَن ثريز رينج، / آت توينتي ميترز. ‖
+It is planned — / 813 scenes were not available in this proof of concept. ‖
+إت إز پلاند — / إيت وَن ثري سينز وِر نوت أڤيلابل إن ذيس پروف أوف كونسپت. ‖
+> اضغطي السهم →
+
+@solution
+Here is the whole method, / left to right. ‖
+هير إز ذا هول ميثود، / لِفت تو رايت. ‖
+We cut every stand into 200-metre cells / and read every Sentinel-2 date. ‖
+وي كات إيڤري ستاند إنتو تو هاندرد ميتر سِلز / آند ريد إيڤري سِنتينِل تو دايت. ‖
+The tide-aware model — in blue — / predicts what each stand and each cell should look like. ‖
+ذا تايد أوير مودل — إن بلو — / پريدِكتس وَت إيتش ستاند آند إيتش سِل شود لوك لايك. ‖
+If reality falls too far below, / the alert rule — in rose — fires. ‖
+إف رياليتي فولز تو فار بيلو، / ذي أليرت رول — إن روز — فايرز. ‖
+The decision layer — in sand — / adds the cell map and the carbon at stake, / with EnMAP and sub-metre imagery as independent checks. ‖
+ذا ديسيجن لاير — إن ساند — / آدز ذا سِل ماب آند ذا كاربون آت ستيك، / وِذ إن ماب آند ساب ميتر إميجري آز إنديپندنت تشيكس. ‖
+> أشّري على المربعات وإنتِ بتحكي، بعدين اضغطي السهم →
+
+@sequence
+For the user: / an alert with the cell map and the carbon at stake — / the inspector visits only those cells. ‖ If nothing changes, / a monthly report. ‖
+فور ذا يوزر: / آن أليرت وِذ ذا سِل ماب آند ذا كاربون آت ستيك — / ذي إنسپكتر ڤيزِتس أونلي ذوز سِلز. ‖ إف ناثينغ تشينجز، / أ مَنثلي ريپورت. ‖
+> اضغطي السهم →
+
+@innovation
+Now the hard part — / the one that breaks most monitors in the Gulf: / the tide. ‖
+ناو ذا هارد پارت — / ذا وَن ذات بريكس موست مونيتورز إن ذا غَلف: / ذا تايد. ‖
+When the tide comes in, / flooded mangroves look, from space, / like dying mangroves. ‖
+وِن ذا تايد كامز إن، / فلادِد مانغروڤز لوك، فروم سپيس، / لايك دايينغ مانغروڤز. ‖
+In this illustration / the same trees drop from 0.30 to 0.18. ‖
+إن ذيس إلاستريشن / ذا سيم تريز دروپ فروم زيرو پوينت ثري / تو زيرو پوينت وَن إيت. ‖
+On our stands, / index noise follows wetness / with a correlation of minus 0.9. ‖
+أون آور ستاندز، / إندكس نويز فولوز وِتنِس / وِذ أ كوريليشن أوف ماينس زيرو پوينت ناين. ‖
+So for every stand and every date / we model trend, season — and the tide. ‖
+سو فور إيڤري ستاند آند إيڤري دايت / وي مودل ترِند، سيزن — آند ذا تايد. ‖
+Noise falls by 29 to 35 percent on every index. ‖
+نويز فولز باي توينتي ناين تو ثيرتي فايف پيرسنت أون إيڤري إندكس. ‖
+> أشّري على البطاقة اليمين تحت (1.61 → 0.96)
+And we tested the textbook recipe — / NDVI alone, no tide model — / on the same stands with the same alert rule: / 1.61 false alarms per stand per year. ‖
+آند وي تِستِد ذا تِكستبوك ريسيپي — / إن دي ڤي آي ألون، نو تايد مودل — / أون ذا سيم ستاندز وِذ ذا سيم أليرت رول: / وَن پوينت سِكس وَن فولس ألارمز پير ستاند پير يير. ‖
+Ours: 0.96. ‖ Forty percent fewer wasted site visits, / and the tide model is most of that gain. ‖
+آورز: زيرو پوينت ناين سِكس. ‖ فورتي پيرسنت فيوَر وايستِد سايت ڤيزِتس، / آند ذا تايد مودل إز موست أوف ذات غين. ‖
+That is what makes a reliable alert possible. ‖
+ذات إز وَت مايكس أ ريلايابل أليرت پوسيبل. ‖
+> اضغطي السهم →
+
+@cells
+Our second innovation: / averages hide damage. ‖
+آور سِكند إنوڤيشن: / آڤريجِز هايد دامِج. ‖
+Real data from stand 5: / watch the cells turn red / while the stand average barely moves. ‖
+ريال داتا فروم ستاند فايف: / وَتش ذا سِلز تيرن رِد / وايل ذا ستاند آڤريج بيرلي موڤز. ‖
+Three of our five real conversions / were found only by the cells. ‖
+ثري أوف آور فايف ريال كونڤيرجنز / وِر فاوند أونلي باي ذا سِلز. ‖
+In simulation, / a partial loss is caught within 60 days / 73 percent of the time — / against 13 percent by chance. ‖
+إن سيميوليشن، / أ پارشال لوس إز كوت وِذِن سِكستي دايز / سِڤنتي ثري پيرسنت أوف ذا تايم — / أغينست ثيرتين پيرسنت باي تشانس. ‖
+> اضغطي السهم →
+
+@different
+How is this different? ‖ Surveys are periodic, / maps are one-off, / and Global Mangrove Watch's free monthly alerts are complementary. ‖
+هاو إز ذيس ديفرنت؟ ‖ سيرڤيز آر پيريوديك، / مابس آر وَن أوف، / آند غلوبال مانغروڤ وَتشِز فري مَنثلي أليرتس آر كومپليمنتري. ‖
+> أشّري على العمود الأزرق من فوق لتحت
+What we add: / every five days, / the tide removed, / where inside the stand, / a measured false-alarm rate, / and the carbon at stake — / built and tested for the Gulf. ‖
+وَت وي آد: / إيڤري فايف دايز، / ذا تايد ريموڤد، / وير إنسايد ذا ستاند، / أ ميجَرد فولس ألارم رايت، / آند ذا كاربون آت ستيك — / بيلت آند تِستِد فور ذا غَلف. ‖
+> اضغطي السهم →
+
+@validation-real
+Does it work on real events? ‖ Five real conversions, / all confirmed on 30-to-50-centimetre imagery. ‖
+داز إت وورك أون ريال إيڤنتس؟ ‖ فايف ريال كونڤيرجنز، / أول كونفيرمد أون ثيرتي تو فيفتي سنتيميتر إميجري. ‖
+The blue bar is the window / between the last intact image / and the first image showing works; / the diamond is when our alert started. ‖
+ذا بلو بار إز ذا ويندو / بيتوين ذا لاست إنتاكت إميج / آند ذا فيرست إميج شوينغ وركس؛ / ذا دايموند إز وِن آور أليرت ستارتِد. ‖
+Every alert falls inside that window. ‖
+إيڤري أليرت فولز إنسايد ذات ويندو. ‖
+> أشّري على المعيّن (الألماسة) تبع Stand 5
+This is detection while the works happen — / not a prediction. ‖ We never claim advance warning. ‖
+ذيس إز ديتِكشن وايل ذا وركس هاپن — / نوت أ پريدِكشن. ‖ وي نِڤر كليم أدڤانس وورنينغ. ‖
+> اضغطي السهم →
+
+@validation
+We also tested ourselves against pure chance — / every rate has its chance rate next to it. ‖
+وي أولسو تِستِد آورسِلڤز أغينست پيور تشانس — / إيڤري رايت هاز إتس تشانس رايت نِكست تو إت. ‖
+Partial loss: / 73 percent caught, / 13 by chance; / a uniform loss, / 63 versus 36. ‖
+پارشال لوس: / سِڤنتي ثري پيرسنت كوت، / ثيرتين باي تشانس؛ / أ يونيفورم لوس، / سِكستي ثري ڤيرسِس ثيرتي سِكس. ‖
+On 65 stands the model never saw, / thresholds frozen, / false alarms stayed at 0.79 per stand-year. ‖
+أون سِكستي فايف ستاندز ذا مودل نِڤر سو، / ثريشولدز فروزن، / فولس ألارمز ستايد آت زيرو پوينت سِڤن ناين پير ستاند يير. ‖
+And when we found a flaw in our own first test, / we withdrew it. ‖
+آند وِن وي فاوند أ فلو إن آور أون فيرست تِست، / وي وِذدرو إت. ‖
+These are the numbers that survived — / and our limits are on the record; / I am happy to go through them. ‖
+ذيز آر ذا نامبرز ذات سيرڤايڤد — / آند آور ليمِتس آر أون ذا ريكورد؛ / آي آم هاپي تو غو ثرو ذِم. ‖
+> اضغطي السهم →   (بالأسئلة: عن الحدود اكتبي 21 + Enter · عن NDVI اكتبي 20 + Enter)
+
+@impact
+Why it matters. ‖ 108 tonnes of carbon per hectare in these stands — / 82 percent in the soil, / released when the stand is cleared. ‖
+واي إت ماترز. ‖ وَن هاندرد آند إيت تَنز أوف كاربون پير هِكتار إن ذيز ستاندز — / إيتي تو پيرسنت إن ذا سويل، / ريليسد وِن ذا ستاند إز كليرد. ‖
+The pilot holds about 247 thousand tonnes; / in stand 5 alone, / the converted area held 3 to 7 thousand. ‖
+ذا پايلوت هولدز أباوت تو هاندرد فورتي سِڤن ثاوزند تَنز؛ / إن ستاند فايف ألون، / ذا كونڤيرتِد إيريا هِلد ثري تو سِڤن ثاوزند. ‖
+As a service: / about 12 thousand dollars per site per year, / against a cost to serve of about 3 thousand. ‖
+آز أ سيرڤِس: / أباوت تويلڤ ثاوزند دولارز پير سايت پير يير، / أغينست أ كوست تو سيرڤ أوف أباوت ثري ثاوزند. ‖
+The real prize is a national MRV contract, / or a monitoring layer on gIQ. ‖
+ذا ريال پرايز إز أ ناشونال إم آر ڤي كونتراكت، / أور أ مونيتورينغ لاير أون جي آي كيو. ‖
+> اضغطي السهم →
+
+@scale
+Beyond the proof of concept: / everything is public and reproducible — / the notebook re-runs in 24 seconds, / and a clean-machine test gives the same numbers. ‖
+بيوند ذا پروف أوف كونسپت: / إيڤري ثينغ إز پابليك آند ريپروديوسيبل — / ذا نوتبوك ري رانز إن توينتي فور سِكندز، / آند أ كلين ماشين تِست غِڤز ذا سيم نامبرز. ‖
+It already transferred to unseen stands and a second country, / at under five dollars of compute per site per year. ‖
+إت أولريدي ترانسفيرد تو أنسين ستاندز آند أ سِكند كانتري، / آت أندر فايف دولارز أوف كومپيوت پير سايت پير يير. ‖
+> اضغطي السهم →
+
+@close
+> ببطء، وطّلعي بالكاميرا
+A working product, / five real events confirmed, / every number reproducible. ‖
+أ وركينغ پرودَكت، / فايف ريال إيڤنتس كونفيرمد، / إيڤري نامبر ريپروديوسيبل. ‖
+Every lost mangrove leaves a trace — / and we find it from space. ‖
+إيڤري لوست مانغروڤ ليڤز أ ترايس — / آند وي فايند إت فروم سپيس. ‖
+Our ask: / incubation, / to run a pilot with a Gulf agency or planting programme. ‖
+آور آسك: / إنكيوبيشن، / تو ران أ پايلوت وِذ أ غَلف إيجنسي أور پلانتينغ پروغرام. ‖
+> اضغطي السهم → (شريحة الشكر)
+
+@thanks
+> بدفء وبهدوء
+Thank you — / to the United Arab Emirates, / for leading our region in protecting its mangroves, / and to the UAE Space Agency, / the National Space Academy and Space42 / for this programme. ‖
+ثانك يو — / تو ذا يونايتِد أراب إميريتس، / فور ليدينغ آور ريجِن إن پروتِكتينغ إتس مانغروڤز، / آند تو ذا يو إي إي سپيس إيجنسي، / ذا ناشونال سپيس أكاديمي آند سپيس فورتي تو / فور ذيس پروغرام. ‖
+I'm happy to take your questions. ‖
+آيم هاپي تو تايك يور كويسشنز. ‖
+> اسكتي، وضلّي على هالشريحة وقت الأسئلة. الأجوبة تحت ↓
+! ==================== أسئلة الحكام وأجوبتها (بس إنتِ بتشوفيها) ====================
+! قاعدة: جملة بتجاوب + رقم + وقفي. إذا ما بتعرفي: قولي جملة رقم 0.
+! للانتقال: اكتبي رقم الشريحة + Enter (8 = القمر 813 · 20 = مقارنة NDVI · 21 = الحدود · 22 = الفيديو). للرجوع: 19 + Enter.
+! 0) إذا ما بتعرفي الجواب
+Good question — / we haven't tested that yet; / it's the first thing we'd test in incubation. ‖
+غود كويسشن — / وي هاڤنت تِستِد ذات يِت؛ / إتس ذا فيرست ثينغ ويد تِست إن إنكيوبيشن. ‖
+! 1) ما زرتي المواقع؟ كيف متأكدة إنها خسائر حقيقية؟
+All five are confirmed on dated sub-metre satellite images, / 30 to 50 centimetres. ‖ At every site / the alert began between the last intact image / and the first one showing works. ‖ Matching permits and site records / is our first pilot task. ‖
+أول فايف آر كونفيرمد أون دايتِد ساب ميتر ساتلايت إميجِز، / ثيرتي تو فيفتي سنتيميترز. ‖ آت إيڤري سايت / ذي أليرت بيغان بيتوين ذا لاست إنتاكت إميج / آند ذا فيرست وَن شوينغ وركس. ‖ ماتشينغ پيرمِتس آند سايت ريكوردز / إز آور فيرست پايلوت تاسك. ‖
+! 2) هل هو إنذار مبكر؟  (شريحة 21)
+No, / and we say so. ‖ It detects works while they happen. ‖ We never claim to see stress before it is visible. ‖
+نو، / آند وي ساي سو. ‖ إت ديتِكتس وركس وايل ذاي هاپن. ‖ وي نِڤر كليم تو سي سترِس بيفور إت إز ڤيزيبل. ‖
+! 3) الحدود −1.5 و −3.5، مش overfitting؟
+They were calibrated only on stands with no change, / then frozen / and applied to 65 stands the model never saw, / including Saudi Arabia: / 0.79 false alarms per stand-year, / against 0.96. ‖
+ذاي وِر كاليبريتِد أونلي أون ستاندز وِذ نو تشينج، / ذِن فروزن / آند أپلايد تو سِكستي فايف ستاندز ذا مودل نِڤر سو، / إنكلودينغ ساودي أريبيا: / زيرو پوينت سِڤن ناين فولس ألارمز پير ستاند يير، / أغينست زيرو پوينت ناين سِكس. ‖
+! 4) الـ 73% مش صدفة؟
+Every rate is shown next to its chance rate: / 73 percent within 60 days, / against 13 percent by chance. ‖ And we withdrew our own first figure / when a test showed it was inflated. ‖
+إيڤري رايت إز شون نِكست تو إتس تشانس رايت: / سِڤنتي ثري پيرسنت وِذِن سِكستي دايز، / أغينست ثيرتين پيرسنت باي تشانس. ‖ آند وي وِذدرو آور أون فيرست فيغر / وِن أ تِست شود إت واز إنفلايتِد. ‖
+! 5) ليش مش NDVI لحاله؟  (شريحة 20)
+We tested exactly that. ‖ Same rule, same 25 stands: / NDVI alone gives 1.61 false alarms per stand-year, / ours 0.96 — / forty percent fewer. ‖
+وي تِستِد إغزاكتلي ذات. ‖ سيم رول، سيم توينتي فايف ستاندز: / إن دي ڤي آي ألون غِڤز وَن پوينت سِكس وَن فولس ألارمز پير ستاند يير، / آورز زيرو پوينت ناين سِكس — / فورتي پيرسنت فيوَر. ‖
+! 6) ليش المد والجزر مهم؟
+At high tide, / flooded mangroves look like dying mangroves from space. ‖ Modelling the tide cuts the noise by 29 to 35 percent. ‖
+آت هاي تايد، / فلادِد مانغروڤز لوك لايك دايينغ مانغروڤز فروم سپيس. ‖ مودلينغ ذا تايد كاتس ذا نويز باي توينتي ناين تو ثيرتي فايف پيرسنت. ‖
+! 7) قديش دقة خريطة القرم؟
+Mapping is not our contribution: / about 0.6 F1, / and we say so. ‖ We focus on change and condition over time. ‖
+مابينغ إز نوت آور كونتريبيوشن: / أباوت زيرو پوينت سِكس إف وَن، / آند وي ساي سو. ‖ وي فوكَس أون تشينج آند كونديشن أوڤر تايم. ‖
+! 8) اخترتي الحالات اللي بتناسبك؟
+They came from the monitor's own alerts. ‖ We checked the flagged stands on dated images, / including the false alarms, / which we report. ‖
+ذاي كيم فروم ذا مونيتورز أون أليرتس. ‖ وي تشيكت ذا فلاغد ستاندز أون دايتِد إميجِز، / إنكلودينغ ذا فولس ألارمز، / ويتش وي ريپورت. ‖
+! 9) شو أضافت البيانات فائقة الطيف؟
+An independent check: / r up to 0.99 with Sentinel-2. ‖ And a fingerprint: / stand 5 changed from vegetation to sand. ‖ As a classifier / it was not better, / and we say so. ‖
+آن إنديپندنت تشيك: / آر أپ تو زيرو پوينت ناين ناين وِذ سِنتينِل تو. ‖ آند أ فينغرپرينت: / ستاند فايف تشينجد فروم ڤيجيتيشن تو ساند. ‖ آز أ كلاسيفاير / إت واز نوت بِتر، / آند وي ساي سو. ‖
+! 10) ليش ما استعملتي القمر 813؟  (شريحة 8)
+It was not available in the proof of concept. ‖ Every index we use fits inside its range, / so 813 slots into the same step: / Sentinel-2 says when, / 813 says what. ‖
+إت واز نوت أڤيلابل إن ذا پروف أوف كونسپت. ‖ إيڤري إندكس وي يوز فِتس إنسايد إتس رينج، / سو إيت وَن ثري سلوتس إنتو ذا سيم ستِپ: / سِنتينِل تو سيز وِن، / إيت وَن ثري سيز وَت. ‖
+! 11) شو بتعملي مع الغيوم؟
+We use the cloud mask / and keep only clear dates: / still 778 dates in six years. ‖
+وي يوز ذا كلاود ماسك / آند كيپ أونلي كلير دايتس: / ستيل سِڤن هاندرد سِڤنتي إيت دايتس إن سِكس ييرز. ‖
+! 12) طيب البحرين؟
+Bahrain's mangrove patches are under 4 hectares — / too small for 10-metre pixels. ‖ That is a case for very-high-resolution data in incubation. ‖
+البحرينز مانغروڤ پاتشِز آر أندر فور هِكتارز — / تو سمول فور تِن ميتر پيكسلز. ‖ ذات إز أ كيس فور ڤيري هاي ريزوليوشن داتا إن إنكيوبيشن. ‖
+! 13) مين رح يدفع؟
+Agencies, / planting and carbon developers, / and coastal developers. ‖ Our pilot offer is about 12 thousand dollars per site per year; / the cost to serve is about 3 thousand. ‖
+إيجنسيز، / پلانتينغ آند كاربون ديڤيلوپرز، / آند كوستال ديڤيلوپرز. ‖ آور پايلوت أوفر إز أباوت تويلڤ ثاوزند دولارز پير سايت پير يير؛ / ذا كوست تو سيرڤ إز أباوت ثري ثاوزند. ‖
+! 14) شو الفرق عن Global Mangrove Watch؟
+We are complementary. ‖ They give free monthly loss alerts; / we add the tide model, / the 200-metre cells, / a measured false-alarm rate / and the carbon at stake. ‖
+وي آر كومپليمنتري. ‖ ذاي غِڤ فري مَنثلي لوس أليرتس؛ / وي آد ذا تايد مودل، / ذا تو هاندرد ميتر سِلز، / أ ميجَرد فولس ألارم رايت / آند ذا كاربون آت ستيك. ‖
+! 15) الأسعار مجربة؟
+No — / they are hypotheses for a pilot. ‖ What we measured is the cost: / compute is under five dollars per site per year. ‖
+نو — / ذاي آر هايپوثيسيز فور أ پايلوت. ‖ وَت وي ميجَرد إز ذا كوست: / كومپيوت إز أندر فايف دولارز پير سايت پير يير. ‖
+! 16) رقم الكربون معدل امتصاص؟ أرصدة كربون؟
+It is a stock, / not a sequestration rate: / area times 108 tonnes per hectare, / with a range. ‖ It supports verification, / not credits on its own. ‖
+إت إز أ ستوك، / نوت أ سيكويستريشن رايت: / إيريا تايمز وَن هاندرد آند إيت تَنز پير هِكتار، / وِذ أ رينج. ‖ إت سَپورتس ڤيريفيكيشن، / نوت كريدِتس أون إتس أون. ‖
+! 17) كيف بيتوسع للخليج كله؟
+The data is free and read from the cloud. ‖ Six years for a whole block run in under 75 minutes. ‖ Compute is not the limit; / partners are. ‖
+ذا داتا إز فري آند ريد فروم ذا كلاود. ‖ سِكس ييرز فور أ هول بلوك ران إن أندر سِڤنتي فايف مِنِتس. ‖ كومپيوت إز نوت ذا ليمِت؛ / پارتنرز آر. ‖
+! 18) إنتِ شخص واحد، بتقدري؟
+I delivered the full proof of concept, / and everything is public. ‖ For incubation / I will add a mangrove ecologist, / an agency partner / and a GIS analyst. ‖
+آي ديليڤرد ذا فول پروف أوف كونسپت، / آند إيڤري ثينغ إز پابليك. ‖ فور إنكيوبيشن / آي ويل آد أ مانغروڤ إيكولوجيست، / آن إيجنسي پارتنر / آند أ جي آي إس أناليست. ‖
+! 19) وين الذكاء الاصطناعي؟
+A statistical learning model per stand and per cell, / and an anomaly detector calibrated against chance. ‖ We chose an explainable model on purpose: / an inspector must understand why an alert fired. ‖
+أ ستاتيستيكال ليرنينغ مودل پير ستاند آند پير سِل، / آند آن أنومالي ديتِكتور كاليبريتِد أغينست تشانس. ‖ وي تشوز آن إكسپلينابل مودل أون پيرپَس: / آن إنسپكتر مَست أندرستاند واي آن أليرت فايرد. ‖
+! 20) أول شي بالاحتضان؟
+One pilot with a partner: / match our alerts to permits, / add Satellite 813, / and deploy on gIQ. ‖
+وَن پايلوت وِذ أ پارتنر: / ماتش آور أليرتس تو پيرمِتس، / آد ساتلايت إيت وَن ثري، / آند ديپلوي أون جي آي كيو. ‖
+! الأرقام الخمسة: 29–35% أقل تشويش · 1.61 → 0.96 إنذار كاذب (NDVI مقابلنا) · 73% مقابل 13% · 0.79 على 65 منطقة جديدة · 5 من 5 تحويلات مؤكدة
+
+@bk-textbook
+! شريحة احتياط — لا تعرضيها إلا إذا سألوا عن NDVI أو الإنذارات الكاذبة.
+Same alert rule, same 25 stands: / NDVI alone gives 1.61 false alarms per stand-year, / ours 0.96 — / forty percent fewer, / mostly thanks to the tide model. ‖
+سيم أليرت رول، سيم توينتي فايف ستاندز: / إن دي ڤي آي ألون غِڤز وَن پوينت سِكس وَن فولس ألارمز پير ستاند يير، / آورز زيرو پوينت ناين سِكس — / فورتي پيرسنت فيوَر، / موستلي ثانكس تو ذا تايد مودل. ‖
+All four catch the five conversions; / the difference is the false-alarm cost. ‖
+أول فور كاتش ذا فايف كونڤيرجنز؛ / ذا ديفرنس إز ذا فولس ألارم كوست. ‖
+> ارجعي: 19 + Enter
+
+@bk-limits
+! شريحة احتياط — لا تعرضيها إلا إذا سألوا عن الحدود أو نقاط الضعف.
+Detection while works happen, / not early warning. ‖ Ten-metre pixels miss very small stands. ‖ Confirmation on dated images, / not site visits — / matching permits with a partner is our first pilot task. ‖
+ديتِكشن وايل وركس هاپن، / نوت إيرلي وورنينغ. ‖ تِن ميتر پيكسلز مِس ڤيري سمول ستاندز. ‖ كونفيرميشن أون دايتِد إميجِز، / نوت سايت ڤيزِتس — / ماتشينغ پيرمِتس وِذ أ پارتنر إز آور فيرست پايلوت تاسك. ‖
+> ارجعي: 19 + Enter
+"""
+
+
+def build():
+    """Parse RAW into {slide id: notes text}."""
+    out, cur, lines = {}, None, []
+    for raw in RAW.strip().splitlines():
+        line = raw.rstrip()
+        if line.startswith("@"):
+            if cur:
+                out[cur] = "\n".join(lines).strip()
+            cur, lines, pair = line[1:].strip(), [], 0
+            continue
+        if not line:
+            continue
+        if line.startswith("!"):
+            lines += ["", line[1:].strip()]
+        elif line.startswith(">"):
+            lines += ["", "▶ " + line[1:].strip()]
+        else:  # spoken English line, then its Arabic-letter line; blank line after each pair
+            lines.append(line)
+            pair += 1
+            if pair % 2 == 0:
+                lines.append("")
+    if cur:
+        out[cur] = "\n".join(lines).strip()
+    return out
+
+
+READ = build()
