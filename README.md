@@ -103,7 +103,7 @@ Rebuild: `python deck_pptx/assets.py`, `python deck_pptx/diagrams.py`, `python d
 ## 🏆 For the judges: each criterion and where the evidence is
 | Criterion | What we show | Evidence |
 |---|---|---|
-| 💡 **Creativity / innovation** | A **tide-aware** monitor: on Gulf tidal flats the tide, not the trees, drives most index noise, so we model it out. A **200 m cell** trigger finds partial losses that stand averages hide. | 29-35 % less noise; 3 of the 5 real losses were seen **only** by cells ([§8](#8-results-and-limitations)) |
+| 💡 **Creativity / innovation** | A **tide-aware** monitor: on Gulf tidal flats the tide, not the trees, drives most index noise, so we model it out. A **200 m cell** trigger finds partial losses that stand averages hide. | 29-35 % less noise; 40 % fewer false alarms than the textbook NDVI-only approach; 3 of the 5 real losses were seen **only** by cells ([§8](#8-results-and-limitations)) |
 | 🧪 **Validity / technical soundness** | Every detection rate is quoted **with its chance rate**; thresholds tested on stands the model never saw; real events confirmed on dated sub-metre imagery; one of our own early claims withdrawn | 73 % vs 13 % by chance; 0.79 false alarms per stand-year out of sample; 5 conversions confirmed ([§8](#8-results-and-limitations)) |
 | 🌈 **Hyperspectral bonus** | Two EnMAP epochs (224 bands) over the pilot: an independent check of Sentinel-2 and a spectral read of what the land became | r = 0.84-0.99 with Sentinel-2; stand 5 turns from a vegetation to a mineral spectrum ([§8](#what-hyperspectral-added)) |
 | 🛠️ **Practical application / product** | Self-contained dashboard, automatic site reports, alert API concept; the notebook runs offline in about 25 s | [`dashboard/`](dashboard/index.html), [`reports/`](reports/), [`docs/api_alert_concept.md`](docs/api_alert_concept.md), [how a user receives it](#how-a-user-receives-it) |
@@ -262,6 +262,7 @@ Full pipeline from the satellite archive (needs internet; about 20-60 min per Se
 | What we measured | Result | How it was validated |
 |---|---|---|
 | Noise reduction from the tide model | **29-35 %** on every index | robust residuals, 25 stands, 2020-2026 |
+| Against the textbook approach (NDVI only, no tide model), same alert rule | **0.96** vs **1.61** false alarms per stand-year (40 % fewer) | 20 stands without known change, 93.9 stand-years ([`analysis/35`](analysis/35_textbook_baseline.md)) |
 | Real conversions inside our stands | **5** (stands 5, 9, 12, 18, 6), all coastal developments | dated WorldView-2/3 and Legion-1 captures (0.3-0.5 m); the alert began between the last undisturbed and the first disturbed capture at every site |
 | Found only by the 200 m cells | **3 of 5** | the stand averages still read "stable" |
 | Partial loss (a tenth of a stand losing half its canopy) caught within 60 days | **73 %**, against **13 %** by chance | semi-synthetic backtest with a no-loss null ([`analysis/29`](analysis/29_cell_trigger.md)) |

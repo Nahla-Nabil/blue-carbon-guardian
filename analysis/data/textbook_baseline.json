@@ -1,0 +1,74 @@
+{
+ "A": {
+  "indices": [
+   "ndvi"
+  ],
+  "tide": false,
+  "false_alarm_episodes_per_stand_year": 1.61,
+  "normal_stand_time_in_alert": 0.141,
+  "stand_years": 93.9,
+  "events_alert_started_in_window": {
+   "5": "2022-10-28",
+   "6": "2022-12-07",
+   "9": "2022-12-07",
+   "12": "2022-11-02",
+   "18": "2024-01-23"
+  },
+  "events_caught": 5
+ },
+ "B": {
+  "indices": [
+   "ndvi"
+  ],
+  "tide": true,
+  "false_alarm_episodes_per_stand_year": 1.04,
+  "normal_stand_time_in_alert": 0.156,
+  "stand_years": 93.9,
+  "events_alert_started_in_window": {
+   "5": "2022-05-13",
+   "6": "2023-02-15",
+   "9": "2022-07-22",
+   "12": "2022-11-09",
+   "18": "2024-10-24"
+  },
+  "events_caught": 5
+ },
+ "C": {
+  "indices": [
+   "ndvi",
+   "ndre",
+   "ndmi"
+  ],
+  "tide": false,
+  "false_alarm_episodes_per_stand_year": 1.36,
+  "normal_stand_time_in_alert": 0.108,
+  "stand_years": 93.9,
+  "events_alert_started_in_window": {
+   "5": "2022-11-02",
+   "6": "2023-01-01",
+   "9": "2022-12-07",
+   "12": "2023-01-16",
+   "18": "2024-01-23"
+  },
+  "events_caught": 5
+ },
+ "D": {
+  "indices": [
+   "ndvi",
+   "ndre",
+   "ndmi"
+  ],
+  "tide": true,
+  "false_alarm_episodes_per_stand_year": 0.96,
+  "normal_stand_time_in_alert": 0.155,
+  "stand_years": 93.9,
+  "events_alert_started_in_window": {
+   "5": "2022-05-13",
+   "6": "2023-02-17",
+   "9": "2022-12-07",
+   "12": "2022-12-17",
+   "18": "2024-10-29"
+  },
+  "events_caught": 5
+ }
+}

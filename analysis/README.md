@@ -65,3 +65,4 @@ Data are read from the cloud (Microsoft Planetary Computer STAC) without bulk do
 ## Rebuild order after new satellite data
 `05 -> 08 -> 13 -> 14 -> 23 -> 25 -> 26 -> 29 -> 31 -> 09 -> 16`. The extent and change steps (10-12) and the EnMAP steps (17-19) are only needed when their inputs change.
 08 writes a fresh `stand_status.csv`; 14 adds carbon, and 23 adds the condition columns (its verification step is skipped on a fresh table).
+| 35 | `35_textbook_baseline.py` | textbook NDVI-only vs our monitor, same alert rule (`35_textbook_baseline.md`) |

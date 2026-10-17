@@ -195,11 +195,12 @@ Every five days a new scene runs through the model. If an alert fires, we first 
 If nothing changes, the user still gets a monthly report. No dashboards to watch: the system comes to them."
 
 DO: press → ."""),
- "innovation": (35, """SAY: "Now the hard part — the one that breaks most monitors in the Gulf: the tide.
+ "innovation": (45, """SAY: "Now the hard part — the one that breaks most monitors in the Gulf: the tide.
 When the tide comes in, flooded mangroves look, from space, like dying mangroves. In this illustration the same trees drop from 0.30 to 0.18.
 On our stands, index noise follows wetness with a correlation of minus 0.9.
 So for every stand and every date we model trend, season — and the tide.
-Noise falls by 29 to 35 percent on every index. That is what makes a reliable alert possible."
+Noise falls by 29 to 35 percent on every index." (point at the right card at the bottom)
+"And we tested the textbook recipe — NDVI alone, no tide model — on the same stands with the same alert rule: 1.61 false alarms per stand per year. Ours: 0.96. Forty percent fewer wasted site visits, and the tide model is most of that gain. That is what makes a reliable alert possible."
 
 DO: wait for the water to rise in the illustration, then press → on "reliable alert"."""),
 

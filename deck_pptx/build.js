@@ -289,10 +289,13 @@ const pill = (s, name, text, x, y, w, o = {}) => {
         showValue: true, dataLabelPosition: "outEnd", dataLabelColor: TXT, dataLabelFontSize: 10, dataLabelFormatCode: "0.000", dataLabelFontFace: BODY,
         catAxisLabelColor: MUTED, catAxisLabelFontFace: BODY, catAxisLabelFontSize: 11, valAxisHidden: true, valGridLine: { style: "none" }, catGridLine: { style: "none" },
         catAxisLineColor: LINE });
-    card(s, "a5float_st", 0.6, 5.6, 12.13, 1.15, { fill: "E8F0F9", tr: 5 });
-    await iconCircle(s, "a5float_stic", "LuWaves", 0.9, 5.88, 0.6);
-    T(s, "a5float_stn", "−29 to −35 %", 1.7, 5.6, 3.1, 1.15, { face: LIGHT, size: 32, color: GOLD, valign: "middle" });
-    T(s, "a5float_stt", "We regress every index on trend, season and tidal state before flagging anything. Noise falls on every index.", 4.85, 5.6, 7.7, 1.15, { size: 15, valign: "middle" });
+    card(s, "a5float_st", 0.6, 5.6, 6.0, 1.15, { fill: "E8F0F9", tr: 5 });
+    await iconCircle(s, "a5float_stic", "LuWaves", 0.85, 5.88, 0.6);
+    T(s, "a5float_stn", "−29 to −35 %", 1.6, 5.6, 2.55, 1.15, { face: LIGHT, size: 28, color: GOLD, valign: "middle" });
+    T(s, "a5float_stt", "less noise on every index: we model trend, season and the tide before flagging anything", 4.1, 5.6, 2.4, 1.15, { size: 12, valign: "middle" });
+    card(s, "a6float_tb", 6.85, 5.6, 5.88, 1.15, { fill: "E8F0F9", tr: 5 });
+    T(s, "a6float_tbn", [{ text: "1.61 → 0.96", options: { color: GOLD } }], 7.05, 5.6, 2.55, 1.15, { face: LIGHT, size: 28, valign: "middle" });
+    T(s, "a6float_tbt", "false alarms per stand-year: textbook NDVI-only vs our tide-aware monitor, same alert rule, same 25 stands (40 % fewer)", 9.6, 5.6, 3.0, 1.15, { size: 12, valign: "middle" });
   }
 
   // =============== 10 · CELLS ===============

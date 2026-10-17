@@ -316,7 +316,7 @@ S["innovation"] = light("innovation", 6, "Technical innovation 1", "The tide loo
     <div style="margin-top:12px">{bars_before_after()}</div></div>
 </div>
 <div class="card dk" style="margin-top:20px;padding:18px 30px;display:flex;gap:22px;align-items:center">{icon("wave", 30, bg="rgba(255,255,255,.15)")}
-  <p class="t w" style="font-size:25px">We regress each index on trend, season <b>and tidal state</b> before flagging anything: <b>29&#8211;35 % less noise</b> on every index.</p></div>""")
+  <p class="t w" style="font-size:25px">We regress each index on trend, season <b>and tidal state</b> before flagging anything: <b>29&#8211;35 % less noise</b> on every index. Same alert rule, same stands: textbook NDVI-only <b>1.61</b> false alarms per stand-year, ours <b>0.96</b> (40 % fewer).</p></div>""")
 
 # 7 ---------------------------------------------------------------------------------------------------------------------
 S["cells"] = light("cells", 7, "Technical innovation 2", "A stand average hides partial loss. 200 m cells do not.", f"""
