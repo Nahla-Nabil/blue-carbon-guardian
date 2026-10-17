@@ -133,11 +133,11 @@ DO: press → .
 ## 15. validation  (6:20 - 6:55, 35 s)
 
 SAY: "We also tested ourselves against pure chance — every rate has its chance rate next to it.
-Partial loss: 73 percent caught, 13 by chance. A uniform 10-percent loss is harder: 63 versus 36, and we show that too.
+Partial loss: 73 percent caught, 13 by chance; a uniform loss, 63 versus 36.
 On 65 stands the model never saw, thresholds frozen, false alarms stayed at 0.79 per stand-year.
-And when we found a flaw in our own first test, we withdrew it. These are the numbers that survived."
+And when we found a flaw in our own first test, we withdrew it. These are the numbers that survived — and our limits are on the record; I am happy to go through them."
 
-DO: press → on "survived".
+DO: press → on "go through them". (If asked about limits or NDVI later: type 21 or 20 + Enter.)
 
 ## 16. impact  (6:55 - 7:25, 30 s)
 

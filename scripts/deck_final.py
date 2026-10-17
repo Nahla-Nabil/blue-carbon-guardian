@@ -256,11 +256,11 @@ The blue bar is the window between the last intact image and the first image sho
 DO: press → ."""),
 
  "validation": (35, """SAY: "We also tested ourselves against pure chance — every rate has its chance rate next to it.
-Partial loss: 73 percent caught, 13 by chance. A uniform 10-percent loss is harder: 63 versus 36, and we show that too.
+Partial loss: 73 percent caught, 13 by chance; a uniform loss, 63 versus 36.
 On 65 stands the model never saw, thresholds frozen, false alarms stayed at 0.79 per stand-year.
-And when we found a flaw in our own first test, we withdrew it. These are the numbers that survived."
+And when we found a flaw in our own first test, we withdrew it. These are the numbers that survived — and our limits are on the record; I am happy to go through them."
 
-DO: press → on "survived"."""),
+DO: press → on "go through them". (If asked about limits or NDVI later: type 21 or 20 + Enter.)"""),
 
  "impact": (30, """SAY: "Why it matters. 108 tonnes of carbon per hectare in these stands — 82 percent in the soil, released when the stand is cleared. The pilot holds about 247 thousand tonnes; stand 5 alone lost 3 to 7 thousand.
 As a service: about 12 thousand dollars per site per year, against a cost to serve of about 3 thousand. The real prize is a national MRV contract, or a monitoring layer on gIQ."
