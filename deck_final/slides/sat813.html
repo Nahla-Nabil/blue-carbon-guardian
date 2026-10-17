@@ -1,0 +1,34 @@
+<section id="sat813" data-transition="fade" style="background:radial-gradient(900px 500px at 100% 0%, rgba(47,128,237,.10), transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F2F7FF 100%); color:#0B1B3F; font-family:'IBM Plex Sans', Arial, sans-serif; padding:60px 96px 100px 96px; display:flex; flex-direction:column">
+<style>
+.k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:#1E6FD9;font-weight:600}
+.h{font-size:58px;font-weight:700;color:#06235A;line-height:1.08;margin-top:10px}
+.lede{font-size:26px;color:#4A5F86;line-height:1.45;margin-top:14px}
+.card{background:#fff;border:1px solid #D6E6FF;border-radius:22px;box-shadow:0 12px 32px rgba(10,61,145,.08);padding:26px 30px}
+.dk{background:linear-gradient(135deg,#06235A 0%,#0B4A9E 100%);color:#fff;border:none}
+.big{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#0A3D91,#1E6FD9 60%,#0EA5E9);-webkit-background-clip:text;color:transparent}
+.bigw{font-size:64px;font-weight:700;line-height:1;background:linear-gradient(90deg,#FFFFFF,#A9E4FF);-webkit-background-clip:text;color:transparent}
+.t{font-size:24px;color:#0B1B3F;line-height:1.4} .s{font-size:20px;color:#4A5F86;line-height:1.4} .w{color:#fff} .ws{color:#BFDFFF}
+.b{font-weight:700} .lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:19px;font-weight:600;background:#E8F2FF;color:#0A3D91;border:1px solid #C3DDFF}
+.ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1E6FD9,#0EA5E9);flex:none}
+.row{display:flex;gap:26px} .col{display:flex;flex-direction:column;gap:20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+</style>
+  <div style="position:absolute;left:0;top:0;width:12px;height:100%;background:linear-gradient(180deg,#0EA5E9,#1E6FD9 50%,#06235A)"></div>
+  <p class="k">Space data &#183; ready for Satellite 813</p>
+  <h2 class="h">Sentinel-2 says when. Satellite 813 says what.</h2>
+  <div style="margin-top:30px;flex:1;min-height:0;display:flex;flex-direction:column">
+<div class="card" style="padding:0;overflow:hidden"><table style="font-size:22px"><tr><th>Sensor</th><th>Bands</th><th>Range</th><th>Pixel</th><th>Revisit</th><th>Role in the product</th></tr><tr style=""><td style="font-weight:700">Sentinel-2</td><td>13</td><td>443&#8211;2190 nm</td><td>10&#8211;20 m</td><td>~5 days</td><td><b>when</b>: the alert, every pass</td></tr><tr style=""><td style="font-weight:700">EnMAP (used)</td><td>224</td><td>420&#8211;2450 nm</td><td>30 m</td><td>~27 days</td><td><b>what</b>: tested on stand 5</td></tr><tr style="background:#06235A;color:#fff"><td style="font-weight:700">Satellite 813 (next)</td><td>~205</td><td>~400&#8211;1700 nm</td><td>~20 m</td><td>on demand</td><td><b>what, sharper</b>: tasked on the flagged cells</td></tr></table></div>
+<div class="row" style="gap:16px;margin-top:22px;align-items:stretch">
+  <div class="card" style="flex:1;display:flex;gap:16px;align-items:center"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><div><p class="t b">1 · Sentinel-2 alert</p><p class="s" style="font-size:18px">stand or 200 m cell below its threshold</p></div></div><div style="align-self:center;font-size:40px;color:#0EA5E9">&#10142;</div><div class="card" style="flex:1;display:flex;gap:16px;align-items:center"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M3 7l4 4M17 13l4 4M7 3L3 7l3 3 4-4zM17 21l4-4-3-3-4 4zM14 10l2-2"/></svg></div><div><p class="t b">2 · Task Satellite 813</p><p class="s" style="font-size:18px">only over the flagged cells, on demand</p></div></div><div style="align-self:center;font-size:40px;color:#0EA5E9">&#10142;</div><div class="card" style="flex:1;display:flex;gap:16px;align-items:center"><div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c3-12 5-12 7-6s4 6 6-2 4-6 7 2"/></svg></div><div><p class="t b">3 · Spectral diagnosis</p><p class="s" style="font-size:18px">vegetation or sand and fill: evidence pack</p></div></div>
+</div>
+<div class="card dk" style="margin-top:22px;padding:18px 28px"><p class="t w" style="font-size:22px">Every index the monitor uses (NDVI, red edge, SWIR moisture at 1610 nm, wetness) sits inside 813's ~400&#8211;1700 nm range, at 20 m instead of EnMAP's 30 m. <b>Planned, not yet tested:</b> 813 scenes were not available in the proof of concept.</p></div></div>
+  <div style="position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center">
+    <p class="s" style="font-size:19px">Blue Carbon Guardian &#183; Team Blue Athar</p>
+    <p class="mono" style="font-size:18px;font-weight:600;color:#fff;background:#1E6FD9;padding:5px 14px;border-radius:999px">08 / 20</p></div>
+  
+  <aside>[20 s] SAY: "And this is where Satellite 813 comes in. Sentinel-2 tells us when something changed, every five days. Satellite 813 tells us what: once a cell is flagged, we task 813 over just that cell.
+Every index we use sits inside 813's range, at 20 metres. It is planned — 813 scenes were not available in this proof of concept."
+
+DO: press → .</aside>
+</section>

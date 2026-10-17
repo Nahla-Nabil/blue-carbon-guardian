@@ -113,6 +113,10 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a4float_k${i}t`, k[i][1], x + 0.16, 5.8, 1.3, 0.55, { size: 11, color: MUTED });
     }
     T(s, "a5fade_name", "Nahla Nabil  ·  Bahrain", 0.7, 6.7, 5, 0.35, { face: HEAD, size: 16, color: "D4E2EE" });
+    s.addImage({ objectName: "a5fade_fae", path: path.join(__dirname, "flag_ae.png"), x: 7.65, y: 6.1, w: 0.48, h: 0.24 });
+    T(s, "a5fade_fael", "Study area: Abu Dhabi, UAE", 8.2, 6.02, 2.6, 0.4, { size: 12, color: "D4E2EE", valign: "middle" });
+    s.addImage({ objectName: "a5fade_fbh", path: path.join(__dirname, "flag_bh.png"), x: 10.55, y: 6.1, w: 0.4, h: 0.24 });
+    T(s, "a5fade_fbhl", "Built in Bahrain", 11.02, 6.02, 1.8, 0.4, { size: 12, color: "D4E2EE", valign: "middle" });
     usePalette(LIGHT_P);
   }
 
@@ -263,6 +267,33 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a${o}float_h${i}t`, C[i][1], x + 0.22, y + 0.52, 3.55, 0.45, { size: 11, color: MUTED });
     }
     T(s, "a5fade_hc", "Honest limit: as a classifier, the full spectrum is no better than Sentinel-2-like bands (F1 0.74 vs 0.72). Contains modified EnMAP data © DLR 2022, 2025.", 0.6, 6.75, 11.5, 0.22, { size: 10, color: "7A8CA0" });
+  }
+
+  // =============== 6b · READY FOR SATELLITE 813 ===============
+  {
+    const s = slide("OCEAN_C", "Space data · ready for Satellite 813", "Sentinel-2 says when. Satellite 813 says what.", [8.8, -2.8, 6], [-2.4, 3.6, 6], "sat813");
+    const head = ["Sensor", "Bands", "Range", "Pixel", "Revisit", "Role in the product"];
+    const rows = [["Sentinel-2", "13", "443–2190 nm", "10–20 m", "~5 days", "WHEN: the alert, every pass"],
+      ["EnMAP (used)", "224", "420–2450 nm", "30 m", "~27 days", "WHAT: tested on stand 5"],
+      ["Satellite 813 (next)", "~205", "~400–1700 nm", "~20 m", "on demand", "WHAT, sharper: tasked on flagged cells"]];
+    const cell = (v, i, j) => ({ text: v, options: { bold: j === 0 || i === 2, color: i === 2 ? "FFFFFF" : (j === 0 ? TXT : "3A4D63"),
+      fill: { color: i === 2 ? "3F6E9E" : (i % 2 ? "F5F8FC" : "FFFFFF") }, align: j === 0 || j === 5 ? "left" : "center", valign: "middle", fontFace: j === 0 || i === 2 ? HEAD : BODY } });
+    const table = [head.map((v, j) => ({ text: v, options: { bold: true, color: TEAL_L, fill: { color: "E3EDF8" }, align: j === 0 || j === 5 ? "left" : "center", valign: "middle", fontFace: HEAD, fontSize: 12 } })),
+      ...rows.map((r, i) => r.map((v, j) => cell(v, i, j)))];
+    s.addTable(table, { objectName: "a1float_tbl", x: 0.6, y: 1.85, w: 12.13, colW: [2.4, 0.95, 1.75, 1.15, 1.35, 4.53], rowH: 0.52, fontSize: 13, margin: 0.08,
+      border: { type: "solid", color: "D3E0EE", pt: 0.75 } });
+    const F = [["LuBell", "1 · Sentinel-2 alert", "stand or 200 m cell below its threshold"], ["LuSatellite", "2 · Task Satellite 813", "only over the flagged cells, on demand"], ["LuScanLine", "3 · Spectral diagnosis", "vegetation, or sand and fill: an evidence pack"]];
+    for (let i = 0; i < 3; i++) {
+      const x = 0.6 + i * 4.12, o = 2 + i;
+      card(s, `a${o}float_f${i}`, x, 4.15, 3.75, 1.25);
+      await iconCircle(s, `a${o}float_f${i}ic`, F[i][0], x + 0.2, 4.47, 0.6, i === 1 ? GOLD : TEAL);
+      T(s, `a${o}float_f${i}t`, F[i][1], x + 0.95, 4.3, 2.7, 0.38, { face: HEAD, size: 15 });
+      T(s, `a${o}float_f${i}d`, F[i][2], x + 0.95, 4.68, 2.7, 0.6, { size: 12, color: MUTED });
+      if (i < 2) T(s, `a${o}fade_ar${i}`, "→", x + 3.75, 4.5, 0.37, 0.5, { size: 22, color: TEAL, align: "center", valign: "middle" });
+    }
+    card(s, "a5float_note", 0.6, 5.65, 12.13, 1.1, { fill: "E8F0F9", tr: 5 });
+    T(s, "a5float_notet", [{ text: "Every index the monitor uses ", options: { bold: true, color: TEAL_L } }, { text: "(NDVI, red edge, SWIR moisture at 1610 nm, wetness) sits inside 813's ~400–1700 nm range, at 20 m instead of EnMAP's 30 m.  " },
+      { text: "Planned, not yet tested: ", options: { bold: true, color: GOLD } }, { text: "813 scenes were not available in the proof of concept." }], 0.85, 5.65, 11.7, 1.1, { size: 14, valign: "middle" });
   }
 
   // =============== 7 · HOW IT WORKS (README workflow diagram) ===============
@@ -522,7 +553,49 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     T(s, "a6float_askt", [{ text: "Our ask:  ", options: { bold: true, color: TEAL_L } }, { text: "incubation to run a pilot with a Gulf agency or planting programme, mentor access on hyperspectral reading of mangroves, and Satellite 813 scenes when available." }], 1.05, 5.25, 11.3, 0.95, { size: 15, valign: "middle" });
     T(s, "a7fade_links", "nahla-nabil.github.io/blue-carbon-guardian   ·   github.com/Nahla-Nabil/blue-carbon-guardian", 0.8, 6.45, 9, 0.35, { size: 13, color: MUTED });
     T(s, "a7fade_ty", "Thank you", 9.9, 6.38, 2.62, 0.45, { face: HEAD, size: 20, color: GOLD, align: "right" });
+    s.addImage({ objectName: "a7fade_fae", path: path.join(__dirname, "flag_ae.png"), x: 10.2, y: 6.49, w: 0.44, h: 0.22 });
+    s.addImage({ objectName: "a7fade_fbh", path: path.join(__dirname, "flag_bh.png"), x: 10.72, y: 6.49, w: 0.37, h: 0.22 });
     usePalette(LIGHT_P);
+  }
+
+  // =============== BACKUP A · TEXTBOOK BASELINE (Q&A only) ===============
+  {
+    const s = slide("OCEAN_A", "Backup · for questions", "The textbook approach against ours, same alert rule", [8.8, -3, 6], [-2.6, 3.4, 6], "bk-textbook");
+    const head = ["Configuration", "Indices", "Tide model", "False alarms per stand-year", "Real conversions caught"];
+    const rows = [["A · textbook", "NDVI", "no", "1.61", "5 of 5"], ["B", "NDVI", "yes", "1.04", "5 of 5"], ["C", "NDVI + red edge + SWIR moisture", "no", "1.36", "5 of 5"], ["D · ours", "NDVI + red edge + SWIR moisture", "yes", "0.96", "5 of 5"]];
+    const cell = (v, i, j) => ({ text: v, options: { bold: j === 0 || j === 3, color: j === 3 ? (i === 0 ? CORAL : (i === 3 ? TEAL_L : TXT)) : (i === 3 ? TXT : "3A4D63"),
+      fill: { color: i === 3 ? "E3EDF8" : (i % 2 ? "F5F8FC" : "FFFFFF") }, align: j < 2 ? "left" : "center", valign: "middle", fontFace: j === 0 || j === 3 ? HEAD : BODY, fontSize: j === 3 ? 16 : 13 } });
+    s.addTable([head.map((v, j) => ({ text: v, options: { bold: true, color: TEAL_L, fill: { color: "E3EDF8" }, align: j < 2 ? "left" : "center", valign: "middle", fontFace: HEAD, fontSize: 12 } })),
+      ...rows.map((r, i) => r.map((v, j) => cell(v, i, j)))], { objectName: "a1float_tbl", x: 0.6, y: 1.85, w: 12.13, colW: [2.2, 4.0, 1.5, 2.43, 2.0], rowH: 0.55, margin: 0.08,
+      border: { type: "solid", color: "D3E0EE", pt: 0.75 } });
+    const C = [["40 % fewer false alarms", "20 stands with no known change, 93.9 stand-years: about 16 fewer unnecessary inspections a year for 25 stands."],
+      ["The tide model is most of the gain", "NDVI alone 1.61 → with tide terms 1.04; the extra indices bring it to 0.96."],
+      ["Honest limit", "Thresholds calibrated for our monitor; all four catch the five conversions. The difference is the false-alarm cost, not detection."]];
+    for (let i = 0; i < 3; i++) {
+      const x = 0.6 + i * 4.1, o = 2 + i;
+      card(s, `a${o}float_c${i}`, x, 5.0, 3.93, 1.75, i === 2 ? { fill: "FBF5EA" } : {});
+      T(s, `a${o}float_c${i}t`, C[i][0], x + 0.22, 5.12, 3.55, 0.4, { face: HEAD, size: 15, color: i === 2 ? GOLD : TXT });
+      T(s, `a${o}float_c${i}d`, C[i][1], x + 0.22, 5.52, 3.55, 1.15, { size: 12, color: MUTED });
+    }
+  }
+
+  // =============== BACKUP B · LIMITS (Q&A only) ===============
+  {
+    const s = slide("OCEAN_B", "Backup · for questions", "Where it breaks — and what we do not claim", [-2.4, -2.6, 6], [9, 3.6, 6], "bk-limits");
+    const L = [["LuClock", "Detection, not early warning", "Alerts fire as works happen. We never claim to see stress before it is visible."],
+      ["LuLayoutGrid", "10 m pixels", "Patches under ~0.6 ha and young plantings are missed, Bahrain's small stands included."],
+      ["LuSearch", "Imagery, not site visits", "Conversions confirmed on dated sub-metre captures, not yet on permits or field records."],
+      ["LuActivity", "Simulated losses", "Canopy-cover loss, not leaf stress; every rate shown next to its chance rate."],
+      ["LuScanLine", "Hyperspectral", "EnMAP confirms our indices but was not a better classifier (F1 0.74 vs 0.72)."],
+      ["LuLeaf", "Carbon", "Area × field density from four sites (2013–14): a stock with a range, never a sequestration rate."]];
+    for (let i = 0; i < 6; i++) {
+      const x = 0.6 + (i % 3) * 4.1, y = 1.85 + Math.floor(i / 3) * 2.2, o = 1 + Math.floor(i / 3);
+      card(s, `a${o}float_l${i}`, x, y, 3.93, 2.0);
+      await iconCircle(s, `a${o}float_l${i}ic`, L[i][0], x + 0.22, y + 0.22, 0.56);
+      T(s, `a${o}float_l${i}t`, L[i][1], x + 0.95, y + 0.22, 2.85, 0.56, { face: HEAD, size: 15, valign: "middle" });
+      T(s, `a${o}float_l${i}d`, L[i][2], x + 0.22, y + 0.92, 3.55, 1.0, { size: 12, color: MUTED });
+    }
+    T(s, "a3fade_rule", "Rule we kept: no detection rate without its chance rate; no claim of advance warning, field verification or species discrimination.", 0.6, 6.42, 12.1, 0.35, { size: 12, color: TEAL_L });
   }
 
   // =============== 18 · BACKUP: DEMO VIDEO ===============

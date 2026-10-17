@@ -15,10 +15,10 @@ import deck_v5 as v  # builds the PoC slides in memory (v.S); does not write the
 OUT = ROOT / "deck_final"; SL = OUT / "slides"; SL.mkdir(parents=True, exist_ok=True)
 NAVY, BLUE, CYAN, ICE, CORAL, AMBER, MUTED = v.NAVY, v.BLUE, v.CYAN, v.ICE, v.CORAL, v.AMBER, v.MUTED
 icon, light, dark = v.icon, v.light, v.dark
-for k in ("team", "validation", "impact", "scale", "close", "different", "sequence"):
+for k in ("team", "validation", "impact", "scale", "close", "different", "sequence", "sat813", "bk-textbook", "bk-limits"):
     v.NOTES[k] = ""  # notes are attached below
 
-ORDER = ["cover", "team", "problem", "product", "usecase", "data", "hyperspectral", "solution", "sequence", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "close"]
+ORDER = ["cover", "team", "problem", "product", "usecase", "data", "hyperspectral", "sat813", "solution", "sequence", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "close", "bk-textbook", "bk-limits"]
 TOTAL = len(ORDER)
 S = {k: v.S[k] for k in ("cover", "problem", "usecase", "data", "innovation", "cells", "product", "validation-real", "hyperspectral", "solution")}
 
@@ -58,6 +58,30 @@ S["team"] = light("team", 2, "The team", "One engineer, every role &#8212; deliv
       <p class="s" style="margin-top:6px;font-size:19px">a mangrove ecologist as mentor &#183; a restoration or agency partner for site records &#183; a GIS analyst for scale-out</p></div>
   </div>
 </div>""")
+
+# ---- NEW: ready for Satellite 813 (the challenge's namesake) ---------------------------------------------------------
+_rows = [("Sentinel-2", "13", "443&#8211;2190 nm", "10&#8211;20 m", "~5 days", "<b>when</b>: the alert, every pass", False),
+         ("EnMAP (used)", "224", "420&#8211;2450 nm", "30 m", "~27 days", "<b>what</b>: tested on stand 5", False),
+         ("Satellite 813 (next)", "~205", "~400&#8211;1700 nm", "~20 m", "on demand", "<b>what, sharper</b>: tasked on the flagged cells", True)]
+_tr = "".join(f'<tr style="{"background:#06235A;color:#fff" if hi else ""}"><td style="font-weight:700">{a}</td><td>{b}</td><td>{c}</td><td>{d}</td><td>{e}</td><td>{f}</td></tr>' for a, b, c, d, e, f, hi in _rows)
+S["sat813"] = light("sat813", 8, "Space data &#183; ready for Satellite 813", "Sentinel-2 says when. Satellite 813 says what.", f"""
+<div class="card" style="padding:0;overflow:hidden"><table style="font-size:22px"><tr><th>Sensor</th><th>Bands</th><th>Range</th><th>Pixel</th><th>Revisit</th><th>Role in the product</th></tr>{_tr}</table></div>
+<div class="row" style="gap:16px;margin-top:22px;align-items:stretch">
+  {"".join(f'<div class="card" style="flex:1;display:flex;gap:16px;align-items:center">{icon(i)}<div><p class="t b">{a}</p><p class="s" style="font-size:18px">{b}</p></div></div>' + ('' if k == 2 else f'<div style="align-self:center;font-size:40px;color:{CYAN}">&#10142;</div>') for k, (i, a, b) in enumerate([("bell", "1 · Sentinel-2 alert", "stand or 200 m cell below its threshold"), ("sat", "2 · Task Satellite 813", "only over the flagged cells, on demand"), ("spectrum", "3 · Spectral diagnosis", "vegetation or sand and fill: evidence pack")]))}
+</div>
+<div class="card dk" style="margin-top:22px;padding:18px 28px"><p class="t w" style="font-size:22px">Every index the monitor uses (NDVI, red edge, SWIR moisture at 1610 nm, wetness) sits inside 813's ~400&#8211;1700 nm range, at 20 m instead of EnMAP's 30 m. <b>Planned, not yet tested:</b> 813 scenes were not available in the proof of concept.</p></div>""")
+
+# ---- BACKUP (Q&A only): textbook baseline + limits ----------------------------------------------------------------------
+_bt = [("A &#183; textbook", "NDVI", "no", "1.61", True), ("B", "NDVI", "yes", "1.04", False), ("C", "NDVI + red edge + SWIR moisture", "no", "1.36", False), ("D &#183; ours", "NDVI + red edge + SWIR moisture", "yes", "0.96", True)]
+S["bk-textbook"] = light("bk-textbook", 18, "Backup &#183; for questions", "The textbook approach against ours, same alert rule", f"""
+<div class="card" style="padding:0;overflow:hidden"><table style="font-size:23px"><tr><th>Configuration</th><th>Indices</th><th>Tide model</th><th>False alarms per stand-year</th><th>Real conversions caught</th></tr>
+{"".join(f'<tr><td style="font-weight:700">{a}</td><td>{b}</td><td>{c}</td><td style="font-weight:700;color:{CORAL if a.startswith("A") else (BLUE if hi else NAVY)}">{d}</td><td>5 of 5</td></tr>' for a, b, c, d, hi in _bt)}</table></div>
+<div class="row" style="gap:18px;margin-top:22px">
+  <div class="card" style="flex:1"><p class="t b">40 % fewer false alarms</p><p class="s" style="margin-top:6px">20 stands with no known change, 93.9 stand-years, 2022&#8211;2026. About 16 fewer unnecessary inspections a year for 25 stands.</p></div>
+  <div class="card" style="flex:1"><p class="t b">The tide model is most of the gain</p><p class="s" style="margin-top:6px">NDVI alone 1.61 &#8594; with tide terms 1.04; the extra indices bring it to 0.96.</p></div>
+  <div class="card" style="flex:1;border-left:6px solid {AMBER}"><p class="t b">Honest limit</p><p class="s" style="margin-top:6px">Thresholds calibrated for our monitor; all four catch the five conversions. The difference is the false-alarm cost, not detection.</p></div>
+</div>""")
+S["bk-limits"] = light("bk-limits", 19, "Backup &#183; for questions", "Where it breaks &#8212; and what we do not claim", v.S["limits"][v.S["limits"].index('<div style="display:grid'):v.S["limits"].rindex('<div style="position:absolute;left:96px;right:96px;bottom:30px')].rsplit("</div>", 1)[0])
 
 # ---- NEW: validation (simulation + unseen stands + EnMAP + what we do not claim) -------------------------------------
 S["validation"] = light("validation", 10, "Validation 2 &#183; against chance, out of sample, second sensor", "Every rate next to its chance rate", f"""
@@ -151,7 +175,7 @@ This is Blue Carbon Guardian."
 DO: let the scan run for one sweep, then press → .
 BEFORE YOU START: PowerPoint in Slide Show (Presenter View); browser already open on nahla-nabil.github.io/blue-carbon-guardian/#monitor (page loaded, zoom 100 %); notifications off."""),
 
- "problem": (40, """SAY: "The Gulf is planting mangroves at record scale: 100 million pledged by the UAE, more than 100 million by Saudi Arabia. In February the first GCC mangrove monitoring guide was published.
+ "problem": (35, """SAY: "The Gulf is planting mangroves at record scale: 100 million pledged by the UAE, more than 100 million by Saudi Arabia.
 But planting is scaling faster than watching. Look at stand 5." (point at the images, left to right)
 "November 2021: intact. October 2022: works start — and that is when our alert fired. 2023: canals. Today: a canal development.
 Today, a loss like this is found at the next field survey — after the fact. What we solve: a calibrated alert every five days that says where to inspect, and what carbon is at stake."
@@ -193,9 +217,7 @@ We cut every stand into 200-metre cells and read every Sentinel-2 date. The tide
 If reality falls too far below, the alert rule — in rose — fires. The decision layer — in sand — adds the cell map and the carbon at stake, with EnMAP and sub-metre imagery as independent checks."
 
 DO: point along the boxes as you speak, then press → ."""),
- "sequence": (20, """SAY: "And this is what the user experiences.
-Every five days a new scene runs through the model. If an alert fires, we first check the flagged cells on sub-metre imagery, then send the alert with the cell map and the carbon at stake — and the inspector visits only those cells.
-If nothing changes, the user still gets a monthly report. No dashboards to watch: the system comes to them."
+ "sequence": (10, """SAY: "For the user: an alert with the cell map and the carbon at stake — the inspector visits only those cells. If nothing changes, a monthly report."
 
 DO: press → ."""),
  "innovation": (45, """SAY: "Now the hard part — the one that breaks most monitors in the Gulf: the tide.
@@ -247,11 +269,23 @@ On stand 5, the green curves are the vegetation in 2022; the red dashed curves a
 On the same dates, EnMAP agrees with our Sentinel-2 indices with r up to 0.99."
 
 DO: press → ."""),
- "different": (25, """SAY: "So how is this different from what exists?
-Field surveys are periodic. Satellite maps are one-off. Global Mangrove Watch sends free monthly loss alerts — and we see it as complementary.
+ "different": (20, """SAY: "How is this different? Surveys are periodic, maps are one-off, and Global Mangrove Watch's free monthly alerts are complementary.
 What we add" (point down the blue column) ": every five days, the tide removed, where inside the stand, a measured false-alarm rate, and the carbon at stake — built and tested for the Gulf."
 
 DO: press → ."""),
+ "sat813": (20, """SAY: "And this is where Satellite 813 comes in. Sentinel-2 tells us when something changed, every five days. Satellite 813 tells us what: once a cell is flagged, we task 813 over just that cell.
+Every index we use sits inside 813's range, at 20 metres. It is planned — 813 scenes were not available in this proof of concept."
+
+DO: press → ."""),
+
+ "bk-textbook": (0, """BACKUP — do not present. Open only if asked about NDVI, baselines or false alarms.
+SAY: "Same alert rule, same 25 stands: NDVI alone gives 1.61 false alarms per stand-year, ours 0.96 — 40 % fewer, mostly thanks to the tide model. All four catch the five conversions; the difference is the false-alarm cost."
+"""),
+
+ "bk-limits": (0, """BACKUP — do not present. Open only if asked about limits or what we claim.
+SAY: "Detection while works happen, not early warning; 10-metre pixels miss very small stands; confirmation on dated imagery, not site visits — matching permits with a partner is our first pilot task."
+"""),
+
  "close": (15, """SAY (slow, look at the camera): "A working product, five real events confirmed, every number reproducible.
 Every lost mangrove leaves a trace — and we find it from space.
 Our ask: incubation, to run a pilot with a Gulf agency or planting programme. Thank you — I'm happy to take your questions."

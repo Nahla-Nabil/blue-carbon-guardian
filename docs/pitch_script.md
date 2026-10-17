@@ -22,16 +22,16 @@ In incubation I will add what I don't have: a mangrove ecologist and a field par
 
 DO: press → .
 
-## 3. problem  (0:45 - 1:25, 40 s)
+## 3. problem  (0:45 - 1:20, 35 s)
 
-SAY: "The Gulf is planting mangroves at record scale: 100 million pledged by the UAE, more than 100 million by Saudi Arabia. In February the first GCC mangrove monitoring guide was published.
+SAY: "The Gulf is planting mangroves at record scale: 100 million pledged by the UAE, more than 100 million by Saudi Arabia.
 But planting is scaling faster than watching. Look at stand 5." (point at the images, left to right)
 "November 2021: intact. October 2022: works start — and that is when our alert fired. 2023: canals. Today: a canal development.
 Today, a loss like this is found at the next field survey — after the fact. What we solve: a calibrated alert every five days that says where to inspect, and what carbon is at stake."
 
 DO: press → after "at stake".
 
-## 4. product  (1:25 - 2:40, 75 s)
+## 4. product  (1:20 - 2:35, 75 s)
 
 SAY: "So here is what we built. Let me show you — live."
 
@@ -53,21 +53,21 @@ SAY: "And every stand gets a one-page report with the carbon at stake."
 DO: Alt+Tab back to PowerPoint → press → .
 FALLBACK: if the site does not load, stay on this slide — the recording plays the same steps; narrate it with the same lines.
 
-## 5. usecase  (2:40 - 2:55, 15 s)
+## 5. usecase  (2:35 - 2:50, 15 s)
 
 SAY: "Three users, three decisions.
 Agencies: which stands do we inspect this month. Planting and carbon developers: is the carbon we report still there. Developers and regulators: did the works stay outside the mangrove line."
 
 DO: press → .
 
-## 6. data  (2:55 - 3:10, 15 s)
+## 6. data  (2:50 - 3:05, 15 s)
 
 SAY: "The analysis rests on five independent data sources: 778 Sentinel-2 dates over six years, EnMAP hyperspectral, ESA WorldCover, field carbon plots, and dated sub-metre imagery.
 Every image is cloud-masked, only interior pixels are used, and every finding is cross-checked by a second source."
 
 DO: press → .
 
-## 7. hyperspectral  (3:10 - 3:30, 20 s)
+## 7. hyperspectral  (3:05 - 3:25, 20 s)
 
 SAY: "Here is the second source at work: EnMAP hyperspectral, 224 bands.
 On stand 5, the green curves are the vegetation in 2022; the red dashed curves are the same pixels in 2025 — the spectrum of sand and fill. That is reclamation, not dieback.
@@ -75,7 +75,14 @@ On the same dates, EnMAP agrees with our Sentinel-2 indices with r up to 0.99."
 
 DO: press → .
 
-## 8. solution  (3:30 - 3:50, 20 s)
+## 8. sat813  (3:25 - 3:45, 20 s)
+
+SAY: "And this is where Satellite 813 comes in. Sentinel-2 tells us when something changed, every five days. Satellite 813 tells us what: once a cell is flagged, we task 813 over just that cell.
+Every index we use sits inside 813's range, at 20 metres. It is planned — 813 scenes were not available in this proof of concept."
+
+DO: press → .
+
+## 9. solution  (3:45 - 4:05, 20 s)
 
 SAY: "Here is the whole method, left to right.
 We cut every stand into 200-metre cells and read every Sentinel-2 date. The tide-aware model — in blue — predicts what each stand and each cell should look like.
@@ -83,15 +90,13 @@ If reality falls too far below, the alert rule — in rose — fires. The decisi
 
 DO: point along the boxes as you speak, then press → .
 
-## 9. sequence  (3:50 - 4:10, 20 s)
+## 10. sequence  (4:05 - 4:15, 10 s)
 
-SAY: "And this is what the user experiences.
-Every five days a new scene runs through the model. If an alert fires, we first check the flagged cells on sub-metre imagery, then send the alert with the cell map and the carbon at stake — and the inspector visits only those cells.
-If nothing changes, the user still gets a monthly report. No dashboards to watch: the system comes to them."
+SAY: "For the user: an alert with the cell map and the carbon at stake — the inspector visits only those cells. If nothing changes, a monthly report."
 
 DO: press → .
 
-## 10. innovation  (4:10 - 4:55, 45 s)
+## 11. innovation  (4:15 - 5:00, 45 s)
 
 SAY: "Now the hard part — the one that breaks most monitors in the Gulf: the tide.
 When the tide comes in, flooded mangroves look, from space, like dying mangroves. In this illustration the same trees drop from 0.30 to 0.18.
@@ -102,7 +107,7 @@ Noise falls by 29 to 35 percent on every index." (point at the right card at the
 
 DO: wait for the water to rise in the illustration, then press → on "reliable alert".
 
-## 11. cells  (4:55 - 5:20, 25 s)
+## 12. cells  (5:00 - 5:25, 25 s)
 
 SAY: "Our second innovation: averages hide damage.
 Real data from stand 5: watch the cells turn red while the stand average barely moves. Three of our five real conversions were found only by the cells.
@@ -110,15 +115,14 @@ In simulation, a partial loss is caught within 60 days 73 percent of the time �
 
 DO: press → .
 
-## 12. different  (5:20 - 5:45, 25 s)
+## 13. different  (5:25 - 5:45, 20 s)
 
-SAY: "So how is this different from what exists?
-Field surveys are periodic. Satellite maps are one-off. Global Mangrove Watch sends free monthly loss alerts — and we see it as complementary.
+SAY: "How is this different? Surveys are periodic, maps are one-off, and Global Mangrove Watch's free monthly alerts are complementary.
 What we add" (point down the blue column) ": every five days, the tide removed, where inside the stand, a measured false-alarm rate, and the carbon at stake — built and tested for the Gulf."
 
 DO: press → .
 
-## 13. validation-real  (5:45 - 6:20, 35 s)
+## 14. validation-real  (5:45 - 6:20, 35 s)
 
 SAY: "Does it work on real events? Five real conversions, all confirmed on 30-to-50-centimetre imagery.
 The blue bar is the window between the last intact image and the first image showing works; the diamond is when our alert started. Every alert falls inside that window." (point at stand 5's diamond)
@@ -126,7 +130,7 @@ The blue bar is the window between the last intact image and the first image sho
 
 DO: press → .
 
-## 14. validation  (6:20 - 6:55, 35 s)
+## 15. validation  (6:20 - 6:55, 35 s)
 
 SAY: "We also tested ourselves against pure chance — every rate has its chance rate next to it.
 Partial loss: 73 percent caught, 13 by chance. A uniform 10-percent loss is harder: 63 versus 36, and we show that too.
@@ -135,24 +139,36 @@ And when we found a flaw in our own first test, we withdrew it. These are the nu
 
 DO: press → on "survived".
 
-## 15. impact  (6:55 - 7:25, 30 s)
+## 16. impact  (6:55 - 7:25, 30 s)
 
 SAY: "Why it matters. 108 tonnes of carbon per hectare in these stands — 82 percent in the soil, released when the stand is cleared. The pilot holds about 247 thousand tonnes; stand 5 alone lost 3 to 7 thousand.
 As a service: about 12 thousand dollars per site per year, against a cost to serve of about 3 thousand. The real prize is a national MRV contract, or a monitoring layer on gIQ."
 
 DO: press → .
 
-## 16. scale  (7:25 - 7:45, 20 s)
+## 17. scale  (7:25 - 7:45, 20 s)
 
 SAY: "Beyond the proof of concept: everything is public and reproducible — the notebook re-runs in 24 seconds, and a clean-machine test gives the same numbers.
 It already transferred to unseen stands and a second country, at under five dollars of compute per site per year. Next: Satellite 813, gIQ, and a pilot customer."
 
 DO: press → .
 
-## 17. close  (7:45 - 8:00, 15 s)
+## 18. close  (7:45 - 8:00, 15 s)
 
 SAY (slow, look at the camera): "A working product, five real events confirmed, every number reproducible.
 Every lost mangrove leaves a trace — and we find it from space.
 Our ask: incubation, to run a pilot with a Gulf agency or planting programme. Thank you — I'm happy to take your questions."
 
 DO: stop talking; stay on this slide during the Q&A. If asked to see the product again: last slide (backup video) or Alt+Tab to the website.
+
+## 19. bk-textbook  (8:00 - 8:00, 0 s)
+
+BACKUP — do not present. Open only if asked about NDVI, baselines or false alarms.
+SAY: "Same alert rule, same 25 stands: NDVI alone gives 1.61 false alarms per stand-year, ours 0.96 — 40 % fewer, mostly thanks to the tide model. All four catch the five conversions; the difference is the false-alarm cost."
+
+
+## 20. bk-limits  (8:00 - 8:00, 0 s)
+
+BACKUP — do not present. Open only if asked about limits or what we claim.
+SAY: "Detection while works happen, not early warning; 10-metre pixels miss very small stands; confirmation on dated imagery, not site visits — matching permits with a partner is our first pilot task."
+

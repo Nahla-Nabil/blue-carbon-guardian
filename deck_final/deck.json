@@ -13,6 +13,7 @@
     "usecase",
     "data",
     "hyperspectral",
+    "sat813",
     "solution",
     "sequence",
     "innovation",
@@ -22,7 +23,9 @@
     "validation",
     "impact",
     "scale",
-    "close"
+    "close",
+    "bk-textbook",
+    "bk-limits"
   ],
   "sections": {},
   "faces": {
