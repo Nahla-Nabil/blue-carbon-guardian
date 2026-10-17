@@ -34,5 +34,72 @@
   <aside>[10 s] SAY (warm, slow): "Thank you — to the United Arab Emirates, for leading our region in protecting its mangroves, and to the UAE Space Agency, the National Space Academy and Space42 for this programme.
 I'm happy to take your questions."
 
-DO: stop talking; stay on this slide during the Q&A. If a question needs evidence: → backup slides (textbook baseline, limits, demo video) or Alt+Tab to the website.</aside>
+DO: stop talking; stay on this slide during the Q&A. If a question needs evidence: → backup slides (textbook baseline, limits, demo video) or Alt+Tab to the website.
+
+==================== Q&A CHEAT SHEET (only you see this in Presenter View) ====================
+Rule: one sentence that answers + one number + stop. Unknown? "Good question — we haven't tested that yet; it's the first thing we'd test in incubation."
+Jump: type the slide number + Enter (20 = textbook table, 21 = limits, 22 = demo video, 8 = Satellite 813). Back: 19 + Enter.
+
+1. No site visits — how do you know the losses are real?
+→ All five are confirmed on dated sub-metre captures (WorldView-2/3, Legion-1, 30–50 cm). At every site the alert began between the last intact and the first disturbed capture. Matching permits and site records is our first pilot task.
+
+2. Is it early warning?
+→ No, and we say so. It detects works while they happen. We never claim to see stress before it is visible.  (slide 21)
+
+3. Thresholds −1.5 / −3.5 — overfitting?
+→ Calibrated only on stands with no change, to ~1 false alarm per stand-year, then frozen and applied to 65 stands it never saw, incl. Saudi Tarut Bay: 0.79 vs 0.96.
+
+4. Is 73 % luck?
+→ Every rate has its chance rate: 73 % within 60 days vs 13 % by chance, same test with no loss. We withdrew our own first figure when a null test showed it was inflated.
+
+5. Why not just NDVI?
+→ We tested it: same rule, same 25 stands — NDVI alone 1.61 false alarms per stand-year, ours 0.96, 40 % fewer; the tide model is most of the gain. All four setups catch the five conversions; the difference is false-alarm cost.  (slide 20)
+
+6. Why does the tide matter?
+→ At high tide flooded mangrove looks like dying mangrove. Index noise follows wetness, r ≈ −0.9. Modelling the tide cuts noise 29–35 %.
+
+7. How accurate is your mangrove map?
+→ Extent is not our contribution: ~0.6 F1 against reference points, and we say so. We start from ESA WorldCover outlines and focus on change and condition.
+
+8. Did you cherry-pick the five events?
+→ They came from the monitor's own flags; we checked flagged stands on dated imagery, including flags that were false positives, which we report. False alarms are measured separately.
+
+9. What did hyperspectral add?
+→ An independent check (EnMAP vs Sentinel-2, r = 0.84–0.99) and a material fingerprint: stand 5 turns from vegetation to a mineral spectrum — reclamation, not dieback. As a classifier it did not beat multispectral (F1 0.74 vs 0.72).
+
+10. Why not Satellite 813?
+→ Not available in the PoC (onboarding guide). Every index we use sits inside 813's 400–1700 nm range at 20 m; Sentinel-2 says when, 813 says what — tasked on flagged cells. Planned, not tested.  (slide 8)
+
+11. Clouds?
+→ Sentinel-2 cloud mask, only dates with at least half the stand clear; still 778 usable dates in six years.
+
+12. Bahrain?
+→ About 5 ha mapped, largest patch under 4 ha — too small for 10 m pixels. A case for very-high-resolution data in incubation.
+
+13. Who pays?
+→ Agencies (which stands to inspect), planting and carbon developers (is the stock still there), coastal developers and regulators (did works stay outside the mangrove line). Pilot price ~12k USD per site per year; cost to serve ~3.3k.
+
+14. Different from Global Mangrove Watch?
+→ Complementary. GMW gives free monthly loss alerts worldwide; we add the tide model, 200 m cells, a measured false-alarm rate and carbon at stake — tested in the Gulf.
+
+15. Are the prices validated?
+→ No — hypotheses for a pilot, labelled as such. Measured: compute under 5 USD per site per year.
+
+16. Is carbon a sequestration rate / credits?
+→ A stock, not a rate: area × field density 108 t C/ha with its range. It supports verification that a stock is still there, not credit issuance alone.
+
+17. How does it scale?
+→ Free data read in place, no downloads; a 2020–26 backfill per block under 75 min. Gulf ≈ 165 km² of mangrove — compute is not the limit; partners and site records are.
+
+18. You are one person — can you deliver?
+→ I delivered the full PoC; everything is public and reproducible. For incubation: a mangrove ecologist mentor, an agency or restoration partner, a GIS analyst.
+
+19. Where is the AI?
+→ Statistical learning per stand and cell: a robust model of trend, season and tide, and an anomaly detector calibrated against chance. Explainable on purpose — an inspector must understand why an alert fired.
+
+20. First three months of incubation?
+→ One pilot with a partner: match alerts to permits and site records, add Satellite 813 to the spectral step, deploy on gIQ.
+
+FIVE NUMBERS: 29–35 % less noise · 1.61 → 0.96 false alarms (NDVI vs ours) · 73 % vs 13 % · 0.79 on 65 unseen stands · 5 of 5 conversions confirmed
+</aside>
 </section>
