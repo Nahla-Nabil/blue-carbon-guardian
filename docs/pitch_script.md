@@ -146,28 +146,35 @@ As a service: about 12 thousand dollars per site per year, against a cost to ser
 
 DO: press → .
 
-## 17. scale  (7:25 - 7:45, 20 s)
+## 17. scale  (7:25 - 7:40, 15 s)
 
 SAY: "Beyond the proof of concept: everything is public and reproducible — the notebook re-runs in 24 seconds, and a clean-machine test gives the same numbers.
-It already transferred to unseen stands and a second country, at under five dollars of compute per site per year. Next: Satellite 813, gIQ, and a pilot customer."
+It already transferred to unseen stands and a second country, at under five dollars of compute per site per year."
 
 DO: press → .
 
-## 18. close  (7:45 - 8:00, 15 s)
+## 18. close  (7:40 - 7:50, 10 s)
 
 SAY (slow, look at the camera): "A working product, five real events confirmed, every number reproducible.
 Every lost mangrove leaves a trace — and we find it from space.
-Our ask: incubation, to run a pilot with a Gulf agency or planting programme. Thank you — I'm happy to take your questions."
+Our ask: incubation, to run a pilot with a Gulf agency or planting programme."
 
-DO: stop talking; stay on this slide during the Q&A. If asked to see the product again: last slide (backup video) or Alt+Tab to the website.
+DO: press → (thank-you slide).
 
-## 19. bk-textbook  (8:00 - 8:00, 0 s)
+## 19. thanks  (7:50 - 8:00, 10 s)
+
+SAY (warm, slow): "Thank you — to the United Arab Emirates, for leading our region in protecting its mangroves, and to the UAE Space Agency, the National Space Academy and Space42 for this programme.
+I'm happy to take your questions."
+
+DO: stop talking; stay on this slide during the Q&A. If a question needs evidence: → backup slides (textbook baseline, limits, demo video) or Alt+Tab to the website.
+
+## 20. bk-textbook  (8:00 - 8:00, 0 s)
 
 BACKUP — do not present. Open only if asked about NDVI, baselines or false alarms.
 SAY: "Same alert rule, same 25 stands: NDVI alone gives 1.61 false alarms per stand-year, ours 0.96 — 40 % fewer, mostly thanks to the tide model. All four catch the five conversions; the difference is the false-alarm cost."
 
 
-## 20. bk-limits  (8:00 - 8:00, 0 s)
+## 21. bk-limits  (8:00 - 8:00, 0 s)
 
 BACKUP — do not present. Open only if asked about limits or what we claim.
 SAY: "Detection while works happen, not early warning; 10-metre pixels miss very small stands; confirmation on dated imagery, not site visits — matching permits with a partner is our first pilot task."

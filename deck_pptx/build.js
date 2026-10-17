@@ -558,6 +558,25 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     usePalette(LIGHT_P);
   }
 
+  // =============== 17b · THANK YOU ===============
+  {
+    usePalette(HERO_P);
+    const s = pres.addSlide({ masterName: "HERO" });
+    glows(s, [7.6, -2.8, 7.5], [-2.8, 3.2, 7.5]);
+    s.addNotes(NOTES.thanks);
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { objectName: "a1zoom_flagbg", x: 0.74, y: 1.12, w: 2.92, h: 1.48, rectRadius: 0.06, fill: { color: "FFFFFF" }, line: { type: "none" }, shadow: shadow() });
+    s.addImage({ objectName: "a1zoom_flag", path: path.join(__dirname, "flag_ae.png"), x: 0.8, y: 1.18, w: 2.8, h: 1.36 });
+    T(s, "a2float_ty", "Thank you", 3.95, 0.98, 8.6, 1.05, { face: HEAD, size: 60 });
+    T(s, "a2float_tyar", "شكراً للإمارات", 3.98, 1.98, 8.6, 0.75, { face: HEAD, size: 32, color: "D4E2EE" });
+    T(s, "a3float_uae", [{ text: "To the " }, { text: "United Arab Emirates", options: { bold: true, color: GOLD } }, { text: " — for leading the region in protecting its mangroves, and for opening space to Arab youth." }],
+      0.8, 3.15, 11.7, 1.15, { face: LIGHT, size: 24 });
+    card(s, "a4float_org", 0.8, 4.55, 11.72, 0.95, { fill: TEAL, tr: 84, line: TEAL });
+    T(s, "a4float_orgt", [{ text: "With thanks to:  ", options: { bold: true, color: TEAL_L } }, { text: "UAE Space Agency  ·  National Space Academy  ·  Space42  ·  the mentors and the judges" }], 1.05, 4.55, 11.3, 0.95, { size: 17, valign: "middle" });
+    s.addImage({ objectName: "a5fade_fbh", path: path.join(__dirname, "flag_bh.png"), x: 0.8, y: 6.08, w: 0.42, h: 0.25 });
+    T(s, "a5fade_from", "From Bahrain, with gratitude  —  Nahla Nabil  ·  Team Blue Athar", 1.32, 5.98, 9, 0.45, { size: 14, color: "D4E2EE", valign: "middle" });
+    usePalette(LIGHT_P);
+  }
+
   // =============== BACKUP A · TEXTBOOK BASELINE (Q&A only) ===============
   {
     const s = slide("OCEAN_A", "Backup · for questions", "The textbook approach against ours, same alert rule", [8.8, -3, 6], [-2.6, 3.4, 6], "bk-textbook");

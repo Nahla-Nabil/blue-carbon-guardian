@@ -15,10 +15,10 @@ import deck_v5 as v  # builds the PoC slides in memory (v.S); does not write the
 OUT = ROOT / "deck_final"; SL = OUT / "slides"; SL.mkdir(parents=True, exist_ok=True)
 NAVY, BLUE, CYAN, ICE, CORAL, AMBER, MUTED = v.NAVY, v.BLUE, v.CYAN, v.ICE, v.CORAL, v.AMBER, v.MUTED
 icon, light, dark = v.icon, v.light, v.dark
-for k in ("team", "validation", "impact", "scale", "close", "different", "sequence", "sat813", "bk-textbook", "bk-limits"):
+for k in ("team", "validation", "impact", "scale", "close", "different", "sequence", "sat813", "thanks", "bk-textbook", "bk-limits"):
     v.NOTES[k] = ""  # notes are attached below
 
-ORDER = ["cover", "team", "problem", "product", "usecase", "data", "hyperspectral", "sat813", "solution", "sequence", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "close", "bk-textbook", "bk-limits"]
+ORDER = ["cover", "team", "problem", "product", "usecase", "data", "hyperspectral", "sat813", "solution", "sequence", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "close", "thanks", "bk-textbook", "bk-limits"]
 TOTAL = len(ORDER)
 S = {k: v.S[k] for k in ("cover", "problem", "usecase", "data", "innovation", "cells", "product", "validation-real", "hyperspectral", "solution")}
 
@@ -70,6 +70,20 @@ S["sat813"] = light("sat813", 8, "Space data &#183; ready for Satellite 813", "S
   {"".join(f'<div class="card" style="flex:1;display:flex;gap:16px;align-items:center">{icon(i)}<div><p class="t b">{a}</p><p class="s" style="font-size:18px">{b}</p></div></div>' + ('' if k == 2 else f'<div style="align-self:center;font-size:40px;color:{CYAN}">&#10142;</div>') for k, (i, a, b) in enumerate([("bell", "1 · Sentinel-2 alert", "stand or 200 m cell below its threshold"), ("sat", "2 · Task Satellite 813", "only over the flagged cells, on demand"), ("spectrum", "3 · Spectral diagnosis", "vegetation or sand and fill: evidence pack")]))}
 </div>
 <div class="card dk" style="margin-top:22px;padding:18px 28px"><p class="t w" style="font-size:22px">Every index the monitor uses (NDVI, red edge, SWIR moisture at 1610 nm, wetness) sits inside 813's ~400&#8211;1700 nm range, at 20 m instead of EnMAP's 30 m. <b>Planned, not yet tested:</b> 813 scenes were not available in the proof of concept.</p></div>""")
+
+# ---- NEW: thank you (to the UAE and the organisers; names only, no logos without permission) ------------------------
+S["thanks"] = dark("thanks", """
+  <div style="position:absolute;left:110px;top:150px;width:1700px">
+    <div style="display:flex;gap:40px;align-items:center">
+      <div style="width:300px;height:150px;flex:none;display:flex;border-radius:10px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)">
+        <div style="width:75px;background:#FF0000"></div><div style="flex:1;display:flex;flex-direction:column"><div style="flex:1;background:#00732F"></div><div style="flex:1;background:#fff"></div><div style="flex:1;background:#000"></div></div></div>
+      <div><p style="font-size:110px;font-weight:700;line-height:1;background:linear-gradient(90deg,#fff,#CBEBFF 60%,#7FD3FF);-webkit-background-clip:text;color:transparent">Thank you</p>
+        <p style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:56px;font-weight:600;color:#D8EEFF;margin-top:6px">شكراً للإمارات</p></div>
+    </div>
+    <p style="font-size:34px;color:#fff;margin-top:60px;line-height:1.4;max-width:1500px">To the <b>United Arab Emirates</b> — for leading the region in protecting its mangroves, and for opening space to Arab youth.</p>
+    <p style="font-size:26px;color:#BFDFFF;margin-top:28px">UAE Space Agency &#183; National Space Academy &#183; Space42 &#183; the mentors and the judges</p>
+    <p style="font-size:22px;color:#8FD3FF;margin-top:60px">From Bahrain, with gratitude &#8212; Nahla Nabil &#183; Team Blue Athar</p>
+  </div>""")
 
 # ---- BACKUP (Q&A only): textbook baseline + limits ----------------------------------------------------------------------
 _bt = [("A &#183; textbook", "NDVI", "no", "1.61", True), ("B", "NDVI", "yes", "1.04", False), ("C", "NDVI + red edge + SWIR moisture", "no", "1.36", False), ("D &#183; ours", "NDVI + red edge + SWIR moisture", "yes", "0.96", True)]
@@ -253,8 +267,8 @@ As a service: about 12 thousand dollars per site per year, against a cost to ser
 
 DO: press → ."""),
 
- "scale": (20, """SAY: "Beyond the proof of concept: everything is public and reproducible — the notebook re-runs in 24 seconds, and a clean-machine test gives the same numbers.
-It already transferred to unseen stands and a second country, at under five dollars of compute per site per year. Next: Satellite 813, gIQ, and a pilot customer."
+ "scale": (15, """SAY: "Beyond the proof of concept: everything is public and reproducible — the notebook re-runs in 24 seconds, and a clean-machine test gives the same numbers.
+It already transferred to unseen stands and a second country, at under five dollars of compute per site per year."
 
 DO: press → ."""),
 
@@ -278,6 +292,11 @@ Every index we use sits inside 813's range, at 20 metres. It is planned — 813 
 
 DO: press → ."""),
 
+ "thanks": (10, """SAY (warm, slow): "Thank you — to the United Arab Emirates, for leading our region in protecting its mangroves, and to the UAE Space Agency, the National Space Academy and Space42 for this programme.
+I'm happy to take your questions."
+
+DO: stop talking; stay on this slide during the Q&A. If a question needs evidence: → backup slides (textbook baseline, limits, demo video) or Alt+Tab to the website."""),
+
  "bk-textbook": (0, """BACKUP — do not present. Open only if asked about NDVI, baselines or false alarms.
 SAY: "Same alert rule, same 25 stands: NDVI alone gives 1.61 false alarms per stand-year, ours 0.96 — 40 % fewer, mostly thanks to the tide model. All four catch the five conversions; the difference is the false-alarm cost."
 """),
@@ -286,11 +305,11 @@ SAY: "Same alert rule, same 25 stands: NDVI alone gives 1.61 false alarms per st
 SAY: "Detection while works happen, not early warning; 10-metre pixels miss very small stands; confirmation on dated imagery, not site visits — matching permits with a partner is our first pilot task."
 """),
 
- "close": (15, """SAY (slow, look at the camera): "A working product, five real events confirmed, every number reproducible.
+ "close": (10, """SAY (slow, look at the camera): "A working product, five real events confirmed, every number reproducible.
 Every lost mangrove leaves a trace — and we find it from space.
-Our ask: incubation, to run a pilot with a Gulf agency or planting programme. Thank you — I'm happy to take your questions."
+Our ask: incubation, to run a pilot with a Gulf agency or planting programme."
 
-DO: stop talking; stay on this slide during the Q&A. If asked to see the product again: last slide (backup video) or Alt+Tab to the website."""),
+DO: press → (thank-you slide)."""),
 }
 assert set(SCRIPT) == set(ORDER)
 
