@@ -18,7 +18,7 @@ icon, light, dark = v.icon, v.light, v.dark
 for k in ("team", "validation", "impact", "scale", "close", "different", "sequence"):
     v.NOTES[k] = ""  # notes are attached below
 
-ORDER = ["cover", "problem", "product", "usecase", "data", "hyperspectral", "solution", "sequence", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "team", "close"]
+ORDER = ["cover", "team", "problem", "product", "usecase", "data", "hyperspectral", "solution", "sequence", "innovation", "cells", "different", "validation-real", "validation", "impact", "scale", "close"]
 TOTAL = len(ORDER)
 S = {k: v.S[k] for k in ("cover", "problem", "usecase", "data", "innovation", "cells", "product", "validation-real", "hyperspectral", "solution")}
 
@@ -49,7 +49,7 @@ S["team"] = light("team", 2, "The team", "One engineer, every role &#8212; deliv
       <li>AI &amp; LLM product engineering (Doo Bahrain; FlyRank backend AI)</li>
       <li>Machine learning, computer vision (deepfake detection), Python geospatial stack</li></ul>
     <p class="lab" style="color:#8FD3FF;margin-top:4px">Community</p>
-    <p class="t w" style="font-size:19px">NASA Space Apps Challenge local lead (Muharraq): organising and mentoring space-data teams</p>
+    <p class="t w" style="font-size:19px">NASA Space Apps Challenge local lead (Manama): organising and mentoring space-data teams</p>
   </div>
   <div class="col" style="flex:1;gap:14px">
     <p class="lab" style="color:{BLUE}">Roles &amp; responsibilities in this project</p>
@@ -236,7 +236,7 @@ It already transferred to unseen stands and a second country, at under five doll
 
 DO: press → ."""),
 
- "team": (30, """SAY: "Who built this? A team of one. I held every role on this slide — satellite pipeline, statistics, product and business case.
+ "team": (30, """SAY: "Before the problem — who is behind this. A team of one. I held every role on this slide — satellite pipeline, statistics, product and business case.
 I'm finishing a BSc in Artificial Intelligence at the Arab Open University in Bahrain, with First-Class Honours standing; I have two IEEE papers in machine learning, and I lead NASA Space Apps locally. I worked with an AI-assisted engineering workflow that I direct and review — and every number is public and checkable.
 In incubation I will add what I don't have: a mangrove ecologist and a field partner."
 

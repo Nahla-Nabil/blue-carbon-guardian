@@ -116,6 +116,42 @@ const pill = (s, name, text, x, y, w, o = {}) => {
     usePalette(LIGHT_P);
   }
 
+  // =============== 2 · TEAM (about me, right after the cover) ===============
+  {
+    const s = slide("OCEAN_B", "The team", "One engineer, every role — delivered in the open", [-2.4, 2.4, 6.5], [9.4, -3, 6], "team");
+    card(s, "a1float_panel", 0.6, 1.85, 4.55, 4.9, { fill: "E8F0F9", tr: 8 });
+    s.addShape(pres.shapes.OVAL, { objectName: "a1float_avring", x: 0.8, y: 2.02, w: 1.32, h: 1.32, fill: { color: "FFFFFF" }, line: { color: TEAL, width: 2 } });
+    s.addImage({ objectName: "a1float_av", path: path.join(__dirname, "nahla.png"), x: 0.85, y: 2.07, w: 1.22, h: 1.22 });
+    T(s, "a1float_name", "Nahla Nabil", 2.28, 2.1, 2.8, 0.45, { face: HEAD, size: 22 });
+    T(s, "a1float_role", "Team lead · AI engineer · IEEE researcher", 2.28, 2.55, 2.8, 0.5, { size: 11, color: MUTED });
+    T(s, "a1float_ctry", "Bahrain", 2.28, 2.84, 2.8, 0.28, { size: 11, color: MUTED });
+    label(s, "a2fade_l0", "Education", 0.88, 3.42, 4);
+    T(s, "a2fade_edu", [{ text: "BSc Artificial Intelligence", options: { bold: true } }, { text: " · Arab Open University, Bahrain · final semester · First-Class Honours standing" }], 0.88, 3.66, 4.1, 0.5, { size: 11.5 });
+    label(s, "a2fade_l1", "Relevant expertise", 0.88, 4.24, 4);
+    s.addText(["2 IEEE papers (ICCA 2025, ICAISET 2026): federated learning for industrial IoT; random-forest audit of GCC sustainability",
+      "AI & LLM product engineering (Doo Bahrain; FlyRank backend AI)", "Machine learning, computer vision (deepfake detection), Python geospatial stack"].map((t, i, a) =>
+      ({ text: t, options: { bullet: { indent: 12 }, breakLine: i < a.length - 1 } })),
+      { objectName: "a2fade_skills", x: 0.88, y: 4.5, w: 4.15, h: 1.4, fontFace: BODY, fontSize: 10.5, color: TXT, paraSpaceAfter: 3, margin: 0, valign: "top", isTextBox: true });
+    label(s, "a3fade_l2", "Community", 0.88, 6.0, 4);
+    T(s, "a3fade_comm", "NASA Space Apps Challenge local lead (Manama): organising and mentoring space-data teams", 0.88, 6.22, 4.15, 0.45, { size: 10 });
+    const roles = [["LuTarget", "Project lead & owner", "problem framing, user needs, scope, every claim"],
+      ["LuSatellite", "EO data engineer", "778 Sentinel-2 dates, EnMAP reader, sub-metre checks"],
+      ["LuLineChart", "Modelling & statistics", "tide-aware model, stand + cell alert, calibration"],
+      ["LuShieldCheck", "Validation & integrity", "real events, simulations, unseen stands"],
+      ["LuLayers", "Product & delivery", "dashboard, website, site reports, notebook"],
+      ["LuDollarSign", "Business & impact", "customers, pricing hypotheses, carbon ranges"]];
+    label(s, "a1fade_l4", "Roles & responsibilities in this project", 5.45, 1.85, 7);
+    for (let i = 0; i < 6; i++) {
+      const x = 5.45 + (i % 2) * 3.7, y = 2.22 + Math.floor(i / 2) * 1.3, o = 2 + Math.floor(i / 2);
+      card(s, `a${o}float_r${i}`, x, y, 3.56, 1.15);
+      await iconCircle(s, `a${o}float_r${i}ic`, roles[i][0], x + 0.2, y + 0.29, 0.56);
+      T(s, `a${o}float_r${i}t`, roles[i][1], x + 0.92, y + 0.18, 2.5, 0.36, { face: HEAD, size: 14 });
+      T(s, `a${o}float_r${i}d`, roles[i][2], x + 0.92, y + 0.55, 2.5, 0.5, { size: 12, color: MUTED });
+    }
+    card(s, "a5float_gap", 5.45, 6.12, 7.26, 0.63, { fill: TEAL, tr: 86, line: TEAL });
+    T(s, "a5float_gapt", [{ text: "Incubation gap we will close:  ", options: { bold: true, color: TEAL_L } }, { text: "a mangrove ecologist mentor · a restoration or agency partner · a GIS analyst" }], 5.7, 6.12, 6.9, 0.63, { size: 13, valign: "middle" });
+  }
+
   // =============== 2 · PROBLEM ===============
   {
     const s = slide("OCEAN_A", "The problem", "Restoration is scaling faster than monitoring", [8.8, -2.2, 6], [-2.5, 4.2, 6], "problem");
@@ -464,42 +500,6 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a${o}float_p${i}d`, P[i][2], 7.8, y + 0.48, 4.75, 0.85, { size: 12, color: "3A4D63" });
     }
     T(s, "a8fade_src", "Areas: Frontiers in Marine Science 2025. Compute measured; prices assumed.", 6.85, 6.75, 5.2, 0.22, { size: 9, color: "8A9BB0" });
-  }
-
-  // =============== 16 · TEAM ===============
-  {
-    const s = slide("OCEAN_B", "The team", "One engineer, every role — delivered in the open", [-2.4, 2.4, 6.5], [9.4, -3, 6], "team");
-    card(s, "a1float_panel", 0.6, 1.85, 4.55, 4.9, { fill: "E8F0F9", tr: 8 });
-    s.addShape(pres.shapes.OVAL, { objectName: "a1float_avring", x: 0.8, y: 2.02, w: 1.32, h: 1.32, fill: { color: "FFFFFF" }, line: { color: TEAL, width: 2 } });
-    s.addImage({ objectName: "a1float_av", path: path.join(__dirname, "nahla.png"), x: 0.85, y: 2.07, w: 1.22, h: 1.22 });
-    T(s, "a1float_name", "Nahla Nabil", 2.28, 2.1, 2.8, 0.45, { face: HEAD, size: 22 });
-    T(s, "a1float_role", "Team lead · AI engineer · IEEE researcher", 2.28, 2.55, 2.8, 0.5, { size: 11, color: MUTED });
-    T(s, "a1float_ctry", "Bahrain", 2.28, 2.84, 2.8, 0.28, { size: 11, color: MUTED });
-    label(s, "a2fade_l0", "Education", 0.88, 3.42, 4);
-    T(s, "a2fade_edu", [{ text: "BSc Artificial Intelligence", options: { bold: true } }, { text: " · Arab Open University, Bahrain · final semester · First-Class Honours standing" }], 0.88, 3.66, 4.1, 0.5, { size: 11.5 });
-    label(s, "a2fade_l1", "Relevant expertise", 0.88, 4.24, 4);
-    s.addText(["2 IEEE papers (ICCA 2025, ICAISET 2026): federated learning for industrial IoT; random-forest audit of GCC sustainability",
-      "AI & LLM product engineering (Doo Bahrain; FlyRank backend AI)", "Machine learning, computer vision (deepfake detection), Python geospatial stack"].map((t, i, a) =>
-      ({ text: t, options: { bullet: { indent: 12 }, breakLine: i < a.length - 1 } })),
-      { objectName: "a2fade_skills", x: 0.88, y: 4.5, w: 4.15, h: 1.4, fontFace: BODY, fontSize: 10.5, color: TXT, paraSpaceAfter: 3, margin: 0, valign: "top", isTextBox: true });
-    label(s, "a3fade_l2", "Community", 0.88, 6.0, 4);
-    T(s, "a3fade_comm", "NASA Space Apps Challenge local lead (Muharraq): organising and mentoring space-data teams", 0.88, 6.22, 4.15, 0.45, { size: 10 });
-    const roles = [["LuTarget", "Project lead & owner", "problem framing, user needs, scope, every claim"],
-      ["LuSatellite", "EO data engineer", "778 Sentinel-2 dates, EnMAP reader, sub-metre checks"],
-      ["LuLineChart", "Modelling & statistics", "tide-aware model, stand + cell alert, calibration"],
-      ["LuShieldCheck", "Validation & integrity", "real events, simulations, unseen stands"],
-      ["LuLayers", "Product & delivery", "dashboard, website, site reports, notebook"],
-      ["LuDollarSign", "Business & impact", "customers, pricing hypotheses, carbon ranges"]];
-    label(s, "a1fade_l4", "Roles & responsibilities in this project", 5.45, 1.85, 7);
-    for (let i = 0; i < 6; i++) {
-      const x = 5.45 + (i % 2) * 3.7, y = 2.22 + Math.floor(i / 2) * 1.3, o = 2 + Math.floor(i / 2);
-      card(s, `a${o}float_r${i}`, x, y, 3.56, 1.15);
-      await iconCircle(s, `a${o}float_r${i}ic`, roles[i][0], x + 0.2, y + 0.29, 0.56);
-      T(s, `a${o}float_r${i}t`, roles[i][1], x + 0.92, y + 0.18, 2.5, 0.36, { face: HEAD, size: 14 });
-      T(s, `a${o}float_r${i}d`, roles[i][2], x + 0.92, y + 0.55, 2.5, 0.5, { size: 12, color: MUTED });
-    }
-    card(s, "a5float_gap", 5.45, 6.12, 7.26, 0.63, { fill: TEAL, tr: 86, line: TEAL });
-    T(s, "a5float_gapt", [{ text: "Incubation gap we will close:  ", options: { bold: true, color: TEAL_L } }, { text: "a mangrove ecologist mentor · a restoration or agency partner · a GIS analyst" }], 5.7, 6.12, 6.9, 0.63, { size: 13, valign: "middle" });
   }
 
   // =============== 17 · CLOSE ===============
