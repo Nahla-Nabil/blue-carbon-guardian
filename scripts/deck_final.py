@@ -141,11 +141,11 @@ ph = [("check", "Proven now", ["91 stands, 2 countries, 2 Sentinel-2 tiles", "65
       ("target", "Scale", ["Gulf &#8776; 165 km&#178; + Red Sea &#8776; 200 km&#178; of mangrove", "sub-metre data for small stands (Bahrain)", "national MRV &#183; platform licensing"])]
 phc = "".join(f'<div class="card{" dk" if k == 0 else ""}" style="padding:18px 26px;flex:1;display:flex;flex-direction:column;justify-content:center"><div style="display:flex;gap:14px;align-items:center">{icon(i, 26)}<p class="t b" style="font-size:24px{";color:#fff" if k == 0 else ""}">{a}</p></div>'
               f'<p class="s{" ws" if k == 0 else ""}" style="margin-top:10px;font-size:21px">{" &#183; ".join(items)}</p></div>' for k, (i, a, items) in enumerate(ph))
-S["scale"] = light("scale", 12, "Bonus criteria &#183; beyond the proof of concept", "Reproducible today, built to scale tomorrow", f"""
+S["scale"] = light("scale", 12, "Documentation &amp; evidence &#183; development potential", "Reproducible today, built to scale tomorrow", f"""
 <div class="row" style="gap:28px;flex:1">
-  <div class="card" style="flex:1;padding:24px 30px;display:flex;flex-direction:column;gap:16px;justify-content:space-between"><p class="lab" style="color:{BLUE}">Bonus &#183; documentation, evidence &amp; reproducibility</p>{rp}
+  <div class="card" style="flex:1;padding:24px 30px;display:flex;flex-direction:column;gap:16px;justify-content:space-between"><p class="lab" style="color:{BLUE}">Documentation &amp; evidence</p>{rp}
     <p class="mono" style="font-size:17px;color:{BLUE}">github.com/Nahla-Nabil/blue-carbon-guardian</p></div>
-  <div class="col" style="flex:1.15;gap:16px"><p class="lab" style="color:{BLUE}">Bonus &#183; scalability beyond the PoC</p>{phc}</div>
+  <div class="col" style="flex:1.15;gap:16px"><p class="lab" style="color:{BLUE}">Development potential</p>{phc}</div>
 </div>
 <p class="s" style="font-size:16px;margin-top:12px">Mangrove areas: Frontiers in Marine Science 2025 (doi:10.3389/fmars.2025.1695426). Compute measured on our runs; prices and analyst time are assumptions.</p>""")
 

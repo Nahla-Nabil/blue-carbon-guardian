@@ -507,9 +507,9 @@ const pill = (s, name, text, x, y, w, o = {}) => {
 
   // =============== 15 · SCALE & REPRODUCIBILITY ===============
   {
-    const s = slide("OCEAN_B", "Bonus criteria · beyond the proof of concept", "Reproducible today, built to scale tomorrow", [-2.6, -2.2, 6.5], [8.9, 3.4, 6.5], "scale");
+    const s = slide("OCEAN_B", "Documentation & evidence · development potential", "Reproducible today, built to scale tomorrow", [-2.6, -2.2, 6.5], [8.9, 3.4, 6.5], "scale");
     card(s, "a1float_rc", 0.6, 1.85, 5.95, 4.9);
-    label(s, "a1float_rl", "Bonus · documentation & reproducibility", 0.85, 2.0, 5.6);
+    label(s, "a1float_rl", "Documentation & evidence", 0.85, 2.0, 5.6);
     const R = [["LuGithub", "Public repository, MIT licence", "code, notebook, figures, provenance and licences"], ["LuCheckCircle", "Re-runs end to end in ~24 s", "outputs committed · pinned requirements · example in/out"],
       ["LuShieldCheck", "Clean-machine test passed", "fresh environment, same numbers, 0 errors"], ["LuSearch", "Every number traceable", "each figure comes from a script and a written summary"], ["LuMonitor", "Live website + site reports", "anyone can open the monitor and check a stand"]];
     for (let i = 0; i < 5; i++) {
@@ -518,7 +518,7 @@ const pill = (s, name, text, x, y, w, o = {}) => {
       T(s, `a${o}float_r${i}t`, R[i][1], 1.55, y - 0.02, 4.8, 0.32, { face: HEAD, size: 15 });
       T(s, `a${o}float_r${i}d`, R[i][2], 1.55, y + 0.3, 4.85, 0.3, { size: 12, color: MUTED });
     }
-    label(s, "a1fade_sl", "Bonus · scalability beyond the PoC", 6.85, 1.85, 5.8);
+    label(s, "a1fade_sl", "Development potential", 6.85, 1.85, 5.8);
     const P = [["LuCheckCircle", "Proven now", "91 stands · 2 countries · 2 Sentinel-2 tiles · 65 unseen stands at 0.79 false alarms / stand-yr · compute < $5 per site per year", true],
       ["LuFlag", "Incubation", "Satellite 813 in the spectral step · deployment on gIQ · a pilot customer + site records · more EnMAP dates", false],
       ["LuRocket", "Scale", "Gulf ≈ 165 km² + Red Sea ≈ 200 km² of mangrove · sub-metre data for small stands (Bahrain) · national MRV, licensing", false]];
