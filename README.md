@@ -82,10 +82,8 @@ An 8-minute pitch built around the final judging criteria, with the team overvie
 
 | File | What it is |
 |---|---|
-| [`docs/Blue_Carbon_Guardian_final_SUBMIT.pptx`](docs/Blue_Carbon_Guardian_final_SUBMIT.pptx) | **Submitted deck.** 22 slides (19 presented + 3 backups for questions) with Morph transitions, entrance animations and embedded videos: a satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo |
-| [`docs/Blue_Carbon_Guardian_final_with_notes.pptx`](docs/Blue_Carbon_Guardian_final_with_notes.pptx) | The same deck with the speaker notes (talk track and question preparation) |
+| [`docs/Blue_Carbon_Guardian_final_SUBMIT.pptx`](docs/Blue_Carbon_Guardian_final_SUBMIT.pptx) | 22 slides (19 presented + 3 backups for questions) with Morph transitions, entrance animations and embedded videos: a satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo |
 | [`docs/Blue_Carbon_Guardian_final.pdf`](docs/Blue_Carbon_Guardian_final.pdf) | The same deck as a PDF (still frames in place of the videos) |
-| [`docs/pitch_script.md`](docs/pitch_script.md) | The timed talk track (8 minutes) |
 
 | Final judging criterion (points) | Slides |
 |---|---|
@@ -97,7 +95,6 @@ An 8-minute pitch built around the final judging criteria, with the team overvie
 | Development Potential (5) | 8 (ready for Satellite 813), 17 (proven now, incubation, scale) |
 | Team overview | 2 (roles, responsibilities and relevant experience) |
 
-Rebuild: `python deck_pptx/assets.py`, `python deck_pptx/diagrams.py`, `python deck_pptx/media.py`, `python scripts/deck_final.py`, then in `deck_pptx/`: `npm install`, `node build.js`, `python animate.py`, and `powershell -File render.ps1` (needs PowerPoint on Windows, with PowerPoint closed; it embeds the videos and exports the PDF).
 
 ---
 
@@ -354,9 +351,8 @@ src/bcg/monitor.py                        core model (tide-aware monitor, condit
 analysis/                                 full pipeline: 34 numbered scripts, a summary .md per result, data/ tables, figures/
 dashboard/index.html                      product demo (self-contained)
 reports/                                  automatic per-stand site reports
-docs/                                     final pitch deck (.pptx with and without notes, .pdf), pitch script, PoC slides.pdf, demo_video.mp4, business plan, API and alert concept, README assets
+docs/                                     final pitch deck (.pptx, .pdf), PoC slides.pdf, demo_video.mp4, business plan, API and alert concept, README assets
 deck_source/                              PoC slide sources
-deck_final/                               final-judging slides (HTML version), built by scripts/deck_final.py
 deck_pptx/                                final pitch deck as PowerPoint: assets, videos, slides, animations (build steps above)
 video/                                    demo-video sources (narration EN + AR, motion graphics, renderer)
 scripts/                                  sample-input and notebook builders, slide export, README visuals (banner, alert story), EnMAP download helper

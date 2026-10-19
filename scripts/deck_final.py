@@ -380,9 +380,11 @@ Jump: type the slide number + Enter (20 = textbook table, 21 = limits, 22 = demo
 FIVE NUMBERS: 29–35 % less noise · 1.61 → 0.96 false alarms (NDVI vs ours) · 73 % vs 13 % · 0.79 on 65 unseen stands · 5 of 5 conversions confirmed
 """
 SCRIPT["thanks"] = (SCRIPT["thanks"][0], SCRIPT["thanks"][1] + QA_CHEAT)  # cheat sheet in the thank-you notes (Presenter View only)
-from pitch_read import READ  # read-aloud notes: English line + Arabic-letter line + pause marks (scripts/pitch_read.py)
-missing = [k for k in ORDER if k not in READ]; assert not missing, missing
-SCRIPT = {k: (s, READ[k]) for k, (s, _) in SCRIPT.items()}
+try:  # private read-aloud notes (kept out of the public repository); without them the short script above is used
+    from pitch_read import READ
+    SCRIPT = {k: (s, READ.get(k, x)) for k, (s, x) in SCRIPT.items()}
+except ImportError:
+    pass
 assert set(SCRIPT) == set(ORDER)
 
 for n, sid in enumerate(ORDER, 1):
