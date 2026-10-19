@@ -57,7 +57,7 @@ showing works (Feb 2023). Contains modified Copernicus Sentinel data 2021–2026
 
 https://github.com/user-attachments/assets/4d3605fd-a30c-499b-8e9f-680cbc4e116d
 
-<p align="center"><sub><a href="docs/Blue_Carbon_Guardian_final.pptx"><b>Final pitch deck (PowerPoint)</b></a> · <a href="docs/Blue_Carbon_Guardian_final.pdf"><b>Final deck (PDF)</b></a> · <a href="docs/slides.pdf">PoC slides (PDF)</a> · <a href="docs/summary_ar.pdf"><b>Arabic summary · ملخص عربي (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
+<p align="center"><sub><a href="docs/Blue_Carbon_Guardian_final_SUBMIT.pptx"><b>Final pitch deck (PowerPoint)</b></a> · <a href="docs/Blue_Carbon_Guardian_final.pdf"><b>Final deck (PDF)</b></a> · <a href="docs/slides.pdf">PoC slides (PDF)</a> · <a href="docs/summary_ar.pdf"><b>Arabic summary · ملخص عربي (PDF)</b></a> · <a href="notebooks/01_blue_carbon_guardian.ipynb"><b>Main notebook</b></a> ·
 <a href="https://nahla-nabil.github.io/blue-carbon-guardian/"><b>Live website &amp; monitor</b></a> · <a href="docs/demo_video.mp4">full-resolution video file</a></sub></p>
 
 ---
@@ -78,22 +78,24 @@ The product, open in any browser with nothing to install (hosted on GitHub Pages
 ---
 
 ## 🎤 Final pitch deck (final judging, October 2026)
-An 8-minute pitch built around the final evaluation criteria, with the live website demo early in the talk.
+An 8-minute pitch built around the final judging criteria, with the team overview first and a live demo of the website early in the talk.
 
 | File | What it is |
 |---|---|
-| [`docs/Blue_Carbon_Guardian_final.pptx`](docs/Blue_Carbon_Guardian_final.pptx) | 18 slides (17 + one backup) with Morph transitions, automatic entrance animations and embedded videos: an animated satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo as a backup |
+| [`docs/Blue_Carbon_Guardian_final_SUBMIT.pptx`](docs/Blue_Carbon_Guardian_final_SUBMIT.pptx) | **Submitted deck.** 22 slides (19 presented + 3 backups for questions) with Morph transitions, entrance animations and embedded videos: a satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo |
+| [`docs/Blue_Carbon_Guardian_final_with_notes.pptx`](docs/Blue_Carbon_Guardian_final_with_notes.pptx) | The same deck with the speaker notes (talk track and question preparation) |
 | [`docs/Blue_Carbon_Guardian_final.pdf`](docs/Blue_Carbon_Guardian_final.pdf) | The same deck as a PDF (still frames in place of the videos) |
-| [`docs/pitch_script.md`](docs/pitch_script.md) | The timed talk track (about 7.5 minutes): what to say and what to click, also stored in the deck's speaker notes |
+| [`docs/pitch_script.md`](docs/pitch_script.md) | The timed talk track (8 minutes) |
 
-| Final criterion | Slides |
+| Final judging criterion (points) | Slides |
 |---|---|
-| Team capability and expertise | 16 (roles, responsibilities, expertise; the gap we will close in incubation) |
-| Quality of space-data use and analytics | 5 (five independent sources, quality control), 6 (EnMAP hyperspectral), 7 (the method as a workflow), 9 (tide model) |
-| Problem relevance, user need, impact | 2 (problem and what we solve), 4 (users and decisions), 8 (how a user receives an alert), 14 (carbon and business) |
-| Innovation and differentiation | 9 (tide model), 10 (200 m cells), 11 (comparison with what exists today) |
-| Scientific validity and feasibility | 7 (method), 12 (five real events on sub-metre imagery), 13 (rates against chance, unseen stands, what we do not claim) |
-| Development potential, documentation, reproducibility | 15 (public code, 24-second re-run, clean-machine test; scale-out and incubation plan) |
+| Problem Relevance & Potential Impact (20) | 3 (problem and what we solve), 5 (users and their decisions), 10 (how a user receives an alert), 16 (carbon at stake and business) |
+| Scientific & Technical Validity (25) | 7 (EnMAP hyperspectral check), 11 (tide model; 40 % fewer false alarms than NDVI alone), 14 (five real events on dated sub-metre imagery), 15 (rates against chance, 65 unseen stands, what we do not claim); backups 20–21 |
+| Innovation & Differentiation (20) | 11 (tide-aware model), 12 (200 m cells), 13 (comparison with what exists today) |
+| Quality of Implementation (20) | 4 (live demo of the monitor), 9 (the method as a workflow), 10 (delivery to the user) |
+| Documentation & Evidence (10) | 17 (public code, 24-second re-run, clean-machine test, every number traceable) |
+| Development Potential (5) | 8 (ready for Satellite 813), 17 (proven now, incubation, scale) |
+| Team overview | 2 (roles, responsibilities and relevant experience) |
 
 Rebuild: `python deck_pptx/assets.py`, `python deck_pptx/diagrams.py`, `python deck_pptx/media.py`, `python scripts/deck_final.py`, then in `deck_pptx/`: `npm install`, `node build.js`, `python animate.py`, and `powershell -File render.ps1` (needs PowerPoint on Windows, with PowerPoint closed; it embeds the videos and exports the PDF).
 
@@ -101,15 +103,14 @@ Rebuild: `python deck_pptx/assets.py`, `python deck_pptx/diagrams.py`, `python d
 
 <a id="judges"></a>
 ## 🏆 For the judges: each criterion and where the evidence is
-| Criterion | What we show | Evidence |
+| Criterion (points) | What we show | Evidence |
 |---|---|---|
-| 💡 **Creativity / innovation** | A **tide-aware** monitor: on Gulf tidal flats the tide, not the trees, drives most index noise, so we model it out. A **200 m cell** trigger finds partial losses that stand averages hide. | 29-35 % less noise; 40 % fewer false alarms than the textbook NDVI-only approach; 3 of the 5 real losses were seen **only** by cells ([§8](#8-results-and-limitations)) |
-| 🧪 **Validity / technical soundness** | Every detection rate is quoted **with its chance rate**; thresholds tested on stands the model never saw; real events confirmed on dated sub-metre imagery; one of our own early claims withdrawn | 73 % vs 13 % by chance; 0.79 false alarms per stand-year out of sample; 5 conversions confirmed ([§8](#8-results-and-limitations)) |
-| 🌈 **Hyperspectral bonus** | Two EnMAP epochs (224 bands) over the pilot: an independent check of Sentinel-2 and a spectral read of what the land became | r = 0.84-0.99 with Sentinel-2; stand 5 turns from a vegetation to a mineral spectrum ([§8](#what-hyperspectral-added)) |
-| 🛠️ **Practical application / product** | Self-contained dashboard, automatic site reports, alert API concept; the notebook runs offline in about 25 s | [`dashboard/`](dashboard/index.html), [`reports/`](reports/), [`docs/api_alert_concept.md`](docs/api_alert_concept.md), [how a user receives it](#how-a-user-receives-it) |
-| 🌍 **Benefits, relevance, SDGs** | UAE and Saudi pledges of 100 M mangroves each by 2030; Abu Dhabi's Gulf mangrove monitoring guide (Feb 2026); carbon at stake per stand | ≈ 247 kt C in the pilot area; SDG 13, 14, 15 ([§2](#2-the-problem)) |
-| 💼 **Business viability** | Three priced tiers (hypotheses for a pilot), measured cost to serve, competitors named | about USD 3.3k cost per site per year; [`docs/business_plan_draft.md`](docs/business_plan_draft.md) (13 sources) |
-| 🎤 **Presentation** | Final pitch deck with live demo and embedded videos, 2-minute video, PoC slides, this README | [`docs/Blue_Carbon_Guardian_final.pptx`](docs/Blue_Carbon_Guardian_final.pptx), [`docs/demo_video.mp4`](docs/demo_video.mp4), [`docs/slides.pdf`](docs/slides.pdf) |
+| 🌍 **Problem Relevance & Potential Impact (20)** | UAE and Saudi pledges of 100 M mangroves each by 2030 and the Gulf's first mangrove monitoring guide (Feb 2026), but monitoring is periodic; three users with a concrete decision each; carbon at stake per stand | ≈ 247 kt C in the pilot area; SDG 13, 14, 15 ([§1](#1-business-use-case), [§2](#2-the-problem)) |
+| 🧪 **Scientific & Technical Validity (25)** | Every detection rate is quoted **with its chance rate**; thresholds frozen and tested on stands the model never saw; real events confirmed on dated sub-metre imagery; a second sensor (EnMAP) agrees; one of our own early claims withdrawn | 73 % vs 13 % by chance; 0.79 false alarms per stand-year on 65 unseen stands; 5 conversions confirmed; EnMAP r = 0.84–0.99 ([§8](#8-results-and-limitations)) |
+| 💡 **Innovation & Differentiation (20)** | A **tide-aware** monitor: on Gulf tidal flats the tide, not the trees, drives most index noise, so we model it out. A **200 m cell** trigger finds partial losses that stand averages hide | 29–35 % less noise; 40 % fewer false alarms than the textbook NDVI-only approach; 3 of the 5 real losses seen **only** by cells |
+| 🛠️ **Quality of Implementation (20)** | A working product: live website with an interactive monitor, automatic site reports, alert API concept, a notebook that runs offline in about 25 s | [live website](https://nahla-nabil.github.io/blue-carbon-guardian/), [`reports/`](reports/), [`docs/api_alert_concept.md`](docs/api_alert_concept.md), [notebook](notebooks/01_blue_carbon_guardian.ipynb) |
+| 📚 **Documentation & Evidence (10)** | Public code (MIT), pinned requirements, example input and output, a written summary behind every number, data provenance and licences | [`analysis/README.md`](analysis/README.md), [§3](#3-data-used), [§5–7](#5-installation); clean-machine test: same numbers, 0 errors |
+| 🚀 **Development Potential (5)** | Ready for Satellite 813 (Sentinel-2 says when, 813 says what), gIQ deployment and a pilot customer in incubation; transferred unchanged to a second country | 91 stands in Abu Dhabi and Saudi Tarut Bay; compute < USD 5 per site per year; [`docs/business_plan_draft.md`](docs/business_plan_draft.md) |
 
 **What is new compared with what exists today**
 | | Field surveys | One-off satellite maps | Free loss alerts (Global Mangrove Watch) | **Blue Carbon Guardian** |
@@ -353,7 +354,7 @@ src/bcg/monitor.py                        core model (tide-aware monitor, condit
 analysis/                                 full pipeline: 34 numbered scripts, a summary .md per result, data/ tables, figures/
 dashboard/index.html                      product demo (self-contained)
 reports/                                  automatic per-stand site reports
-docs/                                     final pitch deck (.pptx/.pdf), pitch script, PoC slides.pdf, demo_video.mp4, business plan, API and alert concept, README assets
+docs/                                     final pitch deck (.pptx with and without notes, .pdf), pitch script, PoC slides.pdf, demo_video.mp4, business plan, API and alert concept, README assets
 deck_source/                              PoC slide sources
 deck_final/                               final-judging slides (HTML version), built by scripts/deck_final.py
 deck_pptx/                                final pitch deck as PowerPoint: assets, videos, slides, animations (build steps above)
