@@ -83,6 +83,8 @@ T = {
     "cal_k": ("Calibrated · 25 pilot stands", "المعايرة · 25 منطقة تجريبية"), "cal_n": ("false-alarm episodes per stand-year (117 stand-years)", "إنذار كاذب لكل منطقة سنوياً (117 سنة-منطقة)"),
     "uns_k": ("Unseen · 65 stands, thresholds fixed", "مناطق جديدة · 65 منطقة بحدود ثابتة"), "uns_n": ("per stand-year over 305 stand-years, including Saudi Arabia's Tarut Bay", "لكل منطقة سنوياً عبر 305 سنة-منطقة، منها خليج تاروت في السعودية"),
     "en_k": ("Hyperspectral · EnMAP, 224 bands", "فائق الطيف · EnMAP، 224 نطاقاً"), "en_h": ("An independent check, and a material fingerprint", "تحقق مستقل وبصمة للمادة"),
+    "sim813": ("<b>Ready for Satellite 813:</b> with only 813's 400–1700 nm range (simulated from EnMAP, not real 813 data), 97 % of the converted pixels still match sand or fill, against 0.4 % of the intact ones, and sand is told apart from buildings better than with Sentinel-2-like bands (F1 0.91 vs 0.88).",
+               "<b>جاهز للقمر 813:</b> باستخدام نطاق 813 وحده (400–1700 نانومتر، بمحاكاة من EnMAP لا ببيانات 813 حقيقية)، بقيت 97% من البكسلات المُزالة تطابق الرمل أو الردم مقابل 0.4% فقط من السليمة، وتمييز الرمل من المباني أفضل منه بنطاقات شبيهة بـSentinel-2 (F1 0.91 مقابل 0.88)."),
     "en_p": ("<b>r = 0.84–0.99</b> between EnMAP and our Sentinel-2 indices on the same dates. The converted part of stand 5 turns from a vegetation spectrum into a bright, mineral-like one: reclamation, not dieback. As a classifier, EnMAP did not beat multispectral bands (F1 0.74 vs 0.72), and we say so.",
              "<b>r = 0.84–0.99</b> بين EnMAP ومؤشرات Sentinel-2 في التواريخ نفسها. ويتحوّل الجزء المُزال من المنطقة 5 من طيف نباتي إلى طيف ساطع شبيه بالمعادن: ردم لا ذبول. وكمصنِّف، لم يتفوّق EnMAP على النطاقات متعددة الأطياف (F1 0.74 مقابل 0.72)، ونذكر ذلك بوضوح."),
     # carbon
@@ -128,8 +130,8 @@ T = {
     "a5": ("Three ways: five real conversions confirmed on dated 0.3–0.5 m imagery; simulated losses scored against a chance baseline (73 % vs 13 %); and thresholds frozen and run on 65 stands the model never saw, where false alarms stayed at 0.79 per stand-year.",
            "بثلاث طرق: خمس حالات حقيقية مؤكدة بصور مؤرّخة دقتها 0.3–0.5 متر؛ وخسائر محاكاة تُقارن بنسبة الصدفة (73% مقابل 13%)؛ وحدود ثابتة طُبّقت على 65 منطقة لم يرها النموذج، وبقيت الإنذارات الكاذبة فيها عند 0.79 لكل منطقة سنوياً."),
     "q6": ("What data does it use, and what about Satellite 813?", "ما البيانات المستخدمة، وماذا عن القمر 813؟"),
-    "a6": ("Free Sentinel-2 imagery for monitoring, EnMAP hyperspectral as an independent check, ESA WorldCover for outlines, and published field plots for carbon. Every index we use sits inside Satellite 813's ~400–1700 nm range, so 813 can explain what a flagged cell became. That step is planned, not yet tested.",
-           "صور Sentinel-2 المجانية للمراقبة، وبيانات EnMAP فائقة الطيف للتحقق المستقل، وESA WorldCover لحدود المناطق، وقياسات ميدانية منشورة للكربون. وكل المؤشرات المستخدمة تقع ضمن نطاق القمر 813 (نحو 400–1700 نانومتر)، فيمكنه تفسير ما آلت إليه الخلية المنبَّه عليها. وهذه الخطوة مخطط لها ولم تُختبر بعد."),
+    "a6": ("Free Sentinel-2 imagery for monitoring, EnMAP hyperspectral as an independent check, ESA WorldCover for outlines, and published field plots for carbon. Every index we use sits inside Satellite 813's ~400–1700 nm range, so 813 can explain what a flagged cell became. We simulated its band range with EnMAP: the stand-5 loss still reads as sand and fill (97 % of converted pixels, 0.4 % of intact ones). Real 813 scenes are the next step.",
+           "صور Sentinel-2 المجانية للمراقبة، وبيانات EnMAP فائقة الطيف للتحقق المستقل، وESA WorldCover لحدود المناطق، وقياسات ميدانية منشورة للكربون. وكل المؤشرات المستخدمة تقع ضمن نطاق القمر 813 (نحو 400–1700 نانومتر)، فيمكنه تفسير ما آلت إليه الخلية المنبَّه عليها. وقد حاكينا نطاقاته باستخدام EnMAP: فبقيت خسارة المنطقة 5 تُقرأ رملاً وردماً (97% من البكسلات المُزالة، و0.4% فقط من السليمة). والخطوة التالية صور 813 حقيقية."),
     "q7": ("Does it work in Bahrain?", "هل يعمل في البحرين؟"),
     "a7": ("Not yet at 10 m: most of Bahrain's mangrove patches are under 4 hectares, too small for Sentinel-2 pixels. That needs very-high-resolution imagery (a few metres or finer). Satellite 813, at 20 m, adds spectral detail rather than spatial detail, so for Bahrain it would explain what changed, not find smaller patches.",
            "ليس بعد بدقة 10 أمتار: فمعظم بقع القرم في البحرين أصغر من 4 هكتارات، أي أصغر من أن تلتقطها بكسلات Sentinel-2. ويتطلب ذلك صوراً عالية الدقة جداً (بضعة أمتار أو أقل). أما القمر 813 فدقته 20 متراً، ويضيف تفاصيل طيفية لا مكانية، أي أنه يفسّر ما الذي تغيّر، لكنه لا يرصد البقع الأصغر."),
@@ -383,6 +385,7 @@ footer a{color:#fff}
     <img src="assets/site/enmap.jpg" style="width:100%;border-radius:10px;background:#fff" alt="EnMAP spectra of stand 5">
     <div><div class="k" data-i18n="en_k"></div><h4 style="font-size:22px;margin:6px 0" data-i18n="en_h"></h4>
       <p data-i18n="en_p"></p>
+      <p style="margin-top:8px;padding:10px 12px;background:var(--soft);border-radius:10px;font-size:14px" data-i18n="sim813"></p>
       <p class="note" style="margin-top:6px">Contains modified EnMAP data © DLR 2022, 2025.</p></div></div></div>
 </div></section>
 

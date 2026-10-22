@@ -92,7 +92,7 @@ An 8-minute pitch built around the final judging criteria, with the team overvie
 | Innovation & Differentiation (20) | 11 (tide-aware model), 12 (200 m cells), 13 (comparison with what exists today) |
 | Quality of Implementation (20) | 4 (live demo of the monitor), 9 (the method as a workflow), 10 (delivery to the user) |
 | Documentation & Evidence (10) | 17 (public code, 24-second re-run, clean-machine test, every number traceable) |
-| Development Potential (5) | 8 (ready for Satellite 813), 17 (proven now, incubation, scale) |
+| Development Potential (5) | 8 (ready for Satellite 813, simulated band range), 17 (proven now, incubation, scale) |
 | Team overview | 2 (roles, responsibilities and relevant experience) |
 
 
@@ -155,7 +155,9 @@ images bought only when an alert fires. Full plan with 13 sources: [`docs/busine
 | 🌳 **Field carbon plots** | Schile et al. 2016, Dryad doi 10.15146/R3K59Z | 2013-2014 | plot data | carbon density | CC0 |
 | 🔍 **World Imagery Wayback** (Maxar WorldView-2/3, Legion-1, 0.31-0.5 m) | Esri | captures 2021-2025 | basemap | confirming the conversions (viewed only, nothing stored) | Esri, Maxar, Earthstar Geographics, and the GIS User Community |
 
-Satellite 813 data were not available during the PoC (per the onboarding guide); the method is ready for them at incubation.
+Satellite 813 data were not available during the PoC (per the onboarding guide). We **simulated its band range** with EnMAP (next section and [`analysis/36_sat813_summary.md`](analysis/36_sat813_summary.md)); real 813 scenes are the incubation step.
+
+**Running, not a one-off:** the monitor was updated on 22 Oct 2026 with 12 new Sentinel-2 images (data to 19 Oct 2026), using the same frozen thresholds: no new alerts, conditions unchanged. The alerts are published as a static JSON feed: [`api/v1/alerts.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/alerts.json), [`api/v1/stands.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands.json) (built by `scripts/build_api.py`). The validation figures in this README refer to the analysis period 2020 to Sep 2026 (778 dates).
 
 ## 4. Technical approach
 ```mermaid
@@ -304,8 +306,10 @@ mineral-like one (sand and fill). Contains modified EnMAP data © DLR 2022, 2025
 
 - **Independent check:** EnMAP-derived indices match our Sentinel-2 indices on the same dates (r = 0.84-0.99 across stands).
 - **What the land became:** the converted part of stand 5 has a mineral spectrum, which points to reclamation, not dieback.
-- **Honest result:** as a mangrove classifier, EnMAP did not beat multispectral bands here (F1 0.74 vs 0.72). Satellite 813 (~205 bands) slots into the
-  same step at incubation.
+- **Honest result:** as a mangrove classifier, EnMAP did not beat multispectral bands here (F1 0.74 vs 0.72).
+- **Simulated Satellite 813** (EnMAP bands inside 400-1700 nm, at 30 m; not real 813 data): the stand-5 loss still reads as sand and fill (97 % of converted pixels match bare or built-up spectra, 0.4 % of the intact vegetation next to them); every index the monitor uses fits inside the range; and sand is told apart from buildings better than with Sentinel-2-like bands (F1 0.91 vs 0.88; full EnMAP 0.95). [`analysis/36_sat813_summary.md`](analysis/36_sat813_summary.md)
+
+<p align="center"><img src="analysis/36_sat813_sim.png" width="100%" alt="Simulated Satellite 813: reference spectra, stand 5 with 813 bands only, classification F1"></p>
 
 **⚠️ Limits, stated honestly:**
 - The alert is detection of works as they happen, **not advance warning**.
