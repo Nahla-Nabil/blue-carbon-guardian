@@ -1,0 +1,95 @@
+{
+ "bands_full": 216,
+ "bands_813": 152,
+ "T1_monitor_indices_inside_813": {
+  "NDVI": true,
+  "NDRE (red edge)": true,
+  "NDMI (SWIR moisture)": true,
+  "MNDWI (wetness / tide)": true
+ },
+ "T1_bands_outside_813": [
+  "B12"
+ ],
+ "T2": {
+  "converted_full": {
+   "n": 679,
+   "angle_change_deg": 27.22065767885676,
+   "share_2022_mangrove": 0.7717231222385862,
+   "share_2025_bare_or_built": 0.7849779086892489
+  },
+  "converted_813": {
+   "n": 679,
+   "angle_change_deg": 21.332247218030975,
+   "share_2022_mangrove": 0.7245949926362297,
+   "share_2025_bare_or_built": 0.9734904270986745
+  },
+  "persistent_full": {
+   "n": 258,
+   "angle_change_deg": 12.346356682064584,
+   "share_2022_mangrove": 0.8294573643410853,
+   "share_2025_bare_or_built": 0.0
+  },
+  "persistent_813": {
+   "n": 258,
+   "angle_change_deg": 12.013239835662944,
+   "share_2022_mangrove": 0.4806201550387597,
+   "share_2025_bare_or_built": 0.003875968992248062
+  }
+ },
+ "T3": {
+  "full": {
+   "pixels": 586,
+   "ha": 52.739999999999995
+  },
+  "813": {
+   "pixels": 678,
+   "ha": 61.019999999999996
+  },
+  "label_agreement_2025": 0.8505509641873278,
+  "ndvi_rule_converted_ha": 61.65
+ },
+ "T4_mangrove_vs_other_veg": {
+  "n": 2865,
+  "blocks": 150,
+  "f1": {
+   "S2-like (7 bands)": [
+    0.7226601993848454,
+    0.028528026654269744
+   ],
+   "S2-like inside 813 (6 bands, no B12)": [
+    0.7107366362058111,
+    0.033632456679626895
+   ],
+   "813 range (EnMAP 400-1700 nm)": [
+    0.7278835156976929,
+    0.028970863992167032
+   ],
+   "EnMAP full (420-2450 nm)": [
+    0.7478445332128043,
+    0.017526808678766104
+   ]
+  }
+ },
+ "T4_bare_vs_built": {
+  "n": 2331,
+  "blocks": 139,
+  "f1": {
+   "S2-like (7 bands)": [
+    0.8747337729757447,
+    0.014177883116065505
+   ],
+   "S2-like inside 813 (6 bands, no B12)": [
+    0.7877471141428908,
+    0.017451365600121428
+   ],
+   "813 range (EnMAP 400-1700 nm)": [
+    0.914213154834399,
+    0.01676317721258926
+   ],
+   "EnMAP full (420-2450 nm)": [
+    0.9449102184621854,
+    0.018867348121788037
+   ]
+  }
+ }
+}
