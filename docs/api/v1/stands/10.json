@@ -1,0 +1,94 @@
+{
+ "service": "Blue Carbon Guardian - tide-aware mangrove monitor (Abu Dhabi pilot)",
+ "generated_utc": "2026-10-22T13:57Z",
+ "data_through": "2026-10-19",
+ "alert_rule": "stand average <= -1.5 sigma OR any 200 m cell <= -3.5 sigma (median of the last 5 Sentinel-2 observations, tide-, season- and trend-corrected); thresholds frozen, calibrated to about one false-alarm episode per stand-year",
+ "condition_rule": "last 12 months vs the stand's own 2020-21 baseline: severe decline <= -50 %; decline <= -15 % and <= -3 sigma",
+ "note": "Screening indicator, not ground truth. Verify with very-high-resolution imagery or on site.",
+ "attribution": "Contains modified Copernicus Sentinel data 2020-2026. Carbon: Schile et al. 2016 field plots (CC0). Code: MIT.",
+ "docs": "https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/api_alert_concept.md",
+ "stand": 10,
+ "area_ha": 79.6,
+ "condition": "stable",
+ "ndvi_change_pct": 6.2,
+ "alert_now": false,
+ "cells_alerting_now": [],
+ "alert_episodes_2022_now": 5,
+ "last_observation": "2026-10-19",
+ "cells_total": 22,
+ "cells_in_decline": 1,
+ "ha_to_inspect": 0.9,
+ "carbon_stock_t_c": {
+  "p10": 6267,
+  "median": 8628,
+  "p90": 11023
+ },
+ "report": null,
+ "episodes": [
+  {
+   "start": "2022-02-15",
+   "end": "2022-03-17",
+   "days": 30,
+   "raised_by": "both",
+   "cells": [
+    394,
+    397
+   ]
+  },
+  {
+   "start": "2022-05-28",
+   "end": "2022-07-12",
+   "days": 45,
+   "raised_by": "both",
+   "cells": [
+    405
+   ]
+  },
+  {
+   "start": "2024-02-15",
+   "end": "2024-02-17",
+   "days": 2,
+   "raised_by": "stand",
+   "cells": []
+  },
+  {
+   "start": "2024-10-29",
+   "end": "2025-07-26",
+   "days": 270,
+   "raised_by": "both",
+   "cells": [
+    394,
+    396,
+    400,
+    401,
+    404,
+    405,
+    406,
+    408,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415
+   ]
+  },
+  {
+   "start": "2025-12-06",
+   "end": "2025-12-10",
+   "days": 4,
+   "raised_by": "both",
+   "cells": [
+    411
+   ]
+  }
+ ],
+ "cells_in_decline_detail": [
+  {
+   "cell": 415,
+   "condition": "severe decline",
+   "area_ha": 0.9,
+   "ndvi_change_pct": -85.0
+  }
+ ]
+}

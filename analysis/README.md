@@ -63,6 +63,8 @@ Data are read from the cloud (Microsoft Planetary Computer STAC) without bulk do
 | 16_site_reports.py | Templated per-stand site report (every sentence from a number) | `../reports/stand_XX_report.html` |
 
 ## Rebuild order after new satellite data
+Monthly update (as run on 22 Oct 2026, data to 19 Oct): `END=YYYY-MM-DD APPEND=1` for 05 and 25 fetches only the new dates; then `08 -> 14 -> 23 -> 26 -> 31 -> 09 -> 16`, copy `reports/*.html` to `docs/reports/`, then `python scripts/build_api.py` (JSON feed in `docs/api/v1/`) and `python scripts/build_site.py`. 31 uses the FROZEN product thresholds (1.5 / 3.5 sigma); 29 (calibration + backtest) is not re-run on new data. Delete `data/substand/cell_trigger_states.pkl` before 31 so the cached monitor states include the new dates.
+
 `05 -> 08 -> 13 -> 14 -> 23 -> 25 -> 26 -> 29 -> 31 -> 09 -> 16`. The extent and change steps (10-12) and the EnMAP steps (17-19) are only needed when their inputs change.
 08 writes a fresh `stand_status.csv`; 14 adds carbon, and 23 adds the condition columns (its verification step is skipped on a fresh table).
 | 35 | `35_textbook_baseline.py` | textbook NDVI-only vs our monitor, same alert rule (`35_textbook_baseline.md`) |

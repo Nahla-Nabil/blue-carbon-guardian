@@ -1,0 +1,125 @@
+{
+ "service": "Blue Carbon Guardian - tide-aware mangrove monitor (Abu Dhabi pilot)",
+ "generated_utc": "2026-10-22T13:57Z",
+ "data_through": "2026-10-19",
+ "alert_rule": "stand average <= -1.5 sigma OR any 200 m cell <= -3.5 sigma (median of the last 5 Sentinel-2 observations, tide-, season- and trend-corrected); thresholds frozen, calibrated to about one false-alarm episode per stand-year",
+ "condition_rule": "last 12 months vs the stand's own 2020-21 baseline: severe decline <= -50 %; decline <= -15 % and <= -3 sigma",
+ "note": "Screening indicator, not ground truth. Verify with very-high-resolution imagery or on site.",
+ "attribution": "Contains modified Copernicus Sentinel data 2020-2026. Carbon: Schile et al. 2016 field plots (CC0). Code: MIT.",
+ "docs": "https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/api_alert_concept.md",
+ "stand": 12,
+ "area_ha": 75.9,
+ "condition": "stable",
+ "ndvi_change_pct": -23.3,
+ "alert_now": false,
+ "cells_alerting_now": [],
+ "alert_episodes_2022_now": 5,
+ "last_observation": "2026-10-19",
+ "cells_total": 20,
+ "cells_in_decline": 6,
+ "ha_to_inspect": 13.2,
+ "carbon_stock_t_c": {
+  "p10": 5976,
+  "median": 8227,
+  "p90": 10510
+ },
+ "report": "https://nahla-nabil.github.io/blue-carbon-guardian/reports/stand_12_report.html",
+ "episodes": [
+  {
+   "start": "2022-12-17",
+   "end": "2024-01-13",
+   "days": 392,
+   "raised_by": "both",
+   "cells": [
+    440,
+    444,
+    448,
+    450,
+    451,
+    454,
+    455,
+    456
+   ]
+  },
+  {
+   "start": "2024-03-08",
+   "end": "2024-03-11",
+   "days": 3,
+   "raised_by": "cells",
+   "cells": [
+    450
+   ]
+  },
+  {
+   "start": "2024-11-16",
+   "end": "2025-04-25",
+   "days": 160,
+   "raised_by": "both",
+   "cells": [
+    446,
+    448,
+    449,
+    450,
+    451,
+    452
+   ]
+  },
+  {
+   "start": "2025-09-04",
+   "end": "2026-01-30",
+   "days": 148,
+   "raised_by": "both",
+   "cells": [
+    450,
+    451
+   ]
+  },
+  {
+   "start": "2026-03-28",
+   "end": "2026-04-07",
+   "days": 10,
+   "raised_by": "cells",
+   "cells": [
+    448
+   ]
+  }
+ ],
+ "cells_in_decline_detail": [
+  {
+   "cell": 450,
+   "condition": "severe decline",
+   "area_ha": 4.0,
+   "ndvi_change_pct": -148.0
+  },
+  {
+   "cell": 451,
+   "condition": "severe decline",
+   "area_ha": 3.4,
+   "ndvi_change_pct": -126.2
+  },
+  {
+   "cell": 452,
+   "condition": "severe decline",
+   "area_ha": 0.7,
+   "ndvi_change_pct": -103.7
+  },
+  {
+   "cell": 454,
+   "condition": "severe decline",
+   "area_ha": 1.0,
+   "ndvi_change_pct": -128.6
+  },
+  {
+   "cell": 455,
+   "condition": "severe decline",
+   "area_ha": 3.0,
+   "ndvi_change_pct": -100.2
+  },
+  {
+   "cell": 456,
+   "condition": "severe decline",
+   "area_ha": 1.0,
+   "ndvi_change_pct": -112.6
+  }
+ ]
+}

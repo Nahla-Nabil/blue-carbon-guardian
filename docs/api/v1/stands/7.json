@@ -1,0 +1,99 @@
+{
+ "service": "Blue Carbon Guardian - tide-aware mangrove monitor (Abu Dhabi pilot)",
+ "generated_utc": "2026-10-22T13:57Z",
+ "data_through": "2026-10-19",
+ "alert_rule": "stand average <= -1.5 sigma OR any 200 m cell <= -3.5 sigma (median of the last 5 Sentinel-2 observations, tide-, season- and trend-corrected); thresholds frozen, calibrated to about one false-alarm episode per stand-year",
+ "condition_rule": "last 12 months vs the stand's own 2020-21 baseline: severe decline <= -50 %; decline <= -15 % and <= -3 sigma",
+ "note": "Screening indicator, not ground truth. Verify with very-high-resolution imagery or on site.",
+ "attribution": "Contains modified Copernicus Sentinel data 2020-2026. Carbon: Schile et al. 2016 field plots (CC0). Code: MIT.",
+ "docs": "https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/api_alert_concept.md",
+ "stand": 7,
+ "area_ha": 126.0,
+ "condition": "stable",
+ "ndvi_change_pct": 2.7,
+ "alert_now": false,
+ "cells_alerting_now": [],
+ "alert_episodes_2022_now": 5,
+ "last_observation": "2026-10-19",
+ "cells_total": 34,
+ "cells_in_decline": 0,
+ "ha_to_inspect": 0.0,
+ "carbon_stock_t_c": {
+  "p10": 9921,
+  "median": 13657,
+  "p90": 17448
+ },
+ "report": null,
+ "episodes": [
+  {
+   "start": "2022-01-31",
+   "end": "2022-01-31",
+   "days": 0,
+   "raised_by": "cells",
+   "cells": [
+    299
+   ]
+  },
+  {
+   "start": "2022-03-17",
+   "end": "2022-03-17",
+   "days": 0,
+   "raised_by": "both",
+   "cells": [
+    308,
+    312,
+    314,
+    317,
+    322,
+    325,
+    326,
+    327,
+    329,
+    330
+   ]
+  },
+  {
+   "start": "2022-10-05",
+   "end": "2022-10-10",
+   "days": 5,
+   "raised_by": "cells",
+   "cells": [
+    326
+   ]
+  },
+  {
+   "start": "2024-12-03",
+   "end": "2025-03-08",
+   "days": 95,
+   "raised_by": "both",
+   "cells": [
+    307,
+    308,
+    310,
+    312,
+    314,
+    315,
+    317,
+    319,
+    320,
+    325,
+    326,
+    327,
+    329,
+    330,
+    331
+   ]
+  },
+  {
+   "start": "2026-03-28",
+   "end": "2026-04-07",
+   "days": 10,
+   "raised_by": "cells",
+   "cells": [
+    307,
+    308
+   ]
+  }
+ ],
+ "cells_in_decline_detail": []
+}

@@ -34,8 +34,8 @@ T = {
     "k4": ("carbon stock in the pilot area", "مخزون الكربون في منطقة التجربة"),
     # monitor
     "mon_k": ("Live product · Abu Dhabi pilot", "منتج فعلي · تجربة أبوظبي"), "mon_h": ("The monitor", "لوحة المراقبة"),
-    "mon_lede": ("25 mangrove stands (2,281 ha), Sentinel-2 from 2020 to Sept 2026. Click a stand on the map or in the table. Switch to <b>200 m cells</b> to see where inside a stand the change is.",
-                 "25 منطقة قرم (2,281 هكتاراً)، وصور Sentinel-2 من 2020 حتى سبتمبر 2026. انقر على أي منطقة في الخريطة أو الجدول، وانتقل إلى <b>خلايا 200 متر</b> لترى موضع التغيّر داخل المنطقة."),
+    "mon_lede": ("25 mangrove stands (2,281 ha), Sentinel-2 from 2020 to <span id=\"lastobs\">Oct 2026</span>. Click a stand on the map or in the table. Switch to <b>200 m cells</b> to see where inside a stand the change is.",
+                 "25 منطقة قرم (2,281 هكتاراً)، وصور Sentinel-2 من 2020 حتى <span id=\"lastobs\">أكتوبر 2026</span>. انقر على أي منطقة في الخريطة أو الجدول، وانتقل إلى <b>خلايا 200 متر</b> لترى موضع التغيّر داخل المنطقة."),
     "b_stands": ("Stands", "المناطق"), "b_cells": ("200 m cells", "خلايا 200 م"),
     "map_note": ("Colour = condition, last 12 months vs 2020–21", "اللون = الحالة: آخر 12 شهراً مقارنةً بـ2020–2021"),
     "lg_stable": ("stable", "مستقر"), "lg_impr": ("improving", "في تحسّن"), "lg_dec": ("decline", "تراجع"), "lg_sev": ("severe decline", "تراجع حاد"), "lg_alert": ("alert active", "إنذار نشط"),
@@ -140,7 +140,8 @@ T = {
     "a9": ("Environment agencies, planting and carbon-project developers, and coastal regulators. Pilot hypothesis: about USD 12k per site per year, with a measured compute cost under USD 5 per site per year.",
            "هيئات البيئة، ومطوّرو التشجير ومشاريع الكربون، والجهات الرقابية الساحلية. والفرضية للتجربة الأولى: نحو 12 ألف دولار لكل موقع سنوياً، بتكلفة حوسبة مقيسة أقل من 5 دولارات لكل موقع سنوياً."),
     # footer
-    "ft_code": ("Code &amp; notebook (GitHub)", "الكود والدفتر البرمجي (GitHub)"), "ft_api": ("Alert API concept", "مفهوم واجهة الإنذار"), "ft_sum": ("Arabic summary (PDF)", "ملخص عربي (PDF)"),
+    "ft_code": ("Code &amp; notebook (GitHub)", "الكود والدفتر البرمجي (GitHub)"), "ft_api": ("Alert API concept", "مفهوم واجهة الإنذار"), "ft_feed": ("Live alert feed (JSON)", "خلاصة الإنذارات (JSON)"),
+    "feed": ("Updated with every new Sentinel-2 image; latest data and alerts as JSON:", "يُحدَّث مع كل صورة Sentinel-2 جديدة؛ آخر البيانات والإنذارات بصيغة JSON:"), "ft_sum": ("Arabic summary (PDF)", "ملخص عربي (PDF)"),
 }
 
 # dynamic strings used by the monitor script
@@ -330,6 +331,7 @@ footer a{color:#fff}
   </div>
   <div class="tablewrap reveal"><table id="tbl"><thead><tr><th data-k="stand"></th><th data-k="area_ha"></th><th data-k="condition"></th><th data-k="ndvi_change_pct"></th><th data-k="cells_bad"></th><th data-k="alerts_2022_2026"></th><th data-k="stock_tC_p50"></th></tr></thead><tbody></tbody></table></div>
   <p class="note" style="margin-top:10px" data-i18n="mon_note"></p>
+  <p class="note" style="margin-top:6px"><span data-i18n="feed"></span> <a href="api/v1/alerts.json" dir="ltr">api/v1/alerts.json</a> · <a href="api/v1/stands.json" dir="ltr">api/v1/stands.json</a></p>
 </div></section>
 
 <section class="alt" id="how"><div class="wrap">
@@ -427,13 +429,14 @@ footer a{color:#fff}
 
 <footer><div class="wrap" style="display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between">
   <div><b style="color:#fff;font-size:16px" data-i18n="title"></b><br>Team Blue Athar · <span style="font-family:'IBM Plex Sans Arabic'">الأثر الأزرق</span> · Nahla Nabil<br>Arab Youth Space Hackathon 2026 · Challenge 813</div>
-  <div><a href="https://github.com/Nahla-Nabil/blue-carbon-guardian" data-i18n="ft_code"></a><br><a href="slides.pdf" data-i18n="cta_slides"></a> · <a href="summary_ar.pdf" data-i18n="ft_sum"></a><br><a href="https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/api_alert_concept.md" data-i18n="ft_api"></a></div>
+  <div><a href="https://github.com/Nahla-Nabil/blue-carbon-guardian" data-i18n="ft_code"></a><br><a href="slides.pdf" data-i18n="cta_slides"></a> · <a href="summary_ar.pdf" data-i18n="ft_sum"></a><br><a href="api/v1/alerts.json" data-i18n="ft_feed"></a> · <a href="https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/api_alert_concept.md" data-i18n="ft_api"></a></div>
   <div style="max-width:430px;font-size:12.5px">Contains modified Copernicus Sentinel data 2020–2026 · Contains modified EnMAP data © DLR 2022, 2025 · ESA WorldCover 2021 (CC BY 4.0) · Schile et al. 2016 (CC0) · sub-metre captures viewed via Esri World Imagery Wayback (Esri, Maxar, Earthstar Geographics, and the GIS User Community). Code: MIT.</div>
 </div></footer>
 
 <script>
 const D = __DATA__, REPORTS = __REPORTS__, TXT = __TXT__, DYN = __DYN__;
 let LANG = document.documentElement.lang === "ar" ? "ar" : "en";
+const fillLast = () => { const el = document.getElementById("lastobs"); if (el) el.textContent = new Date(D.kpi.last_obs).toLocaleDateString(DYN[LANG].locale, {month: "long", year: "numeric"}); };
 const L = k => DYN[LANG][k];
 const COL = {"stable":"#7FB6F5","improving":"#2E9E6B","decline":"#FFB020","severe decline":"#FF4D6D"};
 const NS = "http://www.w3.org/2000/svg";
@@ -448,7 +451,7 @@ function applyLang() {
   document.getElementById("langLbl").textContent = LANG === "ar" ? "English" : "العربية";
   document.title = LANG === "ar" ? "حارس الكربون الأزرق" : "Blue Carbon Guardian";
   document.querySelectorAll("#tbl th").forEach((th, i) => th.textContent = L("th")[i]);
-  drawStatic(); drawTable(); select(sel);
+  fillLast(); drawStatic(); drawTable(); select(sel);
 }
 document.getElementById("langBtn").onclick = () => { LANG = LANG === "ar" ? "en" : "ar"; try { localStorage.setItem("bcg-lang", LANG) } catch (e) {} applyLang(); };
 document.getElementById("themeBtn").onclick = () => { const t = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";

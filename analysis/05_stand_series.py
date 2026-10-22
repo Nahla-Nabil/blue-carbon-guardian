@@ -21,7 +21,7 @@ from shapely.geometry import box, shape
 BOX = [54.30, 24.35, 54.70, 24.65]
 BLOCK = (0.12, 0.09)                      # region size in degrees (lon, lat) ~ 13 km x 10 km
 MIN_STAND_HA, MAX_STANDS = 3.0, 25
-PERIOD, TILE = "2020-01-01/2026-09-19", "40RBN"
+PERIOD, TILE = f"2020-01-01/{os.environ.get('END', '2026-09-19')}", "40RBN"   # END=YYYY-MM-DD extends the series; APPEND=1 fetches only dates not yet in the CSV
 TIME_BUDGET_S = 50 * 60
 OUT_DIR = "analysis/data"; os.makedirs(OUT_DIR, exist_ok=True)
 STATS_CSV, STANDS_CSV = f"{OUT_DIR}/s2_stands_stats.csv", f"{OUT_DIR}/stands.csv"
@@ -62,6 +62,10 @@ for i in found:
     by_date.setdefault(i.datetime.date(), []).append(i)
 scenes = sorted((sorted(v, key=bl, reverse=True)[0] for v in by_date.values()), key=lambda i: i.datetime)
 print(f"{len(scenes)} distinct dates")
+PREV = None
+if os.environ.get("APPEND") == "1" and os.path.exists(STATS_CSV):
+    PREV = pd.read_csv(STATS_CSV); have = set(PREV["date"].astype(str))
+    scenes = [s for s in scenes if str(s.datetime.date()) not in have]; print("APPEND: new dates", [str(s.datetime.date()) for s in scenes])
 
 with rasterio.open(scenes[0].assets["B04"].href) as ds:
     crs = ds.crs
@@ -121,10 +125,11 @@ with cf.ThreadPoolExecutor(12) as ex:
     futs = [ex.submit(process, s) for s in scenes]
     for f in cf.as_completed(futs):
         allrows += f.result(); done += 1
-        if done % 25 == 0:
+        if done % 25 == 0 and PREV is None:
             pd.DataFrame(allrows).to_csv(STATS_CSV, index=False)
             print(f"  {done}/{len(scenes)} scenes, {time.time() - t0:.0f} s", flush=True)
         if time.time() - t0 > TIME_BUDGET_S:
             print("time budget reached, stopping"); [g.cancel() for g in futs]; break
-pd.DataFrame(allrows).sort_values(["date", "stand"]).to_csv(STATS_CSV, index=False)
+res = pd.DataFrame(allrows) if PREV is None else pd.concat([PREV, pd.DataFrame(allrows)], ignore_index=True)
+res.sort_values(["date", "stand"]).to_csv(STATS_CSV, index=False)
 print(f"DONE: {done}/{len(scenes)} scenes in {time.time() - t0:.0f} s -> {STATS_CSV}")

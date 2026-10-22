@@ -111,7 +111,7 @@ if ref_win != NOW_DAYS:
         for c in ("ndvi_base", "ndvi_now", "ndvi_change_pct", "ndvi_change_sigma", "ndmi_base", "ndmi_now", "ndmi_change_pct", "ndmi_change_sigma", "condition"):
             upd.loc[k, c] = r[c]
     upd["condition_window_days"] = NOW_DAYS
-    upd.reset_index().to_csv("analysis/data/stand_status.csv", index=False)
+    upd.index = upd.index.astype(int); upd.reset_index().to_csv("analysis/data/stand_status.csv", index=False)
     print(f"pilot table updated to a {NOW_DAYS}-day 'now' window:", upd.condition.value_counts().to_dict(), "| old copy: analysis/data/stand_status_before_365d.csv")
 
 # ---- new stands ------------------------------------------------------------------------------------------------------

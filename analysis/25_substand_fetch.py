@@ -16,7 +16,7 @@ from rasterio.windows import Window, from_bounds
 from scipy import ndimage as ndi
 from shapely.geometry import box, shape
 
-CELL_PX, MIN_PX, TILE, PERIOD = 20, 60, "40RBN", "2020-01-01/2026-09-19"
+CELL_PX, MIN_PX, TILE, PERIOD = 20, 60, "40RBN", f"2020-01-01/{os.environ.get('END', '2026-09-19')}"   # END / APPEND=1 as in analysis/05
 OUT = "analysis/data/substand"; os.makedirs(OUT, exist_ok=True)
 g = json.load(open("analysis/data/grid.json")); H, W, REGION, crs, tr = g["H"], g["W"], g["region"], g["crs"], Affine(*g["transform"])
 wc = np.load("analysis/data/worldcover_grid.npy")
@@ -91,10 +91,13 @@ if os.environ.get("RETRY") == "1" and os.path.exists(path):
     prev = pd.read_csv(path); bad = set(prev.loc[prev["error"].notna(), "date"]) if "error" in prev else set()
     allrows = prev[prev["error"].isna()].drop(columns=["error"]).to_dict("records") if "error" in prev else prev.to_dict("records")
     scenes = [s for s in scenes if str(s.datetime.date()) in bad]; print("RETRY:", len(scenes), "dates")
+elif os.environ.get("APPEND") == "1" and os.path.exists(path):
+    prev = pd.read_csv(path); have = set(prev["date"].astype(str)); allrows = prev.to_dict("records")
+    scenes = [s for s in scenes if str(s.datetime.date()) not in have]; print("APPEND: new dates", [str(s.datetime.date()) for s in scenes])
 with cf.ThreadPoolExecutor(8) as ex:
     for r in ex.map(process, scenes):
         allrows += r; done += 1
-        if done % 50 == 0:
+        if done % 50 == 0 and os.environ.get("APPEND") != "1":
             pd.DataFrame(allrows).to_csv(path, index=False); print(f"  {done}/{len(scenes)} {time.time() - t0:.0f}s", flush=True)
 out = pd.DataFrame(allrows); out.to_csv(path, index=False)
 print(f"DONE: errors {int(out['error'].notna().sum()) if 'error' in out else 0}, rows {len(out)}, {time.time() - t0:.0f}s")

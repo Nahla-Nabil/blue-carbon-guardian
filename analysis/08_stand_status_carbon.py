@@ -77,7 +77,7 @@ for k, s in S.items():
     for i in IDX:
         beta, sig = rfit(design(s["t"], s["w"], s["ff"]), s["y"][i]); tr_row[f"trend_{i}_per_yr"] = round(float(beta[1]), 4)
         tr_row[f"trend_{i}_pct_per_yr"] = round(100 * float(beta[1]) / float(np.median(s["y"][i])), 2)
-    days_since_last_obs = int((pd.Timestamp("2026-09-19") - (T0 + pd.Timedelta(days=t[last]))).days)
+    days_since_last_obs = int((pd.Timestamp(__import__("os").environ.get("END", "2026-09-19")) - (T0 + pd.Timedelta(days=t[last]))).days)
     status.append(dict(stand=k, area_ha=stands.loc[k, "area_ha"], last_obs=(T0 + pd.Timedelta(days=t[last])).date(), obs_gap_days=days_since_last_obs,
                        z_comp_now=round(float(st["comp"][last]), 2), z_ndmi_now=round(float(st["ndmi"][last]), 2), z_ndvi_now=round(float(st["ndvi"][last]), 2),
                        alert_now=bool(on[last]), alerts_2022_2026=len(groups), **tr_row))

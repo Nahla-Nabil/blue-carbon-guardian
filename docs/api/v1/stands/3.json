@@ -1,0 +1,163 @@
+{
+ "service": "Blue Carbon Guardian - tide-aware mangrove monitor (Abu Dhabi pilot)",
+ "generated_utc": "2026-10-22T13:57Z",
+ "data_through": "2026-10-19",
+ "alert_rule": "stand average <= -1.5 sigma OR any 200 m cell <= -3.5 sigma (median of the last 5 Sentinel-2 observations, tide-, season- and trend-corrected); thresholds frozen, calibrated to about one false-alarm episode per stand-year",
+ "condition_rule": "last 12 months vs the stand's own 2020-21 baseline: severe decline <= -50 %; decline <= -15 % and <= -3 sigma",
+ "note": "Screening indicator, not ground truth. Verify with very-high-resolution imagery or on site.",
+ "attribution": "Contains modified Copernicus Sentinel data 2020-2026. Carbon: Schile et al. 2016 field plots (CC0). Code: MIT.",
+ "docs": "https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/api_alert_concept.md",
+ "stand": 3,
+ "area_ha": 190.3,
+ "condition": "stable",
+ "ndvi_change_pct": 16.7,
+ "alert_now": false,
+ "cells_alerting_now": [],
+ "alert_episodes_2022_now": 6,
+ "last_observation": "2026-10-19",
+ "cells_total": 48,
+ "cells_in_decline": 0,
+ "ha_to_inspect": 0.0,
+ "carbon_stock_t_c": {
+  "p10": 14983,
+  "median": 20627,
+  "p90": 26352
+ },
+ "report": null,
+ "episodes": [
+  {
+   "start": "2022-03-17",
+   "end": "2022-03-17",
+   "days": 0,
+   "raised_by": "both",
+   "cells": [
+    116,
+    117,
+    118,
+    123,
+    124,
+    125,
+    126,
+    130,
+    132,
+    133,
+    134,
+    135,
+    138,
+    139,
+    140,
+    141,
+    142,
+    147,
+    148,
+    149,
+    153,
+    154,
+    155,
+    157
+   ]
+  },
+  {
+   "start": "2022-04-28",
+   "end": "2022-07-25",
+   "days": 88,
+   "raised_by": "both",
+   "cells": [
+    134,
+    135,
+    140,
+    141,
+    142,
+    146,
+    147,
+    148,
+    149,
+    153,
+    154,
+    155,
+    157,
+    158
+   ]
+  },
+  {
+   "start": "2023-11-09",
+   "end": "2025-03-16",
+   "days": 493,
+   "raised_by": "both",
+   "cells": [
+    111,
+    113,
+    114,
+    117,
+    118,
+    121,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    141,
+    142,
+    144,
+    146,
+    147,
+    148,
+    149,
+    150,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158
+   ]
+  },
+  {
+   "start": "2025-12-06",
+   "end": "2025-12-10",
+   "days": 4,
+   "raised_by": "cells",
+   "cells": [
+    118,
+    135
+   ]
+  },
+  {
+   "start": "2026-02-14",
+   "end": "2026-02-16",
+   "days": 2,
+   "raised_by": "cells",
+   "cells": [
+    124
+   ]
+  },
+  {
+   "start": "2026-03-28",
+   "end": "2026-04-07",
+   "days": 10,
+   "raised_by": "cells",
+   "cells": [
+    116,
+    117,
+    118,
+    124,
+    132,
+    134,
+    135,
+    146
+   ]
+  }
+ ],
+ "cells_in_decline_detail": []
+}

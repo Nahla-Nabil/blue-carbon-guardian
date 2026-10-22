@@ -11,6 +11,12 @@ import json, numpy as np, pandas as pd
 src = open("analysis/29_cell_trigger.py", encoding="utf-8").read().split("# ---- real events")[0]; ns = {"__name__": "union"}; exec(src, ns)
 GRID, ST_STAND, HALF, T0, n_episodes, UNION_RATE = ns["GRID"], ns["ST_STAND"], ns["HALF"], ns["T0"], ns["n_episodes"], ns["UNION_RATE"]
 TS, TC = HALF["STAND"], HALF["CELL-1"]
+# Operational rule: the product thresholds are FROZEN at the values calibrated once on 2022 - Sep 2026 (analysis/29: 1.5 / 3.5 sigma).
+# New satellite data are monitored with these fixed thresholds; they are never re-tuned on the data they are applied to.
+FROZEN = (1.5, 3.5)
+if (TS, TC) != FROZEN: print(f"note: re-calibration on the current data would give {TS} / {TC}; using the frozen {FROZEN[0]} / {FROZEN[1]}")
+TS, TC = FROZEN; HALF = {"STAND": TS, "CELL-1": TC}; ns["HALF"] = HALF
+UNION_RATE = sum(n_episodes(*ns["union"](k)) for k in GRID) / ns["YEARS"]
 print(f"combined rule: stand <= -{TS} sigma OR any cell <= -{TC} sigma (realised {UNION_RATE:.2f} episodes per stand-year)")
 day = lambda x: (T0 + pd.Timedelta(days=float(x))).date()
 

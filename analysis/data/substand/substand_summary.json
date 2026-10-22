@@ -5,10 +5,10 @@
   "grey_cells": 51,
   "flagged_of_changed": "11/15",
   "flagged_of_unchanged": "11/554",
-  "flagged_cells_total": 51,
+  "flagged_cells_total": 52,
   "flagged_by_stand": {
    "1": 1,
-   "5": 26,
+   "5": 27,
    "6": 5,
    "9": 8,
    "10": 1,
@@ -29,8 +29,8 @@
     "stable": 3
    },
    "stand_cells_condition": {
-    "severe decline": 26,
-    "stable": 19
+    "severe decline": 27,
+    "stable": 18
    }
   },
   "9": {
@@ -50,8 +50,8 @@
  },
  "cost": {
   "cells": 620,
-  "cell_years": 2908.0,
-  "alert_episodes_per_cell_year": 0.97,
+  "cell_years": 2963.2,
+  "alert_episodes_per_cell_year": 0.95,
   "flagged_cells_without_epoch_support": 11,
   "stands_with_unsupported_flag": [
    1,

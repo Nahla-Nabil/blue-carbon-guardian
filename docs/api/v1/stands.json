@@ -1,0 +1,512 @@
+{
+ "service": "Blue Carbon Guardian - tide-aware mangrove monitor (Abu Dhabi pilot)",
+ "generated_utc": "2026-10-22T13:57Z",
+ "data_through": "2026-10-19",
+ "alert_rule": "stand average <= -1.5 sigma OR any 200 m cell <= -3.5 sigma (median of the last 5 Sentinel-2 observations, tide-, season- and trend-corrected); thresholds frozen, calibrated to about one false-alarm episode per stand-year",
+ "condition_rule": "last 12 months vs the stand's own 2020-21 baseline: severe decline <= -50 %; decline <= -15 % and <= -3 sigma",
+ "note": "Screening indicator, not ground truth. Verify with very-high-resolution imagery or on site.",
+ "attribution": "Contains modified Copernicus Sentinel data 2020-2026. Carbon: Schile et al. 2016 field plots (CC0). Code: MIT.",
+ "docs": "https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/api_alert_concept.md",
+ "stands": [
+  {
+   "stand": 1,
+   "area_ha": 205.4,
+   "condition": "stable",
+   "ndvi_change_pct": -20.1,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 3,
+   "last_observation": "2026-10-19",
+   "cells_total": 56,
+   "cells_in_decline": 1,
+   "ha_to_inspect": 1.3,
+   "carbon_stock_t_c": {
+    "p10": 16172,
+    "median": 22263,
+    "p90": 28442
+   },
+   "report": "https://nahla-nabil.github.io/blue-carbon-guardian/reports/stand_01_report.html",
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/1.json"
+  },
+  {
+   "stand": 2,
+   "area_ha": 195.4,
+   "condition": "stable",
+   "ndvi_change_pct": -7.3,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 3,
+   "last_observation": "2026-10-19",
+   "cells_total": 54,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 15385,
+    "median": 21180,
+    "p90": 27058
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/2.json"
+  },
+  {
+   "stand": 3,
+   "area_ha": 190.3,
+   "condition": "stable",
+   "ndvi_change_pct": 16.7,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 6,
+   "last_observation": "2026-10-19",
+   "cells_total": 48,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 14983,
+    "median": 20627,
+    "p90": 26352
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/3.json"
+  },
+  {
+   "stand": 4,
+   "area_ha": 178.9,
+   "condition": "stable",
+   "ndvi_change_pct": 2.0,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 8,
+   "last_observation": "2026-10-19",
+   "cells_total": 48,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 14086,
+    "median": 19391,
+    "p90": 24773
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/4.json"
+  },
+  {
+   "stand": 5,
+   "area_ha": 176.5,
+   "condition": "severe decline",
+   "ndvi_change_pct": -111.3,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 3,
+   "last_observation": "2026-10-19",
+   "cells_total": 45,
+   "cells_in_decline": 27,
+   "ha_to_inspect": 72.2,
+   "carbon_stock_t_c": {
+    "p10": 13897,
+    "median": 19131,
+    "p90": 24441
+   },
+   "report": "https://nahla-nabil.github.io/blue-carbon-guardian/reports/stand_05_report.html",
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/5.json"
+  },
+  {
+   "stand": 6,
+   "area_ha": 165.0,
+   "condition": "stable",
+   "ndvi_change_pct": 6.2,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 47,
+   "cells_in_decline": 5,
+   "ha_to_inspect": 10.5,
+   "carbon_stock_t_c": {
+    "p10": 12991,
+    "median": 17884,
+    "p90": 22848
+   },
+   "report": "https://nahla-nabil.github.io/blue-carbon-guardian/reports/stand_06_report.html",
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/6.json"
+  },
+  {
+   "stand": 7,
+   "area_ha": 126.0,
+   "condition": "stable",
+   "ndvi_change_pct": 2.7,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 5,
+   "last_observation": "2026-10-19",
+   "cells_total": 34,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 9921,
+    "median": 13657,
+    "p90": 17448
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/7.json"
+  },
+  {
+   "stand": 8,
+   "area_ha": 119.6,
+   "condition": "stable",
+   "ndvi_change_pct": 0.8,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 33,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 9417,
+    "median": 12964,
+    "p90": 16561
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/8.json"
+  },
+  {
+   "stand": 9,
+   "area_ha": 99.2,
+   "condition": "stable",
+   "ndvi_change_pct": -9.7,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 28,
+   "cells_in_decline": 8,
+   "ha_to_inspect": 21.8,
+   "carbon_stock_t_c": {
+    "p10": 7810,
+    "median": 10752,
+    "p90": 13737
+   },
+   "report": "https://nahla-nabil.github.io/blue-carbon-guardian/reports/stand_09_report.html",
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/9.json"
+  },
+  {
+   "stand": 10,
+   "area_ha": 79.6,
+   "condition": "stable",
+   "ndvi_change_pct": 6.2,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 5,
+   "last_observation": "2026-10-19",
+   "cells_total": 22,
+   "cells_in_decline": 1,
+   "ha_to_inspect": 0.9,
+   "carbon_stock_t_c": {
+    "p10": 6267,
+    "median": 8628,
+    "p90": 11023
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/10.json"
+  },
+  {
+   "stand": 11,
+   "area_ha": 79.2,
+   "condition": "stable",
+   "ndvi_change_pct": 7.0,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 6,
+   "last_observation": "2026-10-19",
+   "cells_total": 21,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 6236,
+    "median": 8585,
+    "p90": 10967
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/11.json"
+  },
+  {
+   "stand": 12,
+   "area_ha": 75.9,
+   "condition": "stable",
+   "ndvi_change_pct": -23.3,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 5,
+   "last_observation": "2026-10-19",
+   "cells_total": 20,
+   "cells_in_decline": 6,
+   "ha_to_inspect": 13.2,
+   "carbon_stock_t_c": {
+    "p10": 5976,
+    "median": 8227,
+    "p90": 10510
+   },
+   "report": "https://nahla-nabil.github.io/blue-carbon-guardian/reports/stand_12_report.html",
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/12.json"
+  },
+  {
+   "stand": 13,
+   "area_ha": 68.0,
+   "condition": "stable",
+   "ndvi_change_pct": 4.6,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 5,
+   "last_observation": "2026-10-19",
+   "cells_total": 18,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 5354,
+    "median": 7371,
+    "p90": 9416
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/13.json"
+  },
+  {
+   "stand": 14,
+   "area_ha": 59.4,
+   "condition": "stable",
+   "ndvi_change_pct": 8.7,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 17,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 4677,
+    "median": 6438,
+    "p90": 8225
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/14.json"
+  },
+  {
+   "stand": 15,
+   "area_ha": 59.4,
+   "condition": "stable",
+   "ndvi_change_pct": 1.8,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 5,
+   "last_observation": "2026-10-19",
+   "cells_total": 16,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 4677,
+    "median": 6438,
+    "p90": 8225
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/15.json"
+  },
+  {
+   "stand": 16,
+   "area_ha": 55.6,
+   "condition": "stable",
+   "ndvi_change_pct": 21.4,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 7,
+   "last_observation": "2026-10-19",
+   "cells_total": 17,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 4378,
+    "median": 6027,
+    "p90": 7699
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/16.json"
+  },
+  {
+   "stand": 17,
+   "area_ha": 52.8,
+   "condition": "stable",
+   "ndvi_change_pct": 7.2,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 14,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 4157,
+    "median": 5723,
+    "p90": 7311
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/17.json"
+  },
+  {
+   "stand": 18,
+   "area_ha": 50.6,
+   "condition": "stable",
+   "ndvi_change_pct": -8.0,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 6,
+   "last_observation": "2026-10-19",
+   "cells_total": 16,
+   "cells_in_decline": 3,
+   "ha_to_inspect": 5.1,
+   "carbon_stock_t_c": {
+    "p10": 3984,
+    "median": 5485,
+    "p90": 7007
+   },
+   "report": "https://nahla-nabil.github.io/blue-carbon-guardian/reports/stand_18_report.html",
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/18.json"
+  },
+  {
+   "stand": 19,
+   "area_ha": 48.5,
+   "condition": "stable",
+   "ndvi_change_pct": 35.2,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 12,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 3819,
+    "median": 5257,
+    "p90": 6716
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/19.json"
+  },
+  {
+   "stand": 20,
+   "area_ha": 46.9,
+   "condition": "stable",
+   "ndvi_change_pct": 21.1,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 13,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 3693,
+    "median": 5084,
+    "p90": 6494
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/20.json"
+  },
+  {
+   "stand": 21,
+   "area_ha": 31.2,
+   "condition": "stable",
+   "ndvi_change_pct": 7.8,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 1,
+   "last_observation": "2026-10-19",
+   "cells_total": 8,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 2457,
+    "median": 3382,
+    "p90": 4320
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/21.json"
+  },
+  {
+   "stand": 22,
+   "area_ha": 30.9,
+   "condition": "stable",
+   "ndvi_change_pct": -8.5,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 9,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 2433,
+    "median": 3349,
+    "p90": 4279
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/22.json"
+  },
+  {
+   "stand": 23,
+   "area_ha": 30.8,
+   "condition": "stable",
+   "ndvi_change_pct": 4.3,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 4,
+   "last_observation": "2026-10-19",
+   "cells_total": 10,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 2425,
+    "median": 3338,
+    "p90": 4265
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/23.json"
+  },
+  {
+   "stand": 24,
+   "area_ha": 28.6,
+   "condition": "stable",
+   "ndvi_change_pct": 19.5,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 3,
+   "last_observation": "2026-10-19",
+   "cells_total": 7,
+   "cells_in_decline": 0,
+   "ha_to_inspect": 0.0,
+   "carbon_stock_t_c": {
+    "p10": 2252,
+    "median": 3100,
+    "p90": 3960
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/24.json"
+  },
+  {
+   "stand": 25,
+   "area_ha": 27.3,
+   "condition": "stable",
+   "ndvi_change_pct": -9.5,
+   "alert_now": false,
+   "cells_alerting_now": [],
+   "alert_episodes_2022_now": 5,
+   "last_observation": "2026-10-19",
+   "cells_total": 7,
+   "cells_in_decline": 1,
+   "ha_to_inspect": 2.2,
+   "carbon_stock_t_c": {
+    "p10": 2149,
+    "median": 2959,
+    "p90": 3780
+   },
+   "report": null,
+   "detail": "https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands/25.json"
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "service": "Blue Carbon Guardian - tide-aware mangrove monitor (Abu Dhabi pilot)",
+ "generated_utc": "2026-10-22T13:57Z",
+ "data_through": "2026-10-19",
+ "alert_rule": "stand average <= -1.5 sigma OR any 200 m cell <= -3.5 sigma (median of the last 5 Sentinel-2 observations, tide-, season- and trend-corrected); thresholds frozen, calibrated to about one false-alarm episode per stand-year",
+ "condition_rule": "last 12 months vs the stand's own 2020-21 baseline: severe decline <= -50 %; decline <= -15 % and <= -3 sigma",
+ "note": "Screening indicator, not ground truth. Verify with very-high-resolution imagery or on site.",
+ "attribution": "Contains modified Copernicus Sentinel data 2020-2026. Carbon: Schile et al. 2016 field plots (CC0). Code: MIT.",
+ "docs": "https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/api_alert_concept.md",
+ "stand": 16,
+ "area_ha": 55.6,
+ "condition": "stable",
+ "ndvi_change_pct": 21.4,
+ "alert_now": false,
+ "cells_alerting_now": [],
+ "alert_episodes_2022_now": 7,
+ "last_observation": "2026-10-19",
+ "cells_total": 17,
+ "cells_in_decline": 0,
+ "ha_to_inspect": 0.0,
+ "carbon_stock_t_c": {
+  "p10": 4378,
+  "median": 6027,
+  "p90": 7699
+ },
+ "report": null,
+ "episodes": [
+  {
+   "start": "2022-01-31",
+   "end": "2022-02-02",
+   "days": 2,
+   "raised_by": "both",
+   "cells": [
+    513
+   ]
+  },
+  {
+   "start": "2022-03-17",
+   "end": "2022-03-17",
+   "days": 0,
+   "raised_by": "cells",
+   "cells": [
+    513,
+    514,
+    517,
+    518,
+    521
+   ]
+  },
+  {
+   "start": "2022-12-14",
+   "end": "2023-04-28",
+   "days": 135,
+   "raised_by": "both",
+   "cells": [
+    513,
+    514,
+    517,
+    518
+   ]
+  },
+  {
+   "start": "2024-09-29",
+   "end": "2025-01-27",
+   "days": 120,
+   "raised_by": "both",
+   "cells": [
+    514,
+    515,
+    517,
+    518,
+    520,
+    521,
+    524
+   ]
+  },
+  {
+   "start": "2025-08-08",
+   "end": "2025-08-23",
+   "days": 15,
+   "raised_by": "stand",
+   "cells": []
+  },
+  {
+   "start": "2025-12-03",
+   "end": "2025-12-03",
+   "days": 0,
+   "raised_by": "stand",
+   "cells": []
+  },
+  {
+   "start": "2026-03-28",
+   "end": "2026-04-07",
+   "days": 10,
+   "raised_by": "both",
+   "cells": [
+    513,
+    514,
+    515,
+    517,
+    518,
+    521
+   ]
+  }
+ ],
+ "cells_in_decline_detail": []
+}
