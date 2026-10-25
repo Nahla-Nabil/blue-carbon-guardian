@@ -1,7 +1,7 @@
 {
  "service": "Blue Carbon Guardian - tide-aware mangrove monitor (Abu Dhabi pilot)",
- "generated_utc": "2026-10-22T13:57Z",
- "data_through": "2026-10-19",
+ "generated_utc": "2026-10-25T21:58Z",
+ "data_through": "2026-10-24",
  "alert_rule": "stand average <= -1.5 sigma OR any 200 m cell <= -3.5 sigma (median of the last 5 Sentinel-2 observations, tide-, season- and trend-corrected); thresholds frozen, calibrated to about one false-alarm episode per stand-year",
  "condition_rule": "last 12 months vs the stand's own 2020-21 baseline: severe decline <= -50 %; decline <= -15 % and <= -3 sigma",
  "note": "Screening indicator, not ground truth. Verify with very-high-resolution imagery or on site.",
@@ -10,14 +10,14 @@
  "stand": 5,
  "area_ha": 176.5,
  "condition": "severe decline",
- "ndvi_change_pct": -111.3,
+ "ndvi_change_pct": -110.8,
  "alert_now": false,
  "cells_alerting_now": [],
  "alert_episodes_2022_now": 3,
- "last_observation": "2026-10-19",
+ "last_observation": "2026-10-24",
  "cells_total": 45,
- "cells_in_decline": 27,
- "ha_to_inspect": 72.2,
+ "cells_in_decline": 28,
+ "ha_to_inspect": 75.3,
  "carbon_stock_t_c": {
   "p10": 13897,
   "median": 19131,
@@ -103,49 +103,49 @@
    "cell": 208,
    "condition": "severe decline",
    "area_ha": 1.3,
-   "ndvi_change_pct": -93.0
+   "ndvi_change_pct": -92.2
   },
   {
    "cell": 209,
    "condition": "severe decline",
    "area_ha": 1.5,
-   "ndvi_change_pct": -79.4
+   "ndvi_change_pct": -79.3
   },
   {
    "cell": 210,
    "condition": "severe decline",
    "area_ha": 2.0,
-   "ndvi_change_pct": -94.6
+   "ndvi_change_pct": -94.5
   },
   {
    "cell": 211,
    "condition": "severe decline",
    "area_ha": 2.1,
-   "ndvi_change_pct": -168.5
+   "ndvi_change_pct": -168.6
   },
   {
    "cell": 213,
    "condition": "severe decline",
    "area_ha": 3.1,
-   "ndvi_change_pct": -180.8
+   "ndvi_change_pct": -184.9
   },
   {
    "cell": 214,
    "condition": "severe decline",
    "area_ha": 2.7,
-   "ndvi_change_pct": -86.6
+   "ndvi_change_pct": -87.0
   },
   {
    "cell": 216,
    "condition": "severe decline",
    "area_ha": 3.8,
-   "ndvi_change_pct": -75.5
+   "ndvi_change_pct": -74.9
   },
   {
    "cell": 217,
    "condition": "severe decline",
    "area_ha": 4.0,
-   "ndvi_change_pct": -93.0
+   "ndvi_change_pct": -93.8
   },
   {
    "cell": 218,
@@ -157,103 +157,109 @@
    "cell": 219,
    "condition": "severe decline",
    "area_ha": 4.0,
-   "ndvi_change_pct": -154.4
+   "ndvi_change_pct": -156.2
   },
   {
    "cell": 221,
    "condition": "severe decline",
    "area_ha": 0.6,
-   "ndvi_change_pct": -89.7
+   "ndvi_change_pct": -89.3
   },
   {
    "cell": 222,
    "condition": "severe decline",
    "area_ha": 3.1,
-   "ndvi_change_pct": -101.0
+   "ndvi_change_pct": -100.9
   },
   {
    "cell": 223,
    "condition": "severe decline",
    "area_ha": 4.0,
-   "ndvi_change_pct": -145.9
+   "ndvi_change_pct": -149.1
   },
   {
    "cell": 226,
    "condition": "severe decline",
    "area_ha": 2.1,
-   "ndvi_change_pct": -86.0
+   "ndvi_change_pct": -86.2
   },
   {
    "cell": 227,
    "condition": "severe decline",
    "area_ha": 3.4,
-   "ndvi_change_pct": -122.8
+   "ndvi_change_pct": -123.4
   },
   {
    "cell": 228,
    "condition": "severe decline",
    "area_ha": 0.8,
-   "ndvi_change_pct": -141.6
+   "ndvi_change_pct": -143.7
   },
   {
    "cell": 231,
    "condition": "severe decline",
    "area_ha": 2.1,
-   "ndvi_change_pct": -100.6
+   "ndvi_change_pct": -101.5
   },
   {
    "cell": 233,
    "condition": "severe decline",
    "area_ha": 4.0,
-   "ndvi_change_pct": -80.5
+   "ndvi_change_pct": -79.7
   },
   {
    "cell": 234,
    "condition": "severe decline",
    "area_ha": 3.5,
-   "ndvi_change_pct": -138.9
+   "ndvi_change_pct": -138.3
+  },
+  {
+   "cell": 235,
+   "condition": "decline",
+   "area_ha": 3.1,
+   "ndvi_change_pct": -57.5
   },
   {
    "cell": 239,
    "condition": "severe decline",
    "area_ha": 2.5,
-   "ndvi_change_pct": -113.1
+   "ndvi_change_pct": -113.6
   },
   {
    "cell": 240,
    "condition": "severe decline",
    "area_ha": 3.3,
-   "ndvi_change_pct": -70.0
+   "ndvi_change_pct": -71.6
   },
   {
    "cell": 242,
    "condition": "severe decline",
    "area_ha": 3.3,
-   "ndvi_change_pct": -109.3
+   "ndvi_change_pct": -110.5
   },
   {
    "cell": 243,
    "condition": "severe decline",
    "area_ha": 1.8,
-   "ndvi_change_pct": -106.4
+   "ndvi_change_pct": -107.0
   },
   {
    "cell": 246,
    "condition": "severe decline",
    "area_ha": 4.0,
-   "ndvi_change_pct": -78.5
+   "ndvi_change_pct": -81.7
   },
   {
    "cell": 247,
    "condition": "severe decline",
    "area_ha": 3.9,
-   "ndvi_change_pct": -120.9
+   "ndvi_change_pct": -119.6
   },
   {
    "cell": 248,
    "condition": "severe decline",
    "area_ha": 0.7,
-   "ndvi_change_pct": -95.7
+   "ndvi_change_pct": -96.0
   },
   {
    "cell": 249,

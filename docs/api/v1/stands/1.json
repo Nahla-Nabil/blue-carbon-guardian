@@ -1,7 +1,7 @@
 {
  "service": "Blue Carbon Guardian - tide-aware mangrove monitor (Abu Dhabi pilot)",
- "generated_utc": "2026-10-22T13:57Z",
- "data_through": "2026-10-19",
+ "generated_utc": "2026-10-25T21:58Z",
+ "data_through": "2026-10-24",
  "alert_rule": "stand average <= -1.5 sigma OR any 200 m cell <= -3.5 sigma (median of the last 5 Sentinel-2 observations, tide-, season- and trend-corrected); thresholds frozen, calibrated to about one false-alarm episode per stand-year",
  "condition_rule": "last 12 months vs the stand's own 2020-21 baseline: severe decline <= -50 %; decline <= -15 % and <= -3 sigma",
  "note": "Screening indicator, not ground truth. Verify with very-high-resolution imagery or on site.",
@@ -10,11 +10,11 @@
  "stand": 1,
  "area_ha": 205.4,
  "condition": "stable",
- "ndvi_change_pct": -20.1,
+ "ndvi_change_pct": -19.3,
  "alert_now": false,
  "cells_alerting_now": [],
  "alert_episodes_2022_now": 3,
- "last_observation": "2026-10-19",
+ "last_observation": "2026-10-24",
  "cells_total": 56,
  "cells_in_decline": 1,
  "ha_to_inspect": 1.3,
@@ -101,7 +101,7 @@
    "cell": 13,
    "condition": "severe decline",
    "area_ha": 1.3,
-   "ndvi_change_pct": -53.3
+   "ndvi_change_pct": -52.9
   }
  ]
 }

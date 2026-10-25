@@ -157,7 +157,7 @@ images bought only when an alert fires. Full plan with 13 sources: [`docs/busine
 
 Satellite 813 data were not available during the PoC (per the onboarding guide). We **simulated its band range** with EnMAP (next section and [`analysis/36_sat813_summary.md`](analysis/36_sat813_summary.md)); real 813 scenes are the incubation step.
 
-**Running, not a one-off:** the monitor was updated on 22 Oct 2026 with 12 new Sentinel-2 images (data to 19 Oct 2026), using the same frozen thresholds: no new alerts, conditions unchanged. The alerts are published as a static JSON feed: [`api/v1/alerts.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/alerts.json), [`api/v1/stands.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands.json) (built by `scripts/build_api.py`). The validation figures in this README refer to the analysis period 2020 to Sep 2026 (778 dates).
+**Running, not a one-off:** the monitor was updated on 22 Oct and again on 26 Oct 2026 (data to 24 Oct 2026), using the same frozen thresholds: conditions unchanged. One new single-cell flag (stand 3, cell 112, 22 Oct) was checked against the data: that scene had an unusually low tide and the cell's NDVI and NDRE were higher than in any of the previous ten images, so it is treated as a tide effect, not a loss. The alerts are published as a static JSON feed: [`api/v1/alerts.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/alerts.json), [`api/v1/stands.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands.json) (built by `scripts/build_api.py`). The validation figures in this README refer to the analysis period 2020 to Sep 2026 (778 dates).
 
 ## 4. Technical approach
 ```mermaid

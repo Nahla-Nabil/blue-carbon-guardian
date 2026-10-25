@@ -4,11 +4,11 @@
   "unchanged_cells": 554,
   "grey_cells": 51,
   "flagged_of_changed": "11/15",
-  "flagged_of_unchanged": "11/554",
-  "flagged_cells_total": 52,
+  "flagged_of_unchanged": "12/554",
+  "flagged_cells_total": 53,
   "flagged_by_stand": {
    "1": 1,
-   "5": 27,
+   "5": 28,
    "6": 5,
    "9": 8,
    "10": 1,
@@ -30,7 +30,8 @@
    },
    "stand_cells_condition": {
     "severe decline": 27,
-    "stable": 18
+    "stable": 17,
+    "decline": 1
    }
   },
   "9": {
@@ -50,16 +51,16 @@
  },
  "cost": {
   "cells": 620,
-  "cell_years": 2963.2,
+  "cell_years": 2969.9,
   "alert_episodes_per_cell_year": 0.95,
-  "flagged_cells_without_epoch_support": 11,
+  "flagged_cells_without_epoch_support": 12,
   "stands_with_unsupported_flag": [
    1,
    5,
    6,
    12
   ],
-  "unsupported_area_ha": 18.3
+  "unsupported_area_ha": 21.4
  },
  "now_days": 365
 }
