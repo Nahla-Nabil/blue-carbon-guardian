@@ -92,7 +92,7 @@ An 8-minute pitch (24 presented slides) built around the final judging criteria,
 | Innovation & Differentiation (20) | 12 (tide-aware model), 13 (200 m cells), 15 (comparison with what exists today) |
 | Quality of Implementation (20) | 4 (live demo of the monitor), 9 (the method as a workflow), 10 (delivery to the user), 11 (risk register: ranked cases), 21 (the live website today) |
 | Documentation & Evidence (10) | 14 (equations), 19 (public code, 24-second re-run, clean-machine test, every number traceable); sources in the slide footers |
-| Development Potential (5) | 8 (ready for Satellite 813, simulated band range), 19 (proven now, incubation, scale), 20 (tested in Abu Dhabi and Saudi Arabia, Bahrain next), 23 (Bahrain Space Agency expert evaluation, potential adopters in Bahrain) |
+| Development Potential (5) | 8 (ready for Satellite 813, simulated band range), 19 (proven now, incubation, scale), 20 (tested in Abu Dhabi and Saudi Arabia, Bahrain next), 22 (Bahrain Space Agency expert evaluation, potential adopters in Bahrain), 23 (incubation plan: MVP on GIQ) |
 | Team overview | 2 (roles, responsibilities and relevant experience) |
 
 
