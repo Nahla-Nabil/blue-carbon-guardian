@@ -139,12 +139,12 @@ The measured cost to serve is about USD 3.3k per site per year. Satellites and c
 images bought only when an alert fires. Full plan with 13 sources: [`docs/business_plan_draft.md`](docs/business_plan_draft.md).
 
 ## 2. The problem
-- 🌱 **The UAE and Saudi Arabia each pledge 100 million mangroves by 2030.** Abu Dhabi published the Gulf's first mangrove monitoring guide in February 2026,
+- 🌱 **The UAE and Saudi Arabia each pledge 100 million mangroves by 2030, and Bahrain pledged at COP26 to quadruple its mangroves by 2035.** Abu Dhabi published the Gulf's first mangrove monitoring guide in February 2026,
   yet the latest regional review calls Gulf monitoring "uneven" (Frontiers in Marine Science, 2025).
 - 🏗️ **The stands are small, scattered and next to fast coastal development.** The Gulf has about 165 km² of mangrove, 55-60 km² of it in Abu Dhabi.
 - 🛰️ **Why satellites:** free 5-day Sentinel-2 revisits cover every stand since 2015. Nobody can survey every stand every month on foot.
 - 🌊 **Why it is hard:** on Gulf tidal flats the **tide**, not the trees, drives most of the change in a satellite index (r about -0.9 with a wetness signal).
-  A naive monitor raises false alarms at every high tide.
+  A simple monitor raises false alarms at every high tide.
 
 ## 3. Data used
 | Dataset | Provider | Dates | Level | Used for | Licence |
@@ -157,7 +157,9 @@ images bought only when an alert fires. Full plan with 13 sources: [`docs/busine
 
 Satellite 813 data were not available during the PoC (per the onboarding guide). We **simulated its band range** with EnMAP (next section and [`analysis/36_sat813_summary.md`](analysis/36_sat813_summary.md)); real 813 scenes are the incubation step.
 
-**Running, not a one-off:** the monitor was updated on 22 Oct and again on 26 Oct 2026 (data to 24 Oct 2026), using the same frozen thresholds: conditions unchanged. One new single-cell flag (stand 3, cell 112, 22 Oct) was checked against the data: that scene had an unusually low tide and the cell's NDVI and NDRE were higher than in any of the previous ten images, so it is treated as a tide effect, not a loss. The alerts are published as a static JSON feed: [`api/v1/alerts.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/alerts.json), [`api/v1/stands.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands.json) (built by `scripts/build_api.py`). The validation figures in this README refer to the analysis period 2020 to Sep 2026 (778 dates).
+**Running, not a one-off:** the monitor was updated on 22 Oct and again on 26 Oct 2026 (data to 24 Oct 2026), using the same frozen thresholds: conditions unchanged. One new single-cell flag (stand 3, cell 112, 22 Oct) was checked against the data: that scene had an unusually low tide and the cell's NDVI and NDRE were higher than in any of the previous ten images, so it is treated as a tide effect, not a loss. The alerts are published as a static JSON feed: [`api/v1/alerts.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/alerts.json), [`api/v1/stands.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/stands.json) (built by `scripts/build_api.py`).
+
+**Risk register (added after expert feedback from the Bahrain Space Agency):** every flag becomes a case ranked **urgent / monitor / closed**, with the date, likely cause, confidence level and inspector action, and it stays open until a person closes it with a reason. Today: 4 urgent (stands 5, 9, 12, 6: confirmed conversions with ≥ 10 ha of cells to inspect), 4 monitor (stand 18 and three unchecked single-cell flags), 1 closed (stand 3, a tide effect). Built by `scripts/build_risks.py`, shown on the website and published as [`api/v1/risks.json`](https://nahla-nabil.github.io/blue-carbon-guardian/api/v1/risks.json). The validation figures in this README refer to the analysis period 2020 to Sep 2026 (778 dates).
 
 ## 4. Technical approach
 ```mermaid
@@ -343,6 +345,18 @@ mineral-like one (sand and fill). Contains modified EnMAP data © DLR 2022, 2025
 - DLR EnMAP;
 - Schile et al. 2016;
 - Esri World Imagery Wayback.
+
+### 🇧🇭 Expert Evaluation and Feedback: Bahrain Space Agency
+> *"The Bahrain Space Agency commends Ms. Nahla Nabil for presenting Blue Carbon Guardian, an innovative project using Earth Observation data to monitor regional mangrove ecosystems. The Agency provided specialised assessment and technical feedback, reaffirming its commitment to supporting research and innovation that advance Bahrain's environmental objectives and sustainability goals."*
+> (official statement, 26 Oct 2026)
+
+Feedback applied: a ranked risk register (above), sources and equations on the slides, Bahrain's national pledge, and the note that Bahrain's smaller stands need higher-resolution imagery than open 10 m data provides. Potential adopters in Bahrain named in the pitch (Supreme Council for Environment, Ministry of Municipalities Affairs and Agriculture, universities) are **potential** users, not partners.
+
+### 📚 References and equations
+- **Carbon at stake** = lost area × field carbon density = 26–62 ha (our Sentinel-2 and EnMAP estimates, stand 5) × 108 t C/ha (90 % CI 79–138) = 2.8–6.7 kt C; × 3.67 = t CO₂e. Density: Schile et al. 2017, *Ecological Applications* 27:859–874, doi 10.1002/eap.1489; data Schile et al. 2016, Dryad, doi 10.15146/R3K59Z (CC0).
+- **Cost to serve** ≈ USD 3.3k per site per year = compute < USD 5 (measured; Azure D8s v5 at USD 0.384/h) + sub-metre checks USD 500–750 (SkyWatch archive/tasking USD 19–29 per km²) + analyst USD 2k (assumption). Subscription prices are pilot hypotheses. Full sources: [`docs/business_plan_draft.md`](docs/business_plan_draft.md).
+- **Pledges and guidance:** UAE 100 million mangroves by 2030 (Ministry of Climate Change and Environment, COP26, 2021; Abu Dhabi Mangrove Initiative, Environment Agency – Abu Dhabi); Saudi Green Initiative (more than 100 million by 2030); Bahrain, quadruple mangroves by 2035 (COP26, 2021); first GCC mangrove monitoring guide, Environment Agency – Abu Dhabi with the IUCN Mangrove Specialist Group (Feb 2026, reported by Gulf News); *Guidelines for Mangrove Restoration in the UAE* (EAD, MOCCAE, Emirates Nature–WWF).
+- **Regional areas:** Frontiers in Marine Science 2025, doi 10.3389/fmars.2025.1695426 (Gulf ≈ 165 km², Abu Dhabi 55–60 km²).
 
 <details><summary><b>📁 Repository layout</b></summary>
 

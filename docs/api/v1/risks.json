@@ -1,0 +1,377 @@
+{
+ "generated_utc": "2026-10-26T12:45Z",
+ "data_through": "2026-10-24",
+ "rule": {
+  "urgent": "loss confirmed on sub-metre imagery and >= 10 ha of cells in decline",
+  "monitor": "smaller confirmed loss, or cells in decline not yet checked",
+  "closed": "checked by a person and closed with a reason"
+ },
+ "note": "Cases stay open until a person closes them with a reason. Screening indicator, not ground truth. Prioritisation added after expert evaluation and feedback from the Bahrain Space Agency.",
+ "counts": {
+  "urgent": 4,
+  "monitor": 4,
+  "closed": 1
+ },
+ "risks": [
+  {
+   "id": "R-05",
+   "stand": 5,
+   "priority": "urgent",
+   "status": "open",
+   "opened": "2022-10-25",
+   "likely_cause": {
+    "en": "Coastal development: reclamation with finger canals",
+    "ar": "تطوير ساحلي: ردم مع قنوات متفرعة"
+   },
+   "confidence": {
+    "en": "high",
+    "ar": "عالية"
+   },
+   "confidence_basis": {
+    "en": "Confirmed on dated sub-metre imagery (0.3-0.5 m); stand alert and cells agree.",
+    "ar": "مؤكدة بصور مؤرّخة دون المتر (0.3–0.5 م)، وإنذار المنطقة والخلايا متّفقان."
+   },
+   "action": {
+    "en": "Inspect the 28 flagged cells (75.3 ha); compare the works boundary with the permit; record the loss for carbon accounting.",
+    "ar": "تفتيش الخلايا الـ28 المنبَّه عليها (75.3 هكتار)، ومقارنة حدود الأعمال بالترخيص، وتسجيل الخسارة في حساب الكربون."
+   },
+   "cells": [
+    208,
+    209,
+    210,
+    211,
+    213,
+    214,
+    216,
+    217,
+    218,
+    219,
+    221,
+    222,
+    223,
+    226,
+    227,
+    228,
+    231,
+    233,
+    234,
+    235,
+    239,
+    240,
+    242,
+    243,
+    246,
+    247,
+    248,
+    249
+   ],
+   "ha_to_inspect": 75.3,
+   "carbon_at_stake": {
+    "t_c_median_low": 2808,
+    "t_c_median_high": 6696,
+    "t_c_range": [
+     2054,
+     8556
+    ]
+   },
+   "carbon_note": "converted area 26-62 ha x 108 t C/ha"
+  },
+  {
+   "id": "R-09",
+   "stand": 9,
+   "priority": "urgent",
+   "status": "open",
+   "opened": "2022-12-07",
+   "likely_cause": {
+    "en": "Coastal development: canals in the south-east",
+    "ar": "تطوير ساحلي: قنوات في الجنوب الشرقي"
+   },
+   "confidence": {
+    "en": "high",
+    "ar": "عالية"
+   },
+   "confidence_basis": {
+    "en": "Confirmed on dated sub-metre imagery (0.3-0.5 m); stand alert and cells agree.",
+    "ar": "مؤكدة بصور مؤرّخة دون المتر (0.3–0.5 م)، وإنذار المنطقة والخلايا متّفقان."
+   },
+   "action": {
+    "en": "Inspect the 8 flagged cells (21.8 ha); compare the works boundary with the permit; record the loss for carbon accounting.",
+    "ar": "تفتيش الخلايا الـ8 المنبَّه عليها (21.8 هكتار)، ومقارنة حدود الأعمال بالترخيص، وتسجيل الخسارة في حساب الكربون."
+   },
+   "cells": [
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393
+   ],
+   "ha_to_inspect": 21.8,
+   "carbon_at_stake": {
+    "t_c_median_low": 2354,
+    "t_c_median_high": 2354,
+    "t_c_range": [
+     1722,
+     3008
+    ]
+   },
+   "carbon_note": "upper bound: whole-cell area x 108 t C/ha"
+  },
+  {
+   "id": "R-12",
+   "stand": 12,
+   "priority": "urgent",
+   "status": "open",
+   "opened": "2022-12-17",
+   "likely_cause": {
+    "en": "Coastal development: canal and reclamation at the southern edge",
+    "ar": "تطوير ساحلي: قناة وردم على الحافة الجنوبية"
+   },
+   "confidence": {
+    "en": "high",
+    "ar": "عالية"
+   },
+   "confidence_basis": {
+    "en": "Confirmed on dated sub-metre imagery (0.3-0.5 m); stand alert and cells agree.",
+    "ar": "مؤكدة بصور مؤرّخة دون المتر (0.3–0.5 م)، وإنذار المنطقة والخلايا متّفقان."
+   },
+   "action": {
+    "en": "Inspect the 6 flagged cells (13.2 ha); compare the works boundary with the permit; record the loss for carbon accounting.",
+    "ar": "تفتيش الخلايا الـ6 المنبَّه عليها (13.2 هكتار)، ومقارنة حدود الأعمال بالترخيص، وتسجيل الخسارة في حساب الكربون."
+   },
+   "cells": [
+    450,
+    451,
+    452,
+    454,
+    455,
+    456
+   ],
+   "ha_to_inspect": 13.2,
+   "carbon_at_stake": {
+    "t_c_median_low": 1426,
+    "t_c_median_high": 1426,
+    "t_c_range": [
+     1043,
+     1822
+    ]
+   },
+   "carbon_note": "upper bound: whole-cell area x 108 t C/ha"
+  },
+  {
+   "id": "R-06",
+   "stand": 6,
+   "priority": "urgent",
+   "status": "open",
+   "opened": "2023-02-17",
+   "likely_cause": {
+    "en": "Coastal development: canals and a lagoon around the stand",
+    "ar": "تطوير ساحلي: قنوات وبحيرة حول المنطقة"
+   },
+   "confidence": {
+    "en": "high",
+    "ar": "عالية"
+   },
+   "confidence_basis": {
+    "en": "Confirmed on dated sub-metre imagery (0.3-0.5 m); stand alert and cells agree.",
+    "ar": "مؤكدة بصور مؤرّخة دون المتر (0.3–0.5 م)، وإنذار المنطقة والخلايا متّفقان."
+   },
+   "action": {
+    "en": "Inspect the 5 flagged cells (10.5 ha); compare the works boundary with the permit; record the loss for carbon accounting.",
+    "ar": "تفتيش الخلايا الـ5 المنبَّه عليها (10.5 هكتار)، ومقارنة حدود الأعمال بالترخيص، وتسجيل الخسارة في حساب الكربون."
+   },
+   "cells": [
+    284,
+    288,
+    294,
+    296,
+    298
+   ],
+   "ha_to_inspect": 10.5,
+   "carbon_at_stake": {
+    "t_c_median_low": 1134,
+    "t_c_median_high": 1134,
+    "t_c_range": [
+     830,
+     1449
+    ]
+   },
+   "carbon_note": "upper bound: whole-cell area x 108 t C/ha"
+  },
+  {
+   "id": "R-18",
+   "stand": 18,
+   "priority": "monitor",
+   "status": "open",
+   "opened": "2024-10-29",
+   "likely_cause": {
+    "en": "Coastal development reaching the stand in 2025",
+    "ar": "تطوير ساحلي وصل المنطقة في 2025"
+   },
+   "confidence": {
+    "en": "high",
+    "ar": "عالية"
+   },
+   "confidence_basis": {
+    "en": "Confirmed on dated sub-metre imagery (0.3-0.5 m); stand alert and cells agree.",
+    "ar": "مؤكدة بصور مؤرّخة دون المتر (0.3–0.5 م)، وإنذار المنطقة والخلايا متّفقان."
+   },
+   "action": {
+    "en": "At the next visit, compare the works boundary with the permit; keep watching the 3 cells.",
+    "ar": "في الزيارة القادمة: مقارنة حدود الأعمال بالترخيص، ومتابعة الخلايا الـ3."
+   },
+   "cells": [
+    552,
+    553,
+    554
+   ],
+   "ha_to_inspect": 5.1,
+   "carbon_at_stake": {
+    "t_c_median_low": 551,
+    "t_c_median_high": 551,
+    "t_c_range": [
+     403,
+     704
+    ]
+   },
+   "carbon_note": "upper bound: whole-cell area x 108 t C/ha"
+  },
+  {
+   "id": "R-25",
+   "stand": 25,
+   "priority": "monitor",
+   "status": "open",
+   "opened": "2024-11-08",
+   "likely_cause": {
+    "en": "Unknown: not yet checked on imagery",
+    "ar": "غير معروف: لم يُفحص بالصور بعد"
+   },
+   "confidence": {
+    "en": "low",
+    "ar": "منخفضة"
+   },
+   "confidence_basis": {
+    "en": "1 cell(s) below the 2020-21 baseline; one sensor, not yet checked.",
+    "ar": "1 خلية دون خط أساس 2020–2021؛ مصدر واحد ولم تُفحص بعد."
+   },
+   "action": {
+    "en": "Check the latest sub-metre image of cell 614 before sending anyone.",
+    "ar": "فحص أحدث صورة دون المتر للخلية 614 قبل إرسال أي شخص."
+   },
+   "cells": [
+    614
+   ],
+   "ha_to_inspect": 2.2,
+   "carbon_at_stake": {
+    "t_c_median_low": 238,
+    "t_c_median_high": 238,
+    "t_c_range": [
+     174,
+     304
+    ]
+   },
+   "carbon_note": "upper bound: whole-cell area x 108 t C/ha"
+  },
+  {
+   "id": "R-01",
+   "stand": 1,
+   "priority": "monitor",
+   "status": "open",
+   "opened": "2023-01-21",
+   "likely_cause": {
+    "en": "Unknown: not yet checked on imagery",
+    "ar": "غير معروف: لم يُفحص بالصور بعد"
+   },
+   "confidence": {
+    "en": "low",
+    "ar": "منخفضة"
+   },
+   "confidence_basis": {
+    "en": "1 cell(s) below the 2020-21 baseline; one sensor, not yet checked.",
+    "ar": "1 خلية دون خط أساس 2020–2021؛ مصدر واحد ولم تُفحص بعد."
+   },
+   "action": {
+    "en": "Check the latest sub-metre image of cell 13 before sending anyone.",
+    "ar": "فحص أحدث صورة دون المتر للخلية 13 قبل إرسال أي شخص."
+   },
+   "cells": [
+    13
+   ],
+   "ha_to_inspect": 1.3,
+   "carbon_at_stake": {
+    "t_c_median_low": 140,
+    "t_c_median_high": 140,
+    "t_c_range": [
+     103,
+     179
+    ]
+   },
+   "carbon_note": "upper bound: whole-cell area x 108 t C/ha"
+  },
+  {
+   "id": "R-10",
+   "stand": 10,
+   "priority": "monitor",
+   "status": "open",
+   "opened": "2024-10-29",
+   "likely_cause": {
+    "en": "Unknown: not yet checked on imagery",
+    "ar": "غير معروف: لم يُفحص بالصور بعد"
+   },
+   "confidence": {
+    "en": "low",
+    "ar": "منخفضة"
+   },
+   "confidence_basis": {
+    "en": "1 cell(s) below the 2020-21 baseline; one sensor, not yet checked.",
+    "ar": "1 خلية دون خط أساس 2020–2021؛ مصدر واحد ولم تُفحص بعد."
+   },
+   "action": {
+    "en": "Check the latest sub-metre image of cell 415 before sending anyone.",
+    "ar": "فحص أحدث صورة دون المتر للخلية 415 قبل إرسال أي شخص."
+   },
+   "cells": [
+    415
+   ],
+   "ha_to_inspect": 0.9,
+   "carbon_at_stake": {
+    "t_c_median_low": 97,
+    "t_c_median_high": 97,
+    "t_c_range": [
+     71,
+     124
+    ]
+   },
+   "carbon_note": "upper bound: whole-cell area x 108 t C/ha"
+  },
+  {
+   "id": "R-03",
+   "stand": 3,
+   "priority": "closed",
+   "status": "closed",
+   "opened": "2026-10-22",
+   "closed": "2026-10-26",
+   "likely_cause": {
+    "en": "Low tide in the image: the canopy was greener than in the previous ten images, so a tide effect, not a loss",
+    "ar": "مدّ منخفض في الصورة: كان الغطاء أكثر اخضراراً من الصور العشر السابقة، فهو أثر للمدّ لا خسارة"
+   },
+   "confidence": {
+    "en": "checked: no loss",
+    "ar": "فُحصت: لا خسارة"
+   },
+   "confidence_basis": {
+    "en": "Checked by a person on the image data.",
+    "ar": "فحصها شخص على بيانات الصورة."
+   },
+   "action": {
+    "en": "None. Closed with the reason recorded.",
+    "ar": "لا شيء. أُغلقت مع تسجيل السبب."
+   },
+   "cells": [],
+   "ha_to_inspect": 0,
+   "carbon_at_stake": null
+  }
+ ]
+}

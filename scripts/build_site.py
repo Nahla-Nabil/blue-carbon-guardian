@@ -29,7 +29,7 @@ T = {
     "tag_by": ("by Nahla Nabil · Bahrain", "إعداد نهلة نبيل · البحرين"),
     "cta_mon": ("Open the monitor", "افتح لوحة المراقبة"), "cta_video": ("Demo video", "فيديو العرض"), "cta_slides": ("Slides (PDF)", "العرض التقديمي (PDF)"),
     "k1": ("real mangrove losses caught, confirmed on 0.3–0.5 m imagery", "حالات فقدان حقيقية للقرم رُصدت وتأكدت بصور دقتها 0.3–0.5 متر"),
-    "k2": ("fewer false alarms than the textbook NDVI approach", "إنذارات كاذبة أقل من طريقة NDVI التقليدية"),
+    "k2": ("fewer false alarms than NDVI alone", "إنذارات كاذبة أقل من NDVI وحده"),
     "k3": ("partial loss caught within 60 days (13 % by chance)", "نسبة رصد الخسارة الجزئية خلال 60 يوماً (13% بالصدفة)"),
     "k4": ("carbon stock in the pilot area", "مخزون الكربون في منطقة التجربة"),
     # monitor
@@ -44,9 +44,22 @@ T = {
                "<b>الإنذار</b> = انخفاض حديث دون ما يتوقعه النموذج وفق المدّ والموسم والاتجاه العام (قاعدة مشتركة للمنطقة والخلايا). <b>الحالة</b> = آخر 12 شهراً مقارنةً بخط أساس المنطقة نفسها لعامي 2020–2021. خلية حمراء داخل منطقة زرقاء تعني: المنطقة سليمة في المتوسط، لكن افحص هذا الجزء."),
     "mon_note": ("Alert rule: stand average ≤ −1.5σ OR any 200 m cell ≤ −3.5σ (about one false-alarm episode per stand-year). Condition and alert are screening results, not field verification. Contains modified Copernicus Sentinel data 2020–2026.",
                  "قاعدة الإنذار: متوسط المنطقة ≤ −1.5σ أو أي خلية ≤ −3.5σ (نحو إنذار كاذب واحد لكل منطقة سنوياً). الحالة والإنذار نتائج فرز أولي، وليست تحققاً ميدانياً. يتضمن بيانات Copernicus Sentinel معدّلة 2020–2026."),
+    # risk register (added after expert feedback from the Bahrain Space Agency, 26 Oct 2026)
+    "nav_risk": ("Risks", "المخاطر"),
+    "risk_k": ("Risk register · ranked by priority", "سجل المخاطر · مرتّب حسب الأولوية"), "risk_h": ("What to inspect first", "ماذا نفتّش أولاً"),
+    "risk_lede": ("Every flag becomes a case with a date, a likely cause, a confidence level and an action for the inspector. A case stays open until a person checks it and closes it with a reason.",
+                  "كل تنبيه يصبح ملفاً له تاريخ وسبب محتمل ومستوى ثقة وإجراء للمفتش. ويبقى الملف مفتوحاً حتى يفحصه شخص ويغلقه مع ذكر السبب."),
+    "risk_rule": ("<b>Urgent</b>: loss confirmed on sub-metre imagery and ≥ 10 ha of cells to inspect. <b>Monitor</b>: a smaller confirmed loss, or cells nobody has checked yet. <b>Closed</b>: checked, with the reason recorded. Carbon at stake = area × 108 t C/ha (upper bound where whole cells are counted). Prioritisation added after expert evaluation and feedback from the Bahrain Space Agency.",
+                  "<b>عاجل</b>: خسارة مؤكدة بصور دون المتر و10 هكتارات أو أكثر من الخلايا للتفتيش. <b>للمتابعة</b>: خسارة مؤكدة أصغر، أو خلايا لم يفحصها أحد بعد. <b>مغلق</b>: فُحص وسُجّل السبب. الكربون المعرّض للخطر = المساحة × 108 طن/هكتار (حدّ أعلى حين تُحسب الخلايا كاملة). أُضيف ترتيب الأولويات بعد تقييم وملاحظات خبراء وكالة البحرين للفضاء."),
+    # expert evaluation (Bahrain Space Agency official statement, approved for use 26 Oct 2026)
+    "bsa_k": ("Expert Evaluation and Feedback", "تقييم وملاحظات الخبراء"), "bsa_h": ("Bahrain Space Agency", "وكالة البحرين للفضاء"),
+    "bsa_q": ("“The Bahrain Space Agency commends Ms. Nahla Nabil for presenting Blue Carbon Guardian, an innovative project using Earth Observation data to monitor regional mangrove ecosystems. The Agency provided specialised assessment and technical feedback, reaffirming its commitment to supporting research and innovation that advance Bahrain's environmental objectives and sustainability goals.”",
+              "«تشيد وكالة البحرين للفضاء بالآنسة نهلة نبيل لتقديمها مشروع Blue Carbon Guardian، والذي يوظف بيانات رصد الأرض بشكل مبتكر لمراقبة النظم البيئية لأشجار القرم على مستوى المنطقة. وقد قدمت الوكالة تقييماً متخصصاً وملاحظات فنية، تأكيداً على دورها في دعم المبادرات البحثية والابتكارات التقنية التي تسهم في تحقيق الأهداف البيئية وتعزيز الاستدامة في مملكة البحرين.»"),
+    "bsa_n": ("Official statement of the Bahrain Space Agency. Bahrain has pledged to quadruple its mangroves by 2035; its stands are smaller than Abu Dhabi's, so monitoring them needs higher-resolution imagery than open 10 m data provides.",
+              "بيان رسمي من وكالة البحرين للفضاء. وقد تعهّدت البحرين بمضاعفة أشجار القرم أربع مرات بحلول 2035؛ ومناطقها أصغر من مناطق أبوظبي، لذا تحتاج مراقبتها إلى صور أعلى دقة مما توفّره البيانات المفتوحة بدقة 10 أمتار."),
     # how
     "how_k": ("How it works", "كيف يعمل"), "how_h": ("From satellite pixels to an inspection decision", "من بكسلات القمر الصناعي إلى قرار التفتيش"),
-    "how_lede": ("On Gulf tidal flats the tide, not the trees, drives most of the change in a satellite index. A naive monitor raises a false alarm at every high tide. We model the tide out first.",
+    "how_lede": ("On Gulf tidal flats the tide, not the trees, drives most of the change in a satellite index. A simple monitor raises a false alarm at every high tide. We model the tide out first.",
                  "على السواحل المدّية في الخليج، يسبّب المدُّ معظمَ التغيّر في مؤشرات الأقمار الصناعية، لا الأشجار نفسها. والمراقبة البسيطة تطلق إنذاراً كاذباً مع كل مدّ مرتفع، لذلك نعزل أثر المدّ أولاً."),
     "s1h": ("Stands &amp; cells", "المناطق والخلايا"), "s1p": ("WorldCover 2021 mangrove patches ≥ 3 ha, cut into 200 m cells; interior pixels only.", "بقع القرم من WorldCover 2021 (≥ 3 هكتارات)، مقسّمة إلى خلايا 200 متر، مع البكسلات الداخلية فقط."),
     "s2h": ("Sentinel-2 series", "سلسلة Sentinel-2"), "s2p": ("778 dates 2020–26, read in place from the cloud: NDVI, red edge, SWIR moisture, wetness.", "778 تاريخاً بين 2020 و2026 تُقرأ مباشرة من السحابة: الاخضرار، والحافة الحمراء، والرطوبة، ومؤشر الغمر."),
@@ -54,8 +67,8 @@ T = {
     "s4h": ("Alert &amp; condition", "الإنذار والحالة"), "s4p": ("Stand ≤ −1.5σ OR any cell ≤ −3.5σ; condition = last 12 months vs 2020–21.", "المنطقة ≤ −1.5σ أو أي خلية ≤ −3.5σ؛ والحالة = آخر 12 شهراً مقارنةً بـ2020–2021."),
     "s5h": ("Decision", "القرار"), "s5p": ("Cell map, carbon at stake, dashboard, site reports, alert API (concept).", "خريطة الخلايا، والكربون المعرّض للخطر، ولوحة المراقبة، وتقارير المواقع، وواجهة إنذار (مفهوم)."),
     "noise_h": ("Noise removed by the tide model", "الضجيج الذي يزيله نموذج المدّ"), "noise_n": ("Robust residual noise, 25 stands, 2020–2026", "الضجيج المتبقي، 25 منطقة، 2020–2026"),
-    "textbook": ("<b>Against the textbook approach</b> (NDVI only, no tide model), same alert rule, same stands: <b>1.61</b> false alarms per stand-year vs <b>0.96</b> for ours, 40 % fewer.",
-                 "<b>مقارنةً بالطريقة التقليدية</b> (NDVI فقط دون نموذج المدّ)، بنفس قاعدة الإنذار ونفس المناطق: <b>1.61</b> إنذار كاذب لكل منطقة سنوياً مقابل <b>0.96</b> لنظامنا، أي أقل بنسبة 40%."),
+    "textbook": ("<b>Against NDVI alone</b> (no tide model), same alert rule, same stands: <b>1.61</b> false alarms per stand-year vs <b>0.96</b> for ours, 40 % fewer.",
+                 "<b>مقارنةً بـNDVI وحده</b> (دون نموذج المدّ)، بنفس قاعدة الإنذار ونفس المناطق: <b>1.61</b> إنذار كاذب لكل منطقة سنوياً مقابل <b>0.96</b> لنظامنا، أي أقل بنسبة 40%."),
     "cells_h": ("Why cells matter", "لماذا الخلايا مهمة"),
     "cells_p": ("A stand average hides a partial loss. Stand 9 reads <b>“stable”</b> on average while <b>8 of its 28 cells</b> are in severe decline. <b>3 of the 5</b> real conversions were found <b>only</b> at cell level.",
                 "متوسط المنطقة يُخفي الخسارة الجزئية. فالمنطقة 9 تبدو <b>«مستقرة»</b> في المتوسط، بينما <b>8 من خلاياها الـ28</b> في تراجع حاد. و<b>3 من الحالات الخمس</b> الحقيقية لم تُرصد <b>إلا</b> على مستوى الخلايا."),
@@ -133,8 +146,8 @@ T = {
     "a6": ("Free Sentinel-2 imagery for monitoring, EnMAP hyperspectral as an independent check, ESA WorldCover for outlines, and published field plots for carbon. Every index we use sits inside Satellite 813's ~400–1700 nm range, so 813 can explain what a flagged cell became. We simulated its band range with EnMAP: the stand-5 loss still reads as sand and fill (97 % of converted pixels, 0.4 % of intact ones). Real 813 scenes are the next step.",
            "صور Sentinel-2 المجانية للمراقبة، وبيانات EnMAP فائقة الطيف للتحقق المستقل، وESA WorldCover لحدود المناطق، وقياسات ميدانية منشورة للكربون. وكل المؤشرات المستخدمة تقع ضمن نطاق القمر 813 (نحو 400–1700 نانومتر)، فيمكنه تفسير ما آلت إليه الخلية المنبَّه عليها. وقد حاكينا نطاقاته باستخدام EnMAP: فبقيت خسارة المنطقة 5 تُقرأ رملاً وردماً (97% من البكسلات المُزالة، و0.4% فقط من السليمة). والخطوة التالية صور 813 حقيقية."),
     "q7": ("Does it work in Bahrain?", "هل يعمل في البحرين؟"),
-    "a7": ("Not yet at 10 m: most of Bahrain's mangrove patches are under 4 hectares, too small for Sentinel-2 pixels. That needs very-high-resolution imagery (a few metres or finer). Satellite 813, at 20 m, adds spectral detail rather than spatial detail, so for Bahrain it would explain what changed, not find smaller patches.",
-           "ليس بعد بدقة 10 أمتار: فمعظم بقع القرم في البحرين أصغر من 4 هكتارات، أي أصغر من أن تلتقطها بكسلات Sentinel-2. ويتطلب ذلك صوراً عالية الدقة جداً (بضعة أمتار أو أقل). أما القمر 813 فدقته 20 متراً، ويضيف تفاصيل طيفية لا مكانية، أي أنه يفسّر ما الذي تغيّر، لكنه لا يرصد البقع الأصغر."),
+    "a7": ("Bahrain has pledged to quadruple its mangroves by 2035, so the need is real. But not yet at 10 m: most of Bahrain's mangrove patches are under 4 hectares, too small for Sentinel-2 pixels. That needs very-high-resolution imagery (a few metres or finer). Satellite 813, at 20 m, adds spectral detail rather than spatial detail, so for Bahrain it would explain what changed, not find smaller patches.",
+           "تعهّدت البحرين بمضاعفة أشجار القرم أربع مرات بحلول 2035، فالحاجة حقيقية. لكن ليس بعد بدقة 10 أمتار: فمعظم بقع القرم في البحرين أصغر من 4 هكتارات، أي أصغر من أن تلتقطها بكسلات Sentinel-2. ويتطلب ذلك صوراً عالية الدقة جداً (بضعة أمتار أو أقل). أما القمر 813 فدقته 20 متراً، ويضيف تفاصيل طيفية لا مكانية، أي أنه يفسّر ما الذي تغيّر، لكنه لا يرصد البقع الأصغر."),
     "q8": ("Can I check or reproduce the results?", "هل يمكنني التحقق من النتائج أو إعادة إنتاجها؟"),
     "a8": ("Yes. The code, notebook, example input and outputs are public under the MIT licence; the notebook re-runs end to end in about 24 seconds on a clean machine with the same numbers.",
            "نعم. الكود والدفتر البرمجي والمدخلات والمخرجات النموذجية منشورة للعموم بترخيص MIT، ويُعاد تشغيل الدفتر كاملاً في نحو 24 ثانية على جهاز جديد بالأرقام نفسها."),
@@ -156,7 +169,9 @@ DYN = {
            "th": ["Stand", "Area (ha)", "Condition", "NDVI change", "Cells in decline", "Alert episodes 2022–26", "Carbon (kt C)"],
            "raw": "raw", "tide": "tide model", "chance": "by chance",
            "sim": [["A tenth of a stand loses half its canopy", "within 60 days"], ["A whole stand loses 10 % of its canopy", "within 6 months"], ["A whole stand loses 20 % of its canopy", "within 6 months"]],
-           "locale": "en-GB", "theme_l": "Light", "theme_d": "Dark"},
+           "locale": "en-GB", "theme_l": "Light", "theme_d": "Dark",
+           "urgent": "Urgent", "monitor": "Monitor", "closed": "Closed", "opened": "Open since", "closedon": "Closed on", "cause": "Likely cause",
+           "conf": "Confidence", "action": "Inspector action", "toinsp": "to inspect", "atstake": "carbon at stake", "upto": "up to", "view": "View on the map"},
     "ar": {"stand": "المنطقة", "stable": "مستقر", "improving": "في تحسّن", "decline": "تراجع", "severe decline": "تراجع حاد",
            "noalert": "لا إنذار نشط.", "alertnow": "إنذار نشط الآن.", "eps": "فترات إنذار 2022–2026 (قاعدة المنطقة + الخلايا).",
            "area": "مساحة المنطقة", "stock": "مخزون الكربون", "ndvi": "NDVI، آخر 12 شهراً مقابل 2020–2021", "of": "من", "cells": "خلية", "indecl": "في تراجع",
@@ -165,7 +180,9 @@ DYN = {
            "th": ["المنطقة", "المساحة (هكتار)", "الحالة", "تغيّر NDVI", "خلايا في تراجع", "فترات الإنذار 2022–26", "الكربون (ألف طن)"],
            "raw": "دون تصحيح", "tide": "مع نموذج المدّ", "chance": "بالصدفة",
            "sim": [["عُشر المنطقة يفقد نصف غطائه", "خلال 60 يوماً"], ["المنطقة كلها تفقد 10% من غطائها", "خلال 6 أشهر"], ["المنطقة كلها تفقد 20% من غطائها", "خلال 6 أشهر"]],
-           "locale": "ar-u-nu-latn", "theme_l": "فاتح", "theme_d": "داكن"},
+           "locale": "ar-u-nu-latn", "theme_l": "فاتح", "theme_d": "داكن",
+           "urgent": "عاجل", "monitor": "للمتابعة", "closed": "مغلق", "opened": "مفتوح منذ", "closedon": "أُغلق في", "cause": "السبب المحتمل",
+           "conf": "مستوى الثقة", "action": "إجراء المفتش", "toinsp": "للتفتيش", "atstake": "كربون معرّض للخطر", "upto": "حتى", "view": "اعرضها على الخريطة"},
 }
 
 PAGE = r"""<!doctype html>
@@ -283,6 +300,17 @@ figure img{width:100%;border-radius:10px;display:block}
 .faq summary:after{content:"+";font-size:24px;color:var(--accent);transition:transform .25s;flex:none}
 .faq details[open] summary:after{transform:rotate(45deg)}
 .faq details p{padding:0 0 18px;color:var(--muted);font-size:15.5px}
+/* risk register */
+.riskcount{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.riskcount span{padding:6px 14px;border-radius:999px;font-weight:700;font-size:14px;color:#fff}
+.risks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.risk{border-inline-start:6px solid var(--line);cursor:pointer}
+.risk.urgent{border-inline-start-color:#FF4D6D}.risk.monitor{border-inline-start-color:#FFB020}.risk.closed{border-inline-start-color:#2E9E6B;opacity:.85}
+.risk h4{font-size:18px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.risk dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13.5px;margin-top:10px}
+.risk dt{color:var(--muted);white-space:nowrap}.risk dd{margin:0;color:var(--ink)}
+.risk .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+@media(max-width:900px){.risks{grid-template-columns:1fr}}
 footer{background:#030B26;color:#BFDFFF;padding:46px 0;font-size:14px}
 footer a{color:#fff}
 /* scroll reveal */
@@ -296,7 +324,7 @@ footer a{color:#fff}
 <body>
 <nav><div class="wrap">
   <a class="brand" href="#top"><svg width="26" height="26" viewBox="0 0 240 240"><circle cx="120" cy="120" r="104" fill="none" stroke="#7FD3FF" stroke-width="14"/><path d="M120 52 C 160 80 168 128 120 170 C 72 128 80 80 120 52 Z" fill="none" stroke="#fff" stroke-width="14"/></svg><span data-i18n="title"></span></a>
-  <a class="l" href="#monitor" data-i18n="nav_mon"></a><a class="l" href="#how" data-i18n="nav_how"></a><a class="l" href="#events" data-i18n="nav_ev"></a><a class="l" href="#validation" data-i18n="nav_val"></a><a class="l" href="#carbon" data-i18n="nav_carbon"></a><a class="l" href="#faq" data-i18n="nav_faq"></a>
+  <a class="l" href="#monitor" data-i18n="nav_mon"></a><a class="l" href="#risks" data-i18n="nav_risk"></a><a class="l" href="#how" data-i18n="nav_how"></a><a class="l" href="#events" data-i18n="nav_ev"></a><a class="l" href="#validation" data-i18n="nav_val"></a><a class="l" href="#carbon" data-i18n="nav_carbon"></a><a class="l" href="#faq" data-i18n="nav_faq"></a>
   <button class="tog" id="langBtn" aria-label="Switch language"><span id="langLbl">العربية</span></button>
   <button class="tog" id="themeBtn" aria-label="Switch light / dark theme"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
   <a class="tog" href="https://github.com/Nahla-Nabil/blue-carbon-guardian" aria-label="GitHub">GitHub ↗</a>
@@ -333,7 +361,14 @@ footer a{color:#fff}
   </div>
   <div class="tablewrap reveal"><table id="tbl"><thead><tr><th data-k="stand"></th><th data-k="area_ha"></th><th data-k="condition"></th><th data-k="ndvi_change_pct"></th><th data-k="cells_bad"></th><th data-k="alerts_2022_2026"></th><th data-k="stock_tC_p50"></th></tr></thead><tbody></tbody></table></div>
   <p class="note" style="margin-top:10px" data-i18n="mon_note"></p>
-  <p class="note" style="margin-top:6px"><span data-i18n="feed"></span> <a href="api/v1/alerts.json" dir="ltr">api/v1/alerts.json</a> · <a href="api/v1/stands.json" dir="ltr">api/v1/stands.json</a></p>
+  <p class="note" style="margin-top:6px"><span data-i18n="feed"></span> <a href="api/v1/alerts.json" dir="ltr">api/v1/alerts.json</a> · <a href="api/v1/stands.json" dir="ltr">api/v1/stands.json</a> · <a href="api/v1/risks.json" dir="ltr">api/v1/risks.json</a></p>
+</div></section>
+
+<section id="risks" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="reveal"><div class="k" data-i18n="risk_k"></div><h2 data-i18n="risk_h"></h2><p class="lede" data-i18n="risk_lede"></p></div>
+  <div class="riskcount reveal" id="riskcount"></div>
+  <div class="risks" id="risklist"></div>
+  <p class="note" style="margin-top:12px" data-i18n="risk_rule"></p>
 </div></section>
 
 <section class="alt" id="how"><div class="wrap">
@@ -425,6 +460,15 @@ footer a{color:#fff}
   </div>
 </div></section>
 
+<section id="expert" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="card reveal" style="display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start">
+    <div style="font:700 84px/0.8 Georgia,serif;color:#CE1126">&ldquo;</div>
+    <div><div class="k" data-i18n="bsa_k"></div><h2 style="font-size:28px" data-i18n="bsa_h"></h2>
+      <p style="font-size:17px;font-style:italic;margin-top:6px" data-i18n="bsa_q"></p>
+      <p class="note" style="margin-top:10px" data-i18n="bsa_n"></p></div>
+  </div>
+</div></section>
+
 <section class="alt" id="faq"><div class="wrap">
   <div class="reveal"><div class="k" data-i18n="faq_k"></div><h2 data-i18n="faq_h"></h2></div>
   <div class="faq">__FAQ__</div>
@@ -437,7 +481,7 @@ footer a{color:#fff}
 </div></footer>
 
 <script>
-const D = __DATA__, REPORTS = __REPORTS__, TXT = __TXT__, DYN = __DYN__;
+const D = __DATA__, REPORTS = __REPORTS__, TXT = __TXT__, DYN = __DYN__, RISKS = __RISKS__;
 let LANG = document.documentElement.lang === "ar" ? "ar" : "en";
 const fillLast = () => { const el = document.getElementById("lastobs"); if (el) el.textContent = new Date(D.kpi.last_obs).toLocaleDateString(DYN[LANG].locale, {month: "long", year: "numeric"}); };
 const L = k => DYN[LANG][k];
@@ -454,7 +498,24 @@ function applyLang() {
   document.getElementById("langLbl").textContent = LANG === "ar" ? "English" : "العربية";
   document.title = LANG === "ar" ? "حارس الكربون الأزرق" : "Blue Carbon Guardian";
   document.querySelectorAll("#tbl th").forEach((th, i) => th.textContent = L("th")[i]);
-  fillLast(); drawStatic(); drawTable(); select(sel);
+  fillLast(); drawStatic(); drawTable(); drawRisks(); select(sel);
+}
+// ---------- risk register (ranked cases that stay open until a person closes them) ----------
+const PCOL = {urgent: "#FF4D6D", monitor: "#FFB020", closed: "#2E9E6B"};
+function drawRisks() {
+  const lang = LANG === "ar" ? "ar" : "en", fmt = d => new Date(d).toLocaleDateString(L("locale"), {day: "numeric", month: "short", year: "numeric"});
+  document.getElementById("riskcount").innerHTML = ["urgent", "monitor", "closed"].map(p => `<span style="background:${PCOL[p]}">${RISKS.counts[p]} · ${L(p)}</span>`).join("");
+  document.getElementById("risklist").innerHTML = RISKS.risks.map(r => {
+    const c = r.carbon_at_stake, kt = v => (v / 1000).toFixed(1);
+    const carb = c ? `<span class="pill" dir="ltr">${r.stand === 5 ? "" : L("upto") + " "}${c.t_c_median_low === c.t_c_median_high ? kt(c.t_c_median_high) : kt(c.t_c_median_low) + "–" + kt(c.t_c_median_high)} kt C ${L("atstake")}</span>` : "";
+    return `<div class="card lift risk ${r.priority}" data-k="${r.stand}">
+      <h4><span>${r.id} · ${L("stand")} ${r.stand}</span><span class="badge" style="background:${PCOL[r.priority]};font-size:12px">${L(r.priority)}</span></h4>
+      <dl><dt>${r.status === "closed" ? L("closedon") : L("opened")}</dt><dd dir="ltr" style="text-align:start">${fmt(r.status === "closed" ? r.closed : r.opened)}</dd>
+        <dt>${L("cause")}</dt><dd>${r.likely_cause[lang]}</dd>
+        <dt>${L("conf")}</dt><dd><b>${r.confidence[lang]}</b> · <span class="note">${r.confidence_basis[lang]}</span></dd>
+        <dt>${L("action")}</dt><dd>${r.action[lang]}</dd></dl>
+      <div class="meta">${r.ha_to_inspect ? `<span class="pill" dir="ltr">${r.ha_to_inspect} ha ${L("toinsp")}</span>` : ""}${carb}</div></div>`; }).join("");
+  document.querySelectorAll(".risk").forEach(el => el.onclick = () => { select(+el.dataset.k); document.getElementById("monitor").scrollIntoView({behavior: "smooth"}); });
 }
 document.getElementById("langBtn").onclick = () => { LANG = LANG === "ar" ? "en" : "ar"; try { localStorage.setItem("bcg-lang", LANG) } catch (e) {} applyLang(); };
 document.getElementById("themeBtn").onclick = () => { const t = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -566,7 +627,8 @@ html = re.sub(r'(data-i18n="(\w+)"[^>]*>)(</)', lambda m: m.group(1) + T[m.group
 missing = set(re.findall(r'data-i18n="(\w+)"', html)) - set(T)
 assert not missing, missing
 html = (html.replace("__DATA__", json.dumps(data, separators=(",", ":"))).replace("__REPORTS__", json.dumps(REPORTS))
-            .replace("__TXT__", json.dumps(T, ensure_ascii=False, separators=(",", ":"))).replace("__DYN__", json.dumps(DYN, ensure_ascii=False, separators=(",", ":"))))
+            .replace("__TXT__", json.dumps(T, ensure_ascii=False, separators=(",", ":"))).replace("__DYN__", json.dumps(DYN, ensure_ascii=False, separators=(",", ":")))
+            .replace("__RISKS__", json.dumps(json.load(open(ROOT / "analysis/data/risk_register.json", encoding="utf-8")), ensure_ascii=False, separators=(",", ":"))))
 (ROOT / "docs/index.html").write_text(html, encoding="utf-8")
 (ROOT / "docs/.nojekyll").write_text("", encoding="utf-8")
 print("docs/index.html", round(len(html) / 1024), "KB; reports for stands", REPORTS)
