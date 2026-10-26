@@ -78,7 +78,7 @@ The product, open in any browser with nothing to install (hosted on GitHub Pages
 ---
 
 ## 🎤 Final pitch deck (final judging, October 2026)
-An 8-minute pitch built around the final judging criteria, with the team overview first and a live demo of the website early in the talk.
+An 8-minute pitch (24 presented slides) built around the final judging criteria, with the team overview first and a live demo of the website early in the talk.
 
 | File | What it is |
 |---|---|
@@ -87,12 +87,12 @@ An 8-minute pitch built around the final judging criteria, with the team overvie
 
 | Final judging criterion (points) | Slides |
 |---|---|
-| Problem Relevance & Potential Impact (20) | 3 (problem and what we solve), 5 (users and their decisions), 10 (how a user receives an alert), 16 (carbon at stake and business) |
-| Scientific & Technical Validity (25) | 7 (EnMAP hyperspectral check), 11 (tide model; 40 % fewer false alarms than NDVI alone), 14 (five real events on dated sub-metre imagery), 15 (rates against chance, 65 unseen stands, what we do not claim); backups 20–21 |
-| Innovation & Differentiation (20) | 11 (tide-aware model), 12 (200 m cells), 13 (comparison with what exists today) |
-| Quality of Implementation (20) | 4 (live demo of the monitor), 9 (the method as a workflow), 10 (delivery to the user) |
-| Documentation & Evidence (10) | 17 (public code, 24-second re-run, clean-machine test, every number traceable) |
-| Development Potential (5) | 8 (ready for Satellite 813, simulated band range), 17 (proven now, incubation, scale) |
+| Problem Relevance & Potential Impact (20) | 3 (problem and what we solve), 5 (users and their decisions), 10 (how a user receives an alert), 18 (carbon at stake and business), 20 (why it matters in the region: UAE, Saudi and Bahrain pledges) |
+| Scientific & Technical Validity (25) | 7 (EnMAP hyperspectral check), 12 (tide model; 40 % fewer false alarms than NDVI alone), 14 (how the numbers are made: equations), 16 (five real events on dated sub-metre imagery), 17 (rates against chance, 65 unseen stands); backups 25–26 |
+| Innovation & Differentiation (20) | 12 (tide-aware model), 13 (200 m cells), 15 (comparison with what exists today) |
+| Quality of Implementation (20) | 4 (live demo of the monitor), 9 (the method as a workflow), 10 (delivery to the user), 11 (risk register: ranked cases), 21 (the live website today) |
+| Documentation & Evidence (10) | 14 (equations), 19 (public code, 24-second re-run, clean-machine test, every number traceable); sources in the slide footers |
+| Development Potential (5) | 8 (ready for Satellite 813, simulated band range), 19 (proven now, incubation, scale), 20 (tested in Abu Dhabi and Saudi Arabia, Bahrain next), 23 (Bahrain Space Agency expert evaluation, potential adopters in Bahrain) |
 | Team overview | 2 (roles, responsibilities and relevant experience) |
 
 
@@ -104,7 +104,7 @@ An 8-minute pitch built around the final judging criteria, with the team overvie
 |---|---|---|
 | 🌍 **Problem Relevance & Potential Impact (20)** | UAE and Saudi pledges of 100 M mangroves each by 2030 and the Gulf's first mangrove monitoring guide (Feb 2026), but monitoring is periodic; three users with a concrete decision each; carbon at stake per stand | ≈ 247 kt C in the pilot area; SDG 13, 14, 15 ([§1](#1-business-use-case), [§2](#2-the-problem)) |
 | 🧪 **Scientific & Technical Validity (25)** | Every detection rate is quoted **with its chance rate**; thresholds frozen and tested on stands the model never saw; real events confirmed on dated sub-metre imagery; a second sensor (EnMAP) agrees; one of our own early claims withdrawn | 73 % vs 13 % by chance; 0.79 false alarms per stand-year on 65 unseen stands; 5 conversions confirmed; EnMAP r = 0.84–0.99 ([§8](#8-results-and-limitations)) |
-| 💡 **Innovation & Differentiation (20)** | A **tide-aware** monitor: on Gulf tidal flats the tide, not the trees, drives most index noise, so we model it out. A **200 m cell** trigger finds partial losses that stand averages hide | 29–35 % less noise; 40 % fewer false alarms than the textbook NDVI-only approach; 3 of the 5 real losses seen **only** by cells |
+| 💡 **Innovation & Differentiation (20)** | A **tide-aware** monitor: on Gulf tidal flats the tide, not the trees, drives most index noise, so we model it out. A **200 m cell** trigger finds partial losses that stand averages hide | 29–35 % less noise; 40 % fewer false alarms than the NDVI-alone NDVI-only approach; 3 of the 5 real losses seen **only** by cells |
 | 🛠️ **Quality of Implementation (20)** | A working product: live website with an interactive monitor, automatic site reports, alert API concept, a notebook that runs offline in about 25 s | [live website](https://nahla-nabil.github.io/blue-carbon-guardian/), [`reports/`](reports/), [`docs/api_alert_concept.md`](docs/api_alert_concept.md), [notebook](notebooks/01_blue_carbon_guardian.ipynb) |
 | 📚 **Documentation & Evidence (10)** | Public code (MIT), pinned requirements, example input and output, a written summary behind every number, data provenance and licences | [`analysis/README.md`](analysis/README.md), [§3](#3-data-used), [§5–7](#5-installation); clean-machine test: same numbers, 0 errors |
 | 🚀 **Development Potential (5)** | Ready for Satellite 813 (Sentinel-2 says when, 813 says what), gIQ deployment and a pilot customer in incubation; transferred unchanged to a second country | 91 stands in Abu Dhabi and Saudi Tarut Bay; compute < USD 5 per site per year; [`docs/business_plan_draft.md`](docs/business_plan_draft.md) |
@@ -264,7 +264,7 @@ Full pipeline from the satellite archive (needs internet; about 20-60 min per Se
 | What we measured | Result | How it was validated |
 |---|---|---|
 | Noise reduction from the tide model | **29-35 %** on every index | robust residuals, 25 stands, 2020-2026 |
-| Against the textbook approach (NDVI only, no tide model), same alert rule | **0.96** vs **1.61** false alarms per stand-year (40 % fewer) | 20 stands without known change, 93.9 stand-years ([`analysis/35`](analysis/35_textbook_baseline.md)) |
+| Against NDVI alone (no tide model), same alert rule | **0.96** vs **1.61** false alarms per stand-year (40 % fewer) | 20 stands without known change, 93.9 stand-years ([`analysis/35`](analysis/35_textbook_baseline.md)) |
 | Real conversions inside our stands | **5** (stands 5, 9, 12, 18, 6), all coastal developments | dated WorldView-2/3 and Legion-1 captures (0.3-0.5 m); the alert began between the last undisturbed and the first disturbed capture at every site |
 | Found only by the 200 m cells | **3 of 5** | the stand averages still read "stable" |
 | Partial loss (a tenth of a stand losing half its canopy) caught within 60 days | **73 %**, against **13 %** by chance | semi-synthetic backtest with a no-loss null ([`analysis/29`](analysis/29_cell_trigger.md)) |
