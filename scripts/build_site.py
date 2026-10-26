@@ -51,6 +51,24 @@ T = {
                   "كل تنبيه يصبح ملفاً له تاريخ وسبب محتمل ومستوى ثقة وإجراء للمفتش. ويبقى الملف مفتوحاً حتى يفحصه شخص ويغلقه مع ذكر السبب."),
     "risk_rule": ("<b>Urgent</b>: loss confirmed on sub-metre imagery and ≥ 10 ha of cells to inspect. <b>Monitor</b>: a smaller confirmed loss, or cells nobody has checked yet. <b>Closed</b>: checked, with the reason recorded. Carbon at stake = area × 108 t C/ha (upper bound where whole cells are counted). Prioritisation added after expert evaluation and feedback from the Bahrain Space Agency.",
                   "<b>عاجل</b>: خسارة مؤكدة بصور دون المتر و10 هكتارات أو أكثر من الخلايا للتفتيش. <b>للمتابعة</b>: خسارة مؤكدة أصغر، أو خلايا لم يفحصها أحد بعد. <b>مغلق</b>: فُحص وسُجّل السبب. الكربون المعرّض للخطر = المساحة × 108 طن/هكتار (حدّ أعلى حين تُحسب الخلايا كاملة). أُضيف ترتيب الأولويات بعد تقييم وملاحظات خبراء وكالة البحرين للفضاء."),
+    # regional context (why it matters): pledges, area, pressure, market; every figure sourced below the cards
+    "nav_reg": ("Region", "المنطقة"),
+    "reg_k": ("Why it matters in the region", "لماذا يهمّ في المنطقة"), "reg_h": ("Big national pledges, and a coast that is changing fast", "تعهّدات وطنية كبيرة، وساحل يتغيّر بسرعة"),
+    "reg_lede": ("Gulf states have committed to planting hundreds of millions of mangroves while their coasts are being developed. Both need a way to see, every few days, where mangroves are holding and where they are being lost.",
+                 "التزمت دول الخليج بزراعة مئات الملايين من أشجار القرم، في الوقت الذي تتطوّر فيه سواحلها. وكلا الأمرين يحتاج إلى وسيلة ترى كل بضعة أيام أين يصمد القرم وأين يُفقد."),
+    "ae_n": ("UAE", "الإمارات"), "ae_p": ("mangroves by 2030 (Ministry of Climate Change and Environment, COP26, 2021). Abu Dhabi Mangrove Initiative (EAD, 2022) and the first GCC mangrove monitoring guide (EAD with IUCN, Feb 2026).",
+                                       "شجرة قرم بحلول 2030 (وزارة التغيّر المناخي والبيئة، COP26، 2021). ومبادرة أبوظبي للقرم (هيئة البيئة – أبوظبي، 2022)، وأول دليل خليجي لمراقبة القرم (هيئة البيئة مع IUCN، فبراير 2026)."),
+    "sa_n": ("Saudi Arabia", "السعودية"), "sa_p": ("mangroves by 2030 (Saudi Green Initiative). Red Sea Global alone aims for 50 million by 2030.",
+                                                 "شجرة قرم بحلول 2030 (مبادرة السعودية الخضراء). وتستهدف البحر الأحمر الدولية وحدها 50 مليوناً بحلول 2030."),
+    "bh_n": ("Bahrain", "البحرين"), "bh_p": ("its mangroves by 2035, pledged at COP26 (2021) on the path to net zero by 2060. Its stands are small, so they need higher-resolution imagery.",
+                                            "مضاعفة القرم أربع مرات بحلول 2035، تعهّد في COP26 (2021) ضمن مسار الحياد الكربوني بحلول 2060. ومناطقها صغيرة، فتحتاج صوراً أعلى دقة."),
+    "ar_n": ("Arab region", "المنطقة العربية"), "ar_p": ("km² of mangrove on the Gulf (≈ 165) and Red Sea (≈ 200) coasts, and monitoring is still “uneven” (Frontiers in Marine Science, 2025).",
+                                                       "كم² من القرم على سواحل الخليج (≈ 165) والبحر الأحمر (≈ 200)، والمراقبة ما زالت «غير منتظمة» (Frontiers in Marine Science، 2025)."),
+    "pr1": ("of our 25 pilot stands lost part of their mangrove to coastal development between 2022 and 2025, each confirmed on sub-metre imagery (our own result).",
+            "من مناطقنا التجريبية الـ25 فقدت جزءاً من قرمها لصالح التطوير الساحلي بين 2022 و2025، وكلها مؤكدة بصور دون المتر (نتيجتنا)."),
+    "pr2": ("per tonne of CO₂e: blue-carbon credit prices in 2024–25 (S&P Global Platts), so a hectare that is lost is also value that is lost.",
+            "لكل طن مكافئ CO₂: أسعار أرصدة الكربون الأزرق في 2024–2025 (S&P Global Platts)، فالهكتار المفقود قيمة مفقودة أيضاً."),
+    "reg_src": ("Sources", "المصادر"),
     # expert evaluation (Bahrain Space Agency official statement, approved for use 26 Oct 2026)
     "bsa_k": ("Expert Evaluation and Feedback", "تقييم وملاحظات الخبراء"), "bsa_h": ("Bahrain Space Agency", "وكالة البحرين للفضاء"),
     "bsa_q": ("“The Bahrain Space Agency commends Ms. Nahla Nabil for presenting Blue Carbon Guardian, an innovative project using Earth Observation data to monitor regional mangrove ecosystems. The Agency provided specialised assessment and technical feedback, reaffirming its commitment to supporting research and innovation that advance Bahrain's environmental objectives and sustainability goals.”",
@@ -300,6 +318,10 @@ figure img{width:100%;border-radius:10px;display:block}
 .faq summary:after{content:"+";font-size:24px;color:var(--accent);transition:transform .25s;flex:none}
 .faq details[open] summary:after{transform:rotate(45deg)}
 .faq details p{padding:0 0 18px;color:var(--muted);font-size:15.5px}
+/* regional context */
+.ctry .big{direction:ltr;unicode-bidi:isolate}html[lang="ar"] .ctry .big{text-align:right}
+.ctry b{display:block;font-size:16px;color:var(--head);margin-bottom:4px}.dark.ctry b{color:#fff}
+.ctry .flag{display:block;width:40px;height:24px;border-radius:4px;margin-bottom:10px;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
 /* risk register */
 .riskcount{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .riskcount span{padding:6px 14px;border-radius:999px;font-weight:700;font-size:14px;color:#fff}
@@ -324,7 +346,7 @@ footer a{color:#fff}
 <body>
 <nav><div class="wrap">
   <a class="brand" href="#top"><svg width="26" height="26" viewBox="0 0 240 240"><circle cx="120" cy="120" r="104" fill="none" stroke="#7FD3FF" stroke-width="14"/><path d="M120 52 C 160 80 168 128 120 170 C 72 128 80 80 120 52 Z" fill="none" stroke="#fff" stroke-width="14"/></svg><span data-i18n="title"></span></a>
-  <a class="l" href="#monitor" data-i18n="nav_mon"></a><a class="l" href="#risks" data-i18n="nav_risk"></a><a class="l" href="#how" data-i18n="nav_how"></a><a class="l" href="#events" data-i18n="nav_ev"></a><a class="l" href="#validation" data-i18n="nav_val"></a><a class="l" href="#carbon" data-i18n="nav_carbon"></a><a class="l" href="#faq" data-i18n="nav_faq"></a>
+  <a class="l" href="#monitor" data-i18n="nav_mon"></a><a class="l" href="#risks" data-i18n="nav_risk"></a><a class="l" href="#how" data-i18n="nav_how"></a><a class="l" href="#events" data-i18n="nav_ev"></a><a class="l" href="#validation" data-i18n="nav_val"></a><a class="l" href="#carbon" data-i18n="nav_carbon"></a><a class="l" href="#region" data-i18n="nav_reg"></a><a class="l" href="#faq" data-i18n="nav_faq"></a>
   <button class="tog" id="langBtn" aria-label="Switch language"><span id="langLbl">العربية</span></button>
   <button class="tog" id="themeBtn" aria-label="Switch light / dark theme"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
   <a class="tog" href="https://github.com/Nahla-Nabil/blue-carbon-guardian" aria-label="GitHub">GitHub ↗</a>
@@ -433,6 +455,21 @@ footer a{color:#fff}
     <div class="card dark lift reveal"><div style="font-size:40px;font-weight:700;direction:ltr;unicode-bidi:isolate">2.8–6.7 kt</div><p style="font-size:14px" data-i18n="c4"></p></div>
   </div>
   <p class="note reveal" style="margin-top:12px" data-i18n="car_n"></p>
+</div></section>
+
+<section id="region" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="reveal"><div class="k" data-i18n="reg_k"></div><h2 data-i18n="reg_h"></h2><p class="lede" data-i18n="reg_lede"></p></div>
+  <div class="grid4" style="margin-top:24px">
+    <div class="card lift reveal ctry"><i class="flag" style="background:linear-gradient(90deg,#EF3340 0 22%,transparent 22%),linear-gradient(#00843D 0 33%,#fff 33% 66%,#000 66%)"></i><b data-i18n="ae_n"></b><div class="big">100 M</div><p class="note" data-i18n="ae_p"></p></div>
+    <div class="card lift reveal ctry"><i class="flag" style="background:#006C35"></i><b data-i18n="sa_n"></b><div class="big">100 M+</div><p class="note" data-i18n="sa_p"></p></div>
+    <div class="card lift reveal ctry"><i class="flag" style="background:linear-gradient(90deg,#fff 0 28%,#CE1126 28%)"></i><b data-i18n="bh_n"></b><div class="big">×4</div><p class="note" data-i18n="bh_p"></p></div>
+    <div class="card dark lift reveal ctry"><i class="flag" style="background:linear-gradient(90deg,#7FD3FF,#1E6FD9)"></i><b data-i18n="ar_n"></b><div style="font-size:40px;font-weight:700;direction:ltr;unicode-bidi:isolate">≈ 365</div><p style="font-size:14px" data-i18n="ar_p"></p></div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card reveal" style="display:flex;gap:18px;align-items:center"><div class="big" style="white-space:nowrap">5 / 25</div><p data-i18n="pr1"></p></div>
+    <div class="card reveal" style="display:flex;gap:18px;align-items:center"><div class="big" style="white-space:nowrap;direction:ltr">$25–29</div><p data-i18n="pr2"></p></div>
+  </div>
+  <p class="note" style="margin-top:12px"><b data-i18n="reg_src"></b>: <span dir="ltr">MOCCAE COP26 pledge (2021) · <a href="https://www.ead.gov.ae">Environment Agency – Abu Dhabi</a> · EAD–IUCN GCC mangrove monitoring guide (Gulf News, 24 Feb 2026) · <a href="https://www.sgi.gov.sa">Saudi Green Initiative</a> · <a href="https://www.redseaglobal.com">Red Sea Global</a> (2023) · <a href="https://www.gdnonline.com/Details/1286654/Mangrove-plantation-coverage-%E2%80%98to-expand-four-fold-by-2035%E2%80%99-">GDN Online: Bahrain four-fold by 2035</a> · <a href="https://doi.org/10.3389/fmars.2025.1695426">Frontiers in Marine Science 2025</a> · S&amp;P Global Platts blue-carbon assessments 2024–25 · <a href="https://github.com/Nahla-Nabil/blue-carbon-guardian/blob/main/docs/business_plan_draft.md">full source list</a></span></p>
 </div></section>
 
 <section class="alt" id="offer"><div class="wrap">
