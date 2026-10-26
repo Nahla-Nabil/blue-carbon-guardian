@@ -82,7 +82,7 @@ An 8-minute pitch (24 presented slides) built around the final judging criteria,
 
 | File | What it is |
 |---|---|
-| [`docs/Blue_Carbon_Guardian_final_SUBMIT.pptx`](docs/Blue_Carbon_Guardian_final_SUBMIT.pptx) | 29 slides (24 presented + 5 backups for questions: references, all the equations, NDVI alone, limits, website tour; incl. the risk register, the method in one slide, why it matters in the region and the Bahrain Space Agency expert evaluation) with Morph transitions, entrance animations and embedded videos: a satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo |
+| [`docs/Blue_Carbon_Guardian_final_SUBMIT.pptx`](docs/Blue_Carbon_Guardian_final_SUBMIT.pptx) | 28 slides (24 presented + 4 backups for questions: references, all the equations, NDVI alone, limits; incl. the risk register, the method in one slide, why it matters in the region and the Bahrain Space Agency expert evaluation) with Morph transitions, entrance animations and embedded videos: a satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo |
 | [`docs/Blue_Carbon_Guardian_final.pdf`](docs/Blue_Carbon_Guardian_final.pdf) | The same deck as a PDF (still frames in place of the videos) |
 
 | Final judging criterion (points) | Slides |
