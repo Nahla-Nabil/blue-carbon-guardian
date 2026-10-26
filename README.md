@@ -82,7 +82,7 @@ An 8-minute pitch built around the final judging criteria, with the team overvie
 
 | File | What it is |
 |---|---|
-| [`docs/Blue_Carbon_Guardian_final_SUBMIT.pptx`](docs/Blue_Carbon_Guardian_final_SUBMIT.pptx) | 22 slides (19 presented + 3 backups for questions) with Morph transitions, entrance animations and embedded videos: a satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo |
+| [`docs/Blue_Carbon_Guardian_final_SUBMIT.pptx`](docs/Blue_Carbon_Guardian_final_SUBMIT.pptx) | 25 slides (22 presented + 3 backups for questions, incl. the risk register, the method in one slide and the Bahrain Space Agency expert evaluation) with Morph transitions, entrance animations and embedded videos: a satellite scan of the pilot stands, a screen recording of the live monitor (also the fallback if the connection fails), the stand-5 alert animation, and the 2-minute demo |
 | [`docs/Blue_Carbon_Guardian_final.pdf`](docs/Blue_Carbon_Guardian_final.pdf) | The same deck as a PDF (still frames in place of the videos) |
 
 | Final judging criterion (points) | Slides |
